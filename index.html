@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VERAXA.CO | Luxury Women Clothing</title>
+  <meta name="description" content="VERAXA premium kadın giyim koleksiyonu. Beden seç, WhatsApp ile hızlı sipariş ver." />
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
+    html{scroll-behavior:smooth}
+    body{background:#f7f3ee;color:#111;overflow-x:hidden}
+    a{text-decoration:none;color:inherit}
+    button,select,input,textarea{font-family:inherit}
+
+    .top-note{background:#111;color:#fff;text-align:center;padding:10px 5%;font-size:13px;letter-spacing:1px}
+    header{width:100%;padding:18px 8%;display:flex;justify-content:space-between;align-items:center;background:rgba(255,255,255,.96);position:sticky;top:0;z-index:50;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+    .logo{font-size:28px;letter-spacing:5px;font-weight:800}
+    nav a{margin-left:24px;color:#111;font-size:13px;letter-spacing:1px;font-weight:600}
+    nav a:hover{opacity:.65}
+
+    .hero{min-height:84vh;display:flex;align-items:center;justify-content:space-between;padding:60px 8%;background:linear-gradient(120deg,#f7f3ee,#e7ded2)}
+    .hero-text{width:50%}
+    .tag{display:inline-block;background:#fff;padding:8px 16px;border-radius:30px;font-size:12px;letter-spacing:2px;margin-bottom:18px;box-shadow:0 8px 20px rgba(0,0,0,.06)}
+    .hero h1{font-size:68px;line-height:1.03;margin-bottom:20px;letter-spacing:-2px}
+    .hero p{font-size:18px;color:#444;margin-bottom:30px;max-width:520px;line-height:1.7}
+    .btn{display:inline-block;padding:15px 34px;background:#111;color:#fff;border:none;border-radius:40px;font-size:14px;letter-spacing:1px;cursor:pointer;transition:.25s}
+    .btn:hover{transform:translateY(-2px);box-shadow:0 12px 24px rgba(0,0,0,.18)}
+    .btn-light{background:#fff;color:#111;margin-left:10px}
+    .hero-image{width:42%;height:560px;background:url('https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1000&q=80') center/cover;border-radius:30px;box-shadow:0 20px 50px rgba(0,0,0,.18)}
+
+    .trust{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;padding:28px 8%;background:#fff}
+    .trust-card{background:#f7f3ee;border-radius:20px;padding:24px;text-align:center;border:1px solid #eee}
+    .trust-card h3{font-size:16px;margin-bottom:8px}.trust-card p{color:#555;font-size:14px;line-height:1.5}
+
+    .section{padding:76px 8%}.section-title{text-align:center;font-size:36px;margin-bottom:12px;letter-spacing:2px}.section-sub{text-align:center;color:#666;margin-bottom:38px;line-height:1.6}
+    .toolbar{display:flex;gap:12px;justify-content:center;align-items:center;margin-bottom:30px;flex-wrap:wrap}
+    .toolbar input,.toolbar select{padding:13px 16px;border:1px solid #ddd;border-radius:30px;background:#fff;min-width:220px;outline:none}
+
+    .products{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}.product-card{background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.08);transition:.3s;position:relative}.product-card:hover{transform:translateY(-6px)}
+    .badge{position:absolute;top:14px;left:14px;background:#111;color:#fff;padding:7px 12px;border-radius:30px;font-size:12px;z-index:2}
+    .product-card img{width:100%;height:390px;object-fit:cover;display:block}.product-info{padding:20px}.product-info h3{font-size:20px;margin-bottom:8px}.product-info p{color:#555;margin-bottom:14px;line-height:1.5}.price{font-weight:bold;font-size:19px;margin-bottom:12px}.old-price{color:#999;text-decoration:line-through;font-size:14px;margin-left:7px;font-weight:400}
+    .size-select{width:100%;margin-top:8px;padding:13px;border:1px solid #ddd;border-radius:30px;background:#fff;outline:none}.product-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.whatsapp-btn{padding:12px 16px;background:#111;color:#fff;border:none;border-radius:30px;font-size:13px;letter-spacing:1px;cursor:pointer;flex:1}.detail-btn{padding:12px 16px;background:#f1ede7;color:#111;border:1px solid #ddd;border-radius:30px;font-size:13px;cursor:pointer;flex:1}
+
+    .banner{padding:86px 8%;background:#111;color:#fff;text-align:center}.banner h2{font-size:42px;margin-bottom:18px}.banner p{max-width:760px;margin:auto;color:#ddd;line-height:1.8;font-size:17px}
+    .about{background:#fff;padding:76px 10%;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}.about h2{font-size:36px;margin-bottom:18px}.about p{line-height:1.8;color:#555;margin-bottom:14px}.about-box{background:#f7f3ee;border-radius:26px;padding:34px;border:1px solid #eee}.about-box ul{padding-left:18px;line-height:2;color:#444}
+
+    .size-guide{padding:70px 8%;background:#f7f3ee}.size-table{max-width:900px;margin:25px auto 0;background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.07)}
+    table{width:100%;border-collapse:collapse}th,td{padding:16px;text-align:center;border-bottom:1px solid #eee}th{background:#111;color:#fff}td{color:#444}
+
+    .instagram{padding:76px 8%;text-align:center;background:#fff}.instagram h2{font-size:34px;margin-bottom:12px}.instagram p{color:#555;margin-bottom:24px}.insta-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:30px}.insta-grid div{height:220px;border-radius:20px;background:center/cover}.i1{background-image:url('https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=700&q=80')}.i2{background-image:url('https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=700&q=80')}.i3{background-image:url('https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=700&q=80')}.i4{background-image:url('https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=700&q=80')}
+
+    .faq{padding:76px 8%;background:#f7f3ee}.faq-item{max-width:900px;margin:0 auto 14px;padding:22px;border-radius:20px;background:#fff;border:1px solid #eee}.faq-item h3{margin-bottom:8px}.faq-item p{color:#555;line-height:1.6}
+    .contact-box{background:#111;color:#fff;padding:70px 8%;text-align:center}.contact-box h2{font-size:36px;margin-bottom:14px}.contact-box p{color:#ddd;margin-bottom:24px;line-height:1.7}.contact-mini{margin-top:18px;color:#ddd;font-size:14px}
+    footer{padding:28px 8%;text-align:center;background:#fff;color:#555;font-size:14px;line-height:1.7}
+    .fixed-whatsapp{position:fixed;right:20px;bottom:20px;background:#111;color:#fff;padding:14px 20px;border-radius:40px;z-index:60;box-shadow:0 10px 30px rgba(0,0,0,.25);font-weight:700}
+
+    .modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.68);z-index:100;align-items:center;justify-content:center;padding:20px}.modal-content{width:100%;max-width:930px;background:#fff;border-radius:26px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;position:relative}.modal-content img{width:100%;height:100%;min-height:560px;object-fit:cover}.modal-info{padding:36px}.modal-info h2{font-size:32px;margin-bottom:12px}.modal-info p{color:#555;line-height:1.7;margin-bottom:16px}.close{position:absolute;right:18px;top:14px;font-size:30px;cursor:pointer;background:#fff;border-radius:50%;width:40px;height:40px;text-align:center;line-height:38px;z-index:5}.modal-info select{margin-bottom:8px}
+
+    @media(max-width:900px){header{padding:16px 5%}nav{display:none}.top-note{font-size:12px}.hero{flex-direction:column;padding:38px 5%;text-align:center}.hero-text{width:100%}.hero h1{font-size:43px}.hero p{margin:0 auto 25px}.hero-image{width:100%;height:430px;margin-top:35px}.btn-light{margin-left:0;margin-top:10px}.trust{grid-template-columns:1fr 1fr;padding:22px 5%}.products{grid-template-columns:1fr}.product-card img{height:430px}.about{grid-template-columns:1fr;padding:58px 5%}.insta-grid{grid-template-columns:1fr 1fr}.modal-content{grid-template-columns:1fr;max-height:92vh;overflow:auto}.modal-content img{min-height:340px}.toolbar input,.toolbar select{width:100%}.fixed-whatsapp{right:14px;bottom:14px;padding:13px 17px}}
+  </style>
+</head>
+<body>
+
+  <div class="top-note">VERAXA.CO — Premium kadın giyim | WhatsApp ile hızlı sipariş: 0546 885 37 31</div>
+
+  <header>
+    <div class="logo">VERAXA</div>
+    <nav>
+      <a href="#home">Ana Sayfa</a>
+      <a href="#products">Ürünler</a>
+      <a href="#about">Hakkımızda</a>
+      <a href="#sizes">Beden Tablosu</a>
+      <a href="#faq">S.S.S</a>
+      <a href="#contact">İletişim</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="hero-text">
+      <span class="tag">NEW COLLECTION</span>
+      <h1>Luxury<br>Streetwear</h1>
+      <p>VERAXA, sade çizgilerle güçlü duruşu birleştiren modern kadın giyim markasıdır. Premium görünüm, günlük rahatlık ve hızlı WhatsApp sipariş deneyimi.</p>
+      <a href="#products" class="btn">Koleksiyonu İncele</a>
+      <a href="https://wa.me/905468853731?text=Merhaba,%20VERAXA%20ürünleri%20hakkında%20bilgi%20almak%20istiyorum." target="_blank" class="btn btn-light">WhatsApp</a>
+    </div>
+    <div class="hero-image"></div>
+  </section>
+
+  <section class="trust">
+    <div class="trust-card"><h3>🚚 Hızlı Kargo</h3><p>Siparişler hazırlanıp en kısa sürede kargoya verilir.</p></div>
+    <div class="trust-card"><h3>🔁 Değişim Desteği</h3><p>Beden uymazsa WhatsApp üzerinden destek alabilirsin.</p></div>
+    <div class="trust-card"><h3>💬 Canlı Destek</h3><p>Sipariş öncesi ve sonrası WhatsApp destek.</p></div>
+    <div class="trust-card"><h3>✨ Premium Duruş</h3><p>Modern kesim, sade tasarım, şık görünüm.</p></div>
+  </section>
+
+  <section class="section" id="products">
+    <h2 class="section-title">Yeni Koleksiyon</h2>
+    <p class="section-sub">Beden seç, ürün detayını incele, WhatsApp üzerinden hızlı sipariş ver.</p>
+
+    <div class="toolbar">
+      <input type="text" id="searchInput" placeholder="Ürün ara..." onkeyup="urunleriFiltrele()">
+      <select id="categoryFilter" onchange="urunleriFiltrele()">
+        <option value="all">Tüm Kategoriler</option>
+        <option value="T-Shirt">T-Shirt</option>
+        <option value="Sweatshirt">Sweatshirt</option>
+        <option value="Elbise">Elbise</option>
+        <option value="Üst Giyim">Üst Giyim</option>
+      </select>
+    </div>
+
+    <div class="products" id="productList"></div>
+  </section>
+
+  <section class="banner">
+    <h2>Minimal çizgi, güçlü duruş.</h2>
+    <p>VERAXA koleksiyonu; sade, şık ve premium görünüm seven kadınlar için hazırlandı. Günlük kombinlerde rahatlık, özel anlarda dikkat çekici duruş.</p>
+  </section>
+
+  <section class="about" id="about">
+    <div>
+      <h2>VERAXA Hakkında</h2>
+      <p>VERAXA, modern kadınların güçlü, sade ve dikkat çekici stilini yansıtmak için kuruldu.</p>
+      <p>Her parçada kaliteli duruş, temiz tasarım ve premium marka hissi hedeflenir.</p>
+    </div>
+    <div class="about-box">
+      <h3>Alışveriş Bilgileri</h3>
+      <ul>
+        <li>WhatsApp ile hızlı sipariş</li>
+        <li>Beden seçerek otomatik mesaj</li>
+        <li>Kargo ve stok bilgisi için canlı destek</li>
+        <li>Instagram: @veraxa.co</li>
+        <li>Telefon: 0546 885 37 31</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="size-guide" id="sizes">
+    <h2 class="section-title">Beden Tablosu</h2>
+    <p class="section-sub">Sipariş vermeden önce bedenini kontrol edebilirsin.</p>
+    <div class="size-table">
+      <table>
+        <thead><tr><th>Beden</th><th>Göğüs</th><th>Bel</th><th>Basen</th></tr></thead>
+        <tbody>
+          <tr><td>XS</td><td>78-82 cm</td><td>60-64 cm</td><td>86-90 cm</td></tr>
+          <tr><td>S</td><td>82-86 cm</td><td>64-68 cm</td><td>90-94 cm</td></tr>
+          <tr><td>M</td><td>86-92 cm</td><td>68-74 cm</td><td>94-100 cm</td></tr>
+          <tr><td>L</td><td>92-98 cm</td><td>74-80 cm</td><td>100-106 cm</td></tr>
+          <tr><td>XL</td><td>98-104 cm</td><td>80-86 cm</td><td>106-112 cm</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="instagram">
+    <h2>Instagram'da VERAXA</h2>
+    <p>Yeni ürünler, kombin önerileri ve kampanyalar için bizi takip et.</p>
+    <a class="btn" href="https://instagram.com/veraxa.co" target="_blank">@veraxa.co Takip Et</a>
+    <div class="insta-grid"><div class="i1"></div><div class="i2"></div><div class="i3"></div><div class="i4"></div></div>
+  </section>
+
+  <section class="faq" id="faq">
+    <h2 class="section-title">Sık Sorulan Sorular</h2>
+    <div class="faq-item"><h3>Sipariş nasıl verilir?</h3><p>Üründe beden seçip “WhatsApp ile Sipariş Ver” butonuna basman yeterli. Ürün adı, beden ve fiyat otomatik mesaj olarak gider.</p></div>
+    <div class="faq-item"><h3>Ürün stokta mı?</h3><p>Stok bilgisi WhatsApp üzerinden hızlıca teyit edilir.</p></div>
+    <div class="faq-item"><h3>Değişim var mı?</h3><p>Beden uyumsuzluğu gibi durumlarda WhatsApp üzerinden destek alabilirsin.</p></div>
+    <div class="faq-item"><h3>Kargo nasıl oluyor?</h3><p>Sipariş onayından sonra ürün hazırlanır ve kargoya verilir.</p></div>
+  </section>
+
+  <section class="contact-box" id="contact">
+    <h2>Sipariş ve İletişim</h2>
+    <p>Sipariş vermek veya ürün hakkında bilgi almak için WhatsApp üzerinden bize ulaş.</p>
+    <a class="btn" href="https://wa.me/905468853731?text=Merhaba,%20VERAXA%20ürünleri%20hakkında%20bilgi%20almak%20istiyorum." target="_blank">WhatsApp'a Git</a>
+    <div class="contact-mini">Telefon: 0546 885 37 31 • Instagram: @veraxa.co</div>
+  </section>
+
+  <footer>
+    © 2026 VERAXA.CO — Premium Women Clothing<br>
+    Instagram: @veraxa.co | WhatsApp: 0546 885 37 31
+  </footer>
+
+  <a class="fixed-whatsapp" href="https://wa.me/905468853731?text=Merhaba,%20VERAXA%20ürünleri%20hakkında%20bilgi%20almak%20istiyorum." target="_blank">WhatsApp</a>
+
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <span class="close" onclick="detayKapat()">×</span>
+      <img id="modalImg" src="" alt="Ürün detayı">
+      <div class="modal-info">
+        <h2 id="modalTitle"></h2>
+        <p id="modalText"></p>
+        <div class="price" id="modalPrice"></div>
+        <p><b>Kategori:</b> <span id="modalCategory"></span></p>
+        <p><b>Kumaş:</b> Premium dokulu, rahat kullanım.</p>
+        <p><b>Kalıp:</b> Günlük kullanıma uygun modern kesim.</p>
+        <p><b>Teslimat:</b> WhatsApp üzerinden sipariş alınır.</p>
+        <select class="size-select" id="modalSize">
+          <option>Beden Seç</option><option>XS</option><option>S</option><option>M</option><option>L</option><option>XL</option>
+        </select>
+        <button class="whatsapp-btn" onclick="modalSiparisVer()">Bu Ürünü Sipariş Ver</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const telefon = '905468853731';
+    let seciliUrun = null;
+
+    const urunler = [
+      {ad:'Minimal Crop T-Shirt', kategori:'T-Shirt', fiyat:'₺699', eski:'₺899', etiket:'Yeni', aciklama:'Yumuşak dokulu, modern kesim crop t-shirt. Günlük kombinlerde premium duruş sağlar.', gorsel:'https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=80'},
+      {ad:'Oversize Sweatshirt', kategori:'Sweatshirt', fiyat:'₺1.249', eski:'₺1.499', etiket:'Popüler', aciklama:'Rahat kalıp, premium görünüm. Soğuk havalarda güçlü ve sade stil.', gorsel:'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=80'},
+      {ad:'Elegant Dress', kategori:'Elbise', fiyat:'₺1.899', eski:'₺2.299', etiket:'Luxury', aciklama:'Şık davetler ve günlük stil için zarif elbise. Temiz çizgi, dikkat çekici duruş.', gorsel:'https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=900&q=80'},
+      {ad:'Luxury Basic Tee', kategori:'T-Shirt', fiyat:'₺749', eski:'₺949', etiket:'Basic', aciklama:'Günlük kombinler için sade premium tişört. Minimal logo baskılarına uygundur.', gorsel:'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=900&q=80'},
+      {ad:'Soft Knit Top', kategori:'Üst Giyim', fiyat:'₺1.099', eski:'₺1.399', etiket:'Soft', aciklama:'Yumuşak triko dokusu, zarif görünüm. Jean ve etek kombinlerine uygundur.', gorsel:'https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=900&q=80'},
+      {ad:'Classic Shirt', kategori:'Üst Giyim', fiyat:'₺1.349', eski:'₺1.699', etiket:'Classic', aciklama:'Ofis ve günlük kullanım için temiz kesim gömlek. Zamansız ve şık.', gorsel:'https://images.unsplash.com/photo-1520975954732-35dd22299614?auto=format&fit=crop&w=900&q=80'},
+      {ad:'Veraxa Premium Hoodie', kategori:'Sweatshirt', fiyat:'₺1.599', eski:'₺1.899', etiket:'Premium', aciklama:'Rahat kalıp kapüşonlu sweatshirt. Sokak stilinde güçlü görünüm.', gorsel:'https://images.unsplash.com/photo-1578587018452-892bacefd3f2?auto=format&fit=crop&w=900&q=80'},
+      {ad:'Satin Look Dress', kategori:'Elbise', fiyat:'₺2.199', eski:'₺2.699', etiket:'Special', aciklama:'Saten görünümlü zarif elbise. Özel davetler için premium seçenek.', gorsel:'https://images.unsplash.com/photo-1539008835657-9e8e9680c956?auto=format&fit=crop&w=900&q=80'},
+      {ad:'Modern Long Sleeve', kategori:'Üst Giyim', fiyat:'₺899', eski:'₺1.149', etiket:'Yeni', aciklama:'Uzun kollu modern üst. Günlük kullanımda sade ve kaliteli görünüm.', gorsel:'https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&w=900&q=80'}
+    ];
+
+    function urunleriYazdir(liste = urunler){
+      const alan = document.getElementById('productList');
+      alan.innerHTML = '';
+      liste.forEach((urun, index) => {
+        alan.innerHTML += `
+          <div class="product-card" data-name="${urun.ad.toLowerCase()}" data-category="${urun.kategori}">
+            <span class="badge">${urun.etiket}</span>
+            <img src="${urun.gorsel}" alt="${urun.ad}">
+            <div class="product-info">
+              <h3>${urun.ad}</h3>
+              <p>${urun.aciklama}</p>
+              <div class="price">${urun.fiyat}<span class="old-price">${urun.eski}</span></div>
+              <select class="size-select">
+                <option>Beden Seç</option><option>XS</option><option>S</option><option>M</option><option>L</option><option>XL</option>
+              </select>
+              <div class="product-actions">
+                <button class="whatsapp-btn" onclick="siparisVer(this)">WhatsApp ile Sipariş Ver</button>
+                <button class="detail-btn" onclick="detayAc(${index})">Detay Gör</button>
+              </div>
+            </div>
+          </div>`;
+      });
+    }
+
+    function urunleriFiltrele(){
+      const arama = document.getElementById('searchInput').value.toLowerCase();
+      const kategori = document.getElementById('categoryFilter').value;
+      const filtreli = urunler.filter(u => {
+        const aramaUygun = u.ad.toLowerCase().includes(arama) || u.aciklama.toLowerCase().includes(arama);
+        const kategoriUygun = kategori === 'all' || u.kategori === kategori;
+        return aramaUygun && kategoriUygun;
+      });
+      urunleriYazdir(filtreli);
+    }
+
+    function siparisVer(btn){
+      const kutu = btn.closest('.product-info');
+      const urun = kutu.querySelector('h3').innerText;
+      const fiyat = kutu.querySelector('.price').childNodes[0].nodeValue.trim();
+      const beden = kutu.querySelector('.size-select').value;
+      if(beden === 'Beden Seç'){alert('Lütfen beden seçin');return;}
+      const mesaj = `Merhaba, VERAXA üzerinden sipariş vermek istiyorum.\n\nÜrün: ${urun}\nBeden: ${beden}\nFiyat: ${fiyat}\n\nStok bilgisi ve sipariş için yardımcı olur musunuz?`;
+      window.open('https://wa.me/' + telefon + '?text=' + encodeURIComponent(mesaj), '_blank');
+    }
+
+    function detayAc(index){
+      seciliUrun = urunler[index];
+      document.getElementById('modalImg').src = seciliUrun.gorsel;
+      document.getElementById('modalTitle').innerText = seciliUrun.ad;
+      document.getElementById('modalText').innerText = seciliUrun.aciklama;
+      document.getElementById('modalPrice').innerText = seciliUrun.fiyat;
+      document.getElementById('modalCategory').innerText = seciliUrun.kategori;
+      document.getElementById('modalSize').value = 'Beden Seç';
+      document.getElementById('modal').style.display = 'flex';
+    }
+
+    function detayKapat(){document.getElementById('modal').style.display='none';}
+
+    function modalSiparisVer(){
+      const beden = document.getElementById('modalSize').value;
+      if(beden === 'Beden Seç'){alert('Lütfen beden seçin');return;}
+      const mesaj = `Merhaba, VERAXA üzerinden sipariş vermek istiyorum.\n\nÜrün: ${seciliUrun.ad}\nBeden: ${beden}\nFiyat: ${seciliUrun.fiyat}\n\nStok bilgisi ve sipariş için yardımcı olur musunuz?`;
+      window.open('https://wa.me/' + telefon + '?text=' + encodeURIComponent(mesaj), '_blank');
+    }
+
+    window.onclick = function(e){if(e.target === document.getElementById('modal')) detayKapat();}
+    urunleriYazdir();
+  </script>
+</body>
+</html>
