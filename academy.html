@@ -1,111 +1,374 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Niloufar English Academy</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Niloufar English | Premium Online English Academy</title>
+  <meta name="description" content="Niloufar English; çocuklar, gençler ve yetişkinler için premium online İngilizce akademisi. Türkçe, English, فارسی dil desteği." />
 
-<style>
-body{font-family:Arial;background:#f5f5f5;margin:0}
-header{display:flex;justify-content:space-between;align-items:center;padding:20px;background:#000;color:#fff}
-.logo{font-size:22px;font-weight:bold}
-.controls{display:flex;gap:10px}
-button,select{padding:8px;border-radius:6px;border:none}
-.hero{padding:60px;text-align:center}
-.price{font-size:28px;font-weight:bold;margin:10px 0}
-.card{background:#fff;padding:20px;margin:20px;border-radius:10px}
-</style>
+  <style>
+    :root{
+      --black:#070707;
+      --dark:#14100c;
+      --cream:#fbf5ec;
+      --ivory:#fffdf8;
+      --gold:#b9935a;
+      --gold2:#e7cf98;
+      --bronze:#7d5a31;
+      --text:#151515;
+      --muted:#6b6258;
+      --line:#eadbc4;
+      --rose:#f6d6cf;
+      --mint:#dceee6;
+      --sky:#dfe9f8;
+    }
+
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:Georgia,'Times New Roman',serif;background:var(--cream);color:var(--text);overflow-x:hidden}
+    a{text-decoration:none;color:inherit}
+    button{font-family:Arial,Helvetica,sans-serif}
+    .sans{font-family:Arial,Helvetica,sans-serif}
+
+    .top-note{background:linear-gradient(90deg,#050505,#2a1d10,#050505);color:#fff;text-align:center;padding:11px 5%;font:12px Arial,Helvetica,sans-serif;letter-spacing:1.8px;text-transform:uppercase}
+
+    header{width:100%;padding:16px 7%;display:flex;justify-content:space-between;align-items:center;background:rgba(251,245,236,.92);backdrop-filter:blur(18px);position:sticky;top:0;z-index:50;border-bottom:1px solid rgba(185,147,90,.28)}
+    .logo{font-size:30px;letter-spacing:.8px;font-weight:500}.logo span{font-family:Arial,Helvetica,sans-serif;font-size:11px;letter-spacing:3.4px;text-transform:uppercase;color:var(--gold);display:block;margin-top:3px}
+    .nav-wrap{display:flex;align-items:center;gap:22px}
+    nav{font-family:Arial,Helvetica,sans-serif}nav a{margin-left:20px;font-size:12px;letter-spacing:1.6px;text-transform:uppercase;font-weight:900;color:#181818}nav a:hover{color:var(--gold)}
+
+    .language-switcher{display:flex;gap:7px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:5px;box-shadow:0 10px 24px rgba(0,0,0,.06)}
+    .lang-btn{border:none;background:transparent;padding:8px 11px;border-radius:999px;cursor:pointer;font:800 12px Arial,Helvetica,sans-serif;color:#2a2a2a;display:flex;align-items:center;gap:6px;transition:.2s}
+    .lang-btn.active{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#111;box-shadow:0 8px 18px rgba(185,147,90,.25)}
+    .flag{font-size:17px;line-height:1}
+
+    .hero{min-height:90vh;display:grid;grid-template-columns:1fr 1fr;gap:58px;align-items:center;padding:72px 7%;background:
+      radial-gradient(circle at 82% 13%,rgba(231,207,152,.48),transparent 28%),
+      radial-gradient(circle at 12% 90%,rgba(246,214,207,.45),transparent 26%),
+      linear-gradient(135deg,#fffaf2,#f0dfc9 55%,#fbf5ec)}
+    .eyebrow{display:inline-block;font:900 12px Arial,Helvetica,sans-serif;letter-spacing:3.3px;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
+    .hero h1{font-size:78px;line-height:.96;font-weight:500;letter-spacing:-3.6px;margin-bottom:24px}.hero h1 em{color:var(--gold);font-style:italic}
+    .hero p{font:18px/1.85 Arial,Helvetica,sans-serif;color:#4d463f;max-width:640px;margin-bottom:30px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;padding:15px 31px;background:var(--black);color:#fff;border:none;border-radius:999px;font:900 12px Arial,Helvetica,sans-serif;letter-spacing:1.6px;text-transform:uppercase;cursor:pointer;transition:.25s;min-height:50px}.btn:hover{transform:translateY(-2px);box-shadow:0 18px 34px rgba(0,0,0,.22)}.btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#111}.btn-light{background:#fff;color:#111;border:1px solid var(--line)}
+
+    .hero-portrait{position:relative;min-height:650px;display:flex;align-items:center;justify-content:center}.portrait-frame{width:520px;height:620px;border-radius:44px;background:linear-gradient(135deg,var(--gold),#fff,var(--gold2));padding:2px;box-shadow:0 38px 90px rgba(0,0,0,.24);position:relative}.portrait-inner{width:100%;height:100%;border-radius:42px;background:linear-gradient(180deg,#fffaf3,#efe1cf);display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}.portrait-inner:before{content:"";position:absolute;inset:18px;border:1px solid rgba(185,147,90,.38);border-radius:34px;z-index:2;pointer-events:none}.profile-img{width:82%;max-width:430px;aspect-ratio:1/1;object-fit:cover;border-radius:50%;border:8px solid rgba(255,255,255,.94);box-shadow:0 24px 60px rgba(0,0,0,.2);z-index:1;background:#fff}
+    .signature-card{position:absolute;left:-38px;bottom:58px;width:310px;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);padding:25px;border-radius:28px;border:1px solid rgba(185,147,90,.35);box-shadow:0 24px 55px rgba(0,0,0,.16)}.signature-card strong{display:block;font-size:32px;color:var(--gold);font-weight:500;margin-bottom:7px}.signature-card p{font:14px/1.6 Arial,Helvetica,sans-serif;color:#5b544d}.mini-card{position:absolute;right:-28px;top:70px;background:#111;color:#fff;padding:19px 22px;border-radius:22px;font:13px/1.6 Arial,Helvetica,sans-serif;box-shadow:0 24px 50px rgba(0,0,0,.28);border:1px solid rgba(231,207,152,.35)}
+
+    .trust{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding:28px 7%;background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.trust-card{background:linear-gradient(180deg,#fffaf4,#f5ebdd);border:1px solid var(--line);border-radius:24px;padding:25px;text-align:center;transition:.22s}.trust-card:hover{transform:translateY(-5px);box-shadow:0 18px 35px rgba(0,0,0,.08)}.trust-icon{width:54px;height:54px;border-radius:18px;margin:0 auto 13px;display:flex;align-items:center;justify-content:center;font-size:26px;background:linear-gradient(135deg,#fff,var(--gold2));box-shadow:0 12px 25px rgba(185,147,90,.18)}.trust-card h3{font:900 16px Arial,Helvetica,sans-serif;margin-bottom:8px}.trust-card p{font:14px/1.55 Arial,Helvetica,sans-serif;color:var(--muted)}
+
+    .section{padding:92px 7%}.section-head{text-align:center;margin-bottom:44px}.section-title{font-size:50px;font-weight:500;letter-spacing:-1px;margin-bottom:12px}.section-sub{font:16px/1.75 Arial,Helvetica,sans-serif;color:var(--muted);max-width:760px;margin:auto}.gold-line{width:82px;height:2px;background:linear-gradient(90deg,var(--gold),var(--gold2));margin:19px auto 0}
+
+    .programs{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}.program-card{background:#fff;border:1px solid var(--line);border-radius:32px;overflow:hidden;box-shadow:0 24px 58px rgba(0,0,0,.08);transition:.25s}.program-card:hover{transform:translateY(-8px)}.program-card img{width:100%;height:275px;object-fit:cover;display:block;filter:saturate(.9) contrast(1.03)}.program-content{padding:30px}.label{font:900 11px Arial,Helvetica,sans-serif;letter-spacing:2.4px;color:var(--gold);text-transform:uppercase;margin-bottom:10px}.program-content h3{font-size:31px;font-weight:500;margin-bottom:12px}.program-content p,.program-content li{font:15px/1.75 Arial,Helvetica,sans-serif;color:#56504a}.program-content ul{padding-left:18px;margin:16px 0 22px;line-height:2}.fancy-icon{width:58px;height:58px;border-radius:20px;margin-bottom:16px;display:flex;align-items:center;justify-content:center;font-size:28px;background:linear-gradient(135deg,var(--mint),#fff,var(--gold2));box-shadow:0 12px 26px rgba(0,0,0,.07)}
+
+    .lux-banner{padding:108px 7%;background:linear-gradient(120deg,rgba(9,9,9,.94),rgba(55,39,18,.74)),url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=85') center/cover;color:#fff;text-align:center}.lux-banner h2{font-size:54px;font-weight:500;margin-bottom:19px}.lux-banner p{font:17px/1.85 Arial,Helvetica,sans-serif;color:#efe9df;max-width:810px;margin:auto}
+
+    .packages{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}.package{background:#fff;border:1px solid var(--line);border-radius:32px;padding:30px;box-shadow:0 22px 52px rgba(0,0,0,.08);position:relative;overflow:hidden}.package:before{content:"";position:absolute;right:-50px;top:-50px;width:140px;height:140px;border-radius:50%;background:rgba(231,207,152,.22)}.package.popular{border:2px solid var(--gold);background:linear-gradient(180deg,#fff,#fff8ec)}.badge{position:absolute;top:18px;right:18px;background:#111;color:#fff;border-radius:999px;padding:8px 13px;font:900 10px Arial,Helvetica,sans-serif;letter-spacing:1.2px;text-transform:uppercase}.package h3{font-size:28px;font-weight:500;margin-bottom:10px}.desc{font:14px/1.65 Arial,Helvetica,sans-serif;color:#666;min-height:46px}.price{font:900 33px Arial,Helvetica,sans-serif;margin:20px 0;color:#111}.price span{font-size:12px;color:#777;font-weight:400}.package ul{padding-left:18px;margin-bottom:24px}.package li{font:14px/2.05 Arial,Helvetica,sans-serif;color:#444}
+
+    .teacher{display:grid;grid-template-columns:.9fr 1.1fr;gap:54px;align-items:center;background:#fff}.teacher-photo{height:590px;border-radius:36px;background:linear-gradient(135deg,var(--gold),#fff,var(--gold2));padding:2px;box-shadow:0 28px 60px rgba(0,0,0,.14)}.teacher-photo div{width:100%;height:100%;border-radius:34px;background:linear-gradient(180deg,#fffaf3,#f2e4d3);display:flex;align-items:center;justify-content:center}.teacher-photo img{width:78%;aspect-ratio:1/1;object-fit:cover;border-radius:50%;border:8px solid #fff;box-shadow:0 18px 45px rgba(0,0,0,.15)}.teacher h2{font-size:47px;font-weight:500;margin-bottom:18px}.teacher p{font:16px/1.9 Arial,Helvetica,sans-serif;color:#555;margin-bottom:14px}.check-list{margin-top:24px}.check-list div{font:15px Arial,Helvetica,sans-serif;margin-bottom:13px;background:var(--cream);border:1px solid var(--line);padding:15px 17px;border-radius:17px}
+
+    .process{background:#0b0b0b;color:#fff;padding:92px 7%}.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.step{background:#1a1a1a;border:1px solid rgba(231,207,152,.12);border-radius:25px;padding:26px}.step strong{display:inline-flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#111;width:42px;height:42px;border-radius:50%;margin-bottom:18px;font:900 14px Arial}.step h3{font:900 18px Arial,Helvetica,sans-serif;margin-bottom:9px}.step p{font:14px/1.75 Arial,Helvetica,sans-serif;color:#d8d8d8}
+
+    .levels{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.level{background:#fff;border:1px solid var(--line);border-radius:25px;padding:27px;box-shadow:0 14px 32px rgba(0,0,0,.055)}.level h3{font:900 18px Arial,Helvetica,sans-serif;margin-bottom:10px}.level p{font:14px/1.75 Arial,Helvetica,sans-serif;color:#555}
+
+    .faq{background:#fff}.faq-item{max-width:940px;margin:0 auto 14px;padding:25px;border-radius:23px;background:var(--cream);border:1px solid var(--line)}.faq-item h3{font:900 17px Arial,Helvetica,sans-serif;margin-bottom:8px}.faq-item p{font:15px/1.75 Arial,Helvetica,sans-serif;color:#555}
+
+    .contact-box{padding:98px 7%;background:linear-gradient(120deg,rgba(9,9,9,.94),rgba(66,45,18,.74)),url('https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=1600&q=85') center/cover;color:#fff;text-align:center}.contact-box h2{font-size:52px;font-weight:500;margin-bottom:16px}.contact-box p{font:17px/1.85 Arial,Helvetica,sans-serif;color:#eee6dc;max-width:740px;margin:0 auto 28px}.contact-mini{font:14px Arial,Helvetica,sans-serif;color:#ddd;margin-top:18px}
+    footer{padding:30px 7%;background:#fff;color:#5b544d;text-align:center;font:14px/1.8 Arial,Helvetica,sans-serif;border-top:1px solid var(--line)}.fixed-whatsapp{position:fixed;right:20px;bottom:20px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#111;padding:15px 21px;border-radius:999px;z-index:80;box-shadow:0 14px 30px rgba(0,0,0,.25);font:900 13px Arial,Helvetica,sans-serif;letter-spacing:1px;text-transform:uppercase}
+
+    [dir="rtl"] body,[dir="rtl"] .sans,[dir="rtl"] nav,[dir="rtl"] .btn,[dir="rtl"] .top-note{font-family:Tahoma,Arial,sans-serif}
+    [dir="rtl"] nav a{margin-left:0;margin-right:20px}
+    [dir="rtl"] .signature-card{left:auto;right:-38px}
+    [dir="rtl"] .mini-card{right:auto;left:-28px}
+
+    @media(max-width:1100px){.packages{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:950px){header{padding:16px 5%;align-items:flex-start}.nav-wrap{flex-direction:column;align-items:flex-end;gap:10px}nav{display:none}.hero{grid-template-columns:1fr;padding:45px 5%;text-align:center}.hero h1{font-size:46px;letter-spacing:-1px}.hero p{margin:0 auto 26px}.hero-actions{justify-content:center}.hero-portrait{min-height:auto}.portrait-frame{width:100%;height:470px}.profile-img{width:78%}.signature-card{position:relative;left:0;right:0;bottom:0;width:100%;margin-top:16px}.mini-card{display:none}.trust{grid-template-columns:1fr 1fr;padding:24px 5%}.section{padding:66px 5%}.section-title{font-size:37px}.programs,.packages,.steps,.levels{grid-template-columns:1fr}.teacher{grid-template-columns:1fr}.teacher-photo{height:430px;order:-1}.lux-banner h2,.contact-box h2{font-size:37px}.fixed-whatsapp{right:14px;bottom:14px;padding:13px 17px}.btn-light{margin-left:0}}
+  </style>
 </head>
-
 <body>
+  <div class="top-note" data-i18n="topNote">Niloufar English — Premium Online English Academy | WhatsApp: 0546 885 37 31</div>
 
-<header>
-<div class="logo">Niloufar English</div>
+  <header>
+    <a href="#home" class="logo">Niloufar<span>English Academy</span></a>
+    <div class="nav-wrap">
+      <nav>
+        <a href="#programs" data-i18n="navPrograms">Programlar</a>
+        <a href="#packages" data-i18n="navPackages">Paketler</a>
+        <a href="#teacher" data-i18n="navTeacher">Öğretmen</a>
+        <a href="#levels" data-i18n="navLevels">Seviyeler</a>
+        <a href="#contact" data-i18n="navRegister">Kayıt</a>
+      </nav>
+      <div class="language-switcher">
+        <button class="lang-btn active" onclick="setLanguage('tr')"><span class="flag">🇹🇷</span> TR</button>
+        <button class="lang-btn" onclick="setLanguage('en')"><span class="flag">🇬🇧</span> EN</button>
+        <button class="lang-btn" onclick="setLanguage('fa')"><span class="flag">🇮🇷</span> FA</button>
+      </div>
+    </div>
+  </header>
 
-<div class="controls">
-<button onclick="setLang('tr')">🇹🇷</button>
-<button onclick="setLang('en')">🇬🇧</button>
-<button onclick="setLang('fa')">🇮🇷</button>
+  <section class="hero" id="home">
+    <div class="hero-text">
+      <span class="eyebrow" data-i18n="heroEyebrow">Premium Online English Academy</span>
+      <h1 data-i18n="heroTitle">İngilizceyi <em>özel</em> ders kalitesinde öğren.</h1>
+      <p class="sans" data-i18n="heroText">Niloufar English; çocuklar, gençler ve yetişkinler için premium online İngilizce dersleri sunar. Kişiye özel program, speaking pratiği ve düzenli takip sistemiyle profesyonel bir öğrenme deneyimi.</p>
+      <div class="hero-actions">
+        <a class="btn btn-gold" href="#packages" data-i18n="heroBtn1">Paketleri İncele</a>
+        <a class="btn btn-light" target="_blank" href="https://wa.me/905468853731?text=Merhaba,%20Niloufar%20English%20dersleri%20hakkında%20bilgi%20almak%20istiyorum." data-i18n="heroBtn2">WhatsApp Kayıt</a>
+      </div>
+    </div>
 
-<select onchange="setCurrency(this.value)">
-<option value="TRY">₺</option>
-<option value="USD">$</option>
-<option value="EUR">€</option>
-<option value="GBP">£</option>
-<option value="TOMAN">تومان</option>
-</select>
-</div>
-</header>
+    <div class="hero-portrait">
+      <div class="portrait-frame">
+        <div class="portrait-inner">
+          <img class="profile-img" src="https://i.ibb.co/NnprJs5t/niloufar-profile-jpg.jpg" alt="Niloufar English Teacher">
+        </div>
+      </div>
+      <div class="mini-card" data-i18n="miniCard">Kids • Beginner • Speaking<br>Premium online ders sistemi</div>
+      <div class="signature-card">
+        <strong>Niloufar</strong>
+        <p data-i18n="signatureText">Çocuklara ve yetişkinlere özel, sakin, anlaşılır ve güven veren İngilizce eğitim sistemi.</p>
+      </div>
+    </div>
+  </section>
 
-<div class="hero">
-<h1 id="title">İngilizce öğren</h1>
-<p id="desc">Premium ders sistemi</p>
-</div>
+  <section class="trust">
+    <div class="trust-card"><div class="trust-icon">👩‍🏫</div><h3 data-i18n="trust1Title">Öğretmen Takibi</h3><p data-i18n="trust1Text">Her öğrencinin gelişimi düzenli takip edilir.</p></div>
+    <div class="trust-card"><div class="trust-icon">💻</div><h3 data-i18n="trust2Title">Online Canlı Ders</h3><p data-i18n="trust2Text">Telefon, tablet veya bilgisayardan kolay katılım.</p></div>
+    <div class="trust-card"><div class="trust-icon">🎨</div><h3 data-i18n="trust3Title">Kids English</h3><p data-i18n="trust3Text">Çocuklara uygun, eğlenceli ve görsel ders sistemi.</p></div>
+    <div class="trust-card"><div class="trust-icon">✨</div><h3 data-i18n="trust4Title">Speaking Focus</h3><p data-i18n="trust4Text">Konuşma pratiğiyle özgüven kazanma.</p></div>
+  </section>
 
-<div class="card">
-<h3>Starter</h3>
-<div class="price" data-price="2800"></div>
-</div>
+  <section class="section" id="programs">
+    <div class="section-head">
+      <h2 class="section-title" data-i18n="programTitle">Premium Programlar</h2>
+      <p class="section-sub" data-i18n="programSub">Niloufar English’te öğrencinin yaşına, seviyesine ve hedefine göre net bir eğitim yolu hazırlanır.</p>
+      <div class="gold-line"></div>
+    </div>
 
-<div class="card">
-<h3>Kids</h3>
-<div class="price" data-price="4200"></div>
-</div>
+    <div class="programs">
+      <div class="program-card">
+        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=900&q=85" alt="Niloufar Kids English">
+        <div class="program-content">
+          <div class="fancy-icon">🧒</div><div class="label" data-i18n="kidsLabel">Kids Program</div>
+          <h3 data-i18n="kidsTitle">Niloufar Kids</h3>
+          <p data-i18n="kidsText">Çocuklar için oyun, görsel hafıza, kısa cümle ve kelime odaklı eğlenceli İngilizce.</p>
+          <ul><li data-i18n="kidsLi1">6-12 yaş için uygun</li><li data-i18n="kidsLi2">Oyunlu öğrenme</li><li data-i18n="kidsLi3">Kelime ve telaffuz</li><li data-i18n="kidsLi4">Mini speaking aktiviteleri</li></ul>
+          <button class="btn" onclick="paketMesaj('Niloufar Kids Program')" data-i18n="infoBtn">Bilgi Al</button>
+        </div>
+      </div>
 
-<script>
-let currentLang="tr";
-let currentCurrency="TRY";
+      <div class="program-card">
+        <img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=900&q=85" alt="Beginner English">
+        <div class="program-content">
+          <div class="fancy-icon">📚</div><div class="label" data-i18n="beginnerLabel">A1-A2 Level</div>
+          <h3 data-i18n="beginnerTitle">Beginner English</h3>
+          <p data-i18n="beginnerText">İngilizceye sıfırdan başlayan öğrenciler için temel kelime, gramer ve günlük cümle sistemi.</p>
+          <ul><li data-i18n="beginnerLi1">Alfabe ve telaffuz</li><li data-i18n="beginnerLi2">Günlük kelimeler</li><li data-i18n="beginnerLi3">Temel gramer</li><li data-i18n="beginnerLi4">Kısa diyaloglar</li></ul>
+          <button class="btn" onclick="paketMesaj('Beginner English Program')" data-i18n="infoBtn">Bilgi Al</button>
+        </div>
+      </div>
 
-const rates={
-TRY:1,
-USD:0.031,
-EUR:0.029,
-GBP:0.025,
-TOMAN:2000
-};
+      <div class="program-card">
+        <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=900&q=85" alt="Speaking Practice">
+        <div class="program-content">
+          <div class="fancy-icon">🗣️</div><div class="label" data-i18n="speakingLabel">Conversation</div>
+          <h3 data-i18n="speakingTitle">Speaking Practice</h3>
+          <p data-i18n="speakingText">Konuşma pratiği yapmak isteyenler için günlük diyalog, soru-cevap ve akıcılık çalışmaları.</p>
+          <ul><li data-i18n="speakingLi1">Günlük konuşma</li><li data-i18n="speakingLi2">Telaffuz düzeltme</li><li data-i18n="speakingLi3">Akıcılık pratiği</li><li data-i18n="speakingLi4">Özgüven kazanma</li></ul>
+          <button class="btn" onclick="paketMesaj('Speaking Practice Program')" data-i18n="infoBtn">Bilgi Al</button>
+        </div>
+      </div>
+    </div>
+  </section>
 
-const texts={
-tr:{title:"İngilizce öğren",desc:"Premium ders sistemi"},
-en:{title:"Learn English",desc:"Premium lesson system"},
-fa:{title:"یادگیری انگلیسی",desc:"سیستم آموزشی حرفه‌ای"}
-};
+  <section class="lux-banner">
+    <h2 data-i18n="bannerTitle">Standart kurs değil, özel akademi deneyimi.</h2>
+    <p data-i18n="bannerText">Her öğrenci aynı yöntemle ilerlemez. Niloufar English’te yaş, seviye, hedef ve öğrenme tarzına göre ders programı oluşturulur.</p>
+  </section>
 
-function setLang(lang){
-currentLang=lang;
-document.getElementById("title").innerText=texts[lang].title;
-document.getElementById("desc").innerText=texts[lang].desc;
+  <section class="section" id="packages">
+    <div class="section-head">
+      <h2 class="section-title" data-i18n="packagesTitle">Premium Ders Paketleri</h2>
+      <p class="section-sub" data-i18n="packagesSub">Paket fiyatları premium online özel ders algısına uygun şekilde hazırlandı.</p>
+      <div class="gold-line"></div>
+    </div>
 
-if(lang==="fa"){
-document.body.style.direction="rtl";
-}else{
-document.body.style.direction="ltr";
-}
-}
+    <div class="packages">
+      <div class="package">
+        <h3>Starter</h3>
+        <p class="desc sans" data-i18n="starterDesc">Yeni başlayan öğrenciler için temel İngilizce paketi.</p>
+        <div class="price">₺2.800 <span data-i18n="perMonth">/ ay</span></div>
+        <ul><li data-i18n="starter1">Haftada 2 online ders</li><li data-i18n="starter2">A1 başlangıç planı</li><li data-i18n="starter3">Kelime ve temel gramer</li><li data-i18n="starter4">WhatsApp takip desteği</li></ul>
+        <button class="btn" onclick="paketMesaj('Starter Paketi - ₺2.800 / ay')" data-i18n="registerBtn">Kayıt Ol</button>
+      </div>
 
-function setCurrency(cur){
-currentCurrency=cur;
-updatePrices();
-}
+      <div class="package popular">
+        <span class="badge" data-i18n="popularBadge">En Popüler</span>
+        <h3>Kids Club</h3>
+        <p class="desc sans" data-i18n="kidsClubDesc">Çocuklar için eğlenceli ve düzenli İngilizce sistemi.</p>
+        <div class="price">₺4.200 <span data-i18n="perMonth">/ ay</span></div>
+        <ul><li data-i18n="kidsClub1">Haftada 3 online ders</li><li data-i18n="kidsClub2">Oyunlu ve görsel öğrenme</li><li data-i18n="kidsClub3">Mini speaking aktiviteleri</li><li data-i18n="kidsClub4">Aylık gelişim takibi</li></ul>
+        <button class="btn btn-gold" onclick="paketMesaj('Kids Club Paketi - ₺4.200 / ay')" data-i18n="registerBtn">Kayıt Ol</button>
+      </div>
 
-function formatPrice(price){
-let value=price*rates[currentCurrency];
+      <div class="package">
+        <h3>Speaking Plus</h3>
+        <p class="desc sans" data-i18n="speakingPlusDesc">Konuşma pratiği ve telaffuz geliştirmek isteyenler için.</p>
+        <div class="price">₺3.900 <span data-i18n="perMonth">/ ay</span></div>
+        <ul><li data-i18n="speakingPlus1">Haftada 3 speaking dersi</li><li data-i18n="speakingPlus2">Günlük diyalog çalışması</li><li data-i18n="speakingPlus3">Telaffuz ve akıcılık</li><li data-i18n="speakingPlus4">Kişisel konuşma hedefi</li></ul>
+        <button class="btn" onclick="paketMesaj('Speaking Plus Paketi - ₺3.900 / ay')" data-i18n="registerBtn">Kayıt Ol</button>
+      </div>
 
-if(currentCurrency==="TRY") return "₺"+Math.round(value);
-if(currentCurrency==="USD") return "$"+Math.round(value);
-if(currentCurrency==="EUR") return "€"+Math.round(value);
-if(currentCurrency==="GBP") return "£"+Math.round(value);
-if(currentCurrency==="TOMAN") return Math.round(value)+" تومان";
-}
+      <div class="package">
+        <h3>Private VIP</h3>
+        <p class="desc sans" data-i18n="vipDesc">Tek öğrenciye özel premium birebir ders.</p>
+        <div class="price">₺750 <span data-i18n="perLesson">/ ders</span></div>
+        <ul><li data-i18n="vip1">50 dakika birebir ders</li><li data-i18n="vip2">Kişiye özel içerik</li><li data-i18n="vip3">Ödev ve takip</li><li data-i18n="vip4">Esnek program</li></ul>
+        <button class="btn" onclick="paketMesaj('Private VIP - ₺750 / ders')" data-i18n="registerBtn">Kayıt Ol</button>
+      </div>
+    </div>
+  </section>
 
-function updatePrices(){
-document.querySelectorAll("[data-price]").forEach(el=>{
-let p=parseFloat(el.getAttribute("data-price"));
-el.innerText=formatPrice(p);
-});
-}
+  <section class="section teacher" id="teacher">
+    <div class="teacher-photo"><div><img src="https://i.ibb.co/NnprJs5t/niloufar-profile-jpg.jpg" alt="Niloufar English Öğretmen Profil"></div></div>
+    <div>
+      <span class="eyebrow" data-i18n="teacherEyebrow">Teacher Profile</span>
+      <h2 data-i18n="teacherTitle">Niloufar ile güvenli ve anlaşılır öğrenme.</h2>
+      <p class="sans" data-i18n="teacherText">Dersler; öğrencinin seviyesine, yaşına ve hedeflerine göre planlanır. Çocuklarda dikkat süresi ve eğlenceli tekrar sistemi; yetişkinlerde ise konuşma, telaffuz ve günlük kullanım odaklı ilerleme hedeflenir.</p>
+      <div class="check-list">
+        <div data-i18n="check1">✓ Kişiye özel seviye ve hedef belirleme</div>
+        <div data-i18n="check2">✓ Çocuklar için görsel ve eğlenceli ders sistemi</div>
+        <div data-i18n="check3">✓ Yetişkinler için speaking ve günlük konuşma pratiği</div>
+        <div data-i18n="check4">✓ WhatsApp üzerinden kayıt ve takip</div>
+      </div>
+    </div>
+  </section>
 
-updatePrices();
-</script>
+  <section class="process">
+    <div class="section-head">
+      <h2 class="section-title" data-i18n="processTitle">Kayıt Süreci</h2>
+      <p class="section-sub" style="color:#ddd" data-i18n="processSub">Kayıt süreci sade, hızlı ve profesyoneldir.</p>
+      <div class="gold-line"></div>
+    </div>
+    <div class="steps">
+      <div class="step"><strong>1</strong><h3 data-i18n="step1Title">WhatsApp</h3><p data-i18n="step1Text">Bilgi almak için WhatsApp üzerinden bize yaz.</p></div>
+      <div class="step"><strong>2</strong><h3 data-i18n="step2Title">Seviye Belirleme</h3><p data-i18n="step2Text">Yaş, seviye ve hedef bilgisi alınır.</p></div>
+      <div class="step"><strong>3</strong><h3 data-i18n="step3Title">Program Seçimi</h3><p data-i18n="step3Text">Kids, starter, speaking veya VIP paket seçilir.</p></div>
+      <div class="step"><strong>4</strong><h3 data-i18n="step4Title">Derse Başla</h3><p data-i18n="step4Text">Online ders planı hazırlanır ve eğitim başlar.</p></div>
+    </div>
+  </section>
 
+  <section class="section" id="levels">
+    <div class="section-head">
+      <h2 class="section-title" data-i18n="levelsTitle">Seviye Yapısı</h2>
+      <p class="section-sub" data-i18n="levelsSub">Öğrenci kendi seviyesine göre adım adım ilerler.</p>
+      <div class="gold-line"></div>
+    </div>
+    <div class="levels">
+      <div class="level"><h3>A1 Beginner</h3><p data-i18n="level1">Sıfırdan başlayanlar için temel kelime, cümle ve günlük ifadeler.</p></div>
+      <div class="level"><h3>A2 Elementary</h3><p data-i18n="level2">Kısa diyaloglar, temel gramer ve daha fazla kelime pratiği.</p></div>
+      <div class="level"><h3>B1 Intermediate</h3><p data-i18n="level3">Daha uzun cümleler, konuşma pratiği ve anlama becerisi.</p></div>
+      <div class="level"><h3>Kids Level</h3><p data-i18n="level4">Çocukların yaşına göre oyunlu, görsel ve tekrar odaklı eğitim.</p></div>
+    </div>
+  </section>
+
+  <section class="section faq" id="faq">
+    <div class="section-head">
+      <h2 class="section-title" data-i18n="faqTitle">Sık Sorulan Sorular</h2>
+      <div class="gold-line"></div>
+    </div>
+    <div class="faq-item"><h3 data-i18n="faq1q">Dersler online mı?</h3><p data-i18n="faq1a">Evet, dersler online yapılır. Telefon, tablet veya bilgisayardan katılım sağlanabilir.</p></div>
+    <div class="faq-item"><h3 data-i18n="faq2q">Çocuklar için uygun mu?</h3><p data-i18n="faq2a">Evet, Niloufar Kids programı çocukların yaşına göre eğlenceli ve görsel şekilde hazırlanır.</p></div>
+    <div class="faq-item"><h3 data-i18n="faq3q">Sıfırdan başlayanlar katılabilir mi?</h3><p data-i18n="faq3a">Evet, Starter / Beginner programı İngilizceye sıfırdan başlayan öğrenciler için uygundur.</p></div>
+    <div class="faq-item"><h3 data-i18n="faq4q">Kayıt nasıl yapılır?</h3><p data-i18n="faq4a">WhatsApp butonuna basarak bilgi alabilir ve kayıt sürecini başlatabilirsin.</p></div>
+  </section>
+
+  <section class="contact-box" id="contact">
+    <h2 data-i18n="contactTitle">Niloufar English’e katıl</h2>
+    <p data-i18n="contactText">Ders programı, fiyat ve kayıt detayları için WhatsApp üzerinden bize ulaş. Öğrencinin seviyesine göre en uygun programı birlikte belirleyelim.</p>
+    <a class="btn btn-gold" href="https://wa.me/905468853731?text=Merhaba,%20Niloufar%20English%20dersleri%20hakkında%20bilgi%20almak%20istiyorum." target="_blank" data-i18n="contactBtn">WhatsApp'tan Bilgi Al</a>
+    <div class="contact-mini" data-i18n="contactMini">Telefon: 0546 885 37 31 • Marka: Niloufar English • Domain: veraxa.co</div>
+  </section>
+
+  <footer data-i18n="footerText">© 2026 Niloufar English — Premium Online English Academy<br>WhatsApp: 0546 885 37 31 | veraxa.co/academy.html</footer>
+
+  <a class="fixed-whatsapp" href="https://wa.me/905468853731?text=Merhaba,%20Niloufar%20English%20dersleri%20hakkında%20bilgi%20almak%20istiyorum." target="_blank" data-i18n="whatsappFixed">WhatsApp</a>
+
+  <script>
+    const telefon = '905468853731';
+
+    const translations = {
+      tr: {
+        topNote:'Niloufar English — Premium Online English Academy | WhatsApp: 0546 885 37 31',
+        navPrograms:'Programlar', navPackages:'Paketler', navTeacher:'Öğretmen', navLevels:'Seviyeler', navRegister:'Kayıt',
+        heroEyebrow:'Premium Online English Academy',
+        heroTitle:'İngilizceyi <em>özel</em> ders kalitesinde öğren.',
+        heroText:'Niloufar English; çocuklar, gençler ve yetişkinler için premium online İngilizce dersleri sunar. Kişiye özel program, speaking pratiği ve düzenli takip sistemiyle profesyonel bir öğrenme deneyimi.',
+        heroBtn1:'Paketleri İncele', heroBtn2:'WhatsApp Kayıt', miniCard:'Kids • Beginner • Speaking<br>Premium online ders sistemi', signatureText:'Çocuklara ve yetişkinlere özel, sakin, anlaşılır ve güven veren İngilizce eğitim sistemi.',
+        trust1Title:'Öğretmen Takibi', trust1Text:'Her öğrencinin gelişimi düzenli takip edilir.', trust2Title:'Online Canlı Ders', trust2Text:'Telefon, tablet veya bilgisayardan kolay katılım.', trust3Title:'Kids English', trust3Text:'Çocuklara uygun, eğlenceli ve görsel ders sistemi.', trust4Title:'Speaking Focus', trust4Text:'Konuşma pratiğiyle özgüven kazanma.',
+        programTitle:'Premium Programlar', programSub:'Niloufar English’te öğrencinin yaşına, seviyesine ve hedefine göre net bir eğitim yolu hazırlanır.',
+        kidsLabel:'Kids Program', kidsTitle:'Niloufar Kids', kidsText:'Çocuklar için oyun, görsel hafıza, kısa cümle ve kelime odaklı eğlenceli İngilizce.', kidsLi1:'6-12 yaş için uygun', kidsLi2:'Oyunlu öğrenme', kidsLi3:'Kelime ve telaffuz', kidsLi4:'Mini speaking aktiviteleri',
+        beginnerLabel:'A1-A2 Level', beginnerTitle:'Beginner English', beginnerText:'İngilizceye sıfırdan başlayan öğrenciler için temel kelime, gramer ve günlük cümle sistemi.', beginnerLi1:'Alfabe ve telaffuz', beginnerLi2:'Günlük kelimeler', beginnerLi3:'Temel gramer', beginnerLi4:'Kısa diyaloglar',
+        speakingLabel:'Conversation', speakingTitle:'Speaking Practice', speakingText:'Konuşma pratiği yapmak isteyenler için günlük diyalog, soru-cevap ve akıcılık çalışmaları.', speakingLi1:'Günlük konuşma', speakingLi2:'Telaffuz düzeltme', speakingLi3:'Akıcılık pratiği', speakingLi4:'Özgüven kazanma', infoBtn:'Bilgi Al',
+        bannerTitle:'Standart kurs değil, özel akademi deneyimi.', bannerText:'Her öğrenci aynı yöntemle ilerlemez. Niloufar English’te yaş, seviye, hedef ve öğrenme tarzına göre ders programı oluşturulur.',
+        packagesTitle:'Premium Ders Paketleri', packagesSub:'Paket fiyatları premium online özel ders algısına uygun şekilde hazırlandı.', perMonth:'/ ay', perLesson:'/ ders', popularBadge:'En Popüler', registerBtn:'Kayıt Ol',
+        starterDesc:'Yeni başlayan öğrenciler için temel İngilizce paketi.', starter1:'Haftada 2 online ders', starter2:'A1 başlangıç planı', starter3:'Kelime ve temel gramer', starter4:'WhatsApp takip desteği',
+        kidsClubDesc:'Çocuklar için eğlenceli ve düzenli İngilizce sistemi.', kidsClub1:'Haftada 3 online ders', kidsClub2:'Oyunlu ve görsel öğrenme', kidsClub3:'Mini speaking aktiviteleri', kidsClub4:'Aylık gelişim takibi',
+        speakingPlusDesc:'Konuşma pratiği ve telaffuz geliştirmek isteyenler için.', speakingPlus1:'Haftada 3 speaking dersi', speakingPlus2:'Günlük diyalog çalışması', speakingPlus3:'Telaffuz ve akıcılık', speakingPlus4:'Kişisel konuşma hedefi',
+        vipDesc:'Tek öğrenciye özel premium birebir ders.', vip1:'50 dakika birebir ders', vip2:'Kişiye özel içerik', vip3:'Ödev ve takip', vip4:'Esnek program',
+        teacherEyebrow:'Teacher Profile', teacherTitle:'Niloufar ile güvenli ve anlaşılır öğrenme.', teacherText:'Dersler; öğrencinin seviyesine, yaşına ve hedeflerine göre planlanır. Çocuklarda dikkat süresi ve eğlenceli tekrar sistemi; yetişkinlerde ise konuşma, telaffuz ve günlük kullanım odaklı ilerleme hedeflenir.', check1:'✓ Kişiye özel seviye ve hedef belirleme', check2:'✓ Çocuklar için görsel ve eğlenceli ders sistemi', check3:'✓ Yetişkinler için speaking ve günlük konuşma pratiği', check4:'✓ WhatsApp üzerinden kayıt ve takip',
+        processTitle:'Kayıt Süreci', processSub:'Kayıt süreci sade, hızlı ve profesyoneldir.', step1Title:'WhatsApp', step1Text:'Bilgi almak için WhatsApp üzerinden bize yaz.', step2Title:'Seviye Belirleme', step2Text:'Yaş, seviye ve hedef bilgisi alınır.', step3Title:'Program Seçimi', step3Text:'Kids, starter, speaking veya VIP paket seçilir.', step4Title:'Derse Başla', step4Text:'Online ders planı hazırlanır ve eğitim başlar.',
+        levelsTitle:'Seviye Yapısı', levelsSub:'Öğrenci kendi seviyesine göre adım adım ilerler.', level1:'Sıfırdan başlayanlar için temel kelime, cümle ve günlük ifadeler.', level2:'Kısa diyaloglar, temel gramer ve daha fazla kelime pratiği.', level3:'Daha uzun cümleler, konuşma pratiği ve anlama becerisi.', level4:'Çocukların yaşına göre oyunlu, görsel ve tekrar odaklı eğitim.',
+        faqTitle:'Sık Sorulan Sorular', faq1q:'Dersler online mı?', faq1a:'Evet, dersler online yapılır. Telefon, tablet veya bilgisayardan katılım sağlanabilir.', faq2q:'Çocuklar için uygun mu?', faq2a:'Evet, Niloufar Kids programı çocukların yaşına göre eğlenceli ve görsel şekilde hazırlanır.', faq3q:'Sıfırdan başlayanlar katılabilir mi?', faq3a:'Evet, Starter / Beginner programı İngilizceye sıfırdan başlayan öğrenciler için uygundur.', faq4q:'Kayıt nasıl yapılır?', faq4a:'WhatsApp butonuna basarak bilgi alabilir ve kayıt sürecini başlatabilirsin.',
+        contactTitle:'Niloufar English’e katıl', contactText:'Ders programı, fiyat ve kayıt detayları için WhatsApp üzerinden bize ulaş. Öğrencinin seviyesine göre en uygun programı birlikte belirleyelim.', contactBtn:'WhatsApp\'tan Bilgi Al', contactMini:'Telefon: 0546 885 37 31 • Marka: Niloufar English • Domain: veraxa.co', footerText:'© 2026 Niloufar English — Premium Online English Academy<br>WhatsApp: 0546 885 37 31 | veraxa.co/academy.html', whatsappFixed:'WhatsApp'
+      },
+      en: {
+        topNote:'Niloufar English — Premium Online English Academy | WhatsApp: +90 546 885 37 31',
+        navPrograms:'Programs', navPackages:'Packages', navTeacher:'Teacher', navLevels:'Levels', navRegister:'Enroll',
+        heroEyebrow:'Premium Online English Academy', heroTitle:'Learn English with <em>private lesson</em> quality.', heroText:'Niloufar English offers premium online English lessons for kids, teenagers and adults with personalized programs, speaking practice and structured progress tracking.', heroBtn1:'View Packages', heroBtn2:'WhatsApp Enroll', miniCard:'Kids • Beginner • Speaking<br>Premium online lesson system', signatureText:'A calm, clear and confidence-building English learning system for kids and adults.',
+        trust1Title:'Teacher Support', trust1Text:'Each student’s progress is followed regularly.', trust2Title:'Live Online Lessons', trust2Text:'Easy access from phone, tablet or computer.', trust3Title:'Kids English', trust3Text:'Fun, visual and child-friendly lesson system.', trust4Title:'Speaking Focus', trust4Text:'Build confidence through speaking practice.',
+        programTitle:'Premium Programs', programSub:'At Niloufar English, each student receives a clear learning path based on age, level and goals.', kidsLabel:'Kids Program', kidsTitle:'Niloufar Kids', kidsText:'Fun English lessons for children with games, visual memory, short sentences and vocabulary.', kidsLi1:'Suitable for ages 6-12', kidsLi2:'Learning through games', kidsLi3:'Vocabulary and pronunciation', kidsLi4:'Mini speaking activities', beginnerLabel:'A1-A2 Level', beginnerTitle:'Beginner English', beginnerText:'A clear foundation program for students starting English from zero.', beginnerLi1:'Alphabet and pronunciation', beginnerLi2:'Daily vocabulary', beginnerLi3:'Basic grammar', beginnerLi4:'Short dialogues', speakingLabel:'Conversation', speakingTitle:'Speaking Practice', speakingText:'Daily dialogues, Q&A and fluency exercises for students who want to speak more confidently.', speakingLi1:'Daily conversation', speakingLi2:'Pronunciation correction', speakingLi3:'Fluency practice', speakingLi4:'Confidence building', infoBtn:'Get Info',
+        bannerTitle:'Not a standard course — a private academy experience.', bannerText:'Every student learns differently. At Niloufar English, lessons are designed around age, level, goals and learning style.', packagesTitle:'Premium Lesson Packages', packagesSub:'Packages are designed for a premium online private lesson experience.', perMonth:'/ month', perLesson:'/ lesson', popularBadge:'Most Popular', registerBtn:'Enroll Now', starterDesc:'Basic English package for beginner students.', starter1:'2 online lessons per week', starter2:'A1 starter plan', starter3:'Vocabulary and basic grammar', starter4:'WhatsApp follow-up support', kidsClubDesc:'Fun and structured English system for children.', kidsClub1:'3 online lessons per week', kidsClub2:'Visual and game-based learning', kidsClub3:'Mini speaking activities', kidsClub4:'Monthly progress tracking', speakingPlusDesc:'For students who want to improve speaking and pronunciation.', speakingPlus1:'3 speaking lessons per week', speakingPlus2:'Daily dialogue practice', speakingPlus3:'Pronunciation and fluency', speakingPlus4:'Personal speaking goal', vipDesc:'Premium one-to-one private lesson.', vip1:'50-minute private lesson', vip2:'Personalized content', vip3:'Homework and follow-up', vip4:'Flexible schedule',
+        teacherEyebrow:'Teacher Profile', teacherTitle:'Learn clearly and confidently with Niloufar.', teacherText:'Lessons are planned based on the student’s level, age and goals. For kids, attention span and fun repetition are prioritized; for adults, speaking, pronunciation and daily use are the focus.', check1:'✓ Personalized level and goal assessment', check2:'✓ Visual and fun lesson system for kids', check3:'✓ Speaking and daily conversation practice for adults', check4:'✓ Enrollment and follow-up via WhatsApp', processTitle:'Enrollment Process', processSub:'The enrollment process is simple, fast and professional.', step1Title:'WhatsApp', step1Text:'Message us on WhatsApp to get information.', step2Title:'Level Check', step2Text:'Age, level and goals are discussed.', step3Title:'Choose Program', step3Text:'Choose Kids, Starter, Speaking or VIP package.', step4Title:'Start Lessons', step4Text:'The online lesson plan is prepared and classes begin.', levelsTitle:'Level Structure', levelsSub:'Students progress step by step according to their level.', level1:'Basic vocabulary, sentences and daily expressions for absolute beginners.', level2:'Short dialogues, basic grammar and more vocabulary practice.', level3:'Longer sentences, speaking practice and comprehension skills.', level4:'Game-based, visual and repetition-focused lessons for children.', faqTitle:'Frequently Asked Questions', faq1q:'Are the lessons online?', faq1a:'Yes, lessons are held online. Students can join from a phone, tablet or computer.', faq2q:'Is it suitable for kids?', faq2a:'Yes, the Niloufar Kids program is designed with fun and visual activities according to children’s age.', faq3q:'Can beginners join?', faq3a:'Yes, the Starter / Beginner program is suitable for students starting English from zero.', faq4q:'How do I enroll?', faq4a:'Click the WhatsApp button to get information and start the enrollment process.', contactTitle:'Join Niloufar English', contactText:'Contact us on WhatsApp for lesson schedules, pricing and enrollment details. Let’s choose the best program for the student’s level.', contactBtn:'Get Info on WhatsApp', contactMini:'Phone: +90 546 885 37 31 • Brand: Niloufar English • Domain: veraxa.co', footerText:'© 2026 Niloufar English — Premium Online English Academy<br>WhatsApp: +90 546 885 37 31 | veraxa.co/academy.html', whatsappFixed:'WhatsApp'
+      },
+      fa: {
+        topNote:'Niloufar English — آکادمی آنلاین زبان انگلیسی | واتساپ: 0546 885 37 31',
+        navPrograms:'دوره‌ها', navPackages:'پکیج‌ها', navTeacher:'مدرس', navLevels:'سطح‌ها', navRegister:'ثبت‌نام',
+        heroEyebrow:'آکادمی آنلاین انگلیسی', heroTitle:'انگلیسی را با کیفیت <em>کلاس خصوصی</em> یاد بگیر.', heroText:'Niloufar English برای کودکان، نوجوانان و بزرگسالان کلاس‌های آنلاین انگلیسی با برنامه اختصاصی، تمرین مکالمه و پیگیری منظم ارائه می‌دهد.', heroBtn1:'مشاهده پکیج‌ها', heroBtn2:'ثبت‌نام واتساپ', miniCard:'کودکان • مبتدی • مکالمه<br>سیستم کلاس آنلاین حرفه‌ای', signatureText:'سیستم آموزش انگلیسی آرام، واضح و اعتمادساز برای کودکان و بزرگسالان.',
+        trust1Title:'پیگیری مدرس', trust1Text:'پیشرفت هر زبان‌آموز به‌صورت منظم پیگیری می‌شود.', trust2Title:'کلاس آنلاین زنده', trust2Text:'شرکت آسان با موبایل، تبلت یا کامپیوتر.', trust3Title:'انگلیسی کودکان', trust3Text:'کلاس شاد، تصویری و مناسب کودکان.', trust4Title:'تمرکز روی مکالمه', trust4Text:'افزایش اعتمادبه‌نفس با تمرین مکالمه.',
+        programTitle:'برنامه‌های حرفه‌ای', programSub:'در Niloufar English مسیر یادگیری بر اساس سن، سطح و هدف زبان‌آموز طراحی می‌شود.', kidsLabel:'برنامه کودکان', kidsTitle:'Niloufar Kids', kidsText:'کلاس‌های شاد انگلیسی برای کودکان با بازی، تصویر، جمله‌های کوتاه و واژگان.', kidsLi1:'مناسب ۶ تا ۱۲ سال', kidsLi2:'یادگیری با بازی', kidsLi3:'واژگان و تلفظ', kidsLi4:'فعالیت‌های کوتاه مکالمه', beginnerLabel:'سطح A1-A2', beginnerTitle:'انگلیسی مبتدی', beginnerText:'برنامه پایه برای زبان‌آموزانی که انگلیسی را از صفر شروع می‌کنند.', beginnerLi1:'الفبا و تلفظ', beginnerLi2:'کلمات روزمره', beginnerLi3:'گرامر پایه', beginnerLi4:'دیالوگ‌های کوتاه', speakingLabel:'مکالمه', speakingTitle:'تمرین مکالمه', speakingText:'تمرین دیالوگ روزمره، پرسش و پاسخ و روان‌تر صحبت کردن.', speakingLi1:'مکالمه روزمره', speakingLi2:'اصلاح تلفظ', speakingLi3:'تمرین روانی گفتار', speakingLi4:'افزایش اعتمادبه‌نفس', infoBtn:'اطلاعات بیشتر',
+        bannerTitle:'فقط یک دوره معمولی نیست؛ تجربه آکادمی خصوصی است.', bannerText:'هر زبان‌آموز روش یادگیری متفاوتی دارد. در Niloufar English کلاس‌ها بر اساس سن، سطح، هدف و سبک یادگیری طراحی می‌شود.', packagesTitle:'پکیج‌های آموزشی حرفه‌ای', packagesSub:'پکیج‌ها برای تجربه کلاس خصوصی آنلاین حرفه‌ای طراحی شده‌اند.', perMonth:'/ ماه', perLesson:'/ جلسه', popularBadge:'محبوب‌ترین', registerBtn:'ثبت‌نام', starterDesc:'پکیج پایه برای زبان‌آموزان مبتدی.', starter1:'۲ کلاس آنلاین در هفته', starter2:'برنامه شروع A1', starter3:'واژگان و گرامر پایه', starter4:'پیگیری از طریق واتساپ', kidsClubDesc:'سیستم انگلیسی شاد و منظم برای کودکان.', kidsClub1:'۳ کلاس آنلاین در هفته', kidsClub2:'یادگیری تصویری و بازی‌محور', kidsClub3:'فعالیت‌های کوتاه مکالمه', kidsClub4:'پیگیری پیشرفت ماهانه', speakingPlusDesc:'برای تقویت مکالمه و تلفظ.', speakingPlus1:'۳ کلاس مکالمه در هفته', speakingPlus2:'تمرین دیالوگ روزانه', speakingPlus3:'تلفظ و روانی گفتار', speakingPlus4:'هدف مکالمه شخصی', vipDesc:'کلاس خصوصی حرفه‌ای یک‌به‌یک.', vip1:'کلاس خصوصی ۵۰ دقیقه‌ای', vip2:'محتوای اختصاصی', vip3:'تمرین و پیگیری', vip4:'برنامه منعطف',
+        teacherEyebrow:'پروفایل مدرس', teacherTitle:'با Niloufar واضح و مطمئن یاد بگیر.', teacherText:'کلاس‌ها بر اساس سطح، سن و هدف زبان‌آموز برنامه‌ریزی می‌شود. برای کودکان تمرکز روی توجه و تکرار شاد است؛ برای بزرگسالان تمرکز روی مکالمه، تلفظ و استفاده روزمره است.', check1:'✓ تعیین سطح و هدف اختصاصی', check2:'✓ سیستم تصویری و شاد برای کودکان', check3:'✓ تمرین مکالمه روزمره برای بزرگسالان', check4:'✓ ثبت‌نام و پیگیری از طریق واتساپ', processTitle:'مراحل ثبت‌نام', processSub:'فرایند ثبت‌نام ساده، سریع و حرفه‌ای است.', step1Title:'واتساپ', step1Text:'برای اطلاعات بیشتر در واتساپ پیام بدهید.', step2Title:'تعیین سطح', step2Text:'سن، سطح و هدف بررسی می‌شود.', step3Title:'انتخاب برنامه', step3Text:'پکیج کودکان، مبتدی، مکالمه یا VIP انتخاب می‌شود.', step4Title:'شروع کلاس', step4Text:'برنامه کلاس آنلاین آماده می‌شود و آموزش شروع می‌شود.', levelsTitle:'ساختار سطح‌ها', levelsSub:'زبان‌آموز مرحله‌به‌مرحله مطابق سطح خود پیش می‌رود.', level1:'واژگان پایه، جمله‌ها و عبارت‌های روزمره برای شروع از صفر.', level2:'دیالوگ کوتاه، گرامر پایه و تمرین واژگان بیشتر.', level3:'جمله‌های بلندتر، تمرین مکالمه و مهارت درک مطلب.', level4:'کلاس بازی‌محور، تصویری و تکرارمحور برای کودکان.', faqTitle:'سوالات متداول', faq1q:'کلاس‌ها آنلاین هستند؟', faq1a:'بله، کلاس‌ها آنلاین برگزار می‌شود و با موبایل، تبلت یا کامپیوتر می‌توان شرکت کرد.', faq2q:'برای کودکان مناسب است؟', faq2a:'بله، برنامه Niloufar Kids با فعالیت‌های شاد و تصویری متناسب با سن کودک طراحی شده است.', faq3q:'افراد مبتدی می‌توانند شرکت کنند؟', faq3a:'بله، برنامه Starter / Beginner برای کسانی مناسب است که از صفر شروع می‌کنند.', faq4q:'چطور ثبت‌نام کنم؟', faq4a:'روی دکمه واتساپ بزنید تا اطلاعات بگیرید و فرایند ثبت‌نام را شروع کنید.', contactTitle:'به Niloufar English بپیوندید', contactText:'برای برنامه کلاس، قیمت و جزئیات ثبت‌نام از طریق واتساپ با ما تماس بگیرید. بهترین برنامه را بر اساس سطح زبان‌آموز انتخاب می‌کنیم.', contactBtn:'اطلاعات در واتساپ', contactMini:'تلفن: 0546 885 37 31 • برند: Niloufar English • دامنه: veraxa.co', footerText:'© 2026 Niloufar English — آکادمی آنلاین انگلیسی<br>WhatsApp: 0546 885 37 31 | veraxa.co/academy.html', whatsappFixed:'واتساپ'
+      }
+    };
+
+    function setLanguage(lang){
+      document.documentElement.lang = lang;
+      document.documentElement.dir = lang === 'fa' ? 'rtl' : 'ltr';
+      document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+      event.currentTarget.classList.add('active');
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if(translations[lang] && translations[lang][key]){
+          el.innerHTML = translations[lang][key];
+        }
+      });
+      localStorage.setItem('niloufarLang', lang);
+    }
+
+    function paketMesaj(paketAdi){
+      const lang = localStorage.getItem('niloufarLang') || 'tr';
+      const intro = lang === 'fa' ? 'سلام، می‌خواهم درباره Niloufar English اطلاعات بگیرم.' : lang === 'en' ? 'Hello, I would like to get information about Niloufar English.' : 'Merhaba, Niloufar English hakkında bilgi almak istiyorum.';
+      const packageText = lang === 'fa' ? 'برنامه/پکیج مورد نظر: ' : lang === 'en' ? 'Interested program/package: ' : 'İlgilendiğim program/paket: ';
+      const help = lang === 'fa' ? 'لطفاً درباره برنامه کلاس، قیمت و ثبت‌نام راهنمایی می‌کنید؟' : lang === 'en' ? 'Could you help me with lesson schedule, price and enrollment?' : 'Ders programı, fiyat ve kayıt hakkında yardımcı olur musunuz?';
+      const mesaj = `${intro}\n\n${packageText}${paketAdi}\n\n${help}`;
+      window.open('https://wa.me/' + telefon + '?text=' + encodeURIComponent(mesaj), '_blank');
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const saved = localStorage.getItem('niloufarLang') || 'tr';
+      const btn = Array.from(document.querySelectorAll('.lang-btn')).find(b => b.textContent.toLowerCase().includes(saved));
+      if(btn){ btn.click(); }
+    });
+  </script>
 </body>
 </html>
