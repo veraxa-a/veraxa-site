@@ -1,416 +1,221 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VÉRAXA | Luxury Women Clothing</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VÉRAXA | Luxury Women Clothing</title>
 
-  <style>
-    *{margin:0;padding:0;box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      background:#050505;
-      color:#f6efe2;
-      font-family:Georgia,"Times New Roman",serif;
-      overflow-x:hidden;
-    }
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:#050505;color:#f5ead8;font-family:Georgia,serif}
 
-    .gold{color:#d6b36a}
-    .logo{
-      font-size:42px;
-      letter-spacing:10px;
-      font-weight:500;
-      color:#d8b66f;
-      text-shadow:0 0 18px rgba(214,179,106,.45);
-    }
+header{
+position:fixed;top:0;width:100%;z-index:99;
+background:rgba(0,0,0,.88);backdrop-filter:blur(16px);
+padding:18px 7%;display:flex;justify-content:space-between;align-items:center;
+border-bottom:1px solid rgba(214,179,106,.25)
+}
 
-    .top{
-      background:#070707;
-      color:#c9aa70;
-      text-align:center;
-      padding:10px;
-      font-size:12px;
-      letter-spacing:3px;
-      border-bottom:1px solid rgba(214,179,106,.25);
-    }
+.logo{font-size:38px;letter-spacing:9px;color:#d6b36a;text-shadow:0 0 20px rgba(214,179,106,.45)}
+nav a{color:#f5ead8;text-decoration:none;margin-left:22px;font-size:12px;letter-spacing:2px}
 
-    header{
-      position:fixed;
-      top:0;
-      width:100%;
-      z-index:99;
-      padding:22px 7%;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      background:rgba(0,0,0,.72);
-      backdrop-filter:blur(16px);
-      border-bottom:1px solid rgba(214,179,106,.18);
-    }
+.hero{
+min-height:90vh;
+background:linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.92)),
+url("https://www.kaktusmoda.com/i/l/014/0146501_terikoton-kumas-kemerli-elbise-siyah.jpeg");
+background-size:cover;background-position:center;
+display:flex;align-items:center;justify-content:center;text-align:center;padding:120px 20px
+}
 
-    nav a{
-      color:#eee3d0;
-      text-decoration:none;
-      margin-left:28px;
-      font-size:12px;
-      letter-spacing:2px;
-      transition:.3s;
-    }
+.hero h1{font-size:78px;letter-spacing:12px}
+.hero p{color:#d6b36a;letter-spacing:4px;margin-top:12px}
 
-    nav a:hover{color:#d6b36a}
+section{padding:80px 7%}
+.title{text-align:center;font-size:38px;letter-spacing:6px;font-weight:400;margin-bottom:12px}
+.sub{text-align:center;color:#aa9b83;letter-spacing:3px;margin-bottom:45px}
 
-    .hero{
-      min-height:100vh;
-      background:
-        linear-gradient(90deg,rgba(0,0,0,.92),rgba(0,0,0,.35),rgba(0,0,0,.88)),
-        url("https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=1800&q=90");
-      background-size:cover;
-      background-position:center;
-      display:flex;
-      align-items:center;
-      padding:150px 7% 80px;
-    }
+.products{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.card{background:#0b0b0b;border:1px solid rgba(214,179,106,.28);overflow:hidden;transition:.35s}
+.card:hover{transform:translateY(-8px);border-color:#d6b36a;box-shadow:0 20px 55px rgba(0,0,0,.75)}
+.card img{width:100%;height:430px;object-fit:cover;background:#111}
+.info{padding:22px;text-align:center}
+.info h3{font-size:16px;letter-spacing:2px;font-weight:400;min-height:45px}
+.info p{color:#aa9b83;margin:8px 0;font-size:13px}
 
-    .hero-content{max-width:720px}
-    .hero small{
-      color:#d6b36a;
-      letter-spacing:5px;
-      font-size:13px;
-    }
+select{
+width:100%;margin-top:10px;padding:12px;
+background:#050505;color:#f5ead8;border:1px solid rgba(214,179,106,.55)
+}
 
-    .hero h1{
-      font-size:82px;
-      letter-spacing:12px;
-      margin:22px 0;
-      color:#f8edd9;
-      font-weight:400;
-      line-height:1;
-    }
+.size-table{
+font-size:12px;color:#b8aa92;line-height:1.7;margin-top:12px;
+border-top:1px solid rgba(214,179,106,.18);padding-top:10px
+}
 
-    .hero p{
-      color:#d8cbb8;
-      font-size:18px;
-      line-height:1.9;
-      letter-spacing:1.5px;
-      max-width:620px;
-      margin-bottom:38px;
-    }
+.btn{
+display:block;margin-top:13px;padding:13px;
+border:1px solid #d6b36a;color:#d6b36a;text-decoration:none;
+background:transparent;letter-spacing:2px;cursor:pointer
+}
 
-    .btns{display:flex;gap:18px;flex-wrap:wrap}
-    .btn{
-      padding:16px 34px;
-      border:1px solid #d6b36a;
-      color:#d6b36a;
-      text-decoration:none;
-      letter-spacing:3px;
-      font-size:12px;
-      transition:.35s;
-      background:rgba(0,0,0,.25);
-    }
+.btn:hover{background:#d6b36a;color:#000}
 
-    .btn:hover{
-      background:#d6b36a;
-      color:#050505;
-      box-shadow:0 0 30px rgba(214,179,106,.35);
-    }
+footer{text-align:center;padding:30px;color:#8d806b;border-top:1px solid rgba(214,179,106,.2);letter-spacing:2px;font-size:12px}
 
-    section{padding:90px 7%}
-    .center{text-align:center}
-    .title{
-      font-size:42px;
-      letter-spacing:7px;
-      font-weight:400;
-      margin-bottom:14px;
-    }
-
-    .sub{
-      color:#a99b86;
-      letter-spacing:3px;
-      font-size:13px;
-      margin-bottom:55px;
-    }
-
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:28px;
-    }
-
-    .card{
-      background:#0b0b0b;
-      border:1px solid rgba(214,179,106,.22);
-      overflow:hidden;
-      transition:.4s;
-    }
-
-    .card:hover{
-      transform:translateY(-8px);
-      box-shadow:0 25px 60px rgba(0,0,0,.6);
-      border-color:rgba(214,179,106,.6);
-    }
-
-    .card img{
-      width:100%;
-      height:470px;
-      object-fit:cover;
-      filter:brightness(.86) contrast(1.05);
-      transition:.5s;
-    }
-
-    .card:hover img{transform:scale(1.04)}
-
-    .card div{padding:28px;text-align:center}
-    .card h3{
-      letter-spacing:4px;
-      font-size:20px;
-      font-weight:400;
-      margin-bottom:12px;
-    }
-
-    .card p{
-      color:#b7aa98;
-      line-height:1.7;
-      font-size:14px;
-    }
-
-    .luxury{
-      background:
-        linear-gradient(rgba(0,0,0,.86),rgba(0,0,0,.92)),
-        url("https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1800&q=90");
-      background-size:cover;
-      background-position:center;
-      text-align:center;
-      border-top:1px solid rgba(214,179,106,.2);
-      border-bottom:1px solid rgba(214,179,106,.2);
-    }
-
-    .luxury p{
-      max-width:880px;
-      margin:auto;
-      color:#d5c8b4;
-      font-size:18px;
-      line-height:2;
-      letter-spacing:1.5px;
-    }
-
-    .features{
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:22px;
-    }
-
-    .feature{
-      background:#0c0c0c;
-      border:1px solid rgba(214,179,106,.22);
-      padding:36px 22px;
-      text-align:center;
-    }
-
-    .feature h4{
-      color:#d6b36a;
-      letter-spacing:3px;
-      margin-bottom:12px;
-      font-size:14px;
-    }
-
-    .feature p{
-      color:#b7aa98;
-      font-size:14px;
-      line-height:1.7;
-    }
-
-    .contact{
-      background:linear-gradient(180deg,#050505,#111);
-      text-align:center;
-    }
-
-    .contact-links a{
-      display:inline-block;
-      margin:10px;
-      padding:15px 30px;
-      border:1px solid #d6b36a;
-      color:#d6b36a;
-      text-decoration:none;
-      letter-spacing:3px;
-      font-size:12px;
-      transition:.3s;
-    }
-
-    .contact-links a:hover{
-      background:#d6b36a;
-      color:#000;
-    }
-
-    footer{
-      text-align:center;
-      padding:34px;
-      color:#8f806b;
-      font-size:12px;
-      letter-spacing:3px;
-      border-top:1px solid rgba(214,179,106,.18);
-    }
-
-    @media(max-width:900px){
-      header{
-        flex-direction:column;
-        gap:15px;
-        padding:18px 5%;
-      }
-
-      nav a{
-        margin:0 8px;
-        font-size:11px;
-      }
-
-      .hero{
-        padding:155px 6% 70px;
-        text-align:center;
-        justify-content:center;
-      }
-
-      .hero h1{
-        font-size:52px;
-        letter-spacing:7px;
-      }
-
-      .logo{
-        font-size:34px;
-        letter-spacing:7px;
-      }
-
-      .grid,.features{
-        grid-template-columns:1fr;
-      }
-
-      .card img{
-        height:430px;
-      }
-
-      .title{
-        font-size:31px;
-        letter-spacing:5px;
-      }
-    }
-  </style>
+@media(max-width:900px){
+header{flex-direction:column;gap:14px}
+nav a{margin:0 7px}
+.hero h1{font-size:48px}
+.products{grid-template-columns:1fr}
+.card img{height:450px}
+}
+</style>
 </head>
 
 <body>
 
-  <div class="top">
-    PREMIUM WOMEN CLOTHING • LIMITED LUXURY COLLECTION
+<header>
+  <div class="logo">VÉRAXA</div>
+  <nav>
+    <a href="#home">ANA SAYFA</a>
+    <a href="#products">ÜRÜNLER</a>
+    <a href="#contact">İLETİŞİM</a>
+  </nav>
+</header>
+
+<section class="hero" id="home">
+  <div>
+    <h1>VÉRAXA</h1>
+    <p>LUXURY WOMEN CLOTHING</p>
   </div>
+</section>
 
-  <header>
-    <div class="logo">VÉRAXA</div>
-    <nav>
-      <a href="#home">ANA SAYFA</a>
-      <a href="#collection">KOLEKSİYON</a>
-      <a href="#brand">MARKA</a>
-      <a href="#contact">İLETİŞİM</a>
-    </nav>
-  </header>
+<section id="products">
+  <h2 class="title">VÉRAXA COLLECTION</h2>
+  <p class="sub">9 PREMIUM PRODUCT</p>
+  <div class="products" id="productList"></div>
+</section>
 
-  <main>
-    <section class="hero" id="home">
-      <div class="hero-content">
-        <small>NEW SEASON • LUXURY WOMEN STYLE</small>
-        <h1>VÉRAXA</h1>
-        <p>
-          Kadın giyiminde zarafet, kalite ve güçlü duruş.
-          VÉRAXA; sade lüks, premium kumaş ve dikkat çeken modern stil için tasarlandı.
-        </p>
-        <div class="btns">
-          <a class="btn" href="#collection">KOLEKSİYONU KEŞFET</a>
-          <a class="btn" href="https://wa.me/989010718143" target="_blank">WHATSAPP</a>
-        </div>
-      </div>
-    </section>
+<section id="contact">
+  <h2 class="title">CONTACT</h2>
+  <p class="sub">Sipariş için WhatsApp veya Telegram</p>
+</section>
 
-    <section id="collection">
-      <div class="center">
-        <h2 class="title">SIGNATURE COLLECTION</h2>
-        <p class="sub">ELEGANT • PREMIUM • TIMELESS</p>
-      </div>
+<footer>© 2026 VÉRAXA • VERAXA.CO</footer>
 
-      <div class="grid">
-        <div class="card">
-          <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=90" alt="Luxury Dress">
-          <div>
-            <h3>ELITE DRESS</h3>
-            <p>Özel günler, davetler ve şehir stiline uygun premium kadın elbiseleri.</p>
-          </div>
-        </div>
+<script>
+const products = [
+{
+name:"Terikoton Kumaş Kemerli Elbise - Siyah",
+category:"Luxury Dress",
+image:"https://www.kaktusmoda.com/i/l/014/0146501_terikoton-kumas-kemerli-elbise-siyah.jpeg",
+colors:["Siyah"],
+sizes:["S","M","L"]
+},
+{
+name:"Çilek Viskon Kumaş U Yaka Bluz - Ekru",
+category:"Premium Bluz",
+image:"https://www.kaktusmoda.com/i/l/014/0146210_cilek-viskon-kumas-u-yaka-bluz-ekru.jpeg",
+colors:["Ekru"],
+sizes:["S","M","L"]
+},
+{
+name:"Çilek Viskon Kumaş V Yaka Basic Tişört - Bej",
+category:"Basic Luxury",
+image:"https://www.kaktusmoda.com/i/l/014/0146207_cilek-viskon-kumas-v-yaka-basic-tisort-bej.jpeg",
+colors:["Bej"],
+sizes:["S","M","L"]
+},
+{
+name:"Çilek Viskon Kumaş U Yaka Bluz - Bej",
+category:"Premium Bluz",
+image:"https://www.kaktusmoda.com/i/l/014/0146208_cilek-viskon-kumas-u-yaka-bluz-bej.jpeg",
+colors:["Bej"],
+sizes:["S","M","L"]
+},
+{
+name:"Çilek Viskon Kumaş U Yaka Bluz - Gri",
+category:"Premium Bluz",
+image:"https://www.kaktusmoda.com/i/l/014/0146205_cilek-viskon-kumas-u-yaka-bluz-gri.jpeg",
+colors:["Gri"],
+sizes:["S","M","L"]
+},
+{
+name:"Çilek Viskon Kumaş U Yaka Bluz - Haki",
+category:"Premium Bluz",
+image:"https://www.kaktusmoda.com/i/l/014/0146203_cilek-viskon-kumas-u-yaka-bluz-haki.jpeg",
+colors:["Haki"],
+sizes:["S","M","L"]
+},
+{
+name:"Çilek Viskon Kumaş U Yaka Bluz - Bordo",
+category:"Premium Bluz",
+image:"https://www.kaktusmoda.com/i/l/014/0146201_cilek-viskon-kumas-u-yaka-bluz-bordo.jpeg",
+colors:["Bordo"],
+sizes:["S","M","L"]
+},
+{
+name:"Modal Kumaş Duble Paça Kadın Pantolon - Bej",
+category:"Luxury Pantolon",
+image:"https://www.kaktusmoda.com/i/l/014/0146101_modal-kumas-duble-paca-kadin-pantolon-bej.jpeg",
+colors:["Bej"],
+sizes:["S","M","L","XL"]
+},
+{
+name:"Süprem Kumaş Çizgili Tişört - Mavi",
+category:"Premium Tişört",
+image:"https://www.kaktusmoda.com/i/l/014/0146001_suprem-kumas-cizgili-tisort-mavi.jpeg",
+colors:["Mavi"],
+sizes:["S","M","L"]
+}
+];
 
-        <div class="card">
-          <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=90" alt="Street Luxury">
-          <div>
-            <h3>STREET LUXURY</h3>
-            <p>Günlük kullanımda sade ama güçlü görünen modern luxury parçalar.</p>
-          </div>
-        </div>
+const container = document.getElementById("productList");
 
-        <div class="card">
-          <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=900&q=90" alt="Premium Wear">
-          <div>
-            <h3>PREMIUM WEAR</h3>
-            <p>Kaliteli kumaş, şık kesim ve zamansız VÉRAXA çizgisi.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+products.forEach((p,i)=>{
+let colorOptions = p.colors.map(c=>`<option value="${c}">${c}</option>`).join("");
+let sizeOptions = p.sizes.map(s=>`<option value="${s}">${s}</option>`).join("");
 
-    <section class="luxury" id="brand">
-      <h2 class="title">THE VÉRAXA WORLD</h2>
-      <p>
-        VÉRAXA sadece kıyafet değil; duruş, kalite ve özgüven sunar.
-        Her parça sade lüks anlayışıyla seçilir. Modern, zarif ve dikkat çekici kadın stili için premium bir marka deneyimi oluşturur.
-      </p>
-    </section>
+container.innerHTML += `
+<div class="card">
+<img src="${p.image}" alt="${p.name}" onerror="this.src='https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=900&q=90'">
+<div class="info">
+<h3>${p.name}</h3>
+<p>${p.category}</p>
 
-    <section>
-      <div class="center">
-        <h2 class="title">WHY VÉRAXA</h2>
-        <p class="sub">LUXURY DETAILS FOR A STRONG LOOK</p>
-      </div>
+<select id="color-${i}">
+${colorOptions}
+</select>
 
-      <div class="features">
-        <div class="feature">
-          <h4>PREMIUM STYLE</h4>
-          <p>Her üründe lüks görünüm ve modern çizgi.</p>
-        </div>
+<select id="size-${i}">
+${sizeOptions}
+</select>
 
-        <div class="feature">
-          <h4>QUALITY FABRIC</h4>
-          <p>Rahat, kaliteli ve güçlü kumaş seçimi.</p>
-        </div>
+<div class="size-table">
+Beden Tablosu:<br>
+S: 36-38<br>
+M: 38-40<br>
+L: 40-42<br>
+XL: 42-44
+</div>
 
-        <div class="feature">
-          <h4>LIMITED LOOK</h4>
-          <p>Herkeste olmayan özel ve elit kombin hissi.</p>
-        </div>
+<button class="btn" onclick="orderProduct('${p.name}', ${i})">SİPARİŞ VER</button>
+</div>
+</div>
+`;
+});
 
-        <div class="feature">
-          <h4>FAST CONTACT</h4>
-          <p>WhatsApp ve Telegram üzerinden hızlı iletişim.</p>
-        </div>
-      </div>
-    </section>
+function orderProduct(name,index){
+let color = document.getElementById("color-"+index).value;
+let size = document.getElementById("size-"+index).value;
 
-    <section class="contact" id="contact">
-      <h2 class="title">CONTACT</h2>
-      <p class="sub">SİPARİŞ VE BİLGİ İÇİN BİZE ULAŞIN</p>
+let message =
+`Merhaba, VÉRAXA sitesinden sipariş vermek istiyorum.%0A%0AÜrün: ${name}%0ARenk: ${color}%0ABeden: ${size}`;
 
-      <div class="contact-links">
-        <a href="https://wa.me/989010718143" target="_blank">WHATSAPP</a>
-        <a href="https://t.me/nilu_mi" target="_blank">TELEGRAM</a>
-        <a href="https://www.instagram.com/veraxa.co" target="_blank">INSTAGRAM</a>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    © 2026 VÉRAXA • LUXURY WOMEN CLOTHING • VERAXA.CO
-  </footer>
+window.open(`https://wa.me/989010718143?text=${message}`, "_blank");
+}
+</script>
 
 </body>
 </html>
