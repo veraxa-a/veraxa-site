@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VÉRAXA | Luxury Women Clothing</title>
+<title>VÉRAXA | Luxury Clothing</title>
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -11,25 +11,57 @@ html{scroll-behavior:smooth}
 body{background:#050505;color:#f6ead6;font-family:Georgia,"Times New Roman",serif}
 a{text-decoration:none}
 
-.topbar{
-background:#090909;color:#d6b36a;text-align:center;
-padding:10px;font-size:12px;letter-spacing:3px;
-border-bottom:1px solid rgba(214,179,106,.22)
+.marquee{
+background:#d6b36a;
+color:#050505;
+overflow:hidden;
+white-space:nowrap;
+padding:10px 0;
+font-size:12px;
+letter-spacing:3px;
+font-weight:bold;
+}
+
+.marquee span{
+display:inline-block;
+padding-left:100%;
+animation:marquee 18s linear infinite;
+}
+
+@keyframes marquee{
+0%{transform:translateX(0)}
+100%{transform:translateX(-100%)}
 }
 
 header{
-position:fixed;top:0;width:100%;z-index:99;
-background:rgba(0,0,0,.88);backdrop-filter:blur(18px);
-padding:18px 7%;display:flex;justify-content:space-between;align-items:center;
+position:fixed;
+top:38px;
+width:100%;
+z-index:99;
+background:rgba(0,0,0,.88);
+backdrop-filter:blur(18px);
+padding:18px 7%;
+display:flex;
+justify-content:space-between;
+align-items:center;
 border-bottom:1px solid rgba(214,179,106,.25)
 }
 
 .logo{
-font-size:40px;letter-spacing:9px;color:#d6b36a;
-text-shadow:0 0 25px rgba(214,179,106,.45)
+font-size:40px;
+letter-spacing:9px;
+color:#d6b36a;
+text-shadow:0 0 25px rgba(214,179,106,.45);
+cursor:pointer;
 }
 
-nav a{color:#f6ead6;margin-left:22px;font-size:12px;letter-spacing:2px}
+nav a{
+color:#f6ead6;
+margin-left:22px;
+font-size:12px;
+letter-spacing:2px
+}
+
 nav a:hover{color:#d6b36a}
 
 .hero{
@@ -37,108 +69,314 @@ min-height:100vh;
 background:
 linear-gradient(90deg,rgba(0,0,0,.92),rgba(0,0,0,.35),rgba(0,0,0,.9)),
 url("https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=1800&q=90");
-background-size:cover;background-position:center;
-display:flex;align-items:center;padding:140px 7% 80px
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:center;
+padding:160px 7% 80px
 }
 
 .hero-box{max-width:760px}
-.hero small{color:#d6b36a;letter-spacing:5px;font-size:13px}
-.hero h1{font-size:86px;letter-spacing:14px;font-weight:400;margin:20px 0;color:#fff0d6}
-.hero p{font-size:18px;line-height:1.9;color:#d7c7ae;letter-spacing:1.5px;margin-bottom:35px}
+
+.hero small{
+color:#d6b36a;
+letter-spacing:5px;
+font-size:13px
+}
+
+.hero h1{
+font-size:86px;
+letter-spacing:14px;
+font-weight:400;
+margin:20px 0;
+color:#fff0d6
+}
+
+.hero p{
+font-size:18px;
+line-height:1.9;
+color:#d7c7ae;
+letter-spacing:1.5px;
+margin-bottom:35px
+}
 
 .btn{
-display:inline-block;padding:15px 30px;margin:7px;
-border:1px solid #d6b36a;color:#d6b36a;
-background:transparent;letter-spacing:2px;font-size:12px;cursor:pointer
+display:inline-block;
+padding:15px 30px;
+margin:7px;
+border:1px solid #d6b36a;
+color:#d6b36a;
+background:transparent;
+letter-spacing:2px;
+font-size:12px;
+cursor:pointer
 }
-.btn:hover{background:#d6b36a;color:#000}
+
+.btn:hover{
+background:#d6b36a;
+color:#000
+}
+
+.banner{
+margin-top:0;
+padding:0;
+}
+
+.banner img{
+width:100%;
+height:430px;
+object-fit:cover;
+display:block;
+filter:brightness(.75);
+}
+
+.banner-text{
+background:#090909;
+text-align:center;
+padding:35px 7%;
+border-top:1px solid rgba(214,179,106,.2);
+border-bottom:1px solid rgba(214,179,106,.2);
+}
+
+.banner-text h2{
+font-size:34px;
+letter-spacing:6px;
+font-weight:400;
+color:#d6b36a;
+margin-bottom:12px;
+}
+
+.banner-text p{
+color:#c8b89e;
+letter-spacing:2px;
+}
 
 section{padding:85px 7%}
-.title{text-align:center;font-size:42px;letter-spacing:7px;font-weight:400;margin-bottom:12px}
-.sub{text-align:center;color:#aa9b83;letter-spacing:3px;margin-bottom:42px}
+
+.title{
+text-align:center;
+font-size:42px;
+letter-spacing:7px;
+font-weight:400;
+margin-bottom:12px
+}
+
+.sub{
+text-align:center;
+color:#aa9b83;
+letter-spacing:3px;
+margin-bottom:42px
+}
 
 .filters{
-display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:35px
+display:flex;
+justify-content:center;
+gap:12px;
+flex-wrap:wrap;
+margin-bottom:35px
 }
 
 .filter-btn{
-padding:12px 22px;background:#0b0b0b;color:#d6b36a;
-border:1px solid rgba(214,179,106,.4);letter-spacing:2px;cursor:pointer
+padding:12px 22px;
+background:#0b0b0b;
+color:#d6b36a;
+border:1px solid rgba(214,179,106,.4);
+letter-spacing:2px;
+cursor:pointer
 }
-.filter-btn.active,.filter-btn:hover{background:#d6b36a;color:#000}
+
+.filter-btn.active,.filter-btn:hover{
+background:#d6b36a;
+color:#000
+}
 
 .products{
-display:grid;grid-template-columns:repeat(4,1fr);gap:25px
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:25px
 }
 
 .card{
-background:#0b0b0b;border:1px solid rgba(214,179,106,.25);
-overflow:hidden;transition:.35s
+background:#0b0b0b;
+border:1px solid rgba(214,179,106,.25);
+overflow:hidden;
+transition:.35s
 }
-.card:hover{transform:translateY(-8px);border-color:#d6b36a;box-shadow:0 25px 65px rgba(0,0,0,.8)}
-.card img{width:100%;height:420px;object-fit:cover;background:#111}
-.info{text-align:center;padding:22px}
-.info h3{font-size:15px;letter-spacing:1.5px;font-weight:400;min-height:42px}
-.category{color:#d6b36a;font-size:12px;letter-spacing:2px;margin:8px 0}
-.price{font-size:18px;color:#fff;margin:10px 0}
+
+.card:hover{
+transform:translateY(-8px);
+border-color:#d6b36a;
+box-shadow:0 25px 65px rgba(0,0,0,.8)
+}
+
+.card img{
+width:100%;
+height:420px;
+object-fit:cover;
+background:#111
+}
+
+.info{
+text-align:center;
+padding:22px
+}
+
+.info h3{
+font-size:15px;
+letter-spacing:1.5px;
+font-weight:400;
+min-height:42px
+}
+
+.category{
+color:#d6b36a;
+font-size:12px;
+letter-spacing:2px;
+margin:8px 0
+}
+
+.price{
+font-size:18px;
+color:#fff;
+margin:10px 0
+}
 
 select{
-width:100%;padding:12px;margin-top:9px;
-background:#050505;color:#f6ead6;border:1px solid rgba(214,179,106,.55)
+width:100%;
+padding:12px;
+margin-top:9px;
+background:#050505;
+color:#f6ead6;
+border:1px solid rgba(214,179,106,.55)
 }
 
 .size-table{
-font-size:12px;color:#b8aa92;line-height:1.7;margin-top:12px;
-border-top:1px solid rgba(214,179,106,.18);padding-top:10px
+font-size:12px;
+color:#b8aa92;
+line-height:1.7;
+margin-top:12px;
+border-top:1px solid rgba(214,179,106,.18);
+padding-top:10px
 }
 
 .brand{
-background:
-linear-gradient(rgba(0,0,0,.86),rgba(0,0,0,.92)),
-url("https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1800&q=90");
-background-size:cover;background-position:center;text-align:center;
+background:#090909;
+text-align:center;
 border-top:1px solid rgba(214,179,106,.18);
 border-bottom:1px solid rgba(214,179,106,.18)
 }
-.brand p{max-width:880px;margin:auto;color:#d5c6ad;font-size:18px;line-height:2;letter-spacing:1px}
+
+.brand p{
+max-width:880px;
+margin:auto;
+color:#d5c6ad;
+font-size:18px;
+line-height:2;
+letter-spacing:1px
+}
 
 .features{
-display:grid;grid-template-columns:repeat(4,1fr);gap:22px
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:22px
 }
+
 .feature{
-background:#0b0b0b;border:1px solid rgba(214,179,106,.25);
-padding:35px 20px;text-align:center
+background:#0b0b0b;
+border:1px solid rgba(214,179,106,.25);
+padding:35px 20px;
+text-align:center
 }
-.feature h4{color:#d6b36a;letter-spacing:3px;margin-bottom:12px;font-size:14px}
-.feature p{color:#b8aa92;line-height:1.7;font-size:14px}
 
-.contact{text-align:center;background:linear-gradient(180deg,#050505,#111)}
+.feature h4{
+color:#d6b36a;
+letter-spacing:3px;
+margin-bottom:12px;
+font-size:14px
+}
+
+.feature p{
+color:#b8aa92;
+line-height:1.7;
+font-size:14px
+}
+
+.contact{
+text-align:center;
+background:linear-gradient(180deg,#050505,#111)
+}
+
 footer{
-text-align:center;padding:32px;color:#8d806b;
+text-align:center;
+padding:32px;
+color:#8d806b;
 border-top:1px solid rgba(214,179,106,.2);
-letter-spacing:2px;font-size:12px
+letter-spacing:2px;
+font-size:12px
 }
 
-@media(max-width:1100px){.products{grid-template-columns:repeat(2,1fr)}.features{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:1100px){
+.products{grid-template-columns:repeat(2,1fr)}
+.features{grid-template-columns:repeat(2,1fr)}
+}
+
 @media(max-width:650px){
-header{flex-direction:column;gap:14px;padding:16px 4%}
-.logo{font-size:32px;letter-spacing:7px}
-nav a{margin:0 6px;font-size:10px}
-.hero{text-align:center;justify-content:center;padding:150px 6% 70px}
-.hero h1{font-size:50px;letter-spacing:8px}
-.products,.features{grid-template-columns:1fr}
-.card img{height:450px}
-.title{font-size:31px;letter-spacing:5px}
+header{
+top:38px;
+flex-direction:column;
+gap:14px;
+padding:15px 4%
+}
+
+.logo{
+font-size:32px;
+letter-spacing:7px
+}
+
+nav a{
+margin:0 6px;
+font-size:10px
+}
+
+.hero{
+text-align:center;
+justify-content:center;
+padding:170px 6% 70px
+}
+
+.hero h1{
+font-size:48px;
+letter-spacing:8px
+}
+
+.products,.features{
+grid-template-columns:1fr
+}
+
+.card img{
+height:450px
+}
+
+.title{
+font-size:31px;
+letter-spacing:5px
+}
+
+.banner img{
+height:330px
+}
 }
 </style>
 </head>
 
 <body>
 
-<div class="topbar">PREMIUM WOMEN CLOTHING • VÉRAXA.CO • LIMITED COLLECTION</div>
+<div class="marquee">
+  <span>NEW IN • PREMIUM COLLECTION • LIMITED STOCK • WHATSAPP İLE HIZLI SİPARİŞ • VÉRAXA LUXURY CLOTHING •</span>
+</div>
 
 <header>
-  <div class="logo">VÉRAXA</div>
+  <a href="#home" class="logo">VÉRAXA</a>
   <nav>
     <a href="#home">ANA SAYFA</a>
     <a href="#products">ÜRÜNLER</a>
@@ -149,25 +387,34 @@ nav a{margin:0 6px;font-size:10px}
 
 <section class="hero" id="home">
   <div class="hero-box">
-    <small>NEW SEASON • LUXURY WOMEN STYLE</small>
+    <small>NEW SEASON • LUXURY CLOTHING</small>
     <h1>VÉRAXA</h1>
-    <p>VÉRAXA; zarif, güçlü ve premium kadın giyim tarzı için oluşturulmuş luxury bir moda markasıdır.</p>
-    <a class="btn" href="#products">KOLEKSİYONU GÖR</a>
-    <a class="btn" href="https://wa.me/989010718143" target="_blank">WHATSAPP</a>
+    <p>Premium kadın ve erkek giyiminde güçlü, sade ve lüks görünüm. Stiline değer katan parçaları şimdi keşfet.</p>
+    <a class="btn" href="#products">ALIŞVERİŞE BAŞLA</a>
+    <a class="btn" href="https://wa.me/989010718143" target="_blank">WHATSAPP SİPARİŞ</a>
+  </div>
+</section>
+
+<section class="banner">
+  <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1800&q=90" alt="Veraxa Banner">
+  <div class="banner-text">
+    <h2>NEW IN COLLECTION</h2>
+    <p>Yeni sezon premium parçalar şimdi VÉRAXA’da.</p>
+    <a class="btn" href="#products">ÜRÜNLERİ GÖR</a>
   </div>
 </section>
 
 <section id="products">
   <h2 class="title">VÉRAXA COLLECTION</h2>
-  <p class="sub">ÜRÜN SEÇ • RENK SEÇ • BEDEN SEÇ • WHATSAPP İLE SİPARİŞ VER</p>
+  <p class="sub">KATEGORİ SEÇ • RENK SEÇ • BEDEN SEÇ • WHATSAPP İLE SİPARİŞ VER</p>
 
   <div class="filters">
     <button class="filter-btn active" onclick="filterProducts('all',this)">TÜMÜ</button>
-    <button class="filter-btn" onclick="filterProducts('Elbise',this)">ELBİSE</button>
-    <button class="filter-btn" onclick="filterProducts('Bluz',this)">BLUZ</button>
-    <button class="filter-btn" onclick="filterProducts('Tişört',this)">TİŞÖRT</button>
-    <button class="filter-btn" onclick="filterProducts('Pantolon',this)">PANTOLON</button>
-    <button class="filter-btn" onclick="filterProducts('Takım',this)">TAKIM</button>
+    <button class="filter-btn" onclick="filterProducts('New In',this)">NEW IN</button>
+    <button class="filter-btn" onclick="filterProducts('Kadın',this)">KADIN</button>
+    <button class="filter-btn" onclick="filterProducts('Erkek',this)">ERKEK</button>
+    <button class="filter-btn" onclick="filterProducts('Sweatshirt',this)">SWEATSHIRT</button>
+    <button class="filter-btn" onclick="filterProducts('T-Shirt',this)">T-SHIRT</button>
   </div>
 
   <div class="products" id="productList"></div>
@@ -177,13 +424,13 @@ nav a{margin:0 6px;font-size:10px}
   <h2 class="title">THE VÉRAXA WORLD</h2>
   <p>
     VÉRAXA sadece kıyafet değil; kalite, duruş ve özgüven sunar.
-    Her ürün modern kadın stiline uygun, sade ama güçlü bir luxury görünüm için seçilmiştir.
+    Her ürün modern stil, sade lüks ve premium görünüm için seçilmiştir.
   </p>
 </section>
 
 <section>
   <h2 class="title">WHY VÉRAXA</h2>
-  <p class="sub">PREMIUM DETAILS FOR A STRONG LOOK</p>
+  <p class="sub">SATIŞ ODAKLI PREMIUM DENEYİM</p>
 
   <div class="features">
     <div class="feature">
@@ -191,16 +438,16 @@ nav a{margin:0 6px;font-size:10px}
       <p>Lüks ve modern görünüm.</p>
     </div>
     <div class="feature">
+      <h4>FAST ORDER</h4>
+      <p>WhatsApp ile hızlı sipariş.</p>
+    </div>
+    <div class="feature">
       <h4>SIZE OPTIONS</h4>
       <p>S, M, L ve XL beden seçenekleri.</p>
     </div>
     <div class="feature">
-      <h4>COLOR OPTIONS</h4>
-      <p>Ürünlere göre renk seçimi.</p>
-    </div>
-    <div class="feature">
-      <h4>FAST ORDER</h4>
-      <p>WhatsApp ile hızlı sipariş.</p>
+      <h4>LIMITED STOCK</h4>
+      <p>Seçili ürünlerde sınırlı stok algısı.</p>
     </div>
   </div>
 </section>
@@ -213,162 +460,117 @@ nav a{margin:0 6px;font-size:10px}
   <a class="btn" href="https://www.instagram.com/veraxa.co" target="_blank">INSTAGRAM</a>
 </section>
 
-<footer>© 2026 VÉRAXA • LUXURY WOMEN CLOTHING • VERAXA.CO</footer>
+<footer>© 2026 VÉRAXA • LUXURY CLOTHING • VERAXA.CO</footer>
 
 <script>
 const products = [
 {
 name:"Kemerli Siyah Elbise",
-category:"Elbise",
+category:"Kadın",
+tag:"New In",
 price:"₺899",
 image:"https://www.kaktusmoda.com/i/l/014/0146501_terikoton-kumas-kemerli-elbise-siyah.jpeg",
 colors:["Siyah","Krem","Kahve"],
 sizes:["S","M","L"]
 },
 {
-name:"Ekru Viskon U Yaka Bluz",
-category:"Bluz",
+name:"Ekru Viskon Bluz",
+category:"Kadın",
+tag:"New In",
 price:"₺449",
 image:"https://www.kaktusmoda.com/i/l/014/0146210_cilek-viskon-kumas-u-yaka-bluz-ekru.jpeg",
 colors:["Ekru","Bej","Siyah"],
 sizes:["S","M","L"]
 },
 {
-name:"Bej Basic Tişört",
-category:"Tişört",
+name:"Bej Basic T-Shirt",
+category:"T-Shirt",
+tag:"Kadın",
 price:"₺399",
 image:"https://www.kaktusmoda.com/i/l/014/0146207_cilek-viskon-kumas-v-yaka-basic-tisort-bej.jpeg",
 colors:["Bej","Ekru","Gri"],
 sizes:["S","M","L"]
 },
 {
-name:"Bej U Yaka Bluz",
-category:"Bluz",
-price:"₺449",
-image:"https://www.kaktusmoda.com/i/l/014/0146208_cilek-viskon-kumas-u-yaka-bluz-bej.jpeg",
-colors:["Bej","Ekru","Haki"],
-sizes:["S","M","L"]
-},
-{
 name:"Gri Premium Bluz",
-category:"Bluz",
+category:"Kadın",
+tag:"New In",
 price:"₺459",
 image:"https://www.kaktusmoda.com/i/l/014/0146205_cilek-viskon-kumas-u-yaka-bluz-gri.jpeg",
 colors:["Gri","Siyah","Ekru"],
 sizes:["S","M","L"]
 },
 {
-name:"Haki Luxury Bluz",
-category:"Bluz",
-price:"₺459",
-image:"https://www.kaktusmoda.com/i/l/014/0146203_cilek-viskon-kumas-u-yaka-bluz-haki.jpeg",
-colors:["Haki","Bej","Siyah"],
-sizes:["S","M","L"]
-},
-{
-name:"Bordo Premium Bluz",
-category:"Bluz",
-price:"₺459",
-image:"https://www.kaktusmoda.com/i/l/014/0146201_cilek-viskon-kumas-u-yaka-bluz-bordo.jpeg",
-colors:["Bordo","Siyah","Ekru"],
-sizes:["S","M","L"]
-},
-{
 name:"Duble Paça Bej Pantolon",
-category:"Pantolon",
+category:"Kadın",
+tag:"New In",
 price:"₺699",
 image:"https://www.kaktusmoda.com/i/l/014/0146101_modal-kumas-duble-paca-kadin-pantolon-bej.jpeg",
 colors:["Bej","Siyah","Kahve"],
 sizes:["S","M","L","XL"]
 },
 {
-name:"Çizgili Mavi Tişört",
-category:"Tişört",
+name:"Çizgili Mavi T-Shirt",
+category:"T-Shirt",
+tag:"Kadın",
 price:"₺499",
 image:"https://www.kaktusmoda.com/i/l/014/0146001_suprem-kumas-cizgili-tisort-mavi.jpeg",
 colors:["Mavi","Lacivert","Ekru"],
 sizes:["S","M","L"]
 },
-
 {
 name:"Luxury Black Dress",
-category:"Elbise",
+category:"Kadın",
+tag:"New In",
 price:"₺1.099",
 image:"https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=90",
 colors:["Siyah","Şampanya","Bordo"],
 sizes:["S","M","L"]
 },
 {
-name:"Premium City Coat",
-category:"Takım",
+name:"Premium Men Jacket",
+category:"Erkek",
+tag:"New In",
 price:"₺1.499",
-image:"https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=900&q=90",
-colors:["Siyah","Krem","Gri"],
-sizes:["S","M","L","XL"]
-},
-{
-name:"Elegant Beige Style",
-category:"Elbise",
-price:"₺999",
-image:"https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=900&q=90",
-colors:["Bej","Ekru","Kahve"],
-sizes:["S","M","L"]
-},
-{
-name:"Modern Street Luxury",
-category:"Takım",
-price:"₺1.299",
-image:"https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=90",
-colors:["Siyah","Gri","Beyaz"],
-sizes:["S","M","L"]
-},
-{
-name:"Minimal White Look",
-category:"Bluz",
-price:"₺549",
-image:"https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=900&q=90",
-colors:["Beyaz","Ekru","Siyah"],
-sizes:["S","M","L"]
-},
-{
-name:"Premium Brown Outfit",
-category:"Takım",
-price:"₺1.199",
-image:"https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?auto=format&fit=crop&w=900&q=90",
-colors:["Kahve","Bej","Siyah"],
-sizes:["S","M","L"]
-},
-{
-name:"Soft Luxury Shirt",
-category:"Bluz",
-price:"₺599",
-image:"https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=90",
-colors:["Ekru","Beyaz","Bej"],
-sizes:["S","M","L"]
-},
-{
-name:"Elite Black Pants",
-category:"Pantolon",
-price:"₺749",
-image:"https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=900&q=90",
+image:"https://images.unsplash.com/photo-1516257984-b1b4d707412e?auto=format&fit=crop&w=900&q=90",
 colors:["Siyah","Gri","Kahve"],
 sizes:["S","M","L","XL"]
 },
 {
-name:"Luxury Casual Tee",
-category:"Tişört",
+name:"Men Premium T-Shirt",
+category:"Erkek",
+tag:"T-Shirt",
 price:"₺499",
 image:"https://images.unsplash.com/photo-1520975916090-3105956dac38?auto=format&fit=crop&w=900&q=90",
 colors:["Beyaz","Siyah","Bej"],
+sizes:["S","M","L","XL"]
+},
+{
+name:"Black Oversize Sweatshirt",
+category:"Sweatshirt",
+tag:"Erkek",
+price:"₺799",
+image:"https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?auto=format&fit=crop&w=900&q=90",
+colors:["Siyah","Gri","Krem"],
+sizes:["S","M","L","XL"]
+},
+{
+name:"Luxury Casual Sweatshirt",
+category:"Sweatshirt",
+tag:"Kadın",
+price:"₺749",
+image:"https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=900&q=90",
+colors:["Krem","Siyah","Gri"],
 sizes:["S","M","L"]
 },
 {
-name:"Golden Evening Dress",
-category:"Elbise",
-price:"₺1.399",
-image:"https://images.unsplash.com/photo-1502716119720-b23a93e5fe1b?auto=format&fit=crop&w=900&q=90",
-colors:["Gold","Siyah","Şampanya"],
-sizes:["S","M","L"]
+name:"Minimal White T-Shirt",
+category:"T-Shirt",
+tag:"New In",
+price:"₺449",
+image:"https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=900&q=90",
+colors:["Beyaz","Ekru","Siyah"],
+sizes:["S","M","L","XL"]
 }
 ];
 
@@ -379,8 +581,8 @@ const container = document.getElementById("productList");
 container.innerHTML = "";
 
 products
-.filter(p => currentCategory === "all" || p.category === currentCategory)
-.forEach((p,i)=>{
+.filter(p => currentCategory === "all" || p.category === currentCategory || p.tag === currentCategory)
+.forEach((p)=>{
 let realIndex = products.indexOf(p);
 let colorOptions = p.colors.map(c=>`<option value="${c}">${c}</option>`).join("");
 let sizeOptions = p.sizes.map(s=>`<option value="${s}">${s}</option>`).join("");
@@ -390,7 +592,7 @@ container.innerHTML += `
 <img src="${p.image}" alt="${p.name}" onerror="this.src='https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=900&q=90'">
 <div class="info">
 <h3>${p.name}</h3>
-<div class="category">${p.category}</div>
+<div class="category">${p.category} • ${p.tag}</div>
 <div class="price">${p.price}</div>
 
 <select id="color-${realIndex}">
