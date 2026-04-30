@@ -7,120 +7,114 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Arial,sans-serif;background:#050505;color:#f5f1e8}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;background:#050505;color:#f4efe6}
 a{text-decoration:none;color:inherit}
-button,select,input{font-family:inherit}
-.topbar{background:#d6b46a;color:#111;padding:10px;font-size:13px;font-weight:bold;overflow:hidden;white-space:nowrap}
-.topbar span{display:inline-block;padding-left:100%;animation:marquee 18s linear infinite}
+button{font-family:inherit}
+
+.topbar{background:#c7a45d;color:#050505;padding:10px 0;overflow:hidden;font-size:12px;letter-spacing:1px}
+.topbar span{display:inline-block;white-space:nowrap;padding-left:100%;animation:marquee 18s linear infinite}
 @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-100%)}}
 
-header{position:sticky;top:0;z-index:99;background:rgba(5,5,5,.93);backdrop-filter:blur(10px);border-bottom:1px solid rgba(214,180,106,.25)}
-.nav{max-width:1200px;margin:auto;display:flex;justify-content:space-between;align-items:center;padding:18px 20px}
-.logo{font-size:28px;letter-spacing:5px;font-weight:500;cursor:pointer}
-.logo span{color:#d6b46a}
-.menu{display:flex;gap:20px;font-size:13px;text-transform:uppercase;letter-spacing:1px}
-.menu a:hover{color:#d6b46a}
-.cartBtn{border:1px solid #d6b46a;padding:9px 14px;border-radius:30px;cursor:pointer;font-size:13px}
+header{
+position:fixed;top:0;left:0;width:100%;z-index:50;
+background:rgba(0,0,0,.35);backdrop-filter:blur(10px);
+border-bottom:1px solid rgba(255,255,255,.08)
+}
+.nav{max-width:1300px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:18px 22px}
+.logo{font-size:27px;letter-spacing:6px;font-weight:400;cursor:pointer}
+.logo span{color:#c7a45d}
+.menu{display:flex;gap:24px;font-size:12px;letter-spacing:2px;text-transform:uppercase}
+.menu a:hover{color:#c7a45d}
+.cartBtn{border:1px solid rgba(199,164,93,.7);padding:9px 15px;border-radius:40px;font-size:12px;cursor:pointer}
 
-.hero{min-height:88vh;background:linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.82)),url("https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1600&auto=format&fit=crop");background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;text-align:center;padding:30px}
-.hero h1{font-size:64px;letter-spacing:8px;margin-bottom:15px;font-weight:400}
-.hero p{font-size:18px;color:#ddd;margin-bottom:30px;letter-spacing:2px}
-.btn{background:#d6b46a;color:#111;padding:14px 34px;border-radius:40px;font-weight:bold;border:none;cursor:pointer}
+.hero{
+height:100vh;
+background:
+linear-gradient(rgba(0,0,0,.18),rgba(0,0,0,.72)),
+url("https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=1800&auto=format&fit=crop");
+background-size:cover;background-position:center;
+display:flex;align-items:center;justify-content:center;text-align:center;padding:25px
+}
+.hero h1{font-size:76px;letter-spacing:12px;font-weight:300;margin-bottom:16px}
+.hero p{font-size:16px;letter-spacing:4px;margin-bottom:32px;color:#eee}
+.btn{
+background:transparent;color:#f4efe6;border:1px solid #f4efe6;
+padding:15px 38px;border-radius:0;letter-spacing:2px;text-transform:uppercase;cursor:pointer
+}
+.btn:hover{background:#f4efe6;color:#050505}
 
-.section{max-width:1200px;margin:auto;padding:70px 20px}
-.title{text-align:center;margin-bottom:35px}
-.title h2{font-size:34px;letter-spacing:3px;font-weight:400}
-.title p{margin-top:10px;color:#aaa}
+.intro{padding:80px 20px;text-align:center;background:#050505}
+.intro h2{font-size:34px;font-weight:300;letter-spacing:5px;margin-bottom:18px}
+.intro p{max-width:720px;margin:auto;color:#bdb7ad;line-height:1.8}
 
-.searchBox{max-width:420px;margin:0 auto 25px}
-.searchBox input{width:100%;padding:14px 18px;border-radius:30px;border:1px solid rgba(214,180,106,.35);background:#0d0d0d;color:#f5f1e8}
+.categories{
+display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:#111
+}
+.cat{
+height:75vh;position:relative;overflow:hidden;cursor:pointer;
+display:flex;align-items:flex-end;justify-content:center;text-align:center;padding:45px
+}
+.cat::before{
+content:"";position:absolute;inset:0;background-size:cover;background-position:center;
+transition:.7s;z-index:1
+}
+.cat::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent,rgba(0,0,0,.82));z-index:2}
+.cat:hover::before{transform:scale(1.08)}
+.catContent{position:relative;z-index:3}
+.cat h2{font-size:38px;font-weight:300;letter-spacing:5px;margin-bottom:14px}
+.cat p{font-size:13px;letter-spacing:2px;color:#ddd;margin-bottom:22px}
+.cat button{
+background:#f4efe6;color:#050505;border:none;padding:13px 32px;letter-spacing:2px;text-transform:uppercase;cursor:pointer
+}
+.women::before{background-image:url("https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=1400&auto=format&fit=crop")}
+.men::before{background-image:url("https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1400&auto=format&fit=crop")}
+.tshirt::before{background-image:url("https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1400&auto=format&fit=crop")}
+.daily::before{background-image:url("https://images.unsplash.com/photo-1544441893-675973e31985?q=80&w=1400&auto=format&fit=crop")}
 
-.filters{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-bottom:35px}
-.filters button{background:transparent;color:#f5f1e8;border:1px solid rgba(214,180,106,.45);padding:10px 20px;border-radius:30px;cursor:pointer}
-.filters button.active,.filters button:hover{background:#d6b46a;color:#111}
-
+.productsSection{display:none;max-width:1250px;margin:auto;padding:80px 20px}
+.productsSection.active{display:block}
+.sectionTitle{text-align:center;margin-bottom:35px}
+.sectionTitle h2{font-size:36px;font-weight:300;letter-spacing:5px}
+.sectionTitle p{margin-top:12px;color:#aaa}
 .products{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
-.card{background:#0d0d0d;border:1px solid rgba(214,180,106,.18);border-radius:22px;overflow:hidden;position:relative;transition:.3s}
-.card:hover{transform:translateY(-6px);border-color:#d6b46a}
-.badge{position:absolute;top:14px;left:14px;background:#d6b46a;color:#111;padding:6px 12px;border-radius:20px;font-size:11px;font-weight:bold;z-index:2}
-.stock{position:absolute;top:14px;right:14px;background:#111;color:#f5f1e8;border:1px solid rgba(214,180,106,.45);padding:6px 12px;border-radius:20px;font-size:11px;z-index:2}
-.card img{width:100%;height:360px;object-fit:cover;display:block;cursor:pointer}
+.card{background:#0c0c0c;border:1px solid rgba(199,164,93,.18);overflow:hidden;position:relative}
+.badge{position:absolute;top:14px;left:14px;background:#c7a45d;color:#050505;padding:7px 13px;font-size:11px;z-index:3;letter-spacing:1px}
+.card img{width:100%;height:430px;object-fit:cover;display:block}
 .info{padding:20px}
-.info h3{font-size:18px;margin-bottom:8px;font-weight:400;cursor:pointer}
-.price{color:#d6b46a;font-size:19px;margin-bottom:10px}
-.miniText{font-size:12px;color:#aaa;margin-bottom:12px}
+.info h3{font-size:18px;font-weight:300;margin-bottom:10px;letter-spacing:1px}
+.price{color:#c7a45d;margin-bottom:15px;font-size:18px}
 .selects{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
-select{background:#050505;color:#f5f1e8;border:1px solid rgba(214,180,106,.35);padding:10px;border-radius:10px}
-.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.add,.quick{width:100%;border:none;padding:12px;border-radius:14px;font-weight:bold;cursor:pointer}
-.add{background:#f5f1e8;color:#111}
-.quick{background:#25D366;color:white}
-.add:hover{background:#d6b46a}
+select{background:#050505;color:#f4efe6;border:1px solid rgba(199,164,93,.35);padding:11px}
+.add{width:100%;background:#f4efe6;color:#050505;border:none;padding:14px;cursor:pointer;letter-spacing:1px}
+.add:hover{background:#c7a45d}
 
-.trust{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:40px}
-.trust div{background:#0d0d0d;border:1px solid rgba(214,180,106,.18);padding:25px;border-radius:20px;text-align:center}
+.brandStory{padding:90px 20px;text-align:center;background:#0b0b0b;border-top:1px solid rgba(199,164,93,.14)}
+.brandStory h2{font-size:34px;font-weight:300;letter-spacing:5px;margin-bottom:18px}
+.brandStory p{max-width:760px;margin:auto;color:#bbb;line-height:1.9}
 
-.lookbook{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.lookbook img{width:100%;height:420px;object-fit:cover;border-radius:22px;border:1px solid rgba(214,180,106,.18)}
-
-.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.review{background:#0d0d0d;border:1px solid rgba(214,180,106,.18);border-radius:20px;padding:22px;line-height:1.7;color:#ccc}
-
-.faq{max-width:850px;margin:auto}
-.faqItem{background:#0d0d0d;border:1px solid rgba(214,180,106,.18);border-radius:18px;margin-bottom:12px;overflow:hidden}
-.faqQ{padding:18px;cursor:pointer;color:#d6b46a}
-.faqA{display:none;padding:0 18px 18px;color:#bbb;line-height:1.7}
-.faqItem.open .faqA{display:block}
-
-.brand{background:#0d0d0d;border-top:1px solid rgba(214,180,106,.18);border-bottom:1px solid rgba(214,180,106,.18);text-align:center;padding:70px 20px}
-.brand h2{font-size:32px;letter-spacing:4px;margin-bottom:15px;font-weight:400}
-.brand p{max-width:700px;margin:auto;color:#bbb;line-height:1.8}
-footer{padding:35px 20px 80px;text-align:center;color:#999;font-size:14px}
+footer{text-align:center;padding:45px 20px;color:#999;font-size:14px}
 .contact{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:18px}
-.contact a{border:1px solid rgba(214,180,106,.45);padding:11px 18px;border-radius:30px}
-.contact a:hover{background:#d6b46a;color:#111}
+.contact a{border:1px solid rgba(199,164,93,.5);padding:11px 18px;border-radius:40px}
+.contact a:hover{background:#c7a45d;color:#050505}
 
-.cartPanel{position:fixed;right:-420px;top:0;width:380px;max-width:92%;height:100vh;background:#080808;z-index:999;border-left:1px solid #d6b46a;padding:25px;transition:.35s;overflow:auto}
+.cartPanel{
+position:fixed;top:0;right:-430px;width:390px;max-width:92%;height:100vh;background:#080808;
+z-index:100;border-left:1px solid #c7a45d;padding:25px;transition:.35s;overflow:auto
+}
 .cartPanel.open{right:0}
-.cartPanel h2{margin-bottom:20px;color:#d6b46a}
-.cartItem{border-bottom:1px solid rgba(214,180,106,.2);padding:14px 0;font-size:14px}
-.close{float:right;cursor:pointer;font-size:24px}
-.whatsapp{width:100%;margin-top:20px;background:#25D366;color:white;padding:14px;border:none;border-radius:14px;font-weight:bold;cursor:pointer}
-.empty{color:#999;margin-top:20px}
-
-.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.78);z-index:1000;align-items:center;justify-content:center;padding:18px}
-.modal.open{display:flex}
-.modalBox{background:#090909;border:1px solid #d6b46a;border-radius:24px;max-width:900px;width:100%;display:grid;grid-template-columns:1fr 1fr;overflow:hidden;position:relative}
-.modalBox img{width:100%;height:100%;object-fit:cover;min-height:500px}
-.modalContent{padding:28px}
-.modalContent h2{font-size:28px;margin-bottom:10px;font-weight:400}
-.modalContent p{color:#bbb;line-height:1.8;margin-bottom:14px}
-.modalClose{position:absolute;top:12px;right:18px;font-size:28px;cursor:pointer;color:#d6b46a}
-.sizeTable{width:100%;border-collapse:collapse;margin-top:15px;font-size:13px}
-.sizeTable td,.sizeTable th{border:1px solid rgba(214,180,106,.25);padding:10px;text-align:center}
-.sizeTable th{color:#d6b46a}
-
-.bottomBar{display:none;position:fixed;bottom:0;left:0;right:0;background:#080808;border-top:1px solid rgba(214,180,106,.45);z-index:998;grid-template-columns:repeat(3,1fr)}
-.bottomBar a,.bottomBar button{background:transparent;color:#f5f1e8;border:none;padding:13px 6px;font-size:12px;text-align:center}
+.close{float:right;font-size:26px;cursor:pointer}
+.cartPanel h2{color:#c7a45d;margin-bottom:22px;font-weight:300}
+.cartItem{border-bottom:1px solid rgba(199,164,93,.22);padding:14px 0;font-size:14px;line-height:1.7}
+.whatsapp{width:100%;margin-top:20px;background:#25D366;color:white;border:none;padding:15px;border-radius:0;font-weight:bold;cursor:pointer}
 
 @media(max-width:850px){
 .menu{display:none}
-.hero h1{font-size:42px}
+.hero h1{font-size:42px;letter-spacing:7px}
+.categories{grid-template-columns:1fr}
+.cat{height:62vh}
 .products{grid-template-columns:1fr}
-.trust,.reviews{grid-template-columns:1fr 1fr}
-.lookbook{grid-template-columns:1fr}
 .card img{height:430px}
-.modalBox{grid-template-columns:1fr;max-height:92vh;overflow:auto}
-.modalBox img{min-height:auto;height:360px}
-.bottomBar{display:grid}
-}
-@media(max-width:520px){
-.hero{min-height:78vh}
-.hero h1{font-size:34px}
-.logo{font-size:22px}
-.trust,.reviews{grid-template-columns:1fr}
-.card img{height:390px}
-.actions{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -128,18 +122,18 @@ footer{padding:35px 20px 80px;text-align:center;color:#999;font-size:14px}
 <body>
 
 <div class="topbar">
-<span>🚚 500₺ Üzeri Ücretsiz Kargo • 🔒 Güvenli Sipariş • ✨ Yeni Sezon VÉRAXA Drop • WhatsApp ile Hızlı Sipariş</span>
+<span>VÉRAXA NEW COLLECTION • PREMIUM DAILY WEAR • WHATSAPP İLE HIZLI SİPARİŞ • LUXURY CLOTHING BRAND</span>
 </div>
 
 <header>
 <div class="nav">
 <div class="logo" onclick="window.scrollTo({top:0,behavior:'smooth'})">V<span>É</span>RAXA</div>
-<nav class="menu">
-<a href="#products">New In</a>
-<a href="#lookbook">Lookbook</a>
-<a href="#reviews">Yorumlar</a>
-<a href="#faq">SSS</a>
-</nav>
+<div class="menu">
+<a href="#categories">Women</a>
+<a href="#categories">Men</a>
+<a href="#categories">T-Shirts</a>
+<a href="#categories">Daily Wear</a>
+</div>
 <div class="cartBtn" onclick="toggleCart()">Sepet <span id="cartCount">0</span></div>
 </div>
 </header>
@@ -147,85 +141,65 @@ footer{padding:35px 20px 80px;text-align:center;color:#999;font-size:14px}
 <section class="hero">
 <div>
 <h1>VÉRAXA</h1>
-<p>Define Your Presence.</p>
-<button class="btn" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">Shop Now</button>
+<p>DEFINE YOUR PRESENCE</p>
+<button class="btn" onclick="document.getElementById('categories').scrollIntoView()">Explore Collection</button>
 </div>
 </section>
 
-<section class="section" id="products">
-<div class="title">
-<h2>NEW COLLECTION</h2>
-<p>Premium daily wear with luxury attitude.</p>
+<section class="intro">
+<h2>THE VÉRAXA WORLD</h2>
+<p>Veraxa, günlük giyimi premium bir duruşa çevirir. Sade çizgiler, güçlü görünüm ve lüks marka hissi için tasarlanmış özel koleksiyon.</p>
+</section>
+
+<section class="categories" id="categories">
+<div class="cat women" onclick="showProducts('women')">
+<div class="catContent">
+<h2>WOMEN</h2>
+<p>Elegant daily luxury</p>
+<button>View Collection</button>
+</div>
 </div>
 
-<div class="searchBox">
-<input id="searchInput" oninput="searchProducts()" placeholder="Ürün ara: sweatshirt, tee, crop...">
+<div class="cat men" onclick="showProducts('men')">
+<div class="catContent">
+<h2>MEN</h2>
+<p>Strong modern presence</p>
+<button>View Collection</button>
+</div>
 </div>
 
-<div class="filters">
-<button class="active" onclick="filterProducts('all',this)">Tümü</button>
-<button onclick="filterProducts('new',this)">New In</button>
-<button onclick="filterProducts('women',this)">Kadın</button>
-<button onclick="filterProducts('men',this)">Erkek</button>
-<button onclick="filterProducts('tshirt',this)">T-Shirt</button>
-<button onclick="filterProducts('sweatshirt',this)">Sweatshirt</button>
+<div class="cat tshirt" onclick="showProducts('tshirt')">
+<div class="catContent">
+<h2>T-SHIRTS</h2>
+<p>Premium essential pieces</p>
+<button>View Collection</button>
+</div>
 </div>
 
+<div class="cat daily" onclick="showProducts('daily')">
+<div class="catContent">
+<h2>DAILY WEAR</h2>
+<p>Clean luxury for every day</p>
+<button>View Collection</button>
+</div>
+</div>
+</section>
+
+<section class="productsSection" id="productsSection">
+<div class="sectionTitle">
+<h2 id="collectionTitle">COLLECTION</h2>
+<p>Renk ve beden seçerek sepete ekleyin.</p>
+</div>
 <div class="products" id="productList"></div>
-
-<div class="trust">
-<div>🚚<br><br>Hızlı Kargo</div>
-<div>🔒<br><br>Güvenli Sipariş</div>
-<div>↩️<br><br>14 Gün Değişim</div>
-<div>💬<br><br>WhatsApp Destek</div>
-</div>
 </section>
 
-<section class="section" id="lookbook">
-<div class="title">
-<h2>VÉRAXA STYLE</h2>
-<p>Modern, clean and powerful street luxury.</p>
-</div>
-<div class="lookbook">
-<img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=900&auto=format&fit=crop">
-<img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?q=80&w=900&auto=format&fit=crop">
-<img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=900&auto=format&fit=crop">
-</div>
-</section>
-
-<section class="section" id="reviews">
-<div class="title">
-<h2>CUSTOMER NOTES</h2>
-<p>Gerçek marka hissi için sosyal kanıt.</p>
-</div>
-<div class="reviews">
-<div class="review">⭐️⭐️⭐️⭐️⭐️<br>“Kumaş dokusu çok iyi, kalıbı premium duruyor.”<br><br><b>— Elif K.</b></div>
-<div class="review">⭐️⭐️⭐️⭐️⭐️<br>“Oversize duruşu tam istediğim gibi. Paketleme de güzeldi.”<br><br><b>— Mert A.</b></div>
-<div class="review">⭐️⭐️⭐️⭐️⭐️<br>“Minimal ama kaliteli görünüyor. Günlük kombin için ideal.”<br><br><b>— Nisa D.</b></div>
-</div>
-</section>
-
-<section class="section" id="faq">
-<div class="title">
-<h2>SIK SORULAN SORULAR</h2>
-<p>Sipariş öncesi merak edilenler.</p>
-</div>
-<div class="faq">
-<div class="faqItem"><div class="faqQ" onclick="toggleFaq(this)">Kargo kaç günde gelir?</div><div class="faqA">Siparişler genelde 1-3 iş günü içinde hazırlanır. Şehre göre teslimat süresi değişebilir.</div></div>
-<div class="faqItem"><div class="faqQ" onclick="toggleFaq(this)">Değişim var mı?</div><div class="faqA">Evet, kullanılmamış ürünlerde 14 gün içinde beden/renk değişimi yapılabilir.</div></div>
-<div class="faqItem"><div class="faqQ" onclick="toggleFaq(this)">Nasıl sipariş verebilirim?</div><div class="faqA">Ürünü sepete ekleyip WhatsApp ile sipariş verebilirsin. Seçtiğin beden ve renk otomatik mesaj olarak gider.</div></div>
-<div class="faqItem"><div class="faqQ" onclick="toggleFaq(this)">Beden nasıl seçmeliyim?</div><div class="faqA">Oversize görünüm için normal bedenini, daha bol duruş için bir beden büyük tercih edebilirsin.</div></div>
-</div>
-</section>
-
-<section class="brand">
-<h2>VÉRAXA WORLD</h2>
-<p>VÉRAXA sadece kıyafet değil, bir duruş biçimidir. Minimal çizgiler, premium dokular ve güçlü görünüm için tasarlandı.</p>
+<section class="brandStory">
+<h2>NOT JUST CLOTHING</h2>
+<p>VÉRAXA bir kıyafetten fazlasıdır. Görünüşü güçlendiren, sade ama dikkat çeken, premium duruşa sahip bir marka dünyasıdır.</p>
 </section>
 
 <footer>
-<strong>VÉRAXA</strong><br>
-Luxury Clothing Brand
+<strong>VÉRAXA</strong><br>Luxury Clothing Brand
 <div class="contact">
 <a href="https://wa.me/989010718143" target="_blank">WhatsApp</a>
 <a href="https://t.me/nilu_mi" target="_blank">Telegram</a>
@@ -236,155 +210,94 @@ Luxury Clothing Brand
 <div class="cartPanel" id="cartPanel">
 <span class="close" onclick="toggleCart()">×</span>
 <h2>Sepetim</h2>
-<div id="cartItems"></div>
+<div id="cartItems">Sepet boş.</div>
 <button class="whatsapp" onclick="sendWhatsApp()">WhatsApp ile Sipariş Ver</button>
-</div>
-
-<div class="modal" id="productModal">
-<div class="modalBox">
-<span class="modalClose" onclick="closeModal()">×</span>
-<img id="modalImg">
-<div class="modalContent">
-<h2 id="modalName"></h2>
-<div class="price" id="modalPrice"></div>
-<p id="modalDesc"></p>
-<p><b>Kumaş:</b> Premium pamuk karışımı</p>
-<p><b>Kalıp:</b> Rahat / oversize duruş</p>
-<p><b>Yıkama:</b> 30 derecede ters çevirerek yıkayınız.</p>
-<h3 style="margin-top:15px;color:#d6b46a;">Beden Rehberi</h3>
-<table class="sizeTable">
-<tr><th>Beden</th><th>Göğüs</th><th>Boy</th></tr>
-<tr><td>S</td><td>52 cm</td><td>68 cm</td></tr>
-<tr><td>M</td><td>55 cm</td><td>71 cm</td></tr>
-<tr><td>L</td><td>58 cm</td><td>74 cm</td></tr>
-<tr><td>XL</td><td>61 cm</td><td>77 cm</td></tr>
-</table>
-</div>
-</div>
-</div>
-
-<div class="bottomBar">
-<a href="https://wa.me/989010718143" target="_blank">WhatsApp</a>
-<button onclick="toggleCart()">Sepet</button>
-<a href="https://instagram.com/veraxa.co" target="_blank">Instagram</a>
 </div>
 
 <script>
 const products=[
-{name:"Veraxa Noir Oversize Tee",price:"899₺",cat:["new","men","tshirt"],stock:"Son 3 ürün",desc:"Günlük kullanım için premium oversize tişört. Minimal ve güçlü Veraxa duruşu.",img:"https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=900&auto=format&fit=crop"},
-{name:"Veraxa Pearl Women Tee",price:"849₺",cat:["new","women","tshirt"],stock:"Limited",desc:"Kadın koleksiyonu için temiz kesim, sade ve lüks görünüm.",img:"https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=900&auto=format&fit=crop"},
-{name:"Veraxa Shadow Sweatshirt",price:"1.499₺",cat:["men","sweatshirt"],stock:"Son 5 ürün",desc:"Soğuk havalar için rahat, güçlü ve premium sweatshirt.",img:"https://images.unsplash.com/photo-1578587018452-892bacefd3f2?q=80&w=900&auto=format&fit=crop"},
-{name:"Veraxa Muse Crop",price:"799₺",cat:["women","new","tshirt"],stock:"New Drop",desc:"Modern crop kesim. Günlük kombinlerde şık ve sade duruş.",img:"https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=900&auto=format&fit=crop"},
-{name:"Veraxa Classic Black Tee",price:"899₺",cat:["men","tshirt"],stock:"Son 2 ürün",desc:"Siyahın güçlü etkisiyle sade, kaliteli ve kolay kombinlenen tişört.",img:"https://images.unsplash.com/photo-1506629905607-d9d297d8f20b?q=80&w=900&auto=format&fit=crop"},
-{name:"Veraxa Soft Beige Sweat",price:"1.399₺",cat:["women","sweatshirt"],stock:"Limited",desc:"Bej tonlarda soft premium sweatshirt. Temiz ve lüks görünüm.",img:"https://images.unsplash.com/photo-1544441893-675973e31985?q=80&w=900&auto=format&fit=crop"},
-{name:"Veraxa Signature Tee",price:"949₺",cat:["new","tshirt","men"],stock:"Yeni",desc:"Veraxa signature ruhunu taşıyan premium basic tişört.",img:"https://images.unsplash.com/photo-1562157873-818bc0726f68?q=80&w=900&auto=format&fit=crop"},
-{name:"Veraxa Elite Women Top",price:"999₺",cat:["women","new"],stock:"Son 4 ürün",desc:"Şık kesimli kadın üst. Minimal ama dikkat çeken görünüm.",img:"https://images.unsplash.com/photo-1529139574466-a303027c1d8b?q=80&w=900&auto=format&fit=crop"},
-{name:"Veraxa Urban Sweatshirt",price:"1.599₺",cat:["sweatshirt","men","new"],stock:"New Drop",desc:"Urban stil için güçlü, rahat ve kaliteli sweatshirt.",img:"https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=900&auto=format&fit=crop"}
+{name:"Veraxa Noir Oversize Tee",price:"899₺",cat:["men","tshirt","daily"],img:"https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=900&auto=format&fit=crop"},
+{name:"Veraxa Pearl Women Tee",price:"849₺",cat:["women","tshirt","daily"],img:"https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=900&auto=format&fit=crop"},
+{name:"Veraxa Shadow Sweatshirt",price:"1.499₺",cat:["men","daily"],img:"https://images.unsplash.com/photo-1578587018452-892bacefd3f2?q=80&w=900&auto=format&fit=crop"},
+{name:"Veraxa Muse Crop",price:"799₺",cat:["women","tshirt"],img:"https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=900&auto=format&fit=crop"},
+{name:"Veraxa Classic Black Tee",price:"899₺",cat:["men","tshirt"],img:"https://images.unsplash.com/photo-1506629905607-d9d297d8f20b?q=80&w=900&auto=format&fit=crop"},
+{name:"Veraxa Soft Beige Sweat",price:"1.399₺",cat:["women","daily"],img:"https://images.unsplash.com/photo-1544441893-675973e31985?q=80&w=900&auto=format&fit=crop"},
+{name:"Veraxa Signature Tee",price:"949₺",cat:["men","tshirt","daily"],img:"https://images.unsplash.com/photo-1562157873-818bc0726f68?q=80&w=900&auto=format&fit=crop"},
+{name:"Veraxa Elite Women Top",price:"999₺",cat:["women","daily"],img:"https://images.unsplash.com/photo-1529139574466-a303027c1d8b?q=80&w=900&auto=format&fit=crop"},
+{name:"Veraxa Urban Sweatshirt",price:"1.599₺",cat:["men","daily"],img:"https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=900&auto=format&fit=crop"}
 ];
 
 let cart=[];
-let currentFilter="all";
 
-function renderProducts(filter="all",search=""){
+function showProducts(category){
+const titles={women:"WOMEN COLLECTION",men:"MEN COLLECTION",tshirt:"T-SHIRTS COLLECTION",daily:"DAILY WEAR"};
+document.getElementById("collectionTitle").innerText=titles[category]||"COLLECTION";
+document.getElementById("productsSection").classList.add("active");
+renderProducts(category);
+document.getElementById("productsSection").scrollIntoView({behavior:"smooth"});
+}
+
+function renderProducts(category){
 const list=document.getElementById("productList");
 list.innerHTML="";
-products.filter(p=>{
-const matchFilter=filter==="all"||p.cat.includes(filter);
-const matchSearch=p.name.toLowerCase().includes(search.toLowerCase())||p.cat.join(" ").includes(search.toLowerCase());
-return matchFilter&&matchSearch;
-}).forEach((p,index)=>{
-const realIndex=products.indexOf(p);
+products.filter(p=>p.cat.includes(category)).forEach((p,i)=>{
 list.innerHTML+=`
 <div class="card">
-<div class="badge">${p.cat.includes("new")?"NEW":"LIMITED"}</div>
-<div class="stock">${p.stock}</div>
-<img src="${p.img}" onclick="openModal(${realIndex})" alt="${p.name}">
+<div class="badge">VÉRAXA</div>
+<img src="${p.img}" alt="${p.name}">
 <div class="info">
-<h3 onclick="openModal(${realIndex})">${p.name}</h3>
+<h3>${p.name}</h3>
 <div class="price">${p.price}</div>
-<div class="miniText">Bugün 18 kişi inceledi • Premium kumaş</div>
 <div class="selects">
-<select id="size-${realIndex}"><option>S</option><option>M</option><option>L</option><option>XL</option></select>
-<select id="color-${realIndex}"><option>Siyah</option><option>Beyaz</option><option>Gri</option><option>Bej</option></select>
+<select id="size-${i}"><option>S</option><option>M</option><option>L</option><option>XL</option></select>
+<select id="color-${i}"><option>Siyah</option><option>Beyaz</option><option>Gri</option><option>Bej</option></select>
 </div>
-<div class="actions">
-<button class="add" onclick="addToCart(${realIndex})">Sepete Ekle</button>
-<button class="quick" onclick="quickOrder(${realIndex})">Hızlı Sipariş</button>
-</div>
+<button class="add" onclick="addToCart(${products.indexOf(p)},${i})">Sepete Ekle</button>
 </div>
 </div>`;
 });
 }
 
-function filterProducts(cat,btn){
-currentFilter=cat;
-document.querySelectorAll(".filters button").forEach(b=>b.classList.remove("active"));
-btn.classList.add("active");
-renderProducts(cat,document.getElementById("searchInput").value);
-}
-
-function searchProducts(){
-renderProducts(currentFilter,document.getElementById("searchInput").value);
-}
-
-function addToCart(index){
-const size=document.getElementById(`size-${index}`).value;
-const color=document.getElementById(`color-${index}`).value;
-const p=products[index];
+function addToCart(productIndex,selectIndex){
+const p=products[productIndex];
+const size=document.getElementById(`size-${selectIndex}`).value;
+const color=document.getElementById(`color-${selectIndex}`).value;
 cart.push({name:p.name,price:p.price,size,color});
 updateCart();
 document.getElementById("cartPanel").classList.add("open");
 }
 
-function quickOrder(index){
-const size=document.getElementById(`size-${index}`).value;
-const color=document.getElementById(`color-${index}`).value;
-const p=products[index];
-let msg=`Merhaba VÉRAXA, bu ürünü sipariş vermek istiyorum:%0A%0AÜrün: ${p.name}%0AFiyat: ${p.price}%0ABeden: ${size}%0ARenk: ${color}`;
-window.open("https://wa.me/989010718143?text="+msg,"_blank");
-}
-
 function updateCart(){
 document.getElementById("cartCount").innerText=cart.length;
 const items=document.getElementById("cartItems");
-if(cart.length===0){items.innerHTML='<p class="empty">Sepet boş.</p>';return;}
+if(cart.length===0){items.innerHTML="Sepet boş.";return;}
 items.innerHTML=cart.map((item,i)=>`
 <div class="cartItem">
 <strong>${item.name}</strong><br>
 Fiyat: ${item.price}<br>
 Beden: ${item.size}<br>
 Renk: ${item.color}<br>
-<button onclick="removeItem(${i})" style="margin-top:8px;background:transparent;color:#d6b46a;border:none;cursor:pointer;">Sil</button>
+<button onclick="removeItem(${i})" style="margin-top:8px;background:transparent;color:#c7a45d;border:none;cursor:pointer">Sil</button>
 </div>`).join("");
 }
 
-function removeItem(i){cart.splice(i,1);updateCart()}
-function toggleCart(){document.getElementById("cartPanel").classList.toggle("open")}
+function removeItem(i){cart.splice(i,1);updateCart();}
+function toggleCart(){document.getElementById("cartPanel").classList.toggle("open");}
 
 function sendWhatsApp(){
-if(cart.length===0){alert("Sepet boş kanka.");return;}
-let message="Merhaba VÉRAXA, sipariş vermek istiyorum:%0A%0A";
+if(cart.length===0){alert("Sepet boş.");return;}
+let msg="Merhaba VÉRAXA, sipariş vermek istiyorum:%0A%0A";
 cart.forEach((item,i)=>{
-message+=`${i+1}) ${item.name}%0AFiyat: ${item.price}%0ABeden: ${item.size}%0ARenk: ${item.color}%0A%0A`;
+msg+=`${i+1}) ${item.name}%0A`;
+msg+=`Fiyat: ${item.price}%0A`;
+msg+=`Beden: ${item.size}%0A`;
+msg+=`Renk: ${item.color}%0A%0A`;
 });
-message+="Bilgi alabilir miyim?";
-window.open("https://wa.me/989010718143?text="+message,"_blank");
+window.open("https://wa.me/989010718143?text="+msg,"_blank");
 }
 
-function openModal(index){
-const p=products[index];
-document.getElementById("modalImg").src=p.img;
-document.getElementById("modalName").innerText=p.name;
-document.getElementById("modalPrice").innerText=p.price;
-document.getElementById("modalDesc").innerText=p.desc;
-document.getElementById("productModal").classList.add("open");
-}
-function closeModal(){document.getElementById("productModal").classList.remove("open")}
-function toggleFaq(el){el.parentElement.classList.toggle("open")}
-
-renderProducts();
 updateCart();
 </script>
 
 </body>
-</html>
+</html>NMHJKL
