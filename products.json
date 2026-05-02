@@ -12,7 +12,7 @@
     "fabric": "Üç iplik premium kumaş",
     "fit": "Rahat kalıp",
     "desc": "Kanguru cep detaylı kapüşonlu sweat. Günlük premium görünüm için güçlü ve rahat parça.",
-    "img": "https://images.pexels.com/photos/6311397/pexels-photo-6311397.jpeg?auto=compress&cs=tinysrgb&w=900",
+    "img": "https://www.kaktusmoda.com/i/l/013/0133874_muslin-kumas-bol-paca-kadin-pantolon-tas.jpeg",
     "active": true
   },
   {
@@ -28,7 +28,7 @@
     "fabric": "Süprem kumaş",
     "fit": "Oversize",
     "desc": "O yaka oversize kadın tişört. Minimal, sade ve premium günlük stil.",
-    "img": "https://images.pexels.com/photos/7679863/pexels-photo-7679863.jpeg?auto=compress&cs=tinysrgb&w=900",
+    "img": "https://www.kaktusmoda.com/i/l/013/0132625_suprem-kumas-cizgili-kadin-tisort-bordo.jpeg",
     "active": true
   },
   {
@@ -40,11 +40,11 @@
     "category": ["women", "tshirt"],
     "stockText": "16 adet stok",
     "stock": { "STD": 16 },
-    "colors": ["Çizgili"],
+    "colors": ["Fuşya", "Mavi"],
     "fabric": "Süprem kumaş",
     "fit": "Regular",
     "desc": "Çizgili sıfır yaka tişört. Temiz, şehirli ve modern görünüm.",
-    "img": "https://images.pexels.com/photos/6311392/pexels-photo-6311392.jpeg?auto=compress&cs=tinysrgb&w=900",
+    "img": "https://www.kaktusmoda.com/i/l/013/0134185_suprem-kumas-cizgili-sifir-yaka-tisort-fusya.jpeg",
     "active": true
   },
   {
@@ -56,11 +56,11 @@
     "category": ["new", "women"],
     "stockText": "10 adet stok",
     "stock": { "STD": 10 },
-    "colors": ["Bej", "Ekru", "Siyah"],
+    "colors": ["Siyah", "Lacivert", "Antrasit"],
     "fabric": "Müslin kumaş",
     "fit": "Salaş",
     "desc": "Müslin kumaş kimono. Yazlık, hafif ve premium kombin tamamlayıcı.",
-    "img": "https://images.pexels.com/photos/7679655/pexels-photo-7679655.jpeg?auto=compress&cs=tinysrgb&w=900",
+    "img": "https://www.kaktusmoda.com/i/l/013/0136657_muslin-kumas-kimono-lacivert.jpeg",
     "active": true
   },
   {
@@ -72,11 +72,11 @@
     "category": ["new", "women"],
     "stockText": "10 adet stok",
     "stock": { "STD": 10 },
-    "colors": ["Bej", "Ekru", "Siyah"],
+    "colors": ["Taş", "Siyah", "Gri", "Antrasit"],
     "fabric": "Müslin kumaş",
     "fit": "Bol paça",
     "desc": "Bol paça kadın pantolon. Rahat, zarif ve premium yazlık duruş.",
-    "img": "https://images.pexels.com/photos/7679722/pexels-photo-7679722.jpeg?auto=compress&cs=tinysrgb&w=900",
+    "img": "https://www.kaktusmoda.com/i/l/013/0133874_muslin-kumas-bol-paca-kadin-pantolon-tas.jpeg",
     "active": true
   },
   {
@@ -88,11 +88,11 @@
     "category": ["women", "tshirt"],
     "stockText": "52 adet stok",
     "stock": { "STD": 52 },
-    "colors": ["Çizgili"],
+    "colors": ["Bordo", "Mavi", "Siyah", "Lacivert"],
     "fabric": "Süprem kumaş",
     "fit": "Regular",
     "desc": "Çizgili kadın tişört. Günlük kombinlerde sade ama dikkat çeken görünüm.",
-    "img": "https://images.pexels.com/photos/6311475/pexels-photo-6311475.jpeg?auto=compress&cs=tinysrgb&w=900",
+    "img": "https://www.kaktusmoda.com/i/l/013/0132625_suprem-kumas-cizgili-kadin-tisort-bordo.jpeg",
     "active": true
   },
   {
@@ -104,11 +104,11 @@
     "category": ["women"],
     "stockText": "8 adet stok",
     "stock": { "STD": 8 },
-    "colors": ["Siyah", "Beyaz", "Bej"],
+    "colors": ["Kiremit", "Siyah", "Taş", "Ekru"],
     "fabric": "Aerobin kumaş",
     "fit": "Gömlek yaka",
     "desc": "V gömlek yaka kadın gömlek. Hafif kumaşıyla şık ve premium görünüm.",
-    "img": "https://images.pexels.com/photos/7679651/pexels-photo-7679651.jpeg?auto=compress&cs=tinysrgb&w=900",
+    "img": "https://www.kaktusmoda.com/i/l/013/0133290_aerobin-kumas-v-gomlek-yaka-kadin-gomlek-kiremit.jpeg",
     "active": true
   },
   {
@@ -120,11 +120,11 @@
     "category": ["new", "women"],
     "stockText": "4 adet stok",
     "stock": { "STD": 4 },
-    "colors": ["Siyah", "Bej"],
+    "colors": ["Siyah", "Bej", "Saks"],
     "fabric": "Double atlas kumaş",
     "fit": "Kemerli elbise",
     "desc": "Double atlas kumaş kemerli elbise. Daha şık ve özel gün görünümü için.",
-    "img": "https://images.pexels.com/photos/7679720/pexels-photo-7679720.jpeg?auto=compress&cs=tinysrgb&w=900",
+    "img": "https://www.kaktusmoda.com/i/l/013/0133290_aerobin-kumas-v-gomlek-yaka-kadin-gomlek-kiremit.jpeg",
     "active": true
   },
   {
@@ -136,11 +136,11 @@
     "category": ["women", "tshirt"],
     "stockText": "18 adet stok",
     "stock": { "STD": 18 },
-    "colors": ["Çilek", "Beyaz", "Siyah"],
+    "colors": ["Haki", "Bordo", "Bej"],
     "fabric": "Viskon kumaş",
     "fit": "V yaka basic",
     "desc": "V yaka basic tişört. Yumuşak dokulu, günlük ve rahat parça.",
-    "img": "https://images.pexels.com/photos/6311392/pexels-photo-6311392.jpeg?auto=compress&cs=tinysrgb&w=900",
+    "img": "https://www.kaktusmoda.com/i/l/013/0132625_suprem-kumas-cizgili-kadin-tisort-bordo.jpeg",
     "active": true
   },
   {
@@ -152,11 +152,11 @@
     "category": ["women"],
     "stockText": "4 adet stok",
     "stock": { "STD": 4 },
-    "colors": ["Siyah", "Bej", "Gri"],
+    "colors": ["Siyah"],
     "fabric": "Süprem kumaş",
     "fit": "Polo yaka elbise",
     "desc": "Polo yaka elbise. Sportif ama premium kadın görünümü.",
-    "img": "https://images.pexels.com/photos/7679863/pexels-photo-7679863.jpeg?auto=compress&cs=tinysrgb&w=900",
+    "img": "https://www.kaktusmoda.com/i/l/013/0132625_suprem-kumas-cizgili-kadin-tisort-bordo.jpeg",
     "active": true
   },
   {
@@ -172,7 +172,7 @@
     "fabric": "Ribana kumaş",
     "fit": "Crop",
     "desc": "Ribana crop top. Modern, fit ve günlük kombinlere uygun.",
-    "img": "https://images.pexels.com/photos/7679655/pexels-photo-7679655.jpeg?auto=compress&cs=tinysrgb&w=900",
+    "img": "https://www.kaktusmoda.com/i/l/013/0132625_suprem-kumas-cizgili-kadin-tisort-bordo.jpeg",
     "active": true
   },
   {
@@ -188,7 +188,7 @@
     "fabric": "Kayık yaka kumaş",
     "fit": "Yanları büzgülü",
     "desc": "Kayık yaka yanları büzgülü bluz. Zarif ve feminen premium duruş.",
-    "img": "https://images.pexels.com/photos/7679651/pexels-photo-7679651.jpeg?auto=compress&cs=tinysrgb&w=900",
+    "img": "https://www.kaktusmoda.com/i/l/013/0133290_aerobin-kumas-v-gomlek-yaka-kadin-gomlek-kiremit.jpeg",
     "active": true
   },
   {
@@ -204,7 +204,7 @@
     "fabric": "Ribana kumaş",
     "fit": "Halter body",
     "desc": "Ribana halter kadın body. Fit, modern ve güçlü yaz stili.",
-    "img": "https://images.pexels.com/photos/7679722/pexels-photo-7679722.jpeg?auto=compress&cs=tinysrgb&w=900",
+    "img": "https://www.kaktusmoda.com/i/l/013/0132625_suprem-kumas-cizgili-kadin-tisort-bordo.jpeg",
     "active": true
   },
   {
@@ -220,7 +220,7 @@
     "fabric": "Ribana kumaş",
     "fit": "Yetim kol",
     "desc": "Ribana yetim kol kadın bluz. Basic ama premium kombin parçası.",
-    "img": "https://images.pexels.com/photos/6311392/pexels-photo-6311392.jpeg?auto=compress&cs=tinysrgb&w=900",
+    "img": "https://www.kaktusmoda.com/i/l/013/0133290_aerobin-kumas-v-gomlek-yaka-kadin-gomlek-kiremit.jpeg",
     "active": true
   },
   {
@@ -236,7 +236,7 @@
     "fabric": "Kayık yaka kumaş",
     "fit": "Omuzları büzgülü",
     "desc": "Kayık yaka omuzları büzgülü bluz. Şık, modern ve dikkat çeken duruş.",
-    "img": "https://images.pexels.com/photos/7679863/pexels-photo-7679863.jpeg?auto=compress&cs=tinysrgb&w=900",
+    "img": "https://www.kaktusmoda.com/i/l/013/0133290_aerobin-kumas-v-gomlek-yaka-kadin-gomlek-kiremit.jpeg",
     "active": true
   },
   {
@@ -252,7 +252,7 @@
     "fabric": "30/2 süprem kumaş",
     "fit": "Basic",
     "desc": "O yaka basic kadın tişört. Her kombine uyan temiz premium parça.",
-    "img": "https://images.pexels.com/photos/6311475/pexels-photo-6311475.jpeg?auto=compress&cs=tinysrgb&w=900",
+    "img": "https://www.kaktusmoda.com/i/l/013/0132625_suprem-kumas-cizgili-kadin-tisort-bordo.jpeg",
     "active": true
   }
 ]
