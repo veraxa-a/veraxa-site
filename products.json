@@ -1,6 +1,3 @@
-Kanka tamam. `products.json` içini **komple sil**, bunu baştan sona yapıştır. Bu temiz ve çalışır hal. 
-
-```json
 [
   {
     "id": 1,
@@ -290,6 +287,3 @@ Kanka tamam. `products.json` içini **komple sil**, bunu baştan sona yapıştı
     "active": true
   }
 ]
-```
-
-Bunu yapıştır → **Commit changes** → sitede **CTRL + F5**.
