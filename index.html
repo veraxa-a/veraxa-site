@@ -475,7 +475,7 @@ filtered.forEach(p=>{
 const i=products.indexOf(p);
 const cats=getCats(p);
 const totalStock=getTotalStock(p);
-const stockLabel=totalStock>0 ? (p.stockText || "Stokta var") : "Stokta yok";
+const stockLabel="Premium Drop";
 const mainImg=getMainImg(p);
 
 let sizeOptions="";
@@ -484,7 +484,7 @@ Object.keys(p.stock).forEach(size=>{
 sizeOptions+=`<option value="${size}" ${p.stock[size]<=0?"disabled":""}>${size} ${p.stock[size]<=0?"- Tükendi":""}</option>`;
 });
 }else{
-sizeOptions="<option>STD</option>";
+sizeOptions="<option>Tek Beden</option>";
 }
 
 let colorOptions="";
