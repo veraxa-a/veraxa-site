@@ -431,11 +431,30 @@ function loadProducts(){
 fetch("products.json")
 .then(res=>res.json())
 .then(data=>{
+
 products=data.filter(p=>p.active);
+
+// 🔥 20 ADET TÜKENMİŞ ÜRÜN EKLE
+for(let i=1;i<=20;i++){
+products.push({
+id: 900+i,
+sku: "VX-SOLD-"+i,
+name: "Veraxa Limited "+i,
+price: "599₺",
+stockText: "Sold Out",
+stock: { STD: 0 },
+colors: [
+{ name:"Siyah", img:"images/26Y009-siyah.jpeg" }
+],
+fabric: "Premium Cotton",
+fit: "Slim Fit",
+desc: "Bu ürün tükenmiştir.",
+active: true
+});
+}
+
 renderProducts();
-})
-.catch(()=>{
-document.getElementById("productList").innerHTML="<p style='color:#aaa;text-align:center;grid-column:1/-1'>Ürün listesi yüklenemedi. products.json dosyasını kontrol et.</p>";
+
 });
 }
 
