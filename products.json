@@ -5,23 +5,12 @@
     "name": "Veraxa Aerobin V Shirt",
     "price": "699₺",
     "cost": 150,
-    "category": [
-      "new",
-      "women"
-    ],
-    "stockText": "8 adet stok",
-    "stock": {
-      "STD": 8
-    },
+    "category": ["new", "women"],
+    "stockText": "Limited Collection",
+    "stock": { "STD": 8 },
     "colors": [
-      {
-        "name": "Lila",
-        "img": "images/25MY6002-lila.jpeg"
-      },
-      {
-        "name": "Yeşil",
-        "img": "images/25MY6002-yesil.jpeg"
-      }
+      { "name": "Lila", "img": "images/25MY6002-lila.jpeg" },
+      { "name": "Yeşil", "img": "images/25MY6002-yesil.jpeg" }
     ],
     "fabric": "Aerobin kumaş",
     "fit": "V gömlek yaka",
@@ -34,39 +23,16 @@
     "name": "Veraxa Riviera Stripe Tee",
     "price": "499₺",
     "cost": 100,
-    "category": [
-      "women",
-      "tshirt"
-    ],
-    "stockText": "52 adet stok",
-    "stock": {
-      "STD": 52
-    },
+    "category": ["women", "tshirt"],
+    "stockText": "Limited Collection",
+    "stock": { "STD": 52 },
     "colors": [
-      {
-        "name": "Yeşil",
-        "img": "images/25MY5504-yesil.jpeg"
-      },
-      {
-        "name": "Bordo",
-        "img": "images/25MY5504-bordo.jpeg"
-      },
-      {
-        "name": "Pembe",
-        "img": "images/25MY5504-pembe.jpeg"
-      },
-      {
-        "name": "Mavi",
-        "img": "images/25MY5504-mavi.jpeg"
-      },
-      {
-        "name": "Siyah",
-        "img": "images/25MY5504-siyah.jpeg"
-      },
-      {
-        "name": "Lacivert",
-        "img": "images/25MY5504-lacivert.jpeg"
-      }
+      { "name": "Yeşil", "img": "images/25MY5504-yesil.jpeg" },
+      { "name": "Bordo", "img": "images/25MY5504-bordo.jpeg" },
+      { "name": "Pembe", "img": "images/25MY5504-pembe.jpeg" },
+      { "name": "Mavi", "img": "images/25MY5504-mavi.jpeg" },
+      { "name": "Siyah", "img": "images/25MY5504-siyah.jpeg" },
+      { "name": "Lacivert", "img": "images/25MY5504-lacivert.jpeg" }
     ],
     "fabric": "Süprem kumaş",
     "fit": "Regular",
@@ -79,35 +45,15 @@
     "name": "Veraxa Berry V Basic Tee",
     "price": "399₺",
     "cost": 80,
-    "category": [
-      "women",
-      "tshirt"
-    ],
-    "stockText": "18 adet stok",
-    "stock": {
-      "STD": 18
-    },
+    "category": ["women", "tshirt"],
+    "stockText": "Limited Collection",
+    "stock": { "STD": 18 },
     "colors": [
-      {
-        "name": "Bej",
-        "img": "images/25TP305-bej.jpeg"
-      },
-      {
-        "name": "Kahve",
-        "img": "images/25TP305-kahve.jpeg"
-      },
-      {
-        "name": "Gri",
-        "img": "images/25TP305-gri.jpeg"
-      },
-      {
-        "name": "Haki",
-        "img": "images/25TP305-haki.jpeg"
-      },
-      {
-        "name": "Bordo",
-        "img": "images/25TP305-bordo.jpeg"
-      }
+      { "name": "Bej", "img": "images/25TP305-bej.jpeg" },
+      { "name": "Kahve", "img": "images/25TP305-kahve.jpeg" },
+      { "name": "Gri", "img": "images/25TP305-gri.jpeg" },
+      { "name": "Haki", "img": "images/25TP305-haki.jpeg" },
+      { "name": "Bordo", "img": "images/25TP305-bordo.jpeg" }
     ],
     "fabric": "Viskon kumaş",
     "fit": "V yaka basic",
@@ -120,19 +66,11 @@
     "name": "Veraxa Polo Mini Dress",
     "price": "999₺",
     "cost": 200,
-    "category": [
-      "new",
-      "women"
-    ],
-    "stockText": "4 adet stok",
-    "stock": {
-      "STD": 4
-    },
+    "category": ["new", "women"],
+    "stockText": "Limited Collection",
+    "stock": { "STD": 4 },
     "colors": [
-      {
-        "name": "Siyah",
-        "img": "images/25VL074-siyah.jpeg"
-      }
+      { "name": "Siyah", "img": "images/25VL074-siyah.jpeg" }
     ],
     "fabric": "Süprem kumaş",
     "fit": "Polo yaka elbise",
@@ -145,19 +83,11 @@
     "name": "Veraxa Atlas Belted Dress",
     "price": "1399₺",
     "cost": 250,
-    "category": [
-      "new",
-      "women"
-    ],
-    "stockText": "4 adet stok",
-    "stock": {
-      "STD": 4
-    },
+    "category": ["new", "women"],
+    "stockText": "Limited Collection",
+    "stock": { "STD": 4 },
     "colors": [
-      {
-        "name": "Saks",
-        "img": "images/25NO4517-saks.jpeg"
-      }
+      { "name": "Saks", "img": "images/25NO4517-saks.jpeg" }
     ],
     "fabric": "Double atlas kumaş",
     "fit": "Kemerli elbise",
@@ -170,19 +100,11 @@
     "name": "Veraxa Muse Kimono",
     "price": "799₺",
     "cost": 150,
-    "category": [
-      "new",
-      "women"
-    ],
-    "stockText": "10 adet stok",
-    "stock": {
-      "STD": 10
-    },
+    "category": ["new", "women"],
+    "stockText": "Limited Collection",
+    "stock": { "STD": 10 },
     "colors": [
-      {
-        "name": "Gri",
-        "img": "images/25MY5001-gri.jpeg"
-      }
+      { "name": "Gri", "img": "images/25MY5001-gri.jpeg" }
     ],
     "fabric": "Müslin kumaş",
     "fit": "Salaş kimono",
@@ -195,19 +117,11 @@
     "name": "Veraxa Muse Wide Leg Pants",
     "price": "899₺",
     "cost": 200,
-    "category": [
-      "new",
-      "women"
-    ],
-    "stockText": "10 adet stok",
-    "stock": {
-      "STD": 10
-    },
+    "category": ["new", "women"],
+    "stockText": "Limited Collection",
+    "stock": { "STD": 10 },
     "colors": [
-      {
-        "name": "Lacivert",
-        "img": "images/25MY5002-lacivert.jpeg"
-      }
+      { "name": "Lacivert", "img": "images/25MY5002-lacivert.jpeg" }
     ],
     "fabric": "Müslin kumaş",
     "fit": "Bol paça",
@@ -220,43 +134,17 @@
     "name": "Veraxa Linea Oversize Tee",
     "price": "499₺",
     "cost": 100,
-    "category": [
-      "women",
-      "tshirt"
-    ],
-    "stockText": "16 adet stok",
-    "stock": {
-      "STD": 16
-    },
+    "category": ["women", "tshirt"],
+    "stockText": "Limited Collection",
+    "stock": { "STD": 16 },
     "colors": [
-      {
-        "name": "Mavi",
-        "img": "images/25MY25585-mavi.jpeg"
-      },
-      {
-        "name": "Açık Mavi",
-        "img": "images/25MY25585-acik-mavi.jpeg"
-      },
-      {
-        "name": "Lacivert",
-        "img": "images/25MY25585-lacivert.jpeg"
-      },
-      {
-        "name": "Yeşil",
-        "img": "images/25MY25585-yesil.jpeg"
-      },
-      {
-        "name": "Siyah",
-        "img": "images/25MY25585-siyah.jpeg"
-      },
-      {
-        "name": "Bordo",
-        "img": "images/25MY25585-bordo.jpeg"
-      },
-      {
-        "name": "Fuşya",
-        "img": "images/25MY25585-fusya.jpeg"
-      }
+      { "name": "Mavi", "img": "images/25MY25585-mavi.jpeg" },
+      { "name": "Açık Mavi", "img": "images/25MY25585-acik-mavi.jpeg" },
+      { "name": "Lacivert", "img": "images/25MY25585-lacivert.jpeg" },
+      { "name": "Yeşil", "img": "images/25MY25585-yesil.jpeg" },
+      { "name": "Siyah", "img": "images/25MY25585-siyah.jpeg" },
+      { "name": "Bordo", "img": "images/25MY25585-bordo.jpeg" },
+      { "name": "Fuşya", "img": "images/25MY25585-fusya.jpeg" }
     ],
     "fabric": "Süprem kumaş",
     "fit": "Oversize",
@@ -269,44 +157,17 @@
     "name": "Veraxa Essential O Neck Tee",
     "price": "549₺",
     "cost": 125,
-    "category": [
-      "new",
-      "women",
-      "tshirt"
-    ],
-    "stockText": "60 adet stok",
-    "stock": {
-      "STD": 60
-    },
+    "category": ["new", "women", "tshirt"],
+    "stockText": "Limited Collection",
+    "stock": { "STD": 60 },
     "colors": [
-      {
-        "name": "Lacivert",
-        "img": "images/26Y020-lacivert.jpeg"
-      },
-      {
-        "name": "Gri",
-        "img": "images/26Y020-gri.jpeg"
-      },
-      {
-        "name": "Beyaz",
-        "img": "images/26Y020-beyaz.jpeg"
-      },
-      {
-        "name": "Siyah",
-        "img": "images/26Y020-siyah.jpeg"
-      },
-      {
-        "name": "Yeşil",
-        "img": "images/26Y020-yesil.jpeg"
-      },
-      {
-        "name": "Bej",
-        "img": "images/26Y020-bej.jpeg"
-      },
-      {
-        "name": "Kahve",
-        "img": "images/26Y020-kahve.jpeg"
-      }
+      { "name": "Lacivert", "img": "images/26Y020-lacivert.jpeg" },
+      { "name": "Gri", "img": "images/26Y020-gri.jpeg" },
+      { "name": "Beyaz", "img": "images/26Y020-beyaz.jpeg" },
+      { "name": "Siyah", "img": "images/26Y020-siyah.jpeg" },
+      { "name": "Yeşil", "img": "images/26Y020-yesil.jpeg" },
+      { "name": "Bej", "img": "images/26Y020-bej.jpeg" },
+      { "name": "Kahve", "img": "images/26Y020-kahve.jpeg" }
     ],
     "fabric": "30/2 süprem kumaş",
     "fit": "Basic",
@@ -319,48 +180,18 @@
     "name": "Veraxa Slim Boat Neck Tee",
     "price": "599₺",
     "cost": 100,
-    "category": [
-      "new",
-      "women",
-      "tshirt"
-    ],
-    "stockText": "60 adet stok",
-    "stock": {
-      "STD": 60
-    },
+    "category": ["new", "women", "tshirt"],
+    "stockText": "Limited Collection",
+    "stock": { "STD": 60 },
     "colors": [
-      {
-        "name": "Siyah",
-        "img": "images/26Y010-siyah.jpeg"
-      },
-      {
-        "name": "Beyaz",
-        "img": "images/26Y010-beyaz.jpeg"
-      },
-      {
-        "name": "Gri",
-        "img": "images/26Y010-gri.jpeg"
-      },
-      {
-        "name": "Lacivert",
-        "img": "images/26Y010-lacivert.jpeg"
-      },
-      {
-        "name": "Pudra",
-        "img": "images/26Y010-pudra.jpeg"
-      },
-      {
-        "name": "Bej",
-        "img": "images/26Y010-bej.jpeg"
-      },
-      {
-        "name": "Kahve",
-        "img": "images/26Y010-kahve.jpeg"
-      },
-      {
-        "name": "Krem",
-        "img": "images/26Y010-krem.jpeg"
-      }
+      { "name": "Siyah", "img": "images/26Y010-siyah.jpeg" },
+      { "name": "Beyaz", "img": "images/26Y010-beyaz.jpeg" },
+      { "name": "Gri", "img": "images/26Y010-gri.jpeg" },
+      { "name": "Lacivert", "img": "images/26Y010-lacivert.jpeg" },
+      { "name": "Pudra", "img": "images/26Y010-pudra.jpeg" },
+      { "name": "Bej", "img": "images/26Y010-bej.jpeg" },
+      { "name": "Kahve", "img": "images/26Y010-kahve.jpeg" },
+      { "name": "Krem", "img": "images/26Y010-krem.jpeg" }
     ],
     "fabric": "Esnek premium kumaş",
     "fit": "Slim fit",
@@ -373,31 +204,14 @@
     "name": "Veraxa Sculpt Tank",
     "price": "549₺",
     "cost": 95,
-    "category": [
-      "new",
-      "women"
-    ],
-    "stockText": "36 adet stok",
-    "stock": {
-      "STD": 36
-    },
+    "category": ["new", "women"],
+    "stockText": "Limited Collection",
+    "stock": { "STD": 36 },
     "colors": [
-      {
-        "name": "Siyah",
-        "img": "images/26Y008-siyah.jpeg"
-      },
-      {
-        "name": "Kahve",
-        "img": "images/26Y008-kahve.jpeg"
-      },
-      {
-        "name": "Krem",
-        "img": "images/26Y008-krem.jpeg"
-      },
-      {
-        "name": "Beyaz",
-        "img": "images/26Y008-beyaz.jpeg"
-      }
+      { "name": "Siyah", "img": "images/26Y008-siyah.jpeg" },
+      { "name": "Kahve", "img": "images/26Y008-kahve.jpeg" },
+      { "name": "Krem", "img": "images/26Y008-krem.jpeg" },
+      { "name": "Beyaz", "img": "images/26Y008-beyaz.jpeg" }
     ],
     "fabric": "Ribana kumaş",
     "fit": "Halter fit",
@@ -410,35 +224,15 @@
     "name": "Veraxa Core Tee",
     "price": "499₺",
     "cost": 100,
-    "category": [
-      "women",
-      "tshirt"
-    ],
-    "stockText": "60 adet stok",
-    "stock": {
-      "STD": 60
-    },
+    "category": ["women", "tshirt"],
+    "stockText": "Limited Collection",
+    "stock": { "STD": 60 },
     "colors": [
-      {
-        "name": "Siyah",
-        "img": "images/26Y009-siyah.jpeg"
-      },
-      {
-        "name": "Beyaz",
-        "img": "images/26Y009-beyaz.jpeg"
-      },
-      {
-        "name": "Lacivert",
-        "img": "images/26Y009-lacivert.jpeg"
-      },
-      {
-        "name": "Pembe",
-        "img": "images/26Y009-pembe.jpeg"
-      },
-      {
-        "name": "Bej",
-        "img": "images/26Y009-bej.jpeg"
-      }
+      { "name": "Siyah", "img": "images/26Y009-siyah.jpeg" },
+      { "name": "Beyaz", "img": "images/26Y009-beyaz.jpeg" },
+      { "name": "Lacivert", "img": "images/26Y009-lacivert.jpeg" },
+      { "name": "Pembe", "img": "images/26Y009-pembe.jpeg" },
+      { "name": "Bej", "img": "images/26Y009-bej.jpeg" }
     ],
     "fabric": "Yumuşak esnek kumaş",
     "fit": "Slim fit",
@@ -451,48 +245,18 @@
     "name": "Veraxa Crop Core",
     "price": "449₺",
     "cost": 90,
-    "category": [
-      "new",
-      "women",
-      "tshirt"
-    ],
-    "stockText": "60 adet stok",
-    "stock": {
-      "STD": 60
-    },
+    "category": ["new", "women", "tshirt"],
+    "stockText": "Limited Collection",
+    "stock": { "STD": 60 },
     "colors": [
-      {
-        "name": "Gri",
-        "img": "images/26Y005-gri.jpeg"
-      },
-      {
-        "name": "Beyaz",
-        "img": "images/26Y005-beyaz.jpeg"
-      },
-      {
-        "name": "Kahve",
-        "img": "images/26Y005-kahve.jpeg"
-      },
-      {
-        "name": "Lacivert",
-        "img": "images/26Y005-lacivert.jpeg"
-      },
-      {
-        "name": "Pembe",
-        "img": "images/26Y005-pembe.jpeg"
-      },
-      {
-        "name": "Siyah",
-        "img": "images/26Y005-siyah.jpeg"
-      },
-      {
-        "name": "Bej",
-        "img": "images/26Y005-bej.jpeg"
-      },
-      {
-        "name": "Krem",
-        "img": "images/26Y005-krem.jpeg"
-      }
+      { "name": "Gri", "img": "images/26Y005-gri.jpeg" },
+      { "name": "Beyaz", "img": "images/26Y005-beyaz.jpeg" },
+      { "name": "Kahve", "img": "images/26Y005-kahve.jpeg" },
+      { "name": "Lacivert", "img": "images/26Y005-lacivert.jpeg" },
+      { "name": "Pembe", "img": "images/26Y005-pembe.jpeg" },
+      { "name": "Siyah", "img": "images/26Y005-siyah.jpeg" },
+      { "name": "Bej", "img": "images/26Y005-bej.jpeg" },
+      { "name": "Krem", "img": "images/26Y005-krem.jpeg" }
     ],
     "fabric": "Ribana kumaş",
     "fit": "Crop fit",
@@ -505,347 +269,21 @@
     "name": "Veraxa Core Fit Tee",
     "price": "499₺",
     "cost": 100,
-    "category": [
-      "women",
-      "tshirt"
-    ],
-    "stockText": "60 adet stok",
-    "stock": {
-      "STD": 60
-    },
+    "category": ["women", "tshirt"],
+    "stockText": "Limited Collection",
+    "stock": { "STD": 60 },
     "colors": [
-      {
-        "name": "Siyah",
-        "img": "images/26Y006-siyah.jpeg"
-      },
-      {
-        "name": "Beyaz",
-        "img": "images/26Y006-beyaz.jpeg"
-      },
-      {
-        "name": "Gri",
-        "img": "images/26Y006-gri.jpeg"
-      },
-      {
-        "name": "Bej",
-        "img": "images/26Y006-bej.jpeg"
-      },
-      {
-        "name": "Kahve",
-        "img": "images/26Y006-kahve.jpeg"
-      },
-      {
-        "name": "Lacivert",
-        "img": "images/26Y006-lacivert.jpeg"
-      },
-      {
-        "name": "Pudra",
-        "img": "images/26Y006-pudra.jpeg"
-      }
+      { "name": "Siyah", "img": "images/26Y006-siyah.jpeg" },
+      { "name": "Beyaz", "img": "images/26Y006-beyaz.jpeg" },
+      { "name": "Gri", "img": "images/26Y006-gri.jpeg" },
+      { "name": "Bej", "img": "images/26Y006-bej.jpeg" },
+      { "name": "Kahve", "img": "images/26Y006-kahve.jpeg" },
+      { "name": "Lacivert", "img": "images/26Y006-lacivert.jpeg" },
+      { "name": "Pudra", "img": "images/26Y006-pudra.jpeg" }
     ],
     "fabric": "Esnek premium kumaş",
     "fit": "Slim fit",
     "desc": "Vücuda oturan yarım kol premium basic tişört. Şık ve günlük kombinlere uygun.",
     "active": true
   }
-],
-{
-  "id": 15,
-  "sku": "VRX-SOLD-001",
-  "name": "Veraxa Noir Luxury Dress",
-  "price": "1299₺",
-  "cost": 0,
-  "category": ["women", "new"],
-  "stockText": "Tükendi",
-  "stock": { "STD": 0 },
-  "colors": [{ "name": "Siyah", "img": "images/25NO4517-saks.jpeg" }],
-  "fabric": "Premium kumaş",
-  "fit": "Luxury fit",
-  "desc": "Sınırlı koleksiyon premium kadın elbise.",
-  "active": true
-},
-{
-  "id": 16,
-  "sku": "VRX-SOLD-002",
-  "name": "Veraxa Pearl Slim Tee",
-  "price": "599₺",
-  "cost": 0,
-  "category": ["women", "tshirt"],
-  "stockText": "Tükendi",
-  "stock": { "STD": 0 },
-  "colors": [{ "name": "Beyaz", "img": "images/26Y020-beyaz.jpeg" }],
-  "fabric": "Premium süprem kumaş",
-  "fit": "Slim fit",
-  "desc": "Minimal ve premium günlük tişört.",
-  "active": true
-},
-{
-  "id": 17,
-  "sku": "VRX-SOLD-003",
-  "name": "Veraxa Gold Line Blouse",
-  "price": "699₺",
-  "cost": 0,
-  "category": ["women"],
-  "stockText": "Tükendi",
-  "stock": { "STD": 0 },
-  "colors": [{ "name": "Bej", "img": "images/26Y006-bej.jpeg" }],
-  "fabric": "Esnek premium kumaş",
-  "fit": "Regular fit",
-  "desc": "Şık ve zamansız kadın bluz.",
-  "active": true
-},
-{
-  "id": 18,
-  "sku": "VRX-SOLD-004",
-  "name": "Veraxa Milano Crop",
-  "price": "499₺",
-  "cost": 0,
-  "category": ["women", "tshirt"],
-  "stockText": "Tükendi",
-  "stock": { "STD": 0 },
-  "colors": [{ "name": "Siyah", "img": "images/26Y005-siyah.jpeg" }],
-  "fabric": "Ribana kumaş",
-  "fit": "Crop fit",
-  "desc": "Modern crop kesim premium üst.",
-  "active": true
-},
-{
-  "id": 19,
-  "sku": "VRX-SOLD-005",
-  "name": "Veraxa Paris Tank",
-  "price": "549₺",
-  "cost": 0,
-  "category": ["women"],
-  "stockText": "Tükendi",
-  "stock": { "STD": 0 },
-  "colors": [{ "name": "Krem", "img": "images/26Y008-krem.jpeg" }],
-  "fabric": "Ribana kumaş",
-  "fit": "Halter fit",
-  "desc": "Şık halter yaka premium atlet.",
-  "active": true
-},
-{
-  "id": 20,
-  "sku": "VRX-SOLD-006",
-  "name": "Veraxa Soft Beige Tee",
-  "price": "499₺",
-  "cost": 0,
-  "category": ["women", "tshirt"],
-  "stockText": "Tükendi",
-  "stock": { "STD": 0 },
-  "colors": [{ "name": "Bej", "img": "images/26Y009-bej.jpeg" }],
-  "fabric": "Yumuşak kumaş",
-  "fit": "Slim fit",
-  "desc": "Günlük premium basic tişört.",
-  "active": true
-},
-{
-  "id": 21,
-  "sku": "VRX-SOLD-007",
-  "name": "Veraxa Elite Shirt",
-  "price": "799₺",
-  "cost": 0,
-  "category": ["women"],
-  "stockText": "Tükendi",
-  "stock": { "STD": 0 },
-  "colors": [{ "name": "Lila", "img": "images/25MY6002-lila.jpeg" }],
-  "fabric": "Aerobin kumaş",
-  "fit": "Gömlek yaka",
-  "desc": "Hafif ve şık premium gömlek.",
-  "active": true
-},
-{
-  "id": 22,
-  "sku": "VRX-SOLD-008",
-  "name": "Veraxa Royal Stripe Tee",
-  "price": "549₺",
-  "cost": 0,
-  "category": ["women", "tshirt"],
-  "stockText": "Tükendi",
-  "stock": { "STD": 0 },
-  "colors": [{ "name": "Lacivert", "img": "images/25MY25585-lacivert.jpeg" }],
-  "fabric": "Süprem kumaş",
-  "fit": "Oversize",
-  "desc": "Çizgili oversize premium tişört.",
-  "active": true
-},
-{
-  "id": 23,
-  "sku": "VRX-SOLD-009",
-  "name": "Veraxa Muse Set Kimono",
-  "price": "899₺",
-  "cost": 0,
-  "category": ["women", "new"],
-  "stockText": "Tükendi",
-  "stock": { "STD": 0 },
-  "colors": [{ "name": "Gri", "img": "images/25MY5001-gri.jpeg" }],
-  "fabric": "Müslin kumaş",
-  "fit": "Salaş",
-  "desc": "Yazlık premium kimono.",
-  "active": true
-},
-{
-  "id": 24,
-  "sku": "VRX-SOLD-010",
-  "name": "Veraxa Muse Set Pants",
-  "price": "999₺",
-  "cost": 0,
-  "category": ["women"],
-  "stockText": "Tükendi",
-  "stock": { "STD": 0 },
-  "colors": [{ "name": "Lacivert", "img": "images/25MY5002-lacivert.jpeg" }],
-  "fabric": "Müslin kumaş",
-  "fit": "Bol paça",
-  "desc": "Premium bol paça yazlık pantolon.",
-  "active": true
-},
-{
-  "id": 25,
-  "sku": "VRX-SOLD-011",
-  "name": "Veraxa Black Core Tee",
-  "price": "499₺",
-  "cost": 0,
-  "category": ["women", "tshirt"],
-  "stockText": "Tükendi",
-  "stock": { "STD": 0 },
-  "colors": [{ "name": "Siyah", "img": "images/26Y009-siyah.jpeg" }],
-  "fabric": "Premium kumaş",
-  "fit": "Slim fit",
-  "desc": "Siyah basic premium tişört.",
-  "active": true
-},
-{
-  "id": 26,
-  "sku": "VRX-SOLD-012",
-  "name": "Veraxa White Core Tee",
-  "price": "499₺",
-  "cost": 0,
-  "category": ["women", "tshirt"],
-  "stockText": "Tükendi",
-  "stock": { "STD": 0 },
-  "colors": [{ "name": "Beyaz", "img": "images/26Y009-beyaz.jpeg" }],
-  "fabric": "Premium kumaş",
-  "fit": "Slim fit",
-  "desc": "Beyaz basic premium tişört.",
-  "active": true
-},
-{
-  "id": 27,
-  "sku": "VRX-SOLD-013",
-  "name": "Veraxa Luxe O Neck",
-  "price": "599₺",
-  "cost": 0,
-  "category": ["women", "tshirt"],
-  "stockText": "Tükendi",
-  "stock": { "STD": 0 },
-  "colors": [{ "name": "Siyah", "img": "images/26Y020-siyah.jpeg" }],
-  "fabric": "30/2 süprem kumaş",
-  "fit": "Basic",
-  "desc": "O yaka premium basic tişört.",
-  "active": true
-},
-{
-  "id": 28,
-  "sku": "VRX-SOLD-014",
-  "name": "Veraxa Cream Sculpt Tank",
-  "price": "549₺",
-  "cost": 0,
-  "category": ["women"],
-  "stockText": "Tükendi",
-  "stock": { "STD": 0 },
-  "colors": [{ "name": "Krem", "img": "images/26Y008-krem.jpeg" }],
-  "fabric": "Ribana kumaş",
-  "fit": "Halter fit",
-  "desc": "Premium halter yaka fit üst.",
-  "active": true
-},
-{
-  "id": 29,
-  "sku": "VRX-SOLD-015",
-  "name": "Veraxa Brown Crop Core",
-  "price": "449₺",
-  "cost": 0,
-  "category": ["women", "tshirt"],
-  "stockText": "Tükendi",
-  "stock": { "STD": 0 },
-  "colors": [{ "name": "Kahve", "img": "images/26Y005-kahve.jpeg" }],
-  "fabric": "Ribana kumaş",
-  "fit": "Crop fit",
-  "desc": "Kahve tonlu premium crop tişört.",
-  "active": true
-},
-{
-  "id": 30,
-  "sku": "VRX-SOLD-016",
-  "name": "Veraxa Pink Core Fit",
-  "price": "499₺",
-  "cost": 0,
-  "category": ["women", "tshirt"],
-  "stockText": "Tükendi",
-  "stock": { "STD": 0 },
-  "colors": [{ "name": "Pudra", "img": "images/26Y006-pudra.jpeg" }],
-  "fabric": "Esnek premium kumaş",
-  "fit": "Slim fit",
-  "desc": "Pudra tonlu premium basic tişört.",
-  "active": true
-},
-{
-  "id": 31,
-  "sku": "VRX-SOLD-017",
-  "name": "Veraxa Bordeaux V Tee",
-  "price": "399₺",
-  "cost": 0,
-  "category": ["women", "tshirt"],
-  "stockText": "Tükendi",
-  "stock": { "STD": 0 },
-  "colors": [{ "name": "Bordo", "img": "images/25TP305-bordo.jpeg" }],
-  "fabric": "Viskon kumaş",
-  "fit": "V yaka",
-  "desc": "Bordo V yaka premium basic tişört.",
-  "active": true
-},
-{
-  "id": 32,
-  "sku": "VRX-SOLD-018",
-  "name": "Veraxa Blue Stripe Tee",
-  "price": "499₺",
-  "cost": 0,
-  "category": ["women", "tshirt"],
-  "stockText": "Tükendi",
-  "stock": { "STD": 0 },
-  "colors": [{ "name": "Mavi", "img": "images/25MY5504-mavi.jpeg" }],
-  "fabric": "Süprem kumaş",
-  "fit": "Regular",
-  "desc": "Mavi çizgili premium günlük tişört.",
-  "active": true
-},
-{
-  "id": 33,
-  "sku": "VRX-SOLD-019",
-  "name": "Veraxa Green Stripe Tee",
-  "price": "499₺",
-  "cost": 0,
-  "category": ["women", "tshirt"],
-  "stockText": "Tükendi",
-  "stock": { "STD": 0 },
-  "colors": [{ "name": "Yeşil", "img": "images/25MY5504-yesil.jpeg" }],
-  "fabric": "Süprem kumaş",
-  "fit": "Regular",
-  "desc": "Yeşil çizgili premium günlük tişört.",
-  "active": true
-},
-{
-  "id": 34,
-  "sku": "VRX-SOLD-020",
-  "name": "Veraxa Limited Black Dress",
-  "price": "1199₺",
-  "cost": 0,
-  "category": ["women", "new"],
-  "stockText": "Tükendi",
-  "stock": { "STD": 0 },
-  "colors": [{ "name": "Siyah", "img": "images/25VL074-siyah.jpeg" }],
-  "fabric": "Premium süprem kumaş",
-  "fit": "Polo yaka",
-  "desc": "Siyah premium polo yaka elbise.",
-  "active": true
-}
+]
