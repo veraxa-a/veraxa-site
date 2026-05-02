@@ -3,14 +3,28 @@
     "id": 1,
     "name": "Veraxa Noir Oversize Tee",
     "price": "899₺",
-    "category": ["new","men","tshirt"],
+    "category": ["new", "men", "tshirt"],
     "stockText": "Stokta var",
     "stock": { "S": 3, "M": 5, "L": 4, "XL": 2 },
-    "colors": ["Siyah","Beyaz","Gri"],
+    "colors": ["Siyah", "Beyaz", "Gri"],
     "fabric": "Premium pamuk",
     "fit": "Oversize",
     "desc": "Minimal premium oversize tişört.",
-    "img": "https://images.pexels.com/photos/6311392/pexels-photo-6311392.jpeg",
+    "img": "https://images.pexels.com/photos/6311392/pexels-photo-6311392.jpeg?auto=compress&cs=tinysrgb&w=900",
+    "active": true
+  },
+  {
+    "id": 2,
+    "name": "Veraxa Pearl Women Tee",
+    "price": "849₺",
+    "category": ["women", "tshirt", "new"],
+    "stockText": "Limited",
+    "stock": { "S": 2, "M": 3, "L": 2, "XL": 0 },
+    "colors": ["Beyaz", "Bej", "Siyah"],
+    "fabric": "Soft premium kumaş",
+    "fit": "Regular",
+    "desc": "Kadın için sade ve lüks tasarım.",
+    "img": "https://images.pexels.com/photos/7679863/pexels-photo-7679863.jpeg?auto=compress&cs=tinysrgb&w=900",
     "active": true
   }
 ]
