@@ -412,6 +412,7 @@ Telefon: 0546 885 37 31
 <a href="#custom-print">Özel Baskı</a>
 </div>
 
+
 <script>
 const PHONE="905468853731";
 
@@ -439,7 +440,14 @@ document.getElementById("productList").innerHTML="<p style='color:#aaa;text-alig
 }
 
 function getCats(p){
-return p.category || p.cat || [];
+return p.category || [];
+}
+
+function getMainImg(p){
+if(p.colors && Array.isArray(p.colors) && p.colors.length>0){
+return p.colors[0].img;
+}
+return p.img || "";
 }
 
 function getTotalStock(p){
@@ -454,7 +462,7 @@ list.innerHTML="";
 const filtered=products.filter(p=>{
 const cats=getCats(p);
 const f=filter==="all"||cats.includes(filter);
-const s=p.name.toLowerCase().includes(search.toLowerCase())||cats.join(" ").includes(search.toLowerCase());
+const s=p.name.toLowerCase().includes(search.toLowerCase())||cats.join(" ").includes(search.toLowerCase())||p.sku.toLowerCase().includes(search.toLowerCase());
 return f&&s;
 });
 
@@ -468,6 +476,7 @@ const i=products.indexOf(p);
 const cats=getCats(p);
 const totalStock=getTotalStock(p);
 const stockLabel=totalStock>0 ? (p.stockText || "Stokta var") : "Stokta yok";
+const mainImg=getMainImg(p);
 
 let sizeOptions="";
 if(p.stock){
@@ -475,14 +484,16 @@ Object.keys(p.stock).forEach(size=>{
 sizeOptions+=`<option value="${size}" ${p.stock[size]<=0?"disabled":""}>${size} ${p.stock[size]<=0?"- Tükendi":""}</option>`;
 });
 }else{
-sizeOptions="<option>S</option><option>M</option><option>L</option><option>XL</option>";
+sizeOptions="<option>STD</option>";
 }
 
 let colorOptions="";
-if(p.colors){
-p.colors.forEach(c=>colorOptions+=`<option>${c}</option>`);
+if(p.colors && Array.isArray(p.colors)){
+p.colors.forEach((c,idx)=>{
+colorOptions+=`<option value="${idx}">${c.name}</option>`;
+});
 }else{
-colorOptions="<option>Siyah</option><option>Beyaz</option><option>Gri</option><option>Bej</option>";
+colorOptions="<option value='0'>Standart</option>";
 }
 
 list.innerHTML+=`
@@ -490,15 +501,19 @@ list.innerHTML+=`
 <div class="badge">${cats.includes("new")?"NEW":"LIMITED"}</div>
 <div class="stock">${stockLabel}</div>
 <button class="fav ${favorites.includes(i)?"active":""}" onclick="toggleFav(${i})">♥</button>
-<img src="${p.img}" onclick="openModal(${i})" alt="${p.name}">
+
+<img id="product-img-${i}" src="${mainImg}" onclick="openModal(${i})" alt="${p.name}">
+
 <div class="info">
 <h3 onclick="openModal(${i})">${p.name}</h3>
 <div class="price">${p.price}</div>
 <div class="miniText">${p.fabric || "Premium kumaş"} • ${p.fit || "Modern kalıp"}</div>
+
 <div class="selects">
 <select id="size-${i}">${sizeOptions}</select>
-<select id="color-${i}">${colorOptions}</select>
+<select id="color-${i}" onchange="changeProductColor(${i})">${colorOptions}</select>
 </div>
+
 <div class="actions">
 <button class="add" onclick="addToCart(${i})" ${totalStock<=0?"disabled style='opacity:.5;cursor:not-allowed'":""}>Sepete Ekle</button>
 <button class="quick" onclick="quickOrder(${i})" ${totalStock<=0?"disabled style='opacity:.5;cursor:not-allowed'":""}>Hızlı Sipariş</button>
@@ -506,6 +521,39 @@ list.innerHTML+=`
 </div>
 </div>`;
 });
+}
+
+function changeProductColor(i){
+const p=products[i];
+const select=document.getElementById(`color-${i}`);
+const img=document.getElementById(`product-img-${i}`);
+const colorIndex=Number(select.value);
+
+if(p.colors && p.colors[colorIndex]){
+img.src=p.colors[colorIndex].img;
+}
+}
+
+function getSelectedColor(i){
+const p=products[i];
+const select=document.getElementById(`color-${i}`);
+const colorIndex=Number(select.value);
+
+if(p.colors && p.colors[colorIndex]){
+return p.colors[colorIndex].name;
+}
+return "Standart";
+}
+
+function getSelectedImg(i){
+const p=products[i];
+const select=document.getElementById(`color-${i}`);
+const colorIndex=Number(select.value);
+
+if(p.colors && p.colors[colorIndex]){
+return p.colors[colorIndex].img;
+}
+return getMainImg(p);
 }
 
 function filterProducts(cat,btn){
@@ -529,14 +577,15 @@ renderProducts(cat,"");
 function addToCart(i){
 const p=products[i];
 const size=document.getElementById(`size-${i}`).value;
-const color=document.getElementById(`color-${i}`).value;
+const color=getSelectedColor(i);
+const img=getSelectedImg(i);
 
 if(p.stock && Number(p.stock[size])<=0){
 alert("Bu beden stokta yok kanka.");
 return;
 }
 
-cart.push({name:p.name,price:p.price,size,color});
+cart.push({name:p.name,price:p.price,size,color,img});
 updateCart();
 document.getElementById("cartPanel").classList.add("open");
 }
@@ -572,9 +621,9 @@ document.getElementById("cartPanel").classList.toggle("open");
 function quickOrder(i){
 const p=products[i];
 const size=document.getElementById(`size-${i}`).value;
-const color=document.getElementById(`color-${i}`).value;
+const color=getSelectedColor(i);
 
-const msg=`Merhaba VÉRAXA, sipariş vermek istiyorum:%0A%0AÜrün: ${p.name}%0AFiyat: ${p.price}%0ABeden: ${size}%0ARenk: ${color}`;
+const msg=`Merhaba VÉRAXA, sipariş vermek istiyorum:%0A%0AÜrün: ${p.name}%0AKod: ${p.sku}%0AFiyat: ${p.price}%0ABeden: ${size}%0ARenk: ${color}`;
 window.open("https://wa.me/"+PHONE+"?text="+msg,"_blank");
 }
 
@@ -601,7 +650,14 @@ window.open("https://wa.me/"+PHONE+"?text="+msg,"_blank");
 
 function openModal(i){
 const p=products[i];
-document.getElementById("modalImg").src=p.img;
+const select=document.getElementById(`color-${i}`);
+let img=getMainImg(p);
+
+if(select && p.colors && p.colors[Number(select.value)]){
+img=p.colors[Number(select.value)].img;
+}
+
+document.getElementById("modalImg").src=img;
 document.getElementById("modalName").innerText=p.name;
 document.getElementById("modalPrice").innerText=p.price;
 document.getElementById("modalDesc").innerText=p.desc;
@@ -644,10 +700,12 @@ return;
 
 favorites.forEach(i=>{
 const p=products[i];
+const img=getMainImg(p);
+
 list.innerHTML+=`
 <div class="card">
 <div class="badge">FAVORİ</div>
-<img src="${p.img}" onclick="openModal(${i})">
+<img src="${img}" onclick="openModal(${i})">
 <div class="info">
 <h3>${p.name}</h3>
 <div class="price">${p.price}</div>
