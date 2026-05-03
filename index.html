@@ -6,130 +6,6 @@
 <title>VÉRAXA | Ultra Luxury Clothing</title>
 
 <style>
-#userArea{
-  display:flex;
-  align-items:center;
-}
-
-.googleLogin{
-  height:38px;
-  border-radius:40px;
-  border:1px solid rgba(201,164,92,.55);
-  background:rgba(0,0,0,.35);
-  color:#f8f3e8;
-  display:flex;
-  align-items:center;
-  gap:8px;
-  padding:0 14px;
-  cursor:pointer;
-  font-size:12px;
-  letter-spacing:1px;
-}
-
-.googleLogin:hover{
-  background:#c9a45c;
-  color:#111;
-}
-
-.gIcon{
-  width:22px;
-  height:22px;
-  border-radius:50%;
-  background:white;
-  color:#111;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-weight:bold;
-}
-
-.accountBox{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  border:1px solid rgba(201,164,92,.55);
-  background:rgba(0,0,0,.38);
-  padding:6px 8px;
-  border-radius:40px;
-}
-
-.accountBox img{
-  width:30px;
-  height:30px;
-  border-radius:50%;
-  object-fit:cover;
-}
-
-.accountBox div{
-  display:flex;
-  flex-direction:column;
-  line-height:1.1;
-}
-
-.accountBox strong{
-  font-size:12px;
-  color:#f8f3e8;
-  max-width:90px;
-  white-space:nowrap;
-  overflow:hidden;
-  text-overflow:ellipsis;
-}
-
-.accountBox small{
-  font-size:10px;
-  color:#c9a45c;
-}
-
-.accountBox button{
-  border:none;
-  background:#c9a45c;
-  color:#111;
-  padding:7px 10px;
-  border-radius:30px;
-  cursor:pointer;
-  font-size:11px;
-  font-weight:bold;
-}
-  .googleLogin,
-.googleUser{
-  height:36px;
-  border-radius:30px;
-  border:1px solid rgba(201,164,92,.55);
-  background:rgba(0,0,0,.35);
-  color:#f8f3e8;
-  display:flex;
-  align-items:center;
-  gap:8px;
-  padding:0 12px;
-  cursor:pointer;
-  font-size:12px;
-  letter-spacing:1px;
-}
-
-.googleLogin:hover,
-.googleUser:hover{
-  background:#c9a45c;
-  color:#111;
-}
-
-.gIcon{
-  width:22px;
-  height:22px;
-  border-radius:50%;
-  background:#fff;
-  color:#111;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-weight:bold;
-}
-
-.googleUser img{
-  width:22px;
-  height:22px;
-  border-radius:50%;
-  object-fit:cover;
-}
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--black:#020202;--soft:#080808;--card:#101010;--gold:#d6b36a;--gold2:#f5deb3;--text:#f8f3e8;--muted:#aaa29a}
 html{scroll-behavior:smooth}
@@ -147,8 +23,18 @@ header{position:fixed;top:0;left:0;width:100%;z-index:99;background:linear-gradi
 .logo span{color:var(--gold2)}
 .menu{display:flex;gap:23px;font-size:12px;letter-spacing:2px;text-transform:uppercase}
 .menu a:hover{color:var(--gold2)}
-.navRight{display:flex;gap:10px}
-.navBtn{background:rgba(0,0,0,.35);color:var(--text);border:1px solid rgba(214,179,106,.5);padding:9px 14px;border-radius:30px;cursor:pointer;font-size:12px}
+.navRight{display:flex;gap:10px;align-items:center}
+.navBtn,.authMiniBtn{background:rgba(0,0,0,.35);color:var(--text);border:1px solid rgba(214,179,106,.5);padding:9px 14px;border-radius:30px;cursor:pointer;font-size:12px}
+.navBtn:hover,.authMiniBtn:hover{background:var(--gold);color:#111}
+
+#userArea{display:flex;align-items:center}
+.authBox{display:flex;align-items:center;gap:8px}
+.accountBox{display:flex;align-items:center;gap:9px;border:1px solid rgba(214,179,106,.55);background:rgba(0,0,0,.42);padding:6px 8px;border-radius:40px}
+.accountBox img{width:30px;height:30px;border-radius:50%;object-fit:cover}
+.accountBox div{display:flex;flex-direction:column;line-height:1.1}
+.accountBox strong{font-size:12px;color:var(--text);max-width:95px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.accountBox small{font-size:10px;color:var(--gold2)}
+.accountBox button{border:none;background:var(--gold);color:#111;padding:7px 10px;border-radius:30px;cursor:pointer;font-size:11px;font-weight:bold}
 
 .hero{min-height:100vh;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center;color:white}
 .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.94),rgba(0,0,0,.32),rgba(0,0,0,.94)),linear-gradient(rgba(0,0,0,.08),rgba(0,0,0,.95)),url("https://images.pexels.com/photos/1926769/pexels-photo-1926769.jpeg?auto=compress&cs=tinysrgb&w=1800");background-size:cover;background-position:center;transform:scale(1.05);animation:heroZoom 12s ease-in-out infinite alternate;filter:contrast(1.1) brightness(.86)}
@@ -251,17 +137,26 @@ footer{text-align:center;color:var(--muted);padding:45px 20px 90px}
 .cartItem{border-bottom:1px solid rgba(214,179,106,.22);padding:15px 0;font-size:14px}
 .whatsapp{width:100%;margin-top:20px;padding:15px;border:none;border-radius:16px;background:#25D366;color:white;font-weight:bold;cursor:pointer}
 
-.modal{display:none;position:fixed;inset:0;z-index:1002;background:rgba(0,0,0,.84);align-items:center;justify-content:center;padding:18px}
-.modal.open{display:flex}
+.modal,.authModal{display:none;position:fixed;inset:0;z-index:1002;background:rgba(0,0,0,.84);align-items:center;justify-content:center;padding:18px}
+.modal.open,.authModal.open{display:flex}
 .modalBox{max-width:960px;width:100%;background:#070707;border:1px solid var(--gold);border-radius:30px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;position:relative}
 .modalBox img{width:100%;height:100%;min-height:560px;object-fit:cover}
 .modalContent{padding:34px}
 .modalContent h2{font-family:Georgia,serif;font-size:32px;font-weight:300;margin-bottom:12px}
 .modalContent p{color:#c8c0b7;line-height:1.8;margin-bottom:12px}
-.modalClose{position:absolute;top:14px;right:22px;font-size:30px;cursor:pointer;color:var(--gold2);z-index:4}
+.modalClose,.authClose{position:absolute;top:14px;right:22px;font-size:30px;cursor:pointer;color:var(--gold2);z-index:4}
 .sizeTable{width:100%;border-collapse:collapse;margin-top:16px;font-size:13px}
 .sizeTable td,.sizeTable th{border:1px solid rgba(214,179,106,.25);padding:10px;text-align:center}
 .sizeTable th{color:var(--gold2)}
+
+.authBoxPanel{position:relative;max-width:430px;width:100%;background:#070707;border:1px solid var(--gold);border-radius:30px;padding:34px;box-shadow:0 30px 90px rgba(0,0,0,.65)}
+.authBoxPanel h2{font-family:Georgia,serif;font-weight:300;letter-spacing:3px;margin-bottom:10px}
+.authBoxPanel p{color:#aaa;margin-bottom:18px;line-height:1.6}
+.authBoxPanel input{width:100%;background:#050505;border:1px solid rgba(214,179,106,.35);border-radius:16px;color:white;padding:14px;margin-bottom:10px}
+.authFullBtn{width:100%;border:none;border-radius:16px;padding:14px;margin-top:8px;background:linear-gradient(90deg,#b58a3e,#f5deb3,#b58a3e);color:#111;font-weight:bold;cursor:pointer}
+.authGhostBtn{width:100%;border:1px solid rgba(214,179,106,.55);border-radius:16px;padding:13px;margin-top:10px;background:transparent;color:white;cursor:pointer}
+.authSwitch{margin-top:14px;text-align:center;color:#aaa;font-size:13px}
+.authSwitch span{color:var(--gold2);cursor:pointer}
 
 .bottomBar{display:none;position:fixed;left:0;right:0;bottom:0;z-index:1000;grid-template-columns:repeat(3,1fr);background:#070707;border-top:1px solid rgba(214,179,106,.45)}
 .bottomBar a,.bottomBar button{background:transparent;color:white;border:none;padding:14px 6px;font-size:12px}
@@ -273,7 +168,7 @@ footer{text-align:center;color:var(--muted);padding:45px 20px 90px}
 .trust{grid-template-columns:1fr 1fr}.finderGrid{grid-template-columns:1fr}.modalBox{grid-template-columns:1fr;max-height:92vh;overflow:auto}.modalBox img{min-height:auto;height:390px}.bottomBar{display:grid}
 }
 @media(max-width:520px){
-.logo{font-size:21px;letter-spacing:5px}.nav{padding:14px}.navBtn{font-size:11px;padding:8px 10px}
+.logo{font-size:21px;letter-spacing:5px}.nav{padding:14px}.navBtn,.authMiniBtn{font-size:11px;padding:8px 10px}
 .hero h1{font-size:39px;letter-spacing:7px}.heroTag{font-size:10px}.title h2{font-size:31px}
 .collections,.trust,.printSteps{grid-template-columns:1fr}.card img,.printCard img{height:410px}.actions{grid-template-columns:1fr}.bannerText h2,.printHero h2{font-size:32px}
 }
@@ -297,7 +192,7 @@ footer{text-align:center;color:var(--muted);padding:45px 20px 90px}
 <a href="#faq">SSS</a>
 </nav>
 <div class="navRight">
-  <div id="userArea"></div>
+<div id="userArea"></div>
 <button class="navBtn" onclick="showFavorites()">Favori <span id="favCount">0</span></button>
 <button class="navBtn" onclick="toggleCart()">Sepet <span id="cartCount">0</span></button>
 </div>
@@ -314,9 +209,7 @@ footer{text-align:center;color:var(--muted);padding:45px 20px 90px}
 <button class="btn" onclick="scrollToProducts()">SHOP COLLECTION</button>
 <button class="btn dark" onclick="document.getElementById('custom-print').scrollIntoView({behavior:'smooth'})">CUSTOM PRINT</button>
 </div>
-<div style="margin-top:20px;font-size:12px;color:#aaa;letter-spacing:2px;">
-✔ Premium Kumaş • ✔ Türkiye Geneli Gönderim • ✔ WhatsApp Hızlı Sipariş
-</div>
+<div style="margin-top:20px;font-size:12px;color:#aaa;letter-spacing:2px;">✔ Premium Kumaş • ✔ Türkiye Geneli Gönderim • ✔ WhatsApp Hızlı Sipariş</div>
 </div>
 <div class="heroBottom">
 <div><b>01</b> PREMIUM FABRIC</div>
@@ -349,43 +242,18 @@ footer{text-align:center;color:var(--muted);padding:45px 20px 90px}
 </section>
 
 <section class="section" id="collections">
-<div class="title">
-<small>SELECT YOUR STYLE</small>
-<h2>COLLECTIONS</h2>
-<p>Tarzını hızlı seç, koleksiyona direkt gir.</p>
-</div>
-
+<div class="title"><small>SELECT YOUR STYLE</small><h2>COLLECTIONS</h2><p>Tarzını hızlı seç, koleksiyona direkt gir.</p></div>
 <div class="collections">
-<div class="colCard" onclick="goFilter('women')">
-<img src="https://images.pexels.com/photos/7679863/pexels-photo-7679863.jpeg?auto=compress&cs=tinysrgb&w=900">
-<div><h3>WOMEN</h3><p>Minimal luxury</p></div>
-</div>
-<div class="colCard" onclick="goFilter('men')">
-<img src="https://images.pexels.com/photos/6765164/pexels-photo-6765164.jpeg?auto=compress&cs=tinysrgb&w=900">
-<div><h3>MEN</h3><p>Bold streetwear</p></div>
-</div>
-<div class="colCard" onclick="goFilter('tshirt')">
-<img src="https://images.pexels.com/photos/6311392/pexels-photo-6311392.jpeg?auto=compress&cs=tinysrgb&w=900">
-<div><h3>T-SHIRT</h3><p>Premium basics</p></div>
-</div>
-<div class="colCard" onclick="goFilter('sweatshirt')">
-<img src="https://images.pexels.com/photos/6311397/pexels-photo-6311397.jpeg?auto=compress&cs=tinysrgb&w=900">
-<div><h3>SWEAT</h3><p>Comfort luxury</p></div>
-</div>
+<div class="colCard" onclick="goFilter('women')"><img src="https://images.pexels.com/photos/7679863/pexels-photo-7679863.jpeg?auto=compress&cs=tinysrgb&w=900"><div><h3>WOMEN</h3><p>Minimal luxury</p></div></div>
+<div class="colCard" onclick="goFilter('men')"><img src="https://images.pexels.com/photos/6765164/pexels-photo-6765164.jpeg?auto=compress&cs=tinysrgb&w=900"><div><h3>MEN</h3><p>Bold streetwear</p></div></div>
+<div class="colCard" onclick="goFilter('tshirt')"><img src="https://images.pexels.com/photos/6311392/pexels-photo-6311392.jpeg?auto=compress&cs=tinysrgb&w=900"><div><h3>T-SHIRT</h3><p>Premium basics</p></div></div>
+<div class="colCard" onclick="goFilter('sweatshirt')"><img src="https://images.pexels.com/photos/6311397/pexels-photo-6311397.jpeg?auto=compress&cs=tinysrgb&w=900"><div><h3>SWEAT</h3><p>Comfort luxury</p></div></div>
 </div>
 </section>
 
 <section class="section" id="products">
-<div class="title">
-<small>SHOP NOW</small>
-<h2>NEW COLLECTION</h2>
-<p>Premium daily wear with luxury attitude.</p>
-</div>
-
-<div class="searchBox">
-<input id="searchInput" oninput="searchProducts()" placeholder="Ürün ara: sweatshirt, tee, crop...">
-</div>
-
+<div class="title"><small>SHOP NOW</small><h2>NEW COLLECTION</h2><p>Premium daily wear with luxury attitude.</p></div>
+<div class="searchBox"><input id="searchInput" oninput="searchProducts()" placeholder="Ürün ara: sweatshirt, tee, crop..."></div>
 <div class="filters">
 <button class="active" onclick="filterProducts('all',this)">Tümü</button>
 <button onclick="filterProducts('new',this)">New In</button>
@@ -394,9 +262,7 @@ footer{text-align:center;color:var(--muted);padding:45px 20px 90px}
 <button onclick="filterProducts('tshirt',this)">T-Shirt</button>
 <button onclick="filterProducts('sweatshirt',this)">Sweatshirt</button>
 </div>
-
 <div class="products" id="productList"></div>
-
 <div class="trust">
 <div>🚚<br><br>Hızlı Kargo</div>
 <div>🔒<br><br>Güvenli Sipariş</div>
@@ -406,89 +272,32 @@ footer{text-align:center;color:var(--muted);padding:45px 20px 90px}
 </section>
 
 <section class="section" id="custom-print">
-<div class="title">
-<small>CUSTOM DTF PRINT</small>
-<h2>İSTEĞE GÖRE BASKI</h2>
-<p>Kendi tasarımını gönder; beyaz tişört, siyah tişört, oversize tişört ve sweatshirt üzerine premium DTF baskı yapalım.</p>
-</div>
-
-<div class="printHero">
-<div>
-<h2>Custom Print Studio</h2>
-<p>Logo, yazı, görsel, marka tasarımı veya özel çizim. Baskı türünü seç, WhatsApp üzerinden tasarımını gönder, fiyat ve üretim bilgisi al.</p>
-</div>
-</div>
-
+<div class="title"><small>CUSTOM DTF PRINT</small><h2>İSTEĞE GÖRE BASKI</h2><p>Kendi tasarımını gönder; beyaz tişört, siyah tişört, oversize tişört ve sweatshirt üzerine premium DTF baskı yapalım.</p></div>
+<div class="printHero"><div><h2>Custom Print Studio</h2><p>Logo, yazı, görsel, marka tasarımı veya özel çizim. Baskı türünü seç, WhatsApp üzerinden tasarımını gönder, fiyat ve üretim bilgisi al.</p></div></div>
 <div class="printGrid">
-<div class="printCard">
-<img src="https://images.pexels.com/photos/8532616/pexels-photo-8532616.jpeg?auto=compress&cs=tinysrgb&w=900">
-<div class="printInfo">
-<h3>Beyaz Tişört Baskı</h3>
-<p>Minimal logo, yazı, anime, marka tasarımı veya özel görsel baskı.</p>
-<button class="printBtn" onclick="customPrintOrder('Beyaz Tişört Baskı')">Teklif Al</button>
+<div class="printCard"><img src="https://images.pexels.com/photos/8532616/pexels-photo-8532616.jpeg?auto=compress&cs=tinysrgb&w=900"><div class="printInfo"><h3>Beyaz Tişört Baskı</h3><p>Minimal logo, yazı, anime, marka tasarımı veya özel görsel baskı.</p><button class="printBtn" onclick="customPrintOrder('Beyaz Tişört Baskı')">Teklif Al</button></div></div>
+<div class="printCard"><img src="https://images.pexels.com/photos/6311392/pexels-photo-6311392.jpeg?auto=compress&cs=tinysrgb&w=900"><div class="printInfo"><h3>Siyah Tişört Baskı</h3><p>Siyah tişört üzerine beyaz, renkli veya premium DTF baskı.</p><button class="printBtn" onclick="customPrintOrder('Siyah Tişört Baskı')">Teklif Al</button></div></div>
+<div class="printCard"><img src="https://images.pexels.com/photos/6311397/pexels-photo-6311397.jpeg?auto=compress&cs=tinysrgb&w=900"><div class="printInfo"><h3>Sweatshirt Baskı</h3><p>Oversize sweatshirt, hoodie ve basic sweat üzerine özel baskı.</p><button class="printBtn" onclick="customPrintOrder('Sweatshirt Baskı')">Teklif Al</button></div></div>
 </div>
-</div>
-
-<div class="printCard">
-<img src="https://images.pexels.com/photos/6311392/pexels-photo-6311392.jpeg?auto=compress&cs=tinysrgb&w=900">
-<div class="printInfo">
-<h3>Siyah Tişört Baskı</h3>
-<p>Siyah tişört üzerine beyaz, renkli veya premium DTF baskı.</p>
-<button class="printBtn" onclick="customPrintOrder('Siyah Tişört Baskı')">Teklif Al</button>
-</div>
-</div>
-
-<div class="printCard">
-<img src="https://images.pexels.com/photos/6311397/pexels-photo-6311397.jpeg?auto=compress&cs=tinysrgb&w=900">
-<div class="printInfo">
-<h3>Sweatshirt Baskı</h3>
-<p>Oversize sweatshirt, hoodie ve basic sweat üzerine özel baskı.</p>
-<button class="printBtn" onclick="customPrintOrder('Sweatshirt Baskı')">Teklif Al</button>
-</div>
-</div>
-</div>
-
-<div class="printSteps">
-<div><b>01</b><br>Modeli seç</div>
-<div><b>02</b><br>Tasarımını gönder</div>
-<div><b>03</b><br>Fiyat al</div>
-<div><b>04</b><br>Baskı hazırlansın</div>
-</div>
+<div class="printSteps"><div><b>01</b><br>Modeli seç</div><div><b>02</b><br>Tasarımını gönder</div><div><b>03</b><br>Fiyat al</div><div><b>04</b><br>Baskı hazırlansın</div></div>
 </section>
 
 <section class="section" id="finder">
-<div class="title">
-<small>SMART SIZE</small>
-<h2>BEDENİMİ BUL</h2>
-<p>Boy ve kilo gir, sana beden önerelim.</p>
-</div>
-<div class="finder">
-<div class="finderGrid">
-<input id="height" type="number" placeholder="Boy cm">
-<input id="weight" type="number" placeholder="Kilo">
-<button class="btn" onclick="findSize()">Öner</button>
-</div>
-<div class="result" id="sizeResult"></div>
-</div>
+<div class="title"><small>SMART SIZE</small><h2>BEDENİMİ BUL</h2><p>Boy ve kilo gir, sana beden önerelim.</p></div>
+<div class="finder"><div class="finderGrid"><input id="height" type="number" placeholder="Boy cm"><input id="weight" type="number" placeholder="Kilo"><button class="btn" onclick="findSize()">Öner</button></div><div class="result" id="sizeResult"></div></div>
 </section>
 
 <section class="section" id="faq">
-<div class="title">
-<small>HELP</small>
-<h2>SIK SORULAN SORULAR</h2>
-</div>
+<div class="title"><small>HELP</small><h2>SIK SORULAN SORULAR</h2></div>
 <div class="faq">
 <div class="faqItem"><div class="faqQ" onclick="toggleFaq(this)">Hazır ürün siparişi nasıl verilir?</div><div class="faqA">Ürünü sepete ekleyip WhatsApp ile sipariş verebilirsin. Beden ve renk otomatik mesaj olarak gider.</div></div>
 <div class="faqItem"><div class="faqQ" onclick="toggleFaq(this)">Özel DTF baskı nasıl yapılır?</div><div class="faqA">Baskı modelini seçip WhatsApp’tan tasarım görselini gönderiyorsun. Sonra fiyat ve üretim bilgisi verilir.</div></div>
-<div class="faqItem"><div class="faqQ" onclick="toggleFaq(this)">Kargo kaç günde gelir?</div><div class="faqA">Siparişler genelde 1-3 iş günü içinde hazırlanır. Teslimat şehre göre değişebilir.</div></div>
+<div class="faqItem"><div class="faqQ" onclick="toggleFaq(this)">Kargo kaç günde gelir?</div><div class="faqA">Siparişler genelde 1-3 iş günü içinde hazırlanır.</div></div>
 <div class="faqItem"><div class="faqQ" onclick="toggleFaq(this)">Değişim var mı?</div><div class="faqA">Kullanılmamış hazır ürünlerde 14 gün içinde değişim yapılabilir.</div></div>
 </div>
 </section>
 
-<section class="brand">
-<h2>VÉRAXA WORLD</h2>
-<p>VÉRAXA sadece kıyafet değil, bir duruş biçimidir. Hazır giyim, özel baskı ve premium görünümü tek çatı altında toplar.</p>
-</section>
+<section class="brand"><h2>VÉRAXA WORLD</h2><p>VÉRAXA sadece kıyafet değil, bir duruş biçimidir. Hazır giyim, özel baskı ve premium görünümü tek çatı altında toplar.</p></section>
 
 <footer>
 <strong>VÉRAXA</strong><br>
@@ -531,361 +340,219 @@ Telefon: 0546 885 37 31
 </div>
 </div>
 
+<div class="authModal" id="authModal">
+<div class="authBoxPanel">
+<span class="authClose" onclick="closeAuth()">×</span>
+<h2 id="authTitle">Üye Girişi</h2>
+<p>Veraxa hesabına giriş yap veya yeni hesap oluştur.</p>
+<input id="authName" placeholder="Ad Soyad" style="display:none">
+<input id="authEmail" type="email" placeholder="E-posta">
+<input id="authPassword" type="password" placeholder="Şifre">
+<button class="authFullBtn" id="authActionBtn" onclick="emailLogin()">Giriş Yap</button>
+<button class="authGhostBtn" onclick="loginGoogle()">Google ile Devam Et</button>
+<div class="authSwitch" id="authSwitchText">Hesabın yok mu? <span onclick="switchAuth('register')">Kayıt ol</span></div>
+</div>
+</div>
+
 <div class="bottomBar">
 <a href="https://wa.me/905468853731" target="_blank">WhatsApp</a>
 <button onclick="toggleCart()">Sepet</button>
 <a href="#custom-print">Özel Baskı</a>
 </div>
 
-
 <script>
 const PHONE="905468853731";
-
 let products=[];
 let cart=[];
 let favorites=[];
 let currentFilter="all";
 
+const fallbackProducts=[
+{name:"Veraxa Noir Oversize Tee",price:"899₺",category:["new","men","tshirt"],sku:"VX-001",stock:{S:2,M:4,L:2,XL:1},colors:[{name:"Siyah",img:"https://images.pexels.com/photos/6311392/pexels-photo-6311392.jpeg?auto=compress&cs=tinysrgb&w=900"}],fabric:"Premium Cotton",fit:"Oversize Fit",desc:"Günlük kullanım için premium oversize tişört."},
+{name:"Veraxa Pearl Women Tee",price:"849₺",category:["new","women","tshirt"],sku:"VX-002",stock:{S:2,M:3,L:1},colors:[{name:"Beyaz",img:"https://images.pexels.com/photos/7679863/pexels-photo-7679863.jpeg?auto=compress&cs=tinysrgb&w=900"}],fabric:"Soft Cotton",fit:"Regular Fit",desc:"Kadın koleksiyonu için sade, temiz ve lüks görünüm."},
+{name:"Veraxa Shadow Sweatshirt",price:"1.499₺",category:["men","sweatshirt"],sku:"VX-003",stock:{M:2,L:3,XL:2},colors:[{name:"Siyah",img:"https://images.pexels.com/photos/6311397/pexels-photo-6311397.jpeg?auto=compress&cs=tinysrgb&w=900"}],fabric:"Premium 3 İplik",fit:"Oversize Fit",desc:"Rahat, güçlü ve premium sweatshirt."}
+];
+
 window.onload=()=>{
-loadProducts();
-updateCart();
-updateFavCount();
+  loadProducts();
+  updateCart();
+  updateFavCount();
 };
 
 function loadProducts(){
-fetch("products.json")
-.then(res=>res.json())
-.then(data=>{
-
-products=data.filter(p=>p.active);
-
-// 🔥 20 ADET TÜKENMİŞ ÜRÜN EKLE
-for(let i=1;i<=20;i++){
-products.push({
-id: 900+i,
-sku: "VX-SOLD-"+i,
-name: "Veraxa Limited "+i,
-price: "599₺",
-stockText: "Sold Out",
-stock: { STD: 0 },
-colors: [
-{ name:"Siyah", img:"images/26Y009-siyah.jpeg" }
-],
-fabric: "Premium Cotton",
-fit: "Slim Fit",
-desc: "Bu ürün tükenmiştir.",
-active: true
-});
+  fetch("products.json")
+  .then(res=>res.json())
+  .then(data=>{
+    products=data.filter(p=>p.active);
+    if(products.length===0) products=fallbackProducts;
+    renderProducts();
+  })
+  .catch(()=>{
+    products=fallbackProducts;
+    renderProducts();
+  });
 }
 
-renderProducts();
-
-});
-}
-
-function getCats(p){
-return p.category || [];
-}
-
-function getMainImg(p){
-if(p.colors && Array.isArray(p.colors) && p.colors.length>0){
-return p.colors[0].img;
-}
-return p.img || "";
-}
-
-function getTotalStock(p){
-if(!p.stock) return 0;
-return Object.values(p.stock).reduce((a,b)=>a+Number(b),0);
-}
+function getCats(p){return p.category || p.cat || []}
+function getMainImg(p){return p.colors && p.colors.length ? p.colors[0].img : (p.img || "")}
+function getTotalStock(p){if(!p.stock) return 1; return Object.values(p.stock).reduce((a,b)=>a+Number(b),0)}
 
 function renderProducts(filter="all",search=""){
-const list=document.getElementById("productList");
-list.innerHTML="";
+  const list=document.getElementById("productList");
+  list.innerHTML="";
+  const filtered=products.filter(p=>{
+    const cats=getCats(p);
+    const f=filter==="all"||cats.includes(filter);
+    const s=(p.name||"").toLowerCase().includes(search.toLowerCase())||cats.join(" ").includes(search.toLowerCase())||String(p.sku||"").toLowerCase().includes(search.toLowerCase());
+    return f&&s;
+  });
 
-const filtered=products.filter(p=>{
-const cats=getCats(p);
-const f=filter==="all"||cats.includes(filter);
-const s=p.name.toLowerCase().includes(search.toLowerCase())||cats.join(" ").includes(search.toLowerCase())||p.sku.toLowerCase().includes(search.toLowerCase());
-return f&&s;
-});
+  if(filtered.length===0){
+    list.innerHTML="<p style='color:#aaa;text-align:center;grid-column:1/-1'>Bu kategoride ürün yok.</p>";
+    return;
+  }
 
-if(filtered.length===0){
-list.innerHTML="<p style='color:#aaa;text-align:center;grid-column:1/-1'>Bu kategoride ürün yok.</p>";
-return;
-}
+  filtered.forEach(p=>{
+    const i=products.indexOf(p);
+    const cats=getCats(p);
+    const totalStock=getTotalStock(p);
+    const mainImg=getMainImg(p);
 
-filtered.forEach(p=>{
-const i=products.indexOf(p);
-const cats=getCats(p);
-const totalStock=getTotalStock(p);
-const stockLabel="Premium Drop";
-const mainImg=getMainImg(p);
+    let sizeOptions="";
+    if(p.stock){
+      Object.keys(p.stock).forEach(size=>{
+        sizeOptions+=`<option value="${size}" ${p.stock[size]<=0?"disabled":""}>${size} ${p.stock[size]<=0?"- Tükendi":""}</option>`;
+      });
+    }else sizeOptions="<option>Tek Beden</option>";
 
-let sizeOptions="";
-if(p.stock){
-Object.keys(p.stock).forEach(size=>{
-sizeOptions+=`<option value="${size}" ${p.stock[size]<=0?"disabled":""}>${size} ${p.stock[size]<=0?"- Tükendi":""}</option>`;
-});
-}else{
-sizeOptions="<option>Tek Beden</option>";
-}
+    let colorOptions="";
+    if(p.colors && Array.isArray(p.colors)){
+      p.colors.forEach((c,idx)=>{ colorOptions+=`<option value="${idx}">${c.name}</option>`; });
+    }else colorOptions="<option value='0'>Standart</option>";
 
-let colorOptions="";
-if(p.colors && Array.isArray(p.colors)){
-p.colors.forEach((c,idx)=>{
-colorOptions+=`<option value="${idx}">${c.name}</option>`;
-});
-}else{
-colorOptions="<option value='0'>Standart</option>";
-}
-
-list.innerHTML+=`
-<div class="card">
-<div class="badge">${cats.includes("new")?"NEW":"LIMITED"}</div>
-<div class="stock">${stockLabel}</div>
-<button class="fav ${favorites.includes(i)?"active":""}" onclick="toggleFav(${i})">♥</button>
-
-<img id="product-img-${i}" src="${mainImg}" onclick="openModal(${i})" alt="${p.name}">
-
-<div class="info">
-<h3 onclick="openModal(${i})">${p.name}</h3>
-<div class="price">${p.price}</div>
-<div class="miniText">${p.fabric || "Premium kumaş"} • ${p.fit || "Modern kalıp"}</div>
-
-<div class="selects">
-<select id="size-${i}">${sizeOptions}</select>
-<select id="color-${i}" onchange="changeProductColor(${i})">${colorOptions}</select>
-</div>
-
-<div class="actions">
-<button class="add" onclick="addToCart(${i})" ${totalStock<=0?"disabled style='opacity:.5;cursor:not-allowed'":""}>Sepete Ekle</button>
-<button class="quick" onclick="quickOrder(${i})" ${totalStock<=0?"disabled style='opacity:.5;cursor:not-allowed'":""}>Hızlı Sipariş</button>
-</div>
-</div>
-</div>`;
-});
+    list.innerHTML+=`
+    <div class="card">
+      <div class="badge">${cats.includes("new")?"NEW":"LIMITED"}</div>
+      <div class="stock">${totalStock>0?"Premium Drop":"Sold Out"}</div>
+      <button class="fav ${favorites.includes(i)?"active":""}" onclick="toggleFav(${i})">♥</button>
+      <img id="product-img-${i}" src="${mainImg}" onclick="openModal(${i})" alt="${p.name}">
+      <div class="info">
+        <h3 onclick="openModal(${i})">${p.name}</h3>
+        <div class="price">${p.price}</div>
+        <div class="miniText">${p.fabric || "Premium kumaş"} • ${p.fit || "Modern kalıp"}</div>
+        <div class="selects">
+          <select id="size-${i}">${sizeOptions}</select>
+          <select id="color-${i}" onchange="changeProductColor(${i})">${colorOptions}</select>
+        </div>
+        <div class="actions">
+          <button class="add" onclick="addToCart(${i})" ${totalStock<=0?"disabled style='opacity:.5;cursor:not-allowed'":""}>Sepete Ekle</button>
+          <button class="quick" onclick="quickOrder(${i})" ${totalStock<=0?"disabled style='opacity:.5;cursor:not-allowed'":""}>Hızlı Sipariş</button>
+        </div>
+      </div>
+    </div>`;
+  });
 }
 
 function changeProductColor(i){
-const p=products[i];
-const select=document.getElementById(`color-${i}`);
-const img=document.getElementById(`product-img-${i}`);
-const colorIndex=Number(select.value);
-
-if(p.colors && p.colors[colorIndex]){
-img.src=p.colors[colorIndex].img;
+  const p=products[i], select=document.getElementById(`color-${i}`), img=document.getElementById(`product-img-${i}`);
+  const colorIndex=Number(select.value);
+  if(p.colors && p.colors[colorIndex]) img.src=p.colors[colorIndex].img;
 }
-}
-
 function getSelectedColor(i){
-const p=products[i];
-const select=document.getElementById(`color-${i}`);
-const colorIndex=Number(select.value);
-
-if(p.colors && p.colors[colorIndex]){
-return p.colors[colorIndex].name;
+  const p=products[i], select=document.getElementById(`color-${i}`);
+  const colorIndex=Number(select.value);
+  return p.colors && p.colors[colorIndex] ? p.colors[colorIndex].name : "Standart";
 }
-return "Standart";
-}
-
 function getSelectedImg(i){
-const p=products[i];
-const select=document.getElementById(`color-${i}`);
-const colorIndex=Number(select.value);
-
-if(p.colors && p.colors[colorIndex]){
-return p.colors[colorIndex].img;
+  const p=products[i], select=document.getElementById(`color-${i}`);
+  const colorIndex=Number(select.value);
+  return p.colors && p.colors[colorIndex] ? p.colors[colorIndex].img : getMainImg(p);
 }
-return getMainImg(p);
-}
-
 function filterProducts(cat,btn){
-currentFilter=cat;
-document.querySelectorAll(".filters button").forEach(b=>b.classList.remove("active"));
-btn.classList.add("active");
-renderProducts(cat,document.getElementById("searchInput").value);
+  currentFilter=cat;
+  document.querySelectorAll(".filters button").forEach(b=>b.classList.remove("active"));
+  btn.classList.add("active");
+  renderProducts(cat,document.getElementById("searchInput").value);
 }
-
-function searchProducts(){
-renderProducts(currentFilter,document.getElementById("searchInput").value);
-}
-
+function searchProducts(){renderProducts(currentFilter,document.getElementById("searchInput").value)}
 function goFilter(cat){
-document.getElementById("products").scrollIntoView({behavior:"smooth"});
-currentFilter=cat;
-document.querySelectorAll(".filters button").forEach(b=>b.classList.remove("active"));
-renderProducts(cat,"");
+  document.getElementById("products").scrollIntoView({behavior:"smooth"});
+  currentFilter=cat;
+  document.querySelectorAll(".filters button").forEach(b=>b.classList.remove("active"));
+  renderProducts(cat,"");
 }
-
 function addToCart(i){
-const p=products[i];
-const size=document.getElementById(`size-${i}`).value;
-const color=getSelectedColor(i);
-const img=getSelectedImg(i);
-
-if(p.stock && Number(p.stock[size])<=0){
-alert("Bu beden stokta yok kanka.");
-return;
+  const p=products[i], size=document.getElementById(`size-${i}`).value, color=getSelectedColor(i), img=getSelectedImg(i);
+  if(p.stock && Number(p.stock[size])<=0){alert("Bu beden stokta yok kanka.");return}
+  cart.push({name:p.name,price:p.price,size,color,img});
+  updateCart();
+  document.getElementById("cartPanel").classList.add("open");
 }
-
-cart.push({name:p.name,price:p.price,size,color,img});
-updateCart();
-document.getElementById("cartPanel").classList.add("open");
-}
-
 function updateCart(){
-document.getElementById("cartCount").innerText=cart.length;
-const items=document.getElementById("cartItems");
-
-if(cart.length===0){
-items.innerHTML="<p style='color:#999;margin-top:20px'>Sepet boş.</p>";
-return;
+  document.getElementById("cartCount").innerText=cart.length;
+  const items=document.getElementById("cartItems");
+  if(cart.length===0){items.innerHTML="<p style='color:#999;margin-top:20px'>Sepet boş.</p>";return}
+  items.innerHTML=cart.map((x,i)=>`<div class="cartItem"><b>${x.name}</b><br>Fiyat: ${x.price}<br>Beden: ${x.size}<br>Renk: ${x.color}<br><button onclick="removeItem(${i})" style="margin-top:8px;background:transparent;color:#f1d28a;border:none;cursor:pointer;">Sil</button></div>`).join("");
 }
-
-items.innerHTML=cart.map((x,i)=>`
-<div class="cartItem">
-<b>${x.name}</b><br>
-Fiyat: ${x.price}<br>
-Beden: ${x.size}<br>
-Renk: ${x.color}<br>
-<button onclick="removeItem(${i})" style="margin-top:8px;background:transparent;color:#f1d28a;border:none;cursor:pointer;">Sil</button>
-</div>`).join("");
-}
-
-function removeItem(i){
-cart.splice(i,1);
-updateCart();
-}
-
-function toggleCart(){
-document.getElementById("cartPanel").classList.toggle("open");
-}
-
+function removeItem(i){cart.splice(i,1);updateCart()}
+function toggleCart(){document.getElementById("cartPanel").classList.toggle("open")}
 function quickOrder(i){
-const p=products[i];
-const size=document.getElementById(`size-${i}`).value;
-const color=getSelectedColor(i);
-
-const msg=`Merhaba VÉRAXA, sipariş vermek istiyorum:%0A%0AÜrün: ${p.name}%0AKod: ${p.sku}%0AFiyat: ${p.price}%0ABeden: ${size}%0ARenk: ${color}`;
-window.open("https://wa.me/"+PHONE+"?text="+msg,"_blank");
+  const p=products[i], size=document.getElementById(`size-${i}`).value, color=getSelectedColor(i);
+  const msg=`Merhaba VÉRAXA, sipariş vermek istiyorum:%0A%0AÜrün: ${p.name}%0AKod: ${p.sku || "-"}%0AFiyat: ${p.price}%0ABeden: ${size}%0ARenk: ${color}`;
+  window.open("https://wa.me/"+PHONE+"?text="+msg,"_blank");
 }
-
 function sendWhatsApp(){
-if(cart.length===0){
-alert("Sepet boş kanka.");
-return;
+  if(cart.length===0){alert("Sepet boş kanka.");return}
+  let msg="Merhaba VÉRAXA, sipariş vermek istiyorum:%0A%0A";
+  cart.forEach((x,i)=>{msg+=`${i+1}) ${x.name}%0AFiyat: ${x.price}%0ABeden: ${x.size}%0ARenk: ${x.color}%0A%0A`});
+  msg+="Bilgi alabilir miyim?";
+  window.open("https://wa.me/"+PHONE+"?text="+msg,"_blank");
 }
-
-let msg="Merhaba VÉRAXA, sipariş vermek istiyorum:%0A%0A";
-
-cart.forEach((x,i)=>{
-msg+=`${i+1}) ${x.name}%0AFiyat: ${x.price}%0ABeden: ${x.size}%0ARenk: ${x.color}%0A%0A`;
-});
-
-msg+="Bilgi alabilir miyim?";
-window.open("https://wa.me/"+PHONE+"?text="+msg,"_blank");
-}
-
 function customPrintOrder(type){
-const msg=`Merhaba VÉRAXA, özel DTF baskı yaptırmak istiyorum.%0A%0ABaskı türü: ${type}%0AÜrün: Tişört / Sweatshirt%0ABeden:%0ARenk:%0ATasarım görseli göndereceğim.%0A%0AFiyat bilgisi alabilir miyim?`;
-window.open("https://wa.me/"+PHONE+"?text="+msg,"_blank");
+  const msg=`Merhaba VÉRAXA, özel DTF baskı yaptırmak istiyorum.%0A%0ABaskı türü: ${type}%0AÜrün: Tişört / Sweatshirt%0ABeden:%0ARenk:%0ATasarım görseli göndereceğim.%0A%0AFiyat bilgisi alabilir miyim?`;
+  window.open("https://wa.me/"+PHONE+"?text="+msg,"_blank");
 }
-
 function openModal(i){
-const p=products[i];
-const select=document.getElementById(`color-${i}`);
-let img=getMainImg(p);
-
-if(select && p.colors && p.colors[Number(select.value)]){
-img=p.colors[Number(select.value)].img;
+  const p=products[i], select=document.getElementById(`color-${i}`);
+  let img=getMainImg(p);
+  if(select && p.colors && p.colors[Number(select.value)]) img=p.colors[Number(select.value)].img;
+  document.getElementById("modalImg").src=img;
+  document.getElementById("modalName").innerText=p.name;
+  document.getElementById("modalPrice").innerText=p.price;
+  document.getElementById("modalDesc").innerText=p.desc || "";
+  document.getElementById("modalFabric").innerText=p.fabric || "Premium kumaş";
+  document.getElementById("modalFit").innerText=p.fit || "Modern kalıp";
+  document.getElementById("productModal").classList.add("open");
 }
-
-document.getElementById("modalImg").src=img;
-document.getElementById("modalName").innerText=p.name;
-document.getElementById("modalPrice").innerText=p.price;
-document.getElementById("modalDesc").innerText=p.desc;
-document.getElementById("modalFabric").innerText=p.fabric || "Premium kumaş";
-document.getElementById("modalFit").innerText=p.fit || "Modern kalıp";
-document.getElementById("productModal").classList.add("open");
-}
-
-function closeModal(){
-document.getElementById("productModal").classList.remove("open");
-}
-
-function toggleFaq(el){
-el.parentElement.classList.toggle("open");
-}
-
+function closeModal(){document.getElementById("productModal").classList.remove("open")}
+function toggleFaq(el){el.parentElement.classList.toggle("open")}
 function toggleFav(i){
-if(favorites.includes(i)){
-favorites=favorites.filter(x=>x!==i);
-}else{
-favorites.push(i);
+  favorites.includes(i) ? favorites=favorites.filter(x=>x!==i) : favorites.push(i);
+  updateFavCount();
+  renderProducts(currentFilter,document.getElementById("searchInput").value);
 }
-updateFavCount();
-renderProducts(currentFilter,document.getElementById("searchInput").value);
-}
-
-function updateFavCount(){
-document.getElementById("favCount").innerText=favorites.length;
-}
-
+function updateFavCount(){document.getElementById("favCount").innerText=favorites.length}
 function showFavorites(){
-document.getElementById("products").scrollIntoView({behavior:"smooth"});
-const list=document.getElementById("productList");
-list.innerHTML="";
-
-if(favorites.length===0){
-list.innerHTML="<p style='color:#aaa;text-align:center;grid-column:1/-1'>Henüz favori ürün yok.</p>";
-return;
+  document.getElementById("products").scrollIntoView({behavior:"smooth"});
+  const list=document.getElementById("productList");
+  list.innerHTML="";
+  if(favorites.length===0){list.innerHTML="<p style='color:#aaa;text-align:center;grid-column:1/-1'>Henüz favori ürün yok.</p>";return}
+  favorites.forEach(i=>{
+    const p=products[i], img=getMainImg(p);
+    list.innerHTML+=`<div class="card"><div class="badge">FAVORİ</div><img src="${img}" onclick="openModal(${i})"><div class="info"><h3>${p.name}</h3><div class="price">${p.price}</div><button class="add" onclick="addToCart(${i})">Sepete Ekle</button></div></div>`;
+  });
 }
-
-favorites.forEach(i=>{
-const p=products[i];
-const img=getMainImg(p);
-
-list.innerHTML+=`
-<div class="card">
-<div class="badge">FAVORİ</div>
-<img src="${img}" onclick="openModal(${i})">
-<div class="info">
-<h3>${p.name}</h3>
-<div class="price">${p.price}</div>
-<button class="add" onclick="addToCart(${i})">Sepete Ekle</button>
-</div>
-</div>`;
-});
-}
-
 function findSize(){
-const h=Number(document.getElementById("height").value);
-const w=Number(document.getElementById("weight").value);
-const result=document.getElementById("sizeResult");
-
-if(!h||!w){
-result.innerText="Boy ve kilo gir kanka.";
-return;
+  const h=Number(document.getElementById("height").value), w=Number(document.getElementById("weight").value), result=document.getElementById("sizeResult");
+  if(!h||!w){result.innerText="Boy ve kilo gir kanka.";return}
+  let size="M";
+  if(w<60) size="S"; else if(w<75) size="M"; else if(w<90) size="L"; else size="XL";
+  result.innerText=`Sana önerilen beden: ${size}${w>80 ? " — oversize görünüm için XL da düşünebilirsin." : ""}`;
 }
-
-let size="M";
-if(w<60) size="S";
-else if(w<75) size="M";
-else if(w<90) size="L";
-else size="XL";
-
-result.innerText=`Sana önerilen beden: ${size}${w>80 ? " — oversize görünüm için XL da düşünebilirsin." : ""}`;
-}
-
-function scrollToProducts(){
-document.getElementById("products").scrollIntoView({behavior:"smooth"});
-}
-
-function scrollTopPage(){
-window.scrollTo({top:0,behavior:"smooth"});
-}
+function scrollToProducts(){document.getElementById("products").scrollIntoView({behavior:"smooth"})}
+function scrollTopPage(){window.scrollTo({top:0,behavior:"smooth"})}
 </script>
+
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
 
@@ -900,58 +567,114 @@ const firebaseConfig = {
 };
 
 firebase.initializeApp(firebaseConfig);
-
 const provider = new firebase.auth.GoogleAuthProvider();
+let authMode="login";
+
+function renderUserArea(user){
+  const area=document.getElementById("userArea");
+  if(!area) return;
+
+  if(user){
+    area.innerHTML=`
+      <div class="accountBox">
+        <img src="${user.photoURL || 'https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg'}">
+        <div>
+          <strong>${user.displayName || user.email || "Veraxa Üyesi"}</strong>
+          <small>Giriş yapıldı</small>
+        </div>
+        <button onclick="logout()">Çıkış</button>
+      </div>`;
+  }else{
+    area.innerHTML=`
+      <div class="authBox">
+        <button class="authMiniBtn" onclick="openAuth('login')">Giriş Yap</button>
+        <button class="authMiniBtn" onclick="openAuth('register')">Kayıt Ol</button>
+      </div>`;
+  }
+}
+
+function openAuth(mode){
+  authMode=mode;
+  document.getElementById("authModal").classList.add("open");
+  switchAuth(mode);
+}
+
+function closeAuth(){
+  document.getElementById("authModal").classList.remove("open");
+}
+
+function switchAuth(mode){
+  authMode=mode;
+  const title=document.getElementById("authTitle");
+  const name=document.getElementById("authName");
+  const btn=document.getElementById("authActionBtn");
+  const switchText=document.getElementById("authSwitchText");
+
+  if(mode==="register"){
+    title.innerText="Kayıt Ol";
+    name.style.display="block";
+    btn.innerText="Kayıt Ol";
+    btn.setAttribute("onclick","emailRegister()");
+    switchText.innerHTML='Zaten hesabın var mı? <span onclick="switchAuth(\\'login\\')">Giriş yap</span>';
+  }else{
+    title.innerText="Üye Girişi";
+    name.style.display="none";
+    btn.innerText="Giriş Yap";
+    btn.setAttribute("onclick","emailLogin()");
+    switchText.innerHTML='Hesabın yok mu? <span onclick="switchAuth(\\'register\\')">Kayıt ol</span>';
+  }
+}
 
 function loginGoogle(){
-  firebase.auth()
-    .setPersistence(firebase.auth.Auth.Persistence.LOCAL)
-    .then(() => {
-      return firebase.auth().signInWithRedirect(provider);
-    });
+  firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL)
+  .then(()=>firebase.auth().signInWithRedirect(provider));
+}
+
+function emailRegister(){
+  const name=document.getElementById("authName").value.trim();
+  const email=document.getElementById("authEmail").value.trim();
+  const pass=document.getElementById("authPassword").value;
+
+  if(!name || !email || !pass){
+    alert("Ad, e-posta ve şifre gir kanka.");
+    return;
+  }
+
+  firebase.auth().createUserWithEmailAndPassword(email,pass)
+  .then(cred=>cred.user.updateProfile({displayName:name}))
+  .then(()=>{
+    closeAuth();
+    alert("Kayıt başarılı kanka.");
+  })
+  .catch(err=>{
+    alert("Kayıt hatası: " + err.message + "\\nFirebase Authentication içinde Email/Password aktif olmalı.");
+  });
+}
+
+function emailLogin(){
+  const email=document.getElementById("authEmail").value.trim();
+  const pass=document.getElementById("authPassword").value;
+
+  if(!email || !pass){
+    alert("E-posta ve şifre gir kanka.");
+    return;
+  }
+
+  firebase.auth().signInWithEmailAndPassword(email,pass)
+  .then(()=>closeAuth())
+  .catch(err=>alert("Giriş hatası: " + err.message));
 }
 
 function logout(){
   firebase.auth().signOut();
 }
 
-function renderUserArea(user){
-  const area = document.getElementById("userArea");
-  if(!area) return;
-
-  if(user){
-    area.innerHTML = `
-      <div class="accountBox">
-        <img src="${user.photoURL || 'https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg'}" alt="Profil">
-        <div>
-          <strong>${user.displayName || "Veraxa Üyesi"}</strong>
-          <small>Giriş yapıldı</small>
-        </div>
-        <button onclick="logout()">Çıkış</button>
-      </div>
-    `;
-  }else{
-    area.innerHTML = `
-      <button class="googleLogin" onclick="loginGoogle()">
-        <span class="gIcon">G</span>
-        <span>Google ile Giriş</span>
-      </button>
-    `;
-  }
-}
-
-document.addEventListener("DOMContentLoaded", function(){
+document.addEventListener("DOMContentLoaded",()=>{
   renderUserArea(null);
-
-  firebase.auth().getRedirectResult().catch(function(error){
-    console.log("Google giriş hatası:", error.message);
-  });
-
-  firebase.auth().onAuthStateChanged(function(user){
-    renderUserArea(user);
-  });
+  firebase.auth().getRedirectResult().catch(err=>console.log("Google giriş hatası:",err.message));
+  firebase.auth().onAuthStateChanged(user=>renderUserArea(user));
 });
 </script>
-</script>
+
 </body>
 </html>
