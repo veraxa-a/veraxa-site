@@ -910,6 +910,8 @@ function logout(){
   firebase.auth().signOut();
 }
 
+window.addEventListener("load", () => {
+
 firebase.auth().onAuthStateChanged(user=>{
   const area = document.getElementById("userArea");
   if(!area) return;
@@ -917,15 +919,12 @@ firebase.auth().onAuthStateChanged(user=>{
   if(user){
     area.innerHTML = `
       <div class="accountBox">
-        <img src="${user.photoURL || 'https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg'}" alt="Profil">
-        <div>
-          <strong>${user.displayName || "Veraxa Üyesi"}</strong>
-          <small>Üye girişi aktif</small>
-        </div>
+        <img src="${user.photoURL || ''}">
+        <span>${user.displayName || "Kullanıcı"}</span>
         <button onclick="logout()">Çıkış</button>
       </div>
     `;
-  }else{
+  } else {
     area.innerHTML = `
       <button class="googleLogin" onclick="loginGoogle()">
         <span class="gIcon">G</span>
@@ -933,6 +932,8 @@ firebase.auth().onAuthStateChanged(user=>{
       </button>
     `;
   }
+});
+
 });
 </script>
 </body>
