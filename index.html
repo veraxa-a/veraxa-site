@@ -173,6 +173,7 @@ footer{text-align:center;color:var(--muted);padding:45px 20px 90px}
 <a href="#faq">SSS</a>
 </nav>
 <div class="navRight">
+  <div id="userArea"></div>
 <button class="navBtn" onclick="showFavorites()">Favori <span id="favCount">0</span></button>
 <button class="navBtn" onclick="toggleCart()">Sepet <span id="cartCount">0</span></button>
 </div>
@@ -761,6 +762,43 @@ function scrollTopPage(){
 window.scrollTo({top:0,behavior:"smooth"});
 }
 </script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
 
+<script>
+const firebaseConfig = {
+  apiKey: "AIzaSyC9IEzvUlZ6JTtw6lVvUyYTsHpveNHeKWc",
+  authDomain: "veraxa-2daad.firebaseapp.com",
+  projectId: "veraxa-2daad",
+  storageBucket: "veraxa-2daad.firebasestorage.app",
+  messagingSenderId: "331694913024",
+  appId: "1:331694913024:web:33797fbbf85d1330ea8ae5"
+};
+
+firebase.initializeApp(firebaseConfig);
+
+const provider = new firebase.auth.GoogleAuthProvider();
+
+function loginGoogle(){
+  firebase.auth().signInWithPopup(provider);
+}
+
+function logout(){
+  firebase.auth().signOut();
+}
+
+firebase.auth().onAuthStateChanged(user=>{
+  if(user){
+    document.getElementById("userArea").innerHTML = `
+      👤 ${user.displayName}
+      <button onclick="logout()" style="margin-left:10px;">Çıkış</button>
+    `;
+  } else {
+    document.getElementById("userArea").innerHTML = `
+      <button onclick="loginGoogle()">Google ile Giriş</button>
+    `;
+  }
+});
+</script>
 </body>
 </html>
