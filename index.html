@@ -6,6 +6,90 @@
 <title>VÉRAXA | Ultra Luxury Clothing</title>
 
 <style>
+#userArea{
+  display:flex;
+  align-items:center;
+}
+
+.googleLogin{
+  height:38px;
+  border-radius:40px;
+  border:1px solid rgba(201,164,92,.55);
+  background:rgba(0,0,0,.35);
+  color:#f8f3e8;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:0 14px;
+  cursor:pointer;
+  font-size:12px;
+  letter-spacing:1px;
+}
+
+.googleLogin:hover{
+  background:#c9a45c;
+  color:#111;
+}
+
+.gIcon{
+  width:22px;
+  height:22px;
+  border-radius:50%;
+  background:white;
+  color:#111;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:bold;
+}
+
+.accountBox{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  border:1px solid rgba(201,164,92,.55);
+  background:rgba(0,0,0,.38);
+  padding:6px 8px;
+  border-radius:40px;
+}
+
+.accountBox img{
+  width:30px;
+  height:30px;
+  border-radius:50%;
+  object-fit:cover;
+}
+
+.accountBox div{
+  display:flex;
+  flex-direction:column;
+  line-height:1.1;
+}
+
+.accountBox strong{
+  font-size:12px;
+  color:#f8f3e8;
+  max-width:90px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.accountBox small{
+  font-size:10px;
+  color:#c9a45c;
+}
+
+.accountBox button{
+  border:none;
+  background:#c9a45c;
+  color:#111;
+  padding:7px 10px;
+  border-radius:30px;
+  cursor:pointer;
+  font-size:11px;
+  font-weight:bold;
+}
   .googleLogin,
 .googleUser{
   height:36px;
@@ -832,16 +916,20 @@ firebase.auth().onAuthStateChanged(user=>{
 
   if(user){
     area.innerHTML = `
-      <button class="googleUser" onclick="logout()">
-        <img src="${user.photoURL || ''}">
-        <span>${user.displayName ? user.displayName.split(" ")[0] : "Hesabım"}</span>
-      </button>
+      <div class="accountBox">
+        <img src="${user.photoURL || 'https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg'}" alt="Profil">
+        <div>
+          <strong>${user.displayName || "Veraxa Üyesi"}</strong>
+          <small>Üye girişi aktif</small>
+        </div>
+        <button onclick="logout()">Çıkış</button>
+      </div>
     `;
   }else{
     area.innerHTML = `
       <button class="googleLogin" onclick="loginGoogle()">
         <span class="gIcon">G</span>
-        <span>Giriş</span>
+        <span>Google ile Giriş</span>
       </button>
     `;
   }
