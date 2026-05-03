@@ -1,692 +1,446 @@
 <!DOCTYPE html>
 <html lang="tr">
-<head> 
-<link rel="icon" href="logo.png?v=2">
-<link rel="icon" type="image/png" sizes="32x32" href="logo.png">
-<link rel="shortcut icon" href="logo.png">
-<link rel="apple-touch-icon" href="logo.png">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VÉRAXA | Luxury Clothing & Custom DTF</title>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VÉRAXA | Luxury Clothing & Custom DTF</title>
 
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-:root{--black:#020202;--soft:#080808;--card:#101010;--gold:#d6b36a;--gold2:#f5deb3;--text:#f8f3e8;--muted:#aaa29a}
-html{scroll-behavior:smooth}
-body{font-family:Arial,Helvetica,sans-serif;background:var(--black);color:var(--text)}
-a{text-decoration:none;color:inherit}
-button,input,select{font-family:inherit}
+  <link rel="icon" href="logo.png?v=2">
 
-.topbar{background:linear-gradient(90deg,#8a6428,#f5deb3,#8a6428);color:#050505;padding:10px;overflow:hidden;white-space:nowrap;font-size:13px;font-weight:bold;letter-spacing:1px}
-.topbar span{display:inline-block;padding-left:100%;animation:marquee 23s linear infinite}
-@keyframes marquee{100%{transform:translateX(-100%)}}
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    :root{
+      --black:#020202;
+      --soft:#080808;
+      --card:#101010;
+      --gold:#d6b36a;
+      --gold2:#f5deb3;
+      --text:#f8f3e8;
+      --muted:#aaa29a;
+    }
+    body{
+      font-family:Arial,Helvetica,sans-serif;
+      background:var(--black);
+      color:var(--text);
+    }
+    a{text-decoration:none;color:inherit}
+    header{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      z-index:99;
+      background:rgba(0,0,0,.88);
+      backdrop-filter:blur(15px);
+      border-bottom:1px solid rgba(214,179,106,.18);
+    }
+    .nav{
+      max-width:1250px;
+      margin:auto;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:18px 24px;
+    }
+    .logo{
+      font-family:Georgia,serif;
+      font-size:30px;
+      letter-spacing:8px;
+      color:var(--gold);
+      cursor:pointer;
+    }
+    .menu{
+      display:flex;
+      gap:20px;
+      font-size:12px;
+      letter-spacing:2px;
+      text-transform:uppercase;
+    }
+    .right{
+      display:flex;
+      gap:10px;
+      align-items:center;
+    }
+    button,.btn{
+      border:none;
+      background:var(--gold);
+      color:#111;
+      padding:11px 18px;
+      border-radius:30px;
+      font-weight:bold;
+      cursor:pointer;
+    }
+    .ghost{
+      background:transparent;
+      color:var(--text);
+      border:1px solid rgba(214,179,106,.55);
+    }
 
-header{position:fixed;top:0;left:0;width:100%;z-index:99;background:linear-gradient(rgba(0,0,0,.92),rgba(0,0,0,.18));backdrop-filter:blur(16px)}
-.nav{max-width:1320px;margin:auto;display:flex;justify-content:space-between;align-items:center;padding:18px 22px}
-.logo{font-family:Georgia,serif;font-size:30px;letter-spacing:9px;font-weight:300;cursor:pointer}
-.logo span{color:var(--gold2)}
-.menu{display:flex;gap:23px;font-size:12px;letter-spacing:2px;text-transform:uppercase}
-.menu a:hover{color:var(--gold2)}
-.navRight{display:flex;gap:10px;align-items:center}
-.navBtn,.authMiniBtn{background:rgba(0,0,0,.35);color:var(--text);border:1px solid rgba(214,179,106,.5);padding:9px 14px;border-radius:30px;cursor:pointer;font-size:12px}
-.navBtn:hover,.authMiniBtn:hover{background:var(--gold);color:#111}
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:120px 20px 70px;
+      background:
+        linear-gradient(rgba(0,0,0,.72),rgba(0,0,0,.95)),
+        url("https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1600&q=80") center/cover;
+    }
+    .hero img{
+      width:115px;
+      margin-bottom:22px;
+    }
+    .hero h1{
+      font-family:Georgia,serif;
+      font-size:72px;
+      letter-spacing:10px;
+      color:var(--gold);
+    }
+    .hero p{
+      max-width:680px;
+      margin:22px auto 32px;
+      color:#ddd;
+      font-size:18px;
+      line-height:1.8;
+    }
 
-#userArea{display:none;align-items:center}
-.accountBox{display:flex;align-items:center;gap:9px;border:1px solid rgba(214,179,106,.55);background:rgba(0,0,0,.42);padding:6px 8px;border-radius:40px}
-.accountBox img{width:30px;height:30px;border-radius:50%;object-fit:cover}
-.accountBox div{display:flex;flex-direction:column;line-height:1.1}
-.accountBox strong{font-size:12px;color:var(--text);max-width:95px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.accountBox small{font-size:10px;color:var(--gold2)}
-.accountBox button{border:none;background:var(--gold);color:#111;padding:7px 10px;border-radius:30px;cursor:pointer;font-size:11px;font-weight:bold}
+    section{padding:80px 24px}
+    .container{max-width:1250px;margin:auto}
+    .title{text-align:center;margin-bottom:45px}
+    .title span{
+      color:var(--gold);
+      letter-spacing:4px;
+      font-size:12px;
+    }
+    .title h2{
+      font-family:Georgia,serif;
+      font-size:44px;
+      margin-top:12px;
+    }
 
-.hero{min-height:100vh;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center;color:white}
-.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.94),rgba(0,0,0,.32),rgba(0,0,0,.94)),linear-gradient(rgba(0,0,0,.08),rgba(0,0,0,.95)),url("https://images.pexels.com/photos/1926769/pexels-photo-1926769.jpeg?auto=compress&cs=tinysrgb&w=1800");background-size:cover;background-position:center;transform:scale(1.05);animation:heroZoom 12s ease-in-out infinite alternate;filter:contrast(1.1) brightness(.86)}
-@keyframes heroZoom{from{transform:scale(1.05)}to{transform:scale(1.13)}}
-.heroContent{position:relative;z-index:2;padding:20px}
-.heroTag{display:inline-block;border:1px solid rgba(214,179,106,.72);padding:9px 24px;border-radius:40px;color:var(--gold2);font-size:12px;letter-spacing:3px;margin-bottom:22px;background:rgba(0,0,0,.32)}
-.hero h1{font-family:Georgia,serif;font-size:108px;letter-spacing:18px;font-weight:300;margin-bottom:16px;text-shadow:0 30px 90px rgba(0,0,0,.95)}
-.hero h1 span{color:var(--gold2)}
-.hero p{max-width:760px;margin:0 auto 20px;color:#e8e0d4;font-size:18px;letter-spacing:3px;line-height:1.8}
-.heroTrust{margin-top:12px;color:#c9a45c;font-size:13px;letter-spacing:2px}
-.heroBtns{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:25px}
-.btn{background:linear-gradient(90deg,#b58a3e,#f5deb3,#b58a3e);color:#080808;border:none;padding:15px 38px;border-radius:40px;font-weight:bold;cursor:pointer;letter-spacing:1px}
-.btn.dark{background:rgba(0,0,0,.42);color:white;border:1px solid rgba(214,179,106,.75)}
-.heroBottom{position:absolute;bottom:0;left:0;right:0;z-index:3;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(214,179,106,.35);background:rgba(0,0,0,.52);backdrop-filter:blur(12px)}
-.heroBottom div{padding:18px 10px;border-right:1px solid rgba(214,179,106,.25);font-size:12px;letter-spacing:2px;color:#ddd}
-.heroBottom b{color:var(--gold2)}
+    .products{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:26px;
+    }
+    .product{
+      background:linear-gradient(180deg,#121212,#070707);
+      border:1px solid rgba(214,179,106,.18);
+      border-radius:28px;
+      overflow:hidden;
+      box-shadow:0 18px 45px rgba(0,0,0,.35);
+    }
+    .product img{
+      width:100%;
+      height:360px;
+      object-fit:cover;
+      background:#111;
+    }
+    .info{padding:24px}
+    .info h3{
+      font-family:Georgia,serif;
+      color:var(--gold2);
+      font-size:24px;
+      margin-bottom:10px;
+    }
+    .info p{
+      color:var(--muted);
+      line-height:1.6;
+      min-height:70px;
+    }
+    .price{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-top:18px;
+    }
+    .price b{font-size:22px;color:var(--gold)}
 
-.section{max-width:1320px;margin:auto;padding:92px 22px}
-.title{text-align:center;margin-bottom:44px}
-.title small{color:var(--gold);letter-spacing:4px;font-size:12px}
-.title h2{font-family:Georgia,serif;font-size:46px;font-weight:300;letter-spacing:5px;margin-top:12px}
-.title p{color:var(--muted);margin-top:12px;line-height:1.7}
+    .dtf{
+      background:#0b0b0b;
+      border-top:1px solid rgba(214,179,106,.2);
+      border-bottom:1px solid rgba(214,179,106,.2);
+    }
+    .dtfBox{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:35px;
+      align-items:center;
+    }
+    .dtfBox img{
+      width:100%;
+      border-radius:30px;
+    }
+    .dtfBox h2{
+      font-family:Georgia,serif;
+      color:var(--gold);
+      font-size:42px;
+      margin-bottom:18px;
+    }
+    .dtfBox p{
+      color:#ccc;
+      line-height:1.8;
+      margin-bottom:20px;
+    }
 
-.collections{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.colCard{height:330px;position:relative;border-radius:28px;overflow:hidden;cursor:pointer;border:1px solid rgba(214,179,106,.25);background:var(--card)}
-.colCard img{width:100%;height:100%;object-fit:cover;transition:.5s;opacity:.86}
-.colCard:hover img{transform:scale(1.08);opacity:1}
-.colCard div{position:absolute;inset:auto 0 0 0;padding:24px;background:linear-gradient(transparent,rgba(0,0,0,.92))}
-.colCard h3{font-family:Georgia,serif;font-weight:300;letter-spacing:3px;font-size:24px}
-.colCard p{color:#bbb;margin-top:8px;font-size:13px}
+    .authModal{
+      display:none;
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,.82);
+      z-index:999;
+      align-items:center;
+      justify-content:center;
+      padding:20px;
+    }
+    .authBox{
+      width:100%;
+      max-width:420px;
+      background:#111;
+      border:1px solid rgba(214,179,106,.35);
+      border-radius:28px;
+      padding:30px;
+      box-shadow:0 30px 80px rgba(0,0,0,.65);
+    }
+    .authBox h2{
+      font-family:Georgia,serif;
+      color:var(--gold);
+      margin-bottom:10px;
+    }
+    .authBox p{
+      color:#aaa;
+      margin-bottom:20px;
+      line-height:1.5;
+    }
+    .authBox input{
+      width:100%;
+      padding:15px;
+      margin-bottom:12px;
+      border-radius:14px;
+      border:1px solid #333;
+      background:#070707;
+      color:white;
+    }
+    .google{
+      width:100%;
+      background:white;
+      color:#111;
+      margin-bottom:12px;
+    }
+    .close{
+      width:100%;
+      margin-top:10px;
+      background:transparent;
+      color:#ccc;
+      border:1px solid #333;
+    }
+    .welcome{
+      display:none;
+      color:var(--gold);
+      font-size:12px;
+      max-width:160px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
 
-.searchBox{max-width:500px;margin:0 auto 25px}
-.searchBox input{width:100%;background:var(--soft);border:1px solid rgba(214,179,106,.35);color:var(--text);padding:15px 20px;border-radius:40px;outline:none}
-.filters{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-bottom:40px}
-.filters button{background:transparent;color:var(--text);border:1px solid rgba(214,179,106,.4);padding:11px 22px;border-radius:40px;cursor:pointer}
-.filters button.active,.filters button:hover{background:var(--gold);color:#111}
+    footer{
+      text-align:center;
+      padding:35px;
+      color:#888;
+      background:#050505;
+    }
 
-.products,.printGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
-.card,.printCard{background:linear-gradient(180deg,#111,#070707);border:1px solid rgba(214,179,106,.18);border-radius:28px;overflow:hidden;position:relative;transition:.35s}
-.card:hover,.printCard:hover{transform:translateY(-8px);border-color:rgba(214,179,106,.75);box-shadow:0 25px 70px rgba(0,0,0,.55)}
-.badge,.stock{position:absolute;top:15px;z-index:3;padding:7px 13px;border-radius:30px;font-size:11px}
-.badge{left:15px;background:linear-gradient(90deg,#b58a3e,#f5deb3);color:#111;font-weight:bold}
-.stock{right:15px;background:rgba(0,0,0,.62);border:1px solid rgba(214,179,106,.5)}
-.fav{position:absolute;top:56px;right:15px;z-index:4;width:36px;height:36px;border-radius:50%;border:1px solid rgba(214,179,106,.6);background:rgba(0,0,0,.7);color:white;cursor:pointer}
-.fav.active{background:var(--gold);color:#111}
-.card img,.printCard img{width:100%;height:430px;object-fit:cover;display:block;cursor:pointer}
-.info,.printInfo{padding:22px}
-.info h3,.printInfo h3{font-family:Georgia,serif;font-size:21px;font-weight:300;margin-bottom:9px;cursor:pointer}
-.price{color:var(--gold2);font-size:20px;margin-bottom:10px}
-.miniText,.printInfo p{color:var(--muted);font-size:13px;margin-bottom:14px;line-height:1.7}
-.selects{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
-select{background:#060606;color:var(--text);border:1px solid rgba(214,179,106,.35);padding:11px;border-radius:12px}
-.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.add,.quick,.printBtn{border:none;padding:13px;border-radius:16px;font-weight:bold;cursor:pointer}
-.add,.printBtn{background:var(--text);color:#111}
-.quick{background:#25D366;color:white}
-
-.luxBanner{max-width:1320px;margin:0 auto;padding:0 22px 76px}
-.bannerGrid{display:grid;grid-template-columns:1.25fr .75fr;gap:24px}
-.bigBanner,.smallBanner{position:relative;border-radius:34px;overflow:hidden;min-height:540px;border:1px solid rgba(214,179,106,.25)}
-.bigBanner img,.smallBanner img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
-.bannerOverlay{position:absolute;inset:0;background:linear-gradient(transparent,rgba(0,0,0,.94))}
-.bannerText{position:absolute;left:34px;right:34px;bottom:34px;z-index:2}
-.bannerText small{color:var(--gold2);letter-spacing:3px}
-.bannerText h2{font-family:Georgia,serif;font-size:46px;font-weight:300;margin:12px 0}
-.bannerText p{color:#ddd;line-height:1.75;max-width:580px}
-
-.printHero{position:relative;overflow:hidden;border-radius:34px;border:1px solid rgba(214,179,106,.25);min-height:430px;margin-bottom:34px;background:linear-gradient(90deg,rgba(0,0,0,.92),rgba(0,0,0,.36)),url("https://images.pexels.com/photos/8532616/pexels-photo-8532616.jpeg?auto=compress&cs=tinysrgb&w=1600");background-size:cover;background-position:center;display:flex;align-items:end;padding:38px}
-.printHero h2{font-family:Georgia,serif;font-size:48px;font-weight:300;letter-spacing:4px}
-.printHero p{max-width:680px;color:#ddd;line-height:1.8;margin-top:12px}
-.printSteps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:28px}
-.printSteps div{background:#0d0d0d;border:1px solid rgba(214,179,106,.18);border-radius:22px;padding:22px;text-align:center;color:#ccc;line-height:1.7}
-.printSteps b{color:var(--gold2)}
-
-.finder{max-width:760px;margin:auto;background:linear-gradient(180deg,#111,#070707);border:1px solid rgba(214,179,106,.25);border-radius:30px;padding:32px}
-.finderGrid{display:grid;grid-template-columns:1fr 1fr auto;gap:12px}
-.finder input{padding:15px;border-radius:16px;border:1px solid rgba(214,179,106,.35);background:#060606;color:white}
-.result{color:var(--gold2);font-size:20px;text-align:center;margin-top:18px}
-
-.trust{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:45px}
-.trust div{background:var(--card);border:1px solid rgba(214,179,106,.18);border-radius:24px;padding:26px;text-align:center;color:#ccc;line-height:1.7}
-
-.faq{max-width:900px;margin:auto}
-.faqItem{background:var(--card);border:1px solid rgba(214,179,106,.18);border-radius:20px;margin-bottom:12px;overflow:hidden}
-.faqQ{padding:20px;cursor:pointer;color:var(--gold2)}
-.faqA{display:none;padding:0 20px 20px;color:var(--muted);line-height:1.7}
-.faqItem.open .faqA{display:block}
-
-.brand{background:linear-gradient(rgba(0,0,0,.74),rgba(0,0,0,.94)),url("https://images.pexels.com/photos/7679651/pexels-photo-7679651.jpeg?auto=compress&cs=tinysrgb&w=1600");background-size:cover;background-position:center;text-align:center;padding:110px 22px;border-top:1px solid rgba(214,179,106,.25);border-bottom:1px solid rgba(214,179,106,.25)}
-.brand h2{font-family:Georgia,serif;font-size:44px;letter-spacing:5px;font-weight:300}
-.brand p{max-width:760px;margin:18px auto 0;color:#ddd;line-height:1.9}
-
-footer{text-align:center;color:var(--muted);padding:45px 20px 90px}
-.contact{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:20px}
-.contact a{border:1px solid rgba(214,179,106,.45);border-radius:40px;padding:12px 20px}
-
-.cartPanel{position:fixed;top:0;right:-430px;width:390px;max-width:92%;height:100vh;background:#070707;border-left:1px solid var(--gold);z-index:1001;padding:26px;transition:.35s;overflow:auto}
-.cartPanel.open{right:0}
-.close{float:right;font-size:26px;cursor:pointer;color:var(--gold2)}
-.cartItem{border-bottom:1px solid rgba(214,179,106,.22);padding:15px 0;font-size:14px}
-.whatsapp{width:100%;margin-top:20px;padding:15px;border:none;border-radius:16px;background:#25D366;color:white;font-weight:bold;cursor:pointer}
-
-.modal,.authModal{display:none;position:fixed;inset:0;z-index:1002;background:rgba(0,0,0,.84);align-items:center;justify-content:center;padding:18px}
-.modal.open,.authModal.open{display:flex}
-.modalBox{max-width:960px;width:100%;background:#070707;border:1px solid var(--gold);border-radius:30px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;position:relative}
-.modalBox img{width:100%;height:100%;min-height:560px;object-fit:cover}
-.modalContent{padding:34px}
-.modalContent h2{font-family:Georgia,serif;font-size:32px;font-weight:300;margin-bottom:12px}
-.modalContent p{color:#c8c0b7;line-height:1.8;margin-bottom:12px}
-.modalClose,.authClose{position:absolute;top:14px;right:22px;font-size:30px;cursor:pointer;color:var(--gold2);z-index:4}
-.sizeTable{width:100%;border-collapse:collapse;margin-top:16px;font-size:13px}
-.sizeTable td,.sizeTable th{border:1px solid rgba(214,179,106,.25);padding:10px;text-align:center}
-.sizeTable th{color:var(--gold2)}
-
-.authBoxPanel{position:relative;max-width:430px;width:100%;background:#070707;border:1px solid var(--gold);border-radius:30px;padding:34px;box-shadow:0 30px 90px rgba(0,0,0,.65)}
-.authBoxPanel h2{font-family:Georgia,serif;font-weight:300;letter-spacing:3px;margin-bottom:10px}
-.authBoxPanel p{color:#aaa;margin-bottom:18px;line-height:1.6}
-.authBoxPanel input{width:100%;background:#050505;border:1px solid rgba(214,179,106,.35);border-radius:16px;color:white;padding:14px;margin-bottom:10px}
-.authFullBtn{width:100%;border:none;border-radius:16px;padding:14px;margin-top:8px;background:linear-gradient(90deg,#b58a3e,#f5deb3,#b58a3e);color:#111;font-weight:bold;cursor:pointer}
-.authGhostBtn{width:100%;border:1px solid rgba(214,179,106,.55);border-radius:16px;padding:13px;margin-top:10px;background:transparent;color:white;cursor:pointer}
-.authSwitch{margin-top:14px;text-align:center;color:#aaa;font-size:13px}
-.authSwitch span{color:var(--gold2);cursor:pointer}
-
-.bottomBar{display:none;position:fixed;left:0;right:0;bottom:0;z-index:1000;grid-template-columns:repeat(3,1fr);background:#070707;border-top:1px solid rgba(214,179,106,.45)}
-.bottomBar a,.bottomBar button{background:transparent;color:white;border:none;padding:14px 6px;font-size:12px}
-
-@media(max-width:900px){
-.menu{display:none}.hero h1{font-size:50px;letter-spacing:9px}.hero p{font-size:14px}.heroBottom{grid-template-columns:1fr}
-.bannerGrid{grid-template-columns:1fr}.bigBanner,.smallBanner{min-height:430px}
-.collections{grid-template-columns:1fr 1fr}.products,.printGrid{grid-template-columns:1fr}.printSteps{grid-template-columns:1fr 1fr}
-.trust{grid-template-columns:1fr 1fr}.finderGrid{grid-template-columns:1fr}.modalBox{grid-template-columns:1fr;max-height:92vh;overflow:auto}.modalBox img{min-height:auto;height:390px}.bottomBar{display:grid}
-}
-@media(max-width:520px){
-.logo{font-size:21px;letter-spacing:5px}.nav{padding:14px}.navBtn,.authMiniBtn{font-size:11px;padding:8px 10px}
-.hero h1{font-size:39px;letter-spacing:7px}.heroTag{font-size:10px}.title h2{font-size:31px}
-.collections,.trust,.printSteps{grid-template-columns:1fr}.card img,.printCard img{height:410px}.actions{grid-template-columns:1fr}.bannerText h2,.printHero h2{font-size:32px}
-}
-</style>
+    @media(max-width:850px){
+      .menu{display:none}
+      .hero h1{font-size:46px}
+      .products{grid-template-columns:1fr}
+      .dtfBox{grid-template-columns:1fr}
+      .logo{font-size:22px}
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="topbar">
-<span>NEW SEASON DROP • PREMIUM QUALITY • ÖZEL DTF BASKI • WHATSAPP İLE HIZLI SİPARİŞ • LIMITED COLLECTION • VÉRAXA.CO •</span>
-</div>
-
 <header>
-<div class="nav">
-<div class="logo" onclick="scrollTopPage()">V<span>É</span>RAXA</div>
-<nav class="menu">
-<a href="#collections">Koleksiyon</a>
-<a href="#products">Ürünler</a>
-<a href="#custom-print">Özel Baskı</a>
-<a href="#finder">Bedenimi Bul</a>
-<a href="#faq">SSS</a>
-</nav>
-<div class="navRight">
-<button id="loginBtn" class="authMiniBtn" onclick="openAuth('login')">Giriş Yap</button>
-<button id="registerBtn" class="authMiniBtn" onclick="openAuth('register')">Kayıt Ol</button>
-<div id="userArea"></div>
-<button class="navBtn" onclick="showFavorites()">Favori <span id="favCount">0</span></button>
-<button class="navBtn" onclick="toggleCart()">Sepet <span id="cartCount">0</span></button>
-</div>
-</div>
+  <div class="nav">
+    <div class="logo" onclick="location.href='#home'">VÉRAXA</div>
+
+    <nav class="menu">
+      <a href="#urunler">Ürünler</a>
+      <a href="#dtf">Custom DTF</a>
+      <a href="#iletisim">İletişim</a>
+    </nav>
+
+    <div class="right">
+      <div id="welcomeText" class="welcome"></div>
+      <button class="ghost" onclick="openAuth()">Giriş Yap</button>
+    </div>
+  </div>
 </header>
 
-<section class="hero">
-<div class="heroContent">
-<div class="heroTag">LUXURY CLOTHING / CUSTOM DTF PRINT</div>
-<h1>V<span>É</span>RAXA</h1>
-<p>Premium clothing, limited drops and custom DTF prints designed for a powerful luxury look.</p>
-<div class="heroTrust">LIMITED STOCK • PREMIUM COLLECTION • SAME DAY WHATSAPP ORDER</div>
-<div class="heroBtns">
-<button class="btn" onclick="scrollToProducts()">SHOP COLLECTION</button>
-<button class="btn dark" onclick="document.getElementById('custom-print').scrollIntoView({behavior:'smooth'})">CUSTOM PRINT</button>
-</div>
-<div style="margin-top:20px;font-size:12px;color:#aaa;letter-spacing:2px;">✔ Premium Kumaş • ✔ Türkiye Geneli Gönderim • ✔ WhatsApp Hızlı Sipariş</div>
-</div>
-<div class="heroBottom">
-<div><b>01</b> PREMIUM FABRIC</div>
-<div><b>02</b> CUSTOM DTF PRINT</div>
-<div><b>03</b> WHATSAPP FAST ORDER</div>
-</div>
+<section class="hero" id="home">
+  <div>
+    <img src="logo.png" alt="Veraxa Logo">
+    <h1>VÉRAXA</h1>
+    <p>Luxury clothing, premium basic parçalar ve özel DTF baskı tasarımları. Sade, güçlü ve dikkat çeken bir marka deneyimi.</p>
+    <a class="btn" href="#urunler">Koleksiyonu İncele</a>
+  </div>
 </section>
 
-<section class="luxBanner">
-<div class="bannerGrid">
-<div class="bigBanner">
-<img src="https://images.pexels.com/photos/845434/pexels-photo-845434.jpeg?auto=compress&cs=tinysrgb&w=1600">
-<div class="bannerOverlay"></div>
-<div class="bannerText">
-<small>VÉRAXA SIGNATURE</small>
-<h2>Premium Street Luxury</h2>
-<p>Hazır giyim ve isteğe özel DTF baskı. Tişört, sweatshirt ve oversize modellerde modern, güçlü ve premium görünüm.</p>
-</div>
-</div>
-<div class="smallBanner">
-<img src="https://images.pexels.com/photos/8532616/pexels-photo-8532616.jpeg?auto=compress&cs=tinysrgb&w=1200">
-<div class="bannerOverlay"></div>
-<div class="bannerText">
-<small>CUSTOM PRINT</small>
-<h2>Your Design</h2>
-<p>Kendi görselini gönder, tişört veya sweatshirt üzerine baskı yaptıralım.</p>
-</div>
-</div>
-</div>
-</section>
+<section id="urunler">
+  <div class="container">
+    <div class="title">
+      <span>PREMIUM COLLECTION</span>
+      <h2>Veraxa Ürünleri</h2>
+    </div>
 
-<section class="section" id="collections">
-<div class="title"><small>SELECT YOUR STYLE</small><h2>COLLECTIONS</h2><p>Tarzını hızlı seç, koleksiyona direkt gir.</p></div>
-<div class="collections">
-<div class="colCard" onclick="goFilter('women')"><img src="https://images.pexels.com/photos/7679863/pexels-photo-7679863.jpeg?auto=compress&cs=tinysrgb&w=900"><div><h3>WOMEN</h3><p>Minimal luxury</p></div></div>
-<div class="colCard" onclick="goFilter('men')"><img src="https://images.pexels.com/photos/6765164/pexels-photo-6765164.jpeg?auto=compress&cs=tinysrgb&w=900"><div><h3>MEN</h3><p>Bold streetwear</p></div></div>
-<div class="colCard" onclick="goFilter('tshirt')"><img src="https://images.pexels.com/photos/6311392/pexels-photo-6311392.jpeg?auto=compress&cs=tinysrgb&w=900"><div><h3>T-SHIRT</h3><p>Premium basics</p></div></div>
-<div class="colCard" onclick="goFilter('sweatshirt')"><img src="https://images.pexels.com/photos/6311397/pexels-photo-6311397.jpeg?auto=compress&cs=tinysrgb&w=900"><div><h3>SWEAT</h3><p>Comfort luxury</p></div></div>
-</div>
-</section>
+    <div class="products">
 
-<section class="section" id="products">
-<div class="title"><small>SHOP NOW</small><h2>NEW COLLECTION</h2><p>Premium daily wear with luxury attitude.</p></div>
-<div class="searchBox"><input id="searchInput" oninput="searchProducts()" placeholder="Ürün ara: sweatshirt, tee, crop..."></div>
-<div class="filters">
-<button class="active" onclick="filterProducts('all',this)">Tümü</button>
-<button onclick="filterProducts('new',this)">New In</button>
-<button onclick="filterProducts('women',this)">Kadın</button>
-<button onclick="filterProducts('men',this)">Erkek</button>
-<button onclick="filterProducts('tshirt',this)">T-Shirt</button>
-<button onclick="filterProducts('sweatshirt',this)">Sweatshirt</button>
-</div>
-<div class="products" id="productList"></div>
-<div class="trust">
-<div>🚚<br><br>Hızlı Kargo</div>
-<div>🔒<br><br>Güvenli Sipariş</div>
-<div>↩️<br><br>14 Gün Değişim</div>
-<div>💬<br><br>WhatsApp Destek</div>
-</div>
-</section>
-
-<section class="section" id="custom-print">
-<div class="title"><small>CUSTOM DTF PRINT</small><h2>İSTEĞE GÖRE BASKI</h2><p>Kendi tasarımını gönder; beyaz tişört, siyah tişört, oversize tişört ve sweatshirt üzerine premium DTF baskı yapalım.</p></div>
-<div class="printHero"><div><h2>Custom Print Studio</h2><p>Logo, yazı, görsel, marka tasarımı veya özel çizim. Baskı türünü seç, WhatsApp üzerinden tasarımını gönder, fiyat ve üretim bilgisi al.</p></div></div>
-<div class="printGrid">
-<div class="printCard"><img src="https://images.pexels.com/photos/8532616/pexels-photo-8532616.jpeg?auto=compress&cs=tinysrgb&w=900"><div class="printInfo"><h3>Beyaz Tişört Baskı</h3><p>Minimal logo, yazı, anime, marka tasarımı veya özel görsel baskı.</p><button class="printBtn" onclick="customPrintOrder('Beyaz Tişört Baskı')">Teklif Al</button></div></div>
-<div class="printCard"><img src="https://images.pexels.com/photos/6311392/pexels-photo-6311392.jpeg?auto=compress&cs=tinysrgb&w=900"><div class="printInfo"><h3>Siyah Tişört Baskı</h3><p>Siyah tişört üzerine beyaz, renkli veya premium DTF baskı.</p><button class="printBtn" onclick="customPrintOrder('Siyah Tişört Baskı')">Teklif Al</button></div></div>
-<div class="printCard"><img src="https://images.pexels.com/photos/6311397/pexels-photo-6311397.jpeg?auto=compress&cs=tinysrgb&w=900"><div class="printInfo"><h3>Sweatshirt Baskı</h3><p>Oversize sweatshirt, hoodie ve basic sweat üzerine özel baskı.</p><button class="printBtn" onclick="customPrintOrder('Sweatshirt Baskı')">Teklif Al</button></div></div>
-</div>
-<div class="printSteps"><div><b>01</b><br>Modeli seç</div><div><b>02</b><br>Tasarımını gönder</div><div><b>03</b><br>Fiyat al</div><div><b>04</b><br>Baskı hazırlansın</div></div>
-</section>
-
-<section class="section" id="finder">
-<div class="title"><small>SMART SIZE</small><h2>BEDENİMİ BUL</h2><p>Boy ve kilo gir, sana beden önerelim.</p></div>
-<div class="finder"><div class="finderGrid"><input id="height" type="number" placeholder="Boy cm"><input id="weight" type="number" placeholder="Kilo"><button class="btn" onclick="findSize()">Öner</button></div><div class="result" id="sizeResult"></div></div>
-</section>
-
-<section class="section" id="faq">
-<div class="title"><small>HELP</small><h2>SIK SORULAN SORULAR</h2></div>
-<div class="faq">
-<div class="faqItem"><div class="faqQ" onclick="toggleFaq(this)">Hazır ürün siparişi nasıl verilir?</div><div class="faqA">Ürünü sepete ekleyip WhatsApp ile sipariş verebilirsin. Beden ve renk otomatik mesaj olarak gider.</div></div>
-<div class="faqItem"><div class="faqQ" onclick="toggleFaq(this)">Özel DTF baskı nasıl yapılır?</div><div class="faqA">Baskı modelini seçip WhatsApp’tan tasarım görselini gönderiyorsun. Sonra fiyat ve üretim bilgisi verilir.</div></div>
-<div class="faqItem"><div class="faqQ" onclick="toggleFaq(this)">Kargo kaç günde gelir?</div><div class="faqA">Siparişler genelde 1-3 iş günü içinde hazırlanır.</div></div>
-<div class="faqItem"><div class="faqQ" onclick="toggleFaq(this)">Değişim var mı?</div><div class="faqA">Kullanılmamış hazır ürünlerde 14 gün içinde değişim yapılabilir.</div></div>
-</div>
-</section>
-
-<section class="brand"><h2>VÉRAXA WORLD</h2><p>VÉRAXA sadece kıyafet değil, bir duruş biçimidir. Hazır giyim, özel baskı ve premium görünümü tek çatı altında toplar.</p></section>
-
-<footer>
-<strong>VÉRAXA</strong><br>
-Luxury Clothing & Custom DTF Print<br>
-Telefon: 0546 885 37 31
-<div class="contact">
-<a href="https://wa.me/905468853731" target="_blank">WhatsApp</a>
-<a href="https://t.me/nilu_mi" target="_blank">Telegram</a>
-<a href="https://instagram.com/veraxa.co" target="_blank">Instagram</a>
-</div>
-</footer>
-
-<div class="cartPanel" id="cartPanel">
-<span class="close" onclick="toggleCart()">×</span>
-<h2>Sepetim</h2>
-<div id="cartItems"></div>
-<button class="whatsapp" onclick="sendWhatsApp()">WhatsApp ile Sipariş Ver</button>
-</div>
-
-<div class="modal" id="productModal">
-<div class="modalBox">
-<span class="modalClose" onclick="closeModal()">×</span>
-<img id="modalImg">
-<div class="modalContent">
-<h2 id="modalName"></h2>
-<div class="price" id="modalPrice"></div>
-<p id="modalDesc"></p>
-<p><b>Kumaş:</b> <span id="modalFabric"></span></p>
-<p><b>Kalıp:</b> <span id="modalFit"></span></p>
-<p><b>Yıkama:</b> 30 derecede ters çevirerek yıkayınız.</p>
-<h3 style="margin-top:15px;color:#f1d28a;">Beden Rehberi</h3>
-<table class="sizeTable">
-<tr><th>Beden</th><th>Göğüs</th><th>Boy</th></tr>
-<tr><td>S</td><td>52 cm</td><td>68 cm</td></tr>
-<tr><td>M</td><td>55 cm</td><td>71 cm</td></tr>
-<tr><td>L</td><td>58 cm</td><td>74 cm</td></tr>
-<tr><td>XL</td><td>61 cm</td><td>77 cm</td></tr>
-</table>
-</div>
-</div>
-</div>
-
-<div class="authModal" id="authModal">
-<div class="authBoxPanel">
-<span class="authClose" onclick="closeAuth()">×</span>
-<h2 id="authTitle">Üye Girişi</h2>
-<p>Veraxa hesabına giriş yap veya yeni hesap oluştur.</p>
-<input id="authName" placeholder="Ad Soyad" style="display:none">
-<input id="authEmail" type="email" placeholder="E-posta">
-<input id="authPassword" type="password" placeholder="Şifre">
-<button class="authFullBtn" id="authActionBtn" onclick="emailLogin()">Giriş Yap</button>
-<button class="authGhostBtn" onclick="loginGoogle()">Google ile Devam Et</button>
-<div class="authSwitch" id="authSwitchText">Hesabın yok mu? <span onclick="switchAuth('register')">Kayıt ol</span></div>
-</div>
-</div>
-
-<div class="bottomBar">
-<a href="https://wa.me/905468853731" target="_blank">WhatsApp</a>
-<button onclick="toggleCart()">Sepet</button>
-<a href="#custom-print">Özel Baskı</a>
-</div>
-
-<script>
-const PHONE="905468853731";
-let products=[];
-let cart=[];
-let favorites=[];
-let currentFilter="all";
-
-const fallbackProducts=[
-{name:"Veraxa Noir Oversize Tee",price:"899₺",category:["new","men","tshirt"],sku:"VX-001",stock:{S:2,M:4,L:2,XL:1},colors:[{name:"Siyah",img:"https://images.pexels.com/photos/6311392/pexels-photo-6311392.jpeg?auto=compress&cs=tinysrgb&w=900"}],fabric:"Premium Cotton",fit:"Oversize Fit",desc:"Günlük kullanım için premium oversize tişört."},
-{name:"Veraxa Pearl Women Tee",price:"849₺",category:["new","women","tshirt"],sku:"VX-002",stock:{S:2,M:3,L:1},colors:[{name:"Beyaz",img:"https://images.pexels.com/photos/7679863/pexels-photo-7679863.jpeg?auto=compress&cs=tinysrgb&w=900"}],fabric:"Soft Cotton",fit:"Regular Fit",desc:"Kadın koleksiyonu için sade, temiz ve lüks görünüm."},
-{name:"Veraxa Shadow Sweatshirt",price:"1.499₺",category:["men","sweatshirt"],sku:"VX-003",stock:{M:2,L:3,XL:2},colors:[{name:"Siyah",img:"https://images.pexels.com/photos/6311397/pexels-photo-6311397.jpeg?auto=compress&cs=tinysrgb&w=900"}],fabric:"Premium 3 İplik",fit:"Oversize Fit",desc:"Rahat, güçlü ve premium sweatshirt."}
-];
-
-window.onload=()=>{
-  loadProducts();
-  updateCart();
-  updateFavCount();
-};
-
-function loadProducts(){
-  fetch("products.json")
-  .then(res=>res.json())
-  .then(data=>{
-    products=data.filter(p=>p.active);
-    if(products.length===0) products=fallbackProducts;
-    renderProducts();
-  })
-  .catch(()=>{
-    products=fallbackProducts;
-    renderProducts();
-  });
-}
-
-function getCats(p){return p.category || p.cat || []}
-function getMainImg(p){return p.colors && p.colors.length ? p.colors[0].img : (p.img || "")}
-function getTotalStock(p){if(!p.stock) return 1; return Object.values(p.stock).reduce((a,b)=>a+Number(b),0)}
-
-function renderProducts(filter="all",search=""){
-  const list=document.getElementById("productList");
-  list.innerHTML="";
-  const filtered=products.filter(p=>{
-    const cats=getCats(p);
-    const f=filter==="all"||cats.includes(filter);
-    const s=(p.name||"").toLowerCase().includes(search.toLowerCase())||cats.join(" ").includes(search.toLowerCase())||String(p.sku||"").toLowerCase().includes(search.toLowerCase());
-    return f&&s;
-  });
-
-  if(filtered.length===0){
-    list.innerHTML="<p style='color:#aaa;text-align:center;grid-column:1/-1'>Bu kategoride ürün yok.</p>";
-    return;
-  }
-
-  filtered.forEach(p=>{
-    const i=products.indexOf(p);
-    const cats=getCats(p);
-    const totalStock=getTotalStock(p);
-    const mainImg=getMainImg(p);
-
-    let sizeOptions="";
-    if(p.stock){
-      Object.keys(p.stock).forEach(size=>{
-        sizeOptions+=`<option value="${size}" ${p.stock[size]<=0?"disabled":""}>${size} ${p.stock[size]<=0?"- Tükendi":""}</option>`;
-      });
-    }else sizeOptions="<option>Tek Beden</option>";
-
-    let colorOptions="";
-    if(p.colors && Array.isArray(p.colors)){
-      p.colors.forEach((c,idx)=>{ colorOptions+=`<option value="${idx}">${c.name}</option>`; });
-    }else colorOptions="<option value='0'>Standart</option>";
-
-    list.innerHTML+=`
-    <div class="card">
-      <div class="badge">${cats.includes("new")?"NEW":"LIMITED"}</div>
-      <div class="stock">${totalStock>0?"Premium Drop":"Sold Out"}</div>
-      <button class="fav ${favorites.includes(i)?"active":""}" onclick="toggleFav(${i})">♥</button>
-      <img id="product-img-${i}" src="${mainImg}" onclick="openModal(${i})" alt="${p.name}">
-      <div class="info">
-        <h3 onclick="openModal(${i})">${p.name}</h3>
-        <div class="price">${p.price}</div>
-        <div class="miniText">${p.fabric || "Premium kumaş"} • ${p.fit || "Modern kalıp"}</div>
-        <div class="selects">
-          <select id="size-${i}">${sizeOptions}</select>
-          <select id="color-${i}" onchange="changeProductColor(${i})">${colorOptions}</select>
-        </div>
-        <div class="actions">
-          <button class="add" onclick="addToCart(${i})" ${totalStock<=0?"disabled style='opacity:.5;cursor:not-allowed'":""}>Sepete Ekle</button>
-          <button class="quick" onclick="quickOrder(${i})" ${totalStock<=0?"disabled style='opacity:.5;cursor:not-allowed'":""}>Hızlı Sipariş</button>
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=80" alt="Veraxa Beyaz Tişört">
+        <div class="info">
+          <h3>Veraxa White Tee</h3>
+          <p>Premium pamuk kumaşlı, sade ve temiz görünümlü beyaz tişört. Günlük kombinlerde lüks basic duruş sağlar.</p>
+          <div class="price"><b>₺499</b><button>Sipariş Ver</button></div>
         </div>
       </div>
-    </div>`;
-  });
-}
 
-function changeProductColor(i){
-  const p=products[i], select=document.getElementById(`color-${i}`), img=document.getElementById(`product-img-${i}`);
-  const colorIndex=Number(select.value);
-  if(p.colors && p.colors[colorIndex]) img.src=p.colors[colorIndex].img;
-}
-function getSelectedColor(i){
-  const p=products[i], select=document.getElementById(`color-${i}`);
-  const colorIndex=Number(select.value);
-  return p.colors && p.colors[colorIndex] ? p.colors[colorIndex].name : "Standart";
-}
-function getSelectedImg(i){
-  const p=products[i], select=document.getElementById(`color-${i}`);
-  const colorIndex=Number(select.value);
-  return p.colors && p.colors[colorIndex] ? p.colors[colorIndex].img : getMainImg(p);
-}
-function filterProducts(cat,btn){
-  currentFilter=cat;
-  document.querySelectorAll(".filters button").forEach(b=>b.classList.remove("active"));
-  btn.classList.add("active");
-  renderProducts(cat,document.getElementById("searchInput").value);
-}
-function searchProducts(){renderProducts(currentFilter,document.getElementById("searchInput").value)}
-function goFilter(cat){
-  document.getElementById("products").scrollIntoView({behavior:"smooth"});
-  currentFilter=cat;
-  document.querySelectorAll(".filters button").forEach(b=>b.classList.remove("active"));
-  renderProducts(cat,"");
-}
-function addToCart(i){
-  const p=products[i], size=document.getElementById(`size-${i}`).value, color=getSelectedColor(i), img=getSelectedImg(i);
-  if(p.stock && Number(p.stock[size])<=0){alert("Bu beden stokta yok kanka.");return}
-  cart.push({name:p.name,price:p.price,size,color,img});
-  updateCart();
-  document.getElementById("cartPanel").classList.add("open");
-}
-function updateCart(){
-  document.getElementById("cartCount").innerText=cart.length;
-  const items=document.getElementById("cartItems");
-  if(cart.length===0){items.innerHTML="<p style='color:#999;margin-top:20px'>Sepet boş.</p>";return}
-  items.innerHTML=cart.map((x,i)=>`<div class="cartItem"><b>${x.name}</b><br>Fiyat: ${x.price}<br>Beden: ${x.size}<br>Renk: ${x.color}<br><button onclick="removeItem(${i})" style="margin-top:8px;background:transparent;color:#f1d28a;border:none;cursor:pointer;">Sil</button></div>`).join("");
-}
-function removeItem(i){cart.splice(i,1);updateCart()}
-function toggleCart(){document.getElementById("cartPanel").classList.toggle("open")}
-function quickOrder(i){
-  const p=products[i], size=document.getElementById(`size-${i}`).value, color=getSelectedColor(i);
-  const msg=`Merhaba VÉRAXA, sipariş vermek istiyorum:%0A%0AÜrün: ${p.name}%0AKod: ${p.sku || "-"}%0AFiyat: ${p.price}%0ABeden: ${size}%0ARenk: ${color}`;
-  window.open("https://wa.me/"+PHONE+"?text="+msg,"_blank");
-}
-function sendWhatsApp(){
-  if(cart.length===0){alert("Sepet boş kanka.");return}
-  let msg="Merhaba VÉRAXA, sipariş vermek istiyorum:%0A%0A";
-  cart.forEach((x,i)=>{msg+=`${i+1}) ${x.name}%0AFiyat: ${x.price}%0ABeden: ${x.size}%0ARenk: ${x.color}%0A%0A`});
-  msg+="Bilgi alabilir miyim?";
-  window.open("https://wa.me/"+PHONE+"?text="+msg,"_blank");
-}
-function customPrintOrder(type){
-  const msg=`Merhaba VÉRAXA, özel DTF baskı yaptırmak istiyorum.%0A%0ABaskı türü: ${type}%0AÜrün: Tişört / Sweatshirt%0ABeden:%0ARenk:%0ATasarım görseli göndereceğim.%0A%0AFiyat bilgisi alabilir miyim?`;
-  window.open("https://wa.me/"+PHONE+"?text="+msg,"_blank");
-}
-function openModal(i){
-  const p=products[i], select=document.getElementById(`color-${i}`);
-  let img=getMainImg(p);
-  if(select && p.colors && p.colors[Number(select.value)]) img=p.colors[Number(select.value)].img;
-  document.getElementById("modalImg").src=img;
-  document.getElementById("modalName").innerText=p.name;
-  document.getElementById("modalPrice").innerText=p.price;
-  document.getElementById("modalDesc").innerText=p.desc || "";
-  document.getElementById("modalFabric").innerText=p.fabric || "Premium kumaş";
-  document.getElementById("modalFit").innerText=p.fit || "Modern kalıp";
-  document.getElementById("productModal").classList.add("open");
-}
-function closeModal(){document.getElementById("productModal").classList.remove("open")}
-function toggleFaq(el){el.parentElement.classList.toggle("open")}
-function toggleFav(i){
-  favorites.includes(i) ? favorites=favorites.filter(x=>x!==i) : favorites.push(i);
-  updateFavCount();
-  renderProducts(currentFilter,document.getElementById("searchInput").value);
-}
-function updateFavCount(){document.getElementById("favCount").innerText=favorites.length}
-function showFavorites(){
-  document.getElementById("products").scrollIntoView({behavior:"smooth"});
-  const list=document.getElementById("productList");
-  list.innerHTML="";
-  if(favorites.length===0){list.innerHTML="<p style='color:#aaa;text-align:center;grid-column:1/-1'>Henüz favori ürün yok.</p>";return}
-  favorites.forEach(i=>{
-    const p=products[i], img=getMainImg(p);
-    list.innerHTML+=`<div class="card"><div class="badge">FAVORİ</div><img src="${img}" onclick="openModal(${i})"><div class="info"><h3>${p.name}</h3><div class="price">${p.price}</div><button class="add" onclick="addToCart(${i})">Sepete Ekle</button></div></div>`;
-  });
-}
-function findSize(){
-  const h=Number(document.getElementById("height").value), w=Number(document.getElementById("weight").value), result=document.getElementById("sizeResult");
-  if(!h||!w){result.innerText="Boy ve kilo gir kanka.";return}
-  let size="M";
-  if(w<60) size="S"; else if(w<75) size="M"; else if(w<90) size="L"; else size="XL";
-  result.innerText=`Sana önerilen beden: ${size}${w>80 ? " — oversize görünüm için XL da düşünebilirsin." : ""}`;
-}
-function scrollToProducts(){document.getElementById("products").scrollIntoView({behavior:"smooth"})}
-function scrollTopPage(){window.scrollTo({top:0,behavior:"smooth"})}
-</script>
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=900&q=80" alt="Veraxa Siyah Tişört">
+        <div class="info">
+          <h3>Veraxa Black Tee</h3>
+          <p>Siyah premium tişört. Minimal, güçlü ve luxury görünüm isteyenler için özel basic parça.</p>
+          <div class="price"><b>₺499</b><button>Sipariş Ver</button></div>
+        </div>
+      </div>
 
-<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&fit=crop&w=900&q=80" alt="Veraxa Sweatshirt">
+        <div class="info">
+          <h3>Veraxa Sweatshirt</h3>
+          <p>Yumuşak dokulu premium sweatshirt. Günlük kullanımda rahatlık ve güçlü marka duruşu sunar.</p>
+          <div class="price"><b>₺899</b><button>Sipariş Ver</button></div>
+        </div>
+      </div>
+
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1554568218-0f1715e72254?auto=format&fit=crop&w=900&q=80" alt="Veraxa Crop">
+        <div class="info">
+          <h3>Veraxa Crop Top</h3>
+          <p>Kadın koleksiyonu için modern kesimli crop model. Şık, sade ve dikkat çekici görünüm.</p>
+          <div class="price"><b>₺449</b><button>Sipariş Ver</button></div>
+        </div>
+      </div>
+
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=900&q=80" alt="Veraxa Elbise">
+        <div class="info">
+          <h3>Veraxa Dress</h3>
+          <p>Minimal çizgilere sahip kadın elbise modeli. Şehir stiline uygun, zarif ve premium görünüm.</p>
+          <div class="price"><b>₺1199</b><button>Sipariş Ver</button></div>
+        </div>
+      </div>
+
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1506629905607-d9f297d0f5f6?auto=format&fit=crop&w=900&q=80" alt="Veraxa Custom DTF">
+        <div class="info">
+          <h3>Custom DTF Baskı</h3>
+          <p>İsteğe özel baskı hizmeti. Tişört, sweatshirt ve özel tasarım ürünler için kaliteli DTF baskı.</p>
+          <div class="price"><b>Teklif Al</b><button>Sipariş Ver</button></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="dtf" id="dtf">
+  <div class="container dtfBox">
+    <img src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&w=900&q=80" alt="Custom DTF Baskı">
+    <div>
+      <h2>Custom DTF Baskı</h2>
+      <p>Veraxa’da sadece hazır ürün değil, isteğe özel baskı hizmeti de sunulur. Kendi tasarımını gönder, tişört veya sweatshirt üzerine kaliteli DTF baskı hazırlayalım.</p>
+      <a class="btn" href="https://wa.me/905468853731" target="_blank">WhatsApp ile Sipariş</a>
+    </div>
+  </div>
+</section>
+
+<section id="iletisim">
+  <div class="container title">
+    <span>CONTACT</span>
+    <h2>Veraxa Sipariş Hattı</h2>
+    <br>
+    <a class="btn" href="https://wa.me/905468853731" target="_blank">WhatsApp: 0546 885 37 31</a>
+  </div>
+</section>
+
+<footer>
+  © 2026 VÉRAXA | Luxury Clothing & Custom DTF
+</footer>
+
+<div class="authModal" id="authModal">
+  <div class="authBox">
+    <h2>Veraxa’ya Hoş Geldiniz</h2>
+    <p>Üye olarak siparişlerinizi daha kolay takip edebilirsiniz.</p>
+
+    <button class="google" onclick="fakeGoogleLogin()">Google ile Giriş Yap</button>
+
+    <input id="userName" type="text" placeholder="Ad Soyad">
+    <input id="userEmail" type="email" placeholder="E-posta adresi">
+    <input id="userPass" type="password" placeholder="Şifre">
+
+    <button onclick="registerUser()">Kayıt Ol / Giriş Yap</button>
+    <button class="close" onclick="closeAuth()">Kapat</button>
+
+    <p style="font-size:12px;margin-top:15px;">
+      Not: Gerçek Google girişi ve otomatik mail için Firebase bağlantısı gerekir.
+    </p>
+  </div>
+</div>
 
 <script>
-const firebaseConfig = {
-  apiKey: "AIzaSyC9IEzvUlZ6JTtw6lVvUyYTsHpveNHeKWc",
-  authDomain: "veraxa-2daad.firebaseapp.com",
-  projectId: "veraxa-2daad",
-  storageBucket: "veraxa-2daad.firebasestorage.app",
-  messagingSenderId: "331694913024",
-  appId: "1:331694913024:web:33797fbbf85d1330ea8ae5"
-};
-
-firebase.initializeApp(firebaseConfig);
-const provider = new firebase.auth.GoogleAuthProvider();
-let authMode="login";
-
-function renderUserArea(user){
-  const area=document.getElementById("userArea");
-  const loginBtn=document.getElementById("loginBtn");
-  const registerBtn=document.getElementById("registerBtn");
-
-  if(user){
-    if(loginBtn) loginBtn.style.display="none";
-    if(registerBtn) registerBtn.style.display="none";
-    if(area){
-      area.style.display="flex";
-      area.innerHTML=`
-        <div class="accountBox">
-          <img src="${user.photoURL || 'https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg'}">
-          <div>
-            <strong>${user.displayName || user.email || "Veraxa Üyesi"}</strong>
-            <small>Giriş yapıldı</small>
-          </div>
-          <button onclick="logout()">Çıkış</button>
-        </div>`;
-    }
-  }else{
-    if(loginBtn) loginBtn.style.display="inline-block";
-    if(registerBtn) registerBtn.style.display="inline-block";
-    if(area){
-      area.style.display="none";
-      area.innerHTML="";
-    }
-  }
+function openAuth(){
+  document.getElementById("authModal").style.display="flex";
 }
-
-function openAuth(mode){
-  authMode=mode;
-  document.getElementById("authModal").classList.add("open");
-  switchAuth(mode);
-}
-
 function closeAuth(){
-  document.getElementById("authModal").classList.remove("open");
+  document.getElementById("authModal").style.display="none";
 }
 
-function switchAuth(mode){
-  authMode=mode;
-  const title=document.getElementById("authTitle");
-  const name=document.getElementById("authName");
-  const btn=document.getElementById("authActionBtn");
-  const switchText=document.getElementById("authSwitchText");
+function registerUser(){
+  let name=document.getElementById("userName").value;
+  let email=document.getElementById("userEmail").value;
 
-  if(mode==="register"){
-    title.innerText="Kayıt Ol";
-    name.style.display="block";
-    btn.innerText="Kayıt Ol";
-    btn.setAttribute("onclick","emailRegister()");
-    switchText.innerHTML='Zaten hesabın var mı? <span onclick="switchAuth(\\'login\\')">Giriş yap</span>';
-  }else{
-    title.innerText="Üye Girişi";
-    name.style.display="none";
-    btn.innerText="Giriş Yap";
-    btn.setAttribute("onclick","emailLogin()");
-    switchText.innerHTML='Hesabın yok mu? <span onclick="switchAuth(\\'register\\')">Kayıt ol</span>';
-  }
-}
-
-function loginGoogle(){
-  firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL)
-  .then(()=>firebase.auth().signInWithRedirect(provider))
-  .catch(err=>alert("Google giriş hatası: " + err.message));
-}
-
-function emailRegister(){
-  const name=document.getElementById("authName").value.trim();
-  const email=document.getElementById("authEmail").value.trim();
-  const pass=document.getElementById("authPassword").value;
-
-  if(!name || !email || !pass){
-    alert("Ad, e-posta ve şifre gir kanka.");
+  if(!name || !email){
+    alert("Lütfen ad ve e-posta gir.");
     return;
   }
 
-  firebase.auth().createUserWithEmailAndPassword(email,pass)
-  .then(cred=>cred.user.updateProfile({displayName:name}))
-  .then(()=>{
-    closeAuth();
-    alert("Kayıt başarılı kanka.");
-  })
-  .catch(err=>{
-    alert("Kayıt hatası: " + err.message + "\\nFirebase Authentication içinde Email/Password aktif olmalı.");
-  });
+  localStorage.setItem("veraxaUser", name);
+  alert("Veraxa’ya hoş geldiniz " + name + "!");
+  closeAuth();
+  showWelcome();
 }
 
-function emailLogin(){
-  const email=document.getElementById("authEmail").value.trim();
-  const pass=document.getElementById("authPassword").value;
+function fakeGoogleLogin(){
+  let name="Google Kullanıcısı";
+  localStorage.setItem("veraxaUser", name);
+  alert("Google ile giriş simülasyonu başarılı. Gerçek Google girişi için Firebase bağlanmalı.");
+  closeAuth();
+  showWelcome();
+}
 
-  if(!email || !pass){
-    alert("E-posta ve şifre gir kanka.");
-    return;
+function showWelcome(){
+  let user=localStorage.getItem("veraxaUser");
+  if(user){
+    let box=document.getElementById("welcomeText");
+    box.style.display="block";
+    box.innerText="Hoş geldin, " + user;
   }
-
-  firebase.auth().signInWithEmailAndPassword(email,pass)
-  .then(()=>closeAuth())
-  .catch(err=>alert("Giriş hatası: " + err.message));
 }
-
-function logout(){
-  firebase.auth().signOut();
-}
-
-document.addEventListener("DOMContentLoaded",()=>{
-  renderUserArea(null);
-  firebase.auth().getRedirectResult().catch(err=>console.log("Google giriş hatası:",err.message));
-  firebase.auth().onAuthStateChanged(user=>renderUserArea(user));
-});
+showWelcome();
 </script>
 
 </body>
