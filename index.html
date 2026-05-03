@@ -818,9 +818,8 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const provider = new firebase.auth.GoogleAuthProvider();
 
- function loginGoogle(){
+function loginGoogle(){
   firebase.auth().signInWithRedirect(provider);
-} firebase.auth().signInWithRedirect(provider);
 }
 
 function logout(){
