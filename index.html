@@ -6,6 +6,46 @@
 <title>VÉRAXA | Ultra Luxury Clothing</title>
 
 <style>
+  .googleLogin,
+.googleUser{
+  height:36px;
+  border-radius:30px;
+  border:1px solid rgba(201,164,92,.55);
+  background:rgba(0,0,0,.35);
+  color:#f8f3e8;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:0 12px;
+  cursor:pointer;
+  font-size:12px;
+  letter-spacing:1px;
+}
+
+.googleLogin:hover,
+.googleUser:hover{
+  background:#c9a45c;
+  color:#111;
+}
+
+.gIcon{
+  width:22px;
+  height:22px;
+  border-radius:50%;
+  background:#fff;
+  color:#111;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:bold;
+}
+
+.googleUser img{
+  width:22px;
+  height:22px;
+  border-radius:50%;
+  object-fit:cover;
+}
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--black:#020202;--soft:#080808;--card:#101010;--gold:#d6b36a;--gold2:#f5deb3;--text:#f8f3e8;--muted:#aaa29a}
 html{scroll-behavior:smooth}
@@ -776,11 +816,10 @@ const firebaseConfig = {
 };
 
 firebase.initializeApp(firebaseConfig);
-
 const provider = new firebase.auth.GoogleAuthProvider();
 
 function loginGoogle(){
-  firebase.auth().signInWithPopup(provider);
+  firebase.auth().signInWithRedirect(provider);
 }
 
 function logout(){
@@ -788,14 +827,22 @@ function logout(){
 }
 
 firebase.auth().onAuthStateChanged(user=>{
+  const area = document.getElementById("userArea");
+  if(!area) return;
+
   if(user){
-    document.getElementById("userArea").innerHTML = `
-      👤 ${user.displayName}
-      <button onclick="logout()" style="margin-left:10px;">Çıkış</button>
+    area.innerHTML = `
+      <button class="googleUser" onclick="logout()">
+        <img src="${user.photoURL || ''}">
+        <span>${user.displayName ? user.displayName.split(" ")[0] : "Hesabım"}</span>
+      </button>
     `;
-  } else {
-    document.getElementById("userArea").innerHTML = `
-      <button onclick="loginGoogle()">Google ile Giriş</button>
+  }else{
+    area.innerHTML = `
+      <button class="googleLogin" onclick="loginGoogle()">
+        <span class="gIcon">G</span>
+        <span>Giriş</span>
+      </button>
     `;
   }
 });
