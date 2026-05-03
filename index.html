@@ -900,31 +900,37 @@ const firebaseConfig = {
 };
 
 firebase.initializeApp(firebaseConfig);
+
 const provider = new firebase.auth.GoogleAuthProvider();
 
 function loginGoogle(){
-  firebase.auth().signInWithRedirect(provider);
+  firebase.auth()
+    .setPersistence(firebase.auth.Auth.Persistence.LOCAL)
+    .then(() => {
+      return firebase.auth().signInWithRedirect(provider);
+    });
 }
 
 function logout(){
   firebase.auth().signOut();
 }
 
-window.addEventListener("load", () => {
-
-firebase.auth().onAuthStateChanged(user=>{
+function renderUserArea(user){
   const area = document.getElementById("userArea");
   if(!area) return;
 
   if(user){
     area.innerHTML = `
       <div class="accountBox">
-        <img src="${user.photoURL || ''}">
-        <span>${user.displayName || "Kullanıcı"}</span>
+        <img src="${user.photoURL || 'https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg'}" alt="Profil">
+        <div>
+          <strong>${user.displayName || "Veraxa Üyesi"}</strong>
+          <small>Giriş yapıldı</small>
+        </div>
         <button onclick="logout()">Çıkış</button>
       </div>
     `;
-  } else {
+  }else{
     area.innerHTML = `
       <button class="googleLogin" onclick="loginGoogle()">
         <span class="gIcon">G</span>
@@ -932,9 +938,20 @@ firebase.auth().onAuthStateChanged(user=>{
       </button>
     `;
   }
-});
+}
 
+document.addEventListener("DOMContentLoaded", function(){
+  renderUserArea(null);
+
+  firebase.auth().getRedirectResult().catch(function(error){
+    console.log("Google giriş hatası:", error.message);
+  });
+
+  firebase.auth().onAuthStateChanged(function(user){
+    renderUserArea(user);
+  });
 });
+</script>
 </script>
 </body>
 </html>
