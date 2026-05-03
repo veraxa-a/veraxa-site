@@ -3,261 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VÉRAXA | Luxury Clothing & Custom DTF</title>
-
-  <link rel="icon" href="logo.png?v=2">
-
+  <title>VÉRAXA | Luxury Clothing</title>
   <style>
     *{margin:0;padding:0;box-sizing:border-box}
-    :root{
-      --black:#020202;
-      --soft:#080808;
-      --card:#101010;
-      --gold:#d6b36a;
-      --gold2:#f5deb3;
-      --text:#f8f3e8;
-      --muted:#aaa29a;
-    }
-    body{
-      font-family:Arial,Helvetica,sans-serif;
-      background:var(--black);
-      color:var(--text);
-    }
+    body{font-family:Arial,Helvetica,sans-serif;background:#050505;color:#f5f0e6}
     a{text-decoration:none;color:inherit}
-    header{
-      position:fixed;
-      top:0;
-      left:0;
-      width:100%;
-      z-index:99;
-      background:rgba(0,0,0,.88);
-      backdrop-filter:blur(15px);
-      border-bottom:1px solid rgba(214,179,106,.18);
-    }
-    .nav{
-      max-width:1250px;
-      margin:auto;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:18px 24px;
-    }
-    .logo{
-      font-family:Georgia,serif;
-      font-size:30px;
-      letter-spacing:8px;
-      color:var(--gold);
-      cursor:pointer;
-    }
-    .menu{
-      display:flex;
-      gap:20px;
-      font-size:12px;
-      letter-spacing:2px;
-      text-transform:uppercase;
-    }
-    .right{
-      display:flex;
-      gap:10px;
-      align-items:center;
-    }
-    button,.btn{
-      border:none;
-      background:var(--gold);
-      color:#111;
-      padding:11px 18px;
-      border-radius:30px;
-      font-weight:bold;
-      cursor:pointer;
-    }
-    .ghost{
-      background:transparent;
-      color:var(--text);
-      border:1px solid rgba(214,179,106,.55);
-    }
-
-    .hero{
-      min-height:100vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      padding:120px 20px 70px;
-      background:
-        linear-gradient(rgba(0,0,0,.72),rgba(0,0,0,.95)),
-        url("https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1600&q=80") center/cover;
-    }
-    .hero img{
-      width:115px;
-      margin-bottom:22px;
-    }
-    .hero h1{
-      font-family:Georgia,serif;
-      font-size:72px;
-      letter-spacing:10px;
-      color:var(--gold);
-    }
-    .hero p{
-      max-width:680px;
-      margin:22px auto 32px;
-      color:#ddd;
-      font-size:18px;
-      line-height:1.8;
-    }
-
-    section{padding:80px 24px}
+    header{position:fixed;top:0;width:100%;z-index:99;background:rgba(0,0,0,.88);backdrop-filter:blur(15px);border-bottom:1px solid rgba(214,179,106,.22)}
+    .nav{max-width:1250px;margin:auto;display:flex;justify-content:space-between;align-items:center;padding:18px 24px}
+    .brand{font-family:Georgia,serif;font-size:31px;letter-spacing:8px;color:#d6b36a}
+    .menu a{margin-left:22px;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#eee}
+    .btn{display:inline-block;background:#d6b36a;color:#090909;padding:13px 24px;border-radius:40px;font-weight:bold;border:none;cursor:pointer}
+    .btn.dark{background:transparent;color:#d6b36a;border:1px solid #d6b36a}
+    .hero{min-height:100vh;background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.9)),url('https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1600&q=80') center/cover;display:flex;align-items:center;text-align:center;padding:120px 24px 70px}
+    .hero-box{max-width:850px;margin:auto}
+    .tag{color:#d6b36a;letter-spacing:5px;font-size:13px;margin-bottom:18px}
+    h1{font-family:Georgia,serif;font-size:76px;letter-spacing:9px;color:#d6b36a;margin-bottom:18px}
+    .hero p{font-size:19px;line-height:1.8;color:#ddd;margin-bottom:30px}
+    section{padding:85px 24px}
     .container{max-width:1250px;margin:auto}
     .title{text-align:center;margin-bottom:45px}
-    .title span{
-      color:var(--gold);
-      letter-spacing:4px;
-      font-size:12px;
-    }
-    .title h2{
-      font-family:Georgia,serif;
-      font-size:44px;
-      margin-top:12px;
-    }
-
-    .products{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:26px;
-    }
-    .product{
-      background:linear-gradient(180deg,#121212,#070707);
-      border:1px solid rgba(214,179,106,.18);
-      border-radius:28px;
-      overflow:hidden;
-      box-shadow:0 18px 45px rgba(0,0,0,.35);
-    }
-    .product img{
-      width:100%;
-      height:360px;
-      object-fit:cover;
-      background:#111;
-    }
+    .title span{color:#d6b36a;letter-spacing:4px;font-size:12px}
+    .title h2{font-family:Georgia,serif;font-size:44px;margin-top:12px}
+    .products{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+    .product{background:#101010;border:1px solid rgba(214,179,106,.18);border-radius:26px;overflow:hidden;box-shadow:0 18px 45px rgba(0,0,0,.45)}
+    .product img{width:100%;height:360px;object-fit:cover}
     .info{padding:24px}
-    .info h3{
-      font-family:Georgia,serif;
-      color:var(--gold2);
-      font-size:24px;
-      margin-bottom:10px;
-    }
-    .info p{
-      color:var(--muted);
-      line-height:1.6;
-      min-height:70px;
-    }
-    .price{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      margin-top:18px;
-    }
-    .price b{font-size:22px;color:var(--gold)}
-
-    .dtf{
-      background:#0b0b0b;
-      border-top:1px solid rgba(214,179,106,.2);
-      border-bottom:1px solid rgba(214,179,106,.2);
-    }
-    .dtfBox{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:35px;
-      align-items:center;
-    }
-    .dtfBox img{
-      width:100%;
-      border-radius:30px;
-    }
-    .dtfBox h2{
-      font-family:Georgia,serif;
-      color:var(--gold);
-      font-size:42px;
-      margin-bottom:18px;
-    }
-    .dtfBox p{
-      color:#ccc;
-      line-height:1.8;
-      margin-bottom:20px;
-    }
-
-    .authModal{
-      display:none;
-      position:fixed;
-      inset:0;
-      background:rgba(0,0,0,.82);
-      z-index:999;
-      align-items:center;
-      justify-content:center;
-      padding:20px;
-    }
-    .authBox{
-      width:100%;
-      max-width:420px;
-      background:#111;
-      border:1px solid rgba(214,179,106,.35);
-      border-radius:28px;
-      padding:30px;
-      box-shadow:0 30px 80px rgba(0,0,0,.65);
-    }
-    .authBox h2{
-      font-family:Georgia,serif;
-      color:var(--gold);
-      margin-bottom:10px;
-    }
-    .authBox p{
-      color:#aaa;
-      margin-bottom:20px;
-      line-height:1.5;
-    }
-    .authBox input{
-      width:100%;
-      padding:15px;
-      margin-bottom:12px;
-      border-radius:14px;
-      border:1px solid #333;
-      background:#070707;
-      color:white;
-    }
-    .google{
-      width:100%;
-      background:white;
-      color:#111;
-      margin-bottom:12px;
-    }
-    .close{
-      width:100%;
-      margin-top:10px;
-      background:transparent;
-      color:#ccc;
-      border:1px solid #333;
-    }
-    .welcome{
-      display:none;
-      color:var(--gold);
-      font-size:12px;
-      max-width:160px;
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
-    }
-
-    footer{
-      text-align:center;
-      padding:35px;
-      color:#888;
-      background:#050505;
-    }
-
+    .info h3{font-family:Georgia,serif;color:#f0d08a;font-size:24px;margin-bottom:10px}
+    .info p{color:#bdb6aa;line-height:1.65;min-height:78px}
+    .price{display:flex;justify-content:space-between;align-items:center;margin-top:20px}
+    .price b{font-size:22px;color:#d6b36a}
+    .dtf{background:#0b0b0b;border-top:1px solid rgba(214,179,106,.18);border-bottom:1px solid rgba(214,179,106,.18)}
+    .dtf-wrap{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+    .dtf img{width:100%;border-radius:28px}
+    .dtf h2{font-family:Georgia,serif;font-size:44px;color:#d6b36a;margin-bottom:18px}
+    .dtf p{color:#ccc;line-height:1.8;margin-bottom:25px}
+    .auth{background:#111;text-align:center}
+    .auth-box{max-width:550px;margin:auto;background:#080808;border:1px solid rgba(214,179,106,.25);border-radius:28px;padding:34px}
+    .auth input{width:100%;padding:15px;margin-bottom:13px;border-radius:14px;border:1px solid #333;background:#050505;color:white}
+    footer{background:#020202;text-align:center;color:#777;padding:32px}
+    .whatsapp{position:fixed;right:20px;bottom:20px;background:#25D366;color:white;padding:15px 22px;border-radius:40px;font-weight:bold;z-index:999}
     @media(max-width:850px){
       .menu{display:none}
-      .hero h1{font-size:46px}
-      .products{grid-template-columns:1fr}
-      .dtfBox{grid-template-columns:1fr}
-      .logo{font-size:22px}
+      h1{font-size:46px}
+      .products,.dtf-wrap{grid-template-columns:1fr}
+      .brand{font-size:24px}
     }
   </style>
 </head>
@@ -266,27 +55,24 @@
 
 <header>
   <div class="nav">
-    <div class="logo" onclick="location.href='#home'">VÉRAXA</div>
-
+    <div class="brand">VÉRAXA</div>
     <nav class="menu">
       <a href="#urunler">Ürünler</a>
-      <a href="#dtf">Custom DTF</a>
+      <a href="#dtf">DTF Baskı</a>
+      <a href="#uyelik">Üyelik</a>
       <a href="#iletisim">İletişim</a>
     </nav>
-
-    <div class="right">
-      <div id="welcomeText" class="welcome"></div>
-      <button class="ghost" onclick="openAuth()">Giriş Yap</button>
-    </div>
   </div>
 </header>
 
-<section class="hero" id="home">
-  <div>
-    <img src="logo.png" alt="Veraxa Logo">
+<a class="whatsapp" href="https://wa.me/905468853731" target="_blank">WhatsApp Sipariş</a>
+
+<section class="hero">
+  <div class="hero-box">
+    <div class="tag">LUXURY CLOTHING BRAND</div>
     <h1>VÉRAXA</h1>
-    <p>Luxury clothing, premium basic parçalar ve özel DTF baskı tasarımları. Sade, güçlü ve dikkat çeken bir marka deneyimi.</p>
-    <a class="btn" href="#urunler">Koleksiyonu İncele</a>
+    <p>Premium giyim, özel tasarım parçalar ve isteğe özel DTF baskı hizmeti. Sade, güçlü ve lüks görünüm için tasarlandı.</p>
+    <a href="#urunler" class="btn">Koleksiyonu İncele</a>
   </div>
 </section>
 
@@ -294,62 +80,62 @@
   <div class="container">
     <div class="title">
       <span>PREMIUM COLLECTION</span>
-      <h2>Veraxa Ürünleri</h2>
+      <h2>Öne Çıkan Ürünler</h2>
     </div>
 
     <div class="products">
 
       <div class="product">
-        <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=80" alt="Veraxa Beyaz Tişört">
+        <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=80" alt="Beyaz Tişört">
         <div class="info">
           <h3>Veraxa White Tee</h3>
-          <p>Premium pamuk kumaşlı, sade ve temiz görünümlü beyaz tişört. Günlük kombinlerde lüks basic duruş sağlar.</p>
-          <div class="price"><b>₺499</b><button>Sipariş Ver</button></div>
+          <p>Beyaz premium pamuk tişört. Temiz, sade ve lüks basic görünüm isteyen günlük kombinler için idealdir.</p>
+          <div class="price"><b>₺499</b><a class="btn" href="https://wa.me/905468853731">Sipariş</a></div>
         </div>
       </div>
 
       <div class="product">
-        <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=900&q=80" alt="Veraxa Siyah Tişört">
+        <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=900&q=80" alt="Siyah Tişört">
         <div class="info">
           <h3>Veraxa Black Tee</h3>
-          <p>Siyah premium tişört. Minimal, güçlü ve luxury görünüm isteyenler için özel basic parça.</p>
-          <div class="price"><b>₺499</b><button>Sipariş Ver</button></div>
+          <p>Siyah premium tişört. Minimal, güçlü ve luxury duruş isteyenler için sade ama dikkat çeken model.</p>
+          <div class="price"><b>₺499</b><a class="btn" href="https://wa.me/905468853731">Sipariş</a></div>
         </div>
       </div>
 
       <div class="product">
-        <img src="https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&fit=crop&w=900&q=80" alt="Veraxa Sweatshirt">
+        <img src="https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&fit=crop&w=900&q=80" alt="Sweatshirt">
         <div class="info">
           <h3>Veraxa Sweatshirt</h3>
-          <p>Yumuşak dokulu premium sweatshirt. Günlük kullanımda rahatlık ve güçlü marka duruşu sunar.</p>
-          <div class="price"><b>₺899</b><button>Sipariş Ver</button></div>
+          <p>Yumuşak dokulu premium sweatshirt. Rahat kalıp, kaliteli his ve güçlü marka görünümü sunar.</p>
+          <div class="price"><b>₺899</b><a class="btn" href="https://wa.me/905468853731">Sipariş</a></div>
         </div>
       </div>
 
       <div class="product">
-        <img src="https://images.unsplash.com/photo-1554568218-0f1715e72254?auto=format&fit=crop&w=900&q=80" alt="Veraxa Crop">
+        <img src="https://images.unsplash.com/photo-1554568218-0f1715e72254?auto=format&fit=crop&w=900&q=80" alt="Crop Top">
         <div class="info">
           <h3>Veraxa Crop Top</h3>
-          <p>Kadın koleksiyonu için modern kesimli crop model. Şık, sade ve dikkat çekici görünüm.</p>
-          <div class="price"><b>₺449</b><button>Sipariş Ver</button></div>
+          <p>Kadın koleksiyonu için modern crop model. Şık, sade ve günlük kullanıma uygun premium görünüm.</p>
+          <div class="price"><b>₺449</b><a class="btn" href="https://wa.me/905468853731">Sipariş</a></div>
         </div>
       </div>
 
       <div class="product">
-        <img src="https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=900&q=80" alt="Veraxa Elbise">
+        <img src="https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=900&q=80" alt="Kadın Elbise">
         <div class="info">
           <h3>Veraxa Dress</h3>
-          <p>Minimal çizgilere sahip kadın elbise modeli. Şehir stiline uygun, zarif ve premium görünüm.</p>
-          <div class="price"><b>₺1199</b><button>Sipariş Ver</button></div>
+          <p>Zarif kadın elbise modeli. Minimal çizgiler, şehir stili ve premium marka hissiyatı bir arada.</p>
+          <div class="price"><b>₺1199</b><a class="btn" href="https://wa.me/905468853731">Sipariş</a></div>
         </div>
       </div>
 
       <div class="product">
-        <img src="https://images.unsplash.com/photo-1506629905607-d9f297d0f5f6?auto=format&fit=crop&w=900&q=80" alt="Veraxa Custom DTF">
+        <img src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&w=900&q=80" alt="DTF Baskı">
         <div class="info">
           <h3>Custom DTF Baskı</h3>
-          <p>İsteğe özel baskı hizmeti. Tişört, sweatshirt ve özel tasarım ürünler için kaliteli DTF baskı.</p>
-          <div class="price"><b>Teklif Al</b><button>Sipariş Ver</button></div>
+          <p>İsteğe özel DTF baskı hizmeti. Tişört, sweatshirt ve özel tasarımlar için kaliteli baskı çözümü.</p>
+          <div class="price"><b>Teklif Al</b><a class="btn" href="https://wa.me/905468853731">Sipariş</a></div>
         </div>
       </div>
 
@@ -358,13 +144,31 @@
 </section>
 
 <section class="dtf" id="dtf">
-  <div class="container dtfBox">
-    <img src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&w=900&q=80" alt="Custom DTF Baskı">
+  <div class="container dtf-wrap">
+    <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=900&q=80" alt="Özel DTF Baskı">
     <div>
-      <h2>Custom DTF Baskı</h2>
-      <p>Veraxa’da sadece hazır ürün değil, isteğe özel baskı hizmeti de sunulur. Kendi tasarımını gönder, tişört veya sweatshirt üzerine kaliteli DTF baskı hazırlayalım.</p>
-      <a class="btn" href="https://wa.me/905468853731" target="_blank">WhatsApp ile Sipariş</a>
+      <h2>İsteğe Özel Baskı</h2>
+      <p>Kendi tasarımını gönder, Veraxa kalitesiyle tişört veya sweatshirt üzerine özel DTF baskı hazırlayalım. Minimal logo, büyük sırt baskısı, yazı tasarımı veya özel görsel çalışması yapılabilir.</p>
+      <a class="btn" href="https://wa.me/905468853731" target="_blank">WhatsApp ile Teklif Al</a>
     </div>
+  </div>
+</section>
+
+<section class="auth" id="uyelik">
+  <div class="auth-box">
+    <div class="title" style="margin-bottom:25px">
+      <span>MEMBER AREA</span>
+      <h2>Veraxa Üyelik</h2>
+    </div>
+    <p style="color:#bbb;line-height:1.7;margin-bottom:20px">
+      Üyelik ve Google ile giriş sistemi görünümü hazırdır. Gerçek Google giriş, otomatik hoş geldiniz maili ve sipariş takibi için Firebase veya Shopify altyapısı bağlanmalıdır.
+    </p>
+    <input type="text" placeholder="Ad Soyad">
+    <input type="email" placeholder="E-posta">
+    <input type="password" placeholder="Şifre">
+    <button class="btn" onclick="alert('Veraxa’ya hoş geldiniz! Gerçek üyelik sistemi için Firebase bağlantısı gerekir.')">Kayıt Ol</button>
+    <br><br>
+    <button class="btn dark" onclick="alert('Google ile gerçek giriş için Firebase kurulumu gerekir.')">Google ile Giriş Yap</button>
   </div>
 </section>
 
@@ -380,68 +184,6 @@
 <footer>
   © 2026 VÉRAXA | Luxury Clothing & Custom DTF
 </footer>
-
-<div class="authModal" id="authModal">
-  <div class="authBox">
-    <h2>Veraxa’ya Hoş Geldiniz</h2>
-    <p>Üye olarak siparişlerinizi daha kolay takip edebilirsiniz.</p>
-
-    <button class="google" onclick="fakeGoogleLogin()">Google ile Giriş Yap</button>
-
-    <input id="userName" type="text" placeholder="Ad Soyad">
-    <input id="userEmail" type="email" placeholder="E-posta adresi">
-    <input id="userPass" type="password" placeholder="Şifre">
-
-    <button onclick="registerUser()">Kayıt Ol / Giriş Yap</button>
-    <button class="close" onclick="closeAuth()">Kapat</button>
-
-    <p style="font-size:12px;margin-top:15px;">
-      Not: Gerçek Google girişi ve otomatik mail için Firebase bağlantısı gerekir.
-    </p>
-  </div>
-</div>
-
-<script>
-function openAuth(){
-  document.getElementById("authModal").style.display="flex";
-}
-function closeAuth(){
-  document.getElementById("authModal").style.display="none";
-}
-
-function registerUser(){
-  let name=document.getElementById("userName").value;
-  let email=document.getElementById("userEmail").value;
-
-  if(!name || !email){
-    alert("Lütfen ad ve e-posta gir.");
-    return;
-  }
-
-  localStorage.setItem("veraxaUser", name);
-  alert("Veraxa’ya hoş geldiniz " + name + "!");
-  closeAuth();
-  showWelcome();
-}
-
-function fakeGoogleLogin(){
-  let name="Google Kullanıcısı";
-  localStorage.setItem("veraxaUser", name);
-  alert("Google ile giriş simülasyonu başarılı. Gerçek Google girişi için Firebase bağlanmalı.");
-  closeAuth();
-  showWelcome();
-}
-
-function showWelcome(){
-  let user=localStorage.getItem("veraxaUser");
-  if(user){
-    let box=document.getElementById("welcomeText");
-    box.style.display="block";
-    box.innerText="Hoş geldin, " + user;
-  }
-}
-showWelcome();
-</script>
 
 </body>
 </html>
