@@ -4,12 +4,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VÉRAXA | Luxury Clothing & Custom DTF</title>
+<meta name="theme-color" content="#020202">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="VÉRAXA">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="application-name" content="VÉRAXA">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/icon.svg">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--black:#020202;--soft:#080808;--card:#101010;--gold:#d6b36a;--gold2:#f5deb3;--text:#f8f3e8;--muted:#aaa29a}
 html{scroll-behavior:smooth}
-body{font-family:Arial,Helvetica,sans-serif;background:var(--black);color:var(--text)}
+body{font-family:Arial,Helvetica,sans-serif;background:var(--black);color:var(--text);min-height:100vh;padding-bottom:env(safe-area-inset-bottom)}
 body::after{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(circle at center,transparent 0,transparent 58%,rgba(214,179,106,.05) 100%);z-index:0}
 a{text-decoration:none;color:inherit}
 button,input,select{font-family:inherit}
@@ -161,7 +170,7 @@ footer{text-align:center;color:var(--muted);padding:45px 20px 90px}
 .authSwitch{margin-top:14px;text-align:center;color:#aaa;font-size:13px}
 .authSwitch span{color:var(--gold2);cursor:pointer}
 
-.bottomBar{display:none;position:fixed;left:0;right:0;bottom:0;z-index:1000;grid-template-columns:repeat(3,1fr);background:#070707;border-top:1px solid rgba(214,179,106,.45)}
+.bottomBar{display:none;position:fixed;left:0;right:0;bottom:0;z-index:1000;grid-template-columns:repeat(3,1fr);background:#070707;border-top:1px solid rgba(214,179,106,.45);padding-bottom:env(safe-area-inset-bottom)}
 .bottomBar a,.bottomBar button{background:transparent;color:white;border:none;padding:14px 6px;font-size:12px}
 
 @media(max-width:900px){
@@ -726,27 +735,4 @@ function emailRegister(){
   firebase.auth().createUserWithEmailAndPassword(email,pass)
   .then(cred=>cred.user.updateProfile({displayName:name}))
   .then(()=>{
-    closeAuth();
-    alert("Kayıt başarılı kanka.");
-  })
-  .catch(err=>showAuthError("Kayıt hatası",err));
-}
-
-function emailLogin(){
-  if(!authReady){
-    alert("Giriş sistemi yüklenemedi. Siteyi GitHub Pages veya domain üzerinden açıp tekrar dene kanka.");
-    return;
-  }
-
-  const email=document.getElementById("authEmail").value.trim();
-  const pass=document.getElementById("authPassword").value;
-
-  if(!email || !pass){
-    alert("E-posta ve şifre gir kanka.");
-    return;
-  }
-
-  firebase.auth().signInWithEmailAndPassword(email,pass)
-  .then(()=>closeAuth())
-  .catch(err=>showAuthError("Giriş hatası",err));
-}
+    closeAut
