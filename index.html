@@ -98,3 +98,103 @@ select{background:#060606;color:var(--text);border:1px solid rgba(214,179,106,.3
 .bigBanner img,.smallBanner img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
 .bannerOverlay{position:absolute;inset:0;background:linear-gradient(transparent,rgba(0,0,0,.94))}
 .bannerText{position:absolute;left:34px;right:34px;bottom:34px;z-index:2}
+.bannerText small{color:var(--gold2);letter-spacing:3px}
+.bannerText h2{font-family:Georgia,serif;font-size:46px;font-weight:300;margin:12px 0}
+.bannerText p{color:#ddd;line-height:1.75;max-width:580px}
+
+.printHero{position:relative;overflow:hidden;border-radius:34px;border:1px solid rgba(214,179,106,.25);min-height:430px;margin-bottom:34px;background:linear-gradient(90deg,rgba(0,0,0,.92),rgba(0,0,0,.36)),url("https://images.pexels.com/photos/8532616/pexels-photo-8532616.jpeg?auto=compress&cs=tinysrgb&w=1600");background-size:cover;background-position:center;display:flex;align-items:end;padding:38px}
+.printHero h2{font-family:Georgia,serif;font-size:48px;font-weight:300;letter-spacing:4px}
+.printHero p{max-width:680px;color:#ddd;line-height:1.8;margin-top:12px}
+.printSteps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:28px}
+.printSteps div{background:#0d0d0d;border:1px solid rgba(214,179,106,.18);border-radius:22px;padding:22px;text-align:center;color:#ccc;line-height:1.7}
+.printSteps b{color:var(--gold2)}
+
+.finder{max-width:760px;margin:auto;background:linear-gradient(180deg,#111,#070707);border:1px solid rgba(214,179,106,.25);border-radius:30px;padding:32px}
+.finderGrid{display:grid;grid-template-columns:1fr 1fr auto;gap:12px}
+.finder input{padding:15px;border-radius:16px;border:1px solid rgba(214,179,106,.35);background:#060606;color:white}
+.result{color:var(--gold2);font-size:20px;text-align:center;margin-top:18px}
+
+.trust{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:45px}
+.trust div{background:var(--card);border:1px solid rgba(214,179,106,.18);border-radius:24px;padding:26px;text-align:center;color:#ccc;line-height:1.7}
+
+.faq{max-width:900px;margin:auto}
+.faqItem{background:var(--card);border:1px solid rgba(214,179,106,.18);border-radius:20px;margin-bottom:12px;overflow:hidden}
+.faqQ{padding:20px;cursor:pointer;color:var(--gold2)}
+.faqA{display:none;padding:0 20px 20px;color:var(--muted);line-height:1.7}
+.faqItem.open .faqA{display:block}
+
+.brand{background:linear-gradient(rgba(0,0,0,.74),rgba(0,0,0,.94)),url("https://images.pexels.com/photos/7679651/pexels-photo-7679651.jpeg?auto=compress&cs=tinysrgb&w=1600");background-size:cover;background-position:center;text-align:center;padding:110px 22px;border-top:1px solid rgba(214,179,106,.25);border-bottom:1px solid rgba(214,179,106,.25)}
+.brand h2{font-family:Georgia,serif;font-size:44px;letter-spacing:5px;font-weight:300}
+.brand p{max-width:760px;margin:18px auto 0;color:#ddd;line-height:1.9}
+
+footer{text-align:center;color:var(--muted);padding:45px 20px 90px}
+.contact{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:20px}
+.contact a{border:1px solid rgba(214,179,106,.45);border-radius:40px;padding:12px 20px}
+
+.cartPanel{position:fixed;top:0;right:-430px;width:390px;max-width:92%;height:100vh;background:#070707;border-left:1px solid var(--gold);z-index:1001;padding:26px;transition:.35s;overflow:auto}
+.cartPanel.open{right:0}
+.close{float:right;font-size:26px;cursor:pointer;color:var(--gold2)}
+.cartItem{border-bottom:1px solid rgba(214,179,106,.22);padding:15px 0;font-size:14px}
+.whatsapp{width:100%;margin-top:20px;padding:15px;border:none;border-radius:16px;background:#25D366;color:white;font-weight:bold;cursor:pointer}
+
+.modal,.authModal{display:none;position:fixed;inset:0;z-index:1002;background:rgba(0,0,0,.84);align-items:center;justify-content:center;padding:18px}
+.modal.open,.authModal.open{display:flex}
+.modalBox{max-width:960px;width:100%;background:#070707;border:1px solid var(--gold);border-radius:30px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;position:relative}
+.modalBox img{width:100%;height:100%;min-height:560px;object-fit:cover}
+.modalContent{padding:34px}
+.modalContent h2{font-family:Georgia,serif;font-size:32px;font-weight:300;margin-bottom:12px}
+.modalContent p{color:#c8c0b7;line-height:1.8;margin-bottom:12px}
+.modalClose,.authClose{position:absolute;top:14px;right:22px;font-size:30px;cursor:pointer;color:var(--gold2);z-index:4}
+.sizeTable{width:100%;border-collapse:collapse;margin-top:16px;font-size:13px}
+.sizeTable td,.sizeTable th{border:1px solid rgba(214,179,106,.25);padding:10px;text-align:center}
+.sizeTable th{color:var(--gold2)}
+
+.authBoxPanel{position:relative;max-width:430px;width:100%;background:#070707;border:1px solid var(--gold);border-radius:30px;padding:34px;box-shadow:0 30px 90px rgba(0,0,0,.65)}
+.authBoxPanel h2{font-family:Georgia,serif;font-weight:300;letter-spacing:3px;margin-bottom:10px}
+.authBoxPanel p{color:#aaa;margin-bottom:18px;line-height:1.6}
+.authBoxPanel input{width:100%;background:#050505;border:1px solid rgba(214,179,106,.35);border-radius:16px;color:white;padding:14px;margin-bottom:10px}
+.authFullBtn{width:100%;border:none;border-radius:16px;padding:14px;margin-top:8px;background:linear-gradient(90deg,#b58a3e,#f5deb3,#b58a3e);color:#111;font-weight:bold;cursor:pointer}
+.authGhostBtn{width:100%;border:1px solid rgba(214,179,106,.55);border-radius:16px;padding:13px;margin-top:10px;background:transparent;color:white;cursor:pointer}
+.authSwitch{margin-top:14px;text-align:center;color:#aaa;font-size:13px}
+.authSwitch span{color:var(--gold2);cursor:pointer}
+
+.bottomBar{display:none;position:fixed;left:0;right:0;bottom:0;z-index:1000;grid-template-columns:repeat(3,1fr);background:#070707;border-top:1px solid rgba(214,179,106,.45)}
+.bottomBar a,.bottomBar button{background:transparent;color:white;border:none;padding:14px 6px;font-size:12px}
+
+@media(max-width:900px){
+.menu{display:none}.hero h1{font-size:50px;letter-spacing:9px}.hero p{font-size:14px}.heroBottom{grid-template-columns:1fr}
+.bannerGrid{grid-template-columns:1fr}.bigBanner,.smallBanner{min-height:430px}
+.collections{grid-template-columns:1fr 1fr}.products,.printGrid{grid-template-columns:1fr}.printSteps{grid-template-columns:1fr 1fr}
+.trust{grid-template-columns:1fr 1fr}.finderGrid{grid-template-columns:1fr}.modalBox{grid-template-columns:1fr;max-height:92vh;overflow:auto}.modalBox img{min-height:auto;height:390px}.bottomBar{display:grid}
+}
+@media(max-width:520px){
+.logo{font-size:21px;letter-spacing:5px}.nav{padding:14px}.navBtn,.authMiniBtn{font-size:11px;padding:8px 10px}
+.hero h1{font-size:39px;letter-spacing:7px}.heroTag{font-size:10px}.title h2{font-size:31px}
+.collections,.trust,.printSteps{grid-template-columns:1fr}.card img,.printCard img{height:410px}.actions{grid-template-columns:1fr}.bannerText h2,.printHero h2{font-size:32px}
+}
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+<span>NEW SEASON DROP • PREMIUM QUALITY • ÖZEL DTF BASKI • WHATSAPP İLE HIZLI SİPARİŞ • LIMITED COLLECTION • VÉRAXA.CO •</span>
+</div>
+
+<header>
+<div class="nav">
+<div class="logo" onclick="scrollTopPage()">V<span>É</span>RAXA</div>
+<nav class="menu">
+<a href="#collections">Koleksiyon</a>
+<a href="#products">Ürünler</a>
+<a href="#custom-print">Özel Baskı</a>
+<a href="#finder">Bedenimi Bul</a>
+<a href="#faq">SSS</a>
+</nav>
+<div class="navRight">
+<button id="loginBtn" class="authMiniBtn" onclick="openAuth('login')">Giriş Yap</button>
+<button id="registerBtn" class="authMiniBtn" onclick="openAuth('register')">Kayıt Ol</button>
+<div id="userArea"></div>
+<button class="navBtn" onclick="showFavorites()">Favori <span id="favCount">0</span></button>
+<button class="navBtn" onclick="toggleCart()">Sepet <span id="cartCount">0</span></button>
+</div>
