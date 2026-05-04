@@ -735,4 +735,57 @@ function emailRegister(){
   firebase.auth().createUserWithEmailAndPassword(email,pass)
   .then(cred=>cred.user.updateProfile({displayName:name}))
   .then(()=>{
-    closeAut
+    closeAuth();
+    alert("Kayıt başarılı kanka.");
+  })
+  .catch(err=>showAuthError("Kayıt hatası",err));
+}
+
+function emailLogin(){
+  if(!authReady){
+    alert("Giriş sistemi yüklenemedi. Siteyi GitHub Pages veya domain üzerinden açıp tekrar dene kanka.");
+    return;
+  }
+
+  const email=document.getElementById("authEmail").value.trim();
+  const pass=document.getElementById("authPassword").value;
+
+  if(!email || !pass){
+    alert("E-posta ve şifre gir kanka.");
+    return;
+  }
+
+  firebase.auth().signInWithEmailAndPassword(email,pass)
+  .then(()=>closeAuth())
+  .catch(err=>showAuthError("Giriş hatası",err));
+}
+
+function logout(){
+  if(!authReady) return;
+  firebase.auth().signOut().catch(err=>showAuthError("Çıkış hatası",err));
+}
+
+document.addEventListener("DOMContentLoaded",()=>{
+  renderUserArea(null);
+
+  if("serviceWorker" in navigator && location.protocol !== "file:"){
+    navigator.serviceWorker.register("service-worker.js").catch(err=>console.warn("Service worker yüklenemedi:",err));
+  }
+
+  if(!authReady){
+    console.warn("Firebase yüklenemedi. Google giriş için siteyi HTTPS domain üzerinden aç.");
+    return;
+  }
+
+  firebase.auth().getRedirectResult()
+  .then(result=>{
+    if(result && result.user) closeAuth();
+  })
+  .catch(err=>showAuthError("Google yönlendirme hatası",err));
+
+  firebase.auth().onAuthStateChanged(user=>renderUserArea(user));
+});
+</script>
+
+</body>
+</html>
