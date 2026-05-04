@@ -7,15 +7,7 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{
-  --black:#020202;
-  --soft:#080808;
-  --card:#101010;
-  --gold:#d6b36a;
-  --gold2:#f5deb3;
-  --text:#f8f3e8;
-  --muted:#aaa29a;
-}
+:root{--black:#020202;--soft:#080808;--card:#101010;--gold:#d6b36a;--gold2:#f5deb3;--text:#f8f3e8;--muted:#aaa29a}
 html{scroll-behavior:smooth}
 body{font-family:Arial,Helvetica,sans-serif;background:var(--black);color:var(--text)}
 a{text-decoration:none;color:inherit}
@@ -628,13 +620,13 @@ function switchAuth(mode){
     name.style.display="block";
     btn.innerText="Kayıt Ol";
     btn.setAttribute("onclick","emailRegister()");
-    switchText.innerHTML='Zaten hesabın var mı? <span onclick="switchAuth(\\'login\\')">Giriş yap</span>';
+    switchText.innerHTML=`Zaten hesabın var mı? <span onclick="switchAuth('login')">Giriş yap</span>`;
   }else{
     title.innerText="Üye Girişi";
     name.style.display="none";
     btn.innerText="Giriş Yap";
     btn.setAttribute("onclick","emailLogin()");
-    switchText.innerHTML='Hesabın yok mu? <span onclick="switchAuth(\\'register\\')">Kayıt ol</span>';
+    switchText.innerHTML=`Hesabın yok mu? <span onclick="switchAuth('register')">Kayıt ol</span>`;
   }
 }
 
