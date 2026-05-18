@@ -427,4 +427,32 @@ button{
     grid-template-columns:1fr;
   }
 
+#loader{
+  position:fixed;
+  inset:0;
+  background:#050505;
+  z-index:99999;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:opacity .8s ease, visibility .8s ease;
 }
+
+.loader-logo{
+  font-family:'Cormorant Garamond',serif;
+  font-size:52px;
+  letter-spacing:18px;
+  color:#f5f1ea;
+  animation:loaderPulse 1.8s ease infinite;
+}
+
+@keyframes loaderPulse{
+  0%,100%{opacity:.35;transform:scale(.98)}
+  50%{opacity:1;transform:scale(1)}
+}
+
+#loader.hide{
+  opacity:0;
+  visibility:hidden;
+}
+
