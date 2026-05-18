@@ -89,4 +89,11 @@ function orderProduct(productName){
     "_blank"
   );
 
-}
+window.addEventListener("load",()=>{
+  setTimeout(()=>{
+    const loader=document.getElementById("loader");
+    if(loader){
+      loader.classList.add("hide");
+    }
+  },900);
+});
