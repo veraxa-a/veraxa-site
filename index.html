@@ -144,6 +144,14 @@
 </footer>
 
 <script src="assets/js/app.js"></script>
+<script>
+window.addEventListener("load", function () {
+  const loader = document.getElementById("loader");
 
+  setTimeout(() => {
+    loader.classList.add("hide");
+  }, 1200);
+});
+</script>
 </body>
 </html>
