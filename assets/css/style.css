@@ -455,4 +455,20 @@ button{
   opacity:0;
   visibility:hidden;
 }
+  #loader{
+  position:fixed !important;
+  inset:0 !important;
+  background:#050505 !important;
+  z-index:999999 !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+}
+
+.loader-logo{
+  font-family:'Cormorant Garamond',serif !important;
+  font-size:52px !important;
+  letter-spacing:18px !important;
+  color:#f5f1ea !important;
+}
 
