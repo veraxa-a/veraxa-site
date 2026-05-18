@@ -88,6 +88,8 @@ function orderProduct(productName){
     `https://wa.me/905468853731?text=${message}`,
     "_blank"
   );
+  
+}
 
 window.addEventListener("load",()=>{
   setTimeout(()=>{
