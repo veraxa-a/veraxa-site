@@ -35,6 +35,8 @@ button{
 }
 
 .header{
+  transition:.4s;
+border-bottom:1px solid rgba(255,255,255,.04);
   position:fixed;
   top:0;
   left:0;
