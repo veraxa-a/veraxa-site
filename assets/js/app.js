@@ -1,17 +1,36 @@
-window.addEventListener("scroll",()=>{
+window.addEventListener("DOMContentLoaded", () => {
 
-  const header=document.querySelector(".header");
+  const productsContainer = document.querySelector(".products-grid");
 
-  if(window.scrollY>80){
+  if(productsContainer){
 
-    header.style.padding="18px 60px";
-    header.style.background="rgba(0,0,0,.92)";
-    header.style.backdropFilter="blur(14px)";
+    productsContainer.innerHTML = "";
 
-  }else{
+    VERAXA_PRODUCTS.forEach(product => {
 
-    header.style.padding="24px 60px";
-    header.style.background="linear-gradient(to bottom,rgba(0,0,0,.85),transparent)";
+      productsContainer.innerHTML += `
+      
+      <div class="product-card">
+
+        <img src="${product.image}" alt="${product.name}">
+
+        <div class="product-content">
+
+          <h3>${product.name}</h3>
+
+          <span>${product.price}</span>
+
+          <button onclick="window.open('https://wa.me/905468853731?text=${product.whatsappText}')">
+            WhatsApp Sipariş
+          </button>
+
+        </div>
+
+      </div>
+
+      `;
+
+    });
 
   }
 
