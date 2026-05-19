@@ -1,96 +1,200 @@
-const VERAXA_PRODUCTS = [
-  {
-    name: "VÉRAXA Mocha Sleeveless Top",
-    price: "899₺",
-    category: "top",
-    images: [
-      "assets/images/products/photo_5789718002545659185_y.jpg",
-      "assets/images/products/photo_5789718002545659186_y.jpg",
-      "assets/images/products/photo_5789718002545659187_y.jpg",
-      "assets/images/products/photo_5789718002545659188_y.jpg"
-    ],
-    whatsappText: "VÉRAXA Mocha Sleeveless Top"
-  },
-  {
-    name: "VÉRAXA White Sleeveless Top",
-    price: "899₺",
-    category: "top",
-    images: [
-      "assets/images/products/photo_5789718002545659189_y (1).jpg",
-      "assets/images/products/photo_5789718002545659190_y.jpg",
-      "assets/images/products/photo_5789718002545659191_y (1).jpg",
-      "assets/images/products/photo_5789718002545659192_y.jpg"
-    ],
-    whatsappText: "VÉRAXA White Sleeveless Top"
-  },
-  {
-    name: "VÉRAXA Black Sleeveless Top",
-    price: "899₺",
-    category: "top",
-    images: [
-      "assets/images/products/photo_5789718002545659195_y.jpg",
-      "assets/images/products/photo_5789718002545659196_y.jpg"
-    ],
-    whatsappText: "VÉRAXA Black Sleeveless Top"
-  },
-  {
-    name: "VÉRAXA Grey Crop Top",
-    price: "849₺",
-    category: "crop",
-    images: [
-      "assets/images/products/photo_5823488260943498600_y.jpg",
-      "assets/images/products/photo_5823488260943498601_y.jpg",
-      "assets/images/products/photo_5823488260943498602_y.jpg",
-      "assets/images/products/photo_5823488260943498603_y.jpg"
-    ],
-    whatsappText: "VÉRAXA Grey Crop Top"
-  },
-  {
-    name: "VÉRAXA Green Crop Top",
-    price: "849₺",
-    category: "crop",
-    images: [
-      "assets/images/products/photo_5823488260943498604_y.jpg",
-      "assets/images/products/photo_5823488260943498605_y.jpg",
-      "assets/images/products/photo_5823488260943498606_y.jpg",
-      "assets/images/products/photo_5823488260943498607_y.jpg"
-    ],
-    whatsappText: "VÉRAXA Green Crop Top"
-  },
-  {
-    name: "VÉRAXA Black Crop Top",
-    price: "849₺",
-    category: "crop",
-    images: [
-      "assets/images/products/photo_5823488260943498608_y.jpg",
-      "assets/images/products/photo_5823488260943498609_y.jpg",
-      "assets/images/products/photo_5823488260943498610_y.jpg",
-      "assets/images/products/photo_5823488260943498611_y.jpg"
-    ],
-    whatsappText: "VÉRAXA Black Crop Top"
-  },
-  {
-    name: "VÉRAXA Beige Crop Top",
-    price: "849₺",
-    category: "crop",
-    images: [
-      "assets/images/products/photo_5823488260943498621_y.jpg",
-      "assets/images/products/photo_5823488260943498622_y.jpg",
-      "assets/images/products/photo_5823488260943498623_y.jpg",
-      "assets/images/products/photo_5823488260943498624_y.jpg"
-    ],
-    whatsappText: "VÉRAXA Beige Crop Top"
-  },
-  {
-    name: "VÉRAXA Burgundy Crop Top",
-    price: "849₺",
-    category: "crop",
-    images: [
-      "assets/images/products/photo_5823582883367995777_y.jpg",
-      "assets/images/products/photo_5823582883367995778_y.jpg",
-      "assets/images/products/photo_5823582883367995779_y.jpg",
-      "assets/images/products/photo_5823582883367995780_y.jpg"
-    ],
-    whatsappText: "VÉRAXA Burgundy Crop Top"
-  }
-];
+window.VERAXA_PRODUCTS = [
+    {
+        "id":  "fitilli-atlet-koleksiyonu",
+        "name":  "VÉRAXA Fitilli Atlet Koleksiyonu",
+        "price":  "₺ 699.00",
+        "category":  "women",
+        "image":  "assets/images/products/fitilli-atlet-koleksiyonu/01.jpg",
+        "images":  [
+                       "assets/images/products/fitilli-atlet-koleksiyonu/01.jpg",
+                       "assets/images/products/fitilli-atlet-koleksiyonu/02.jpg",
+                       "assets/images/products/fitilli-atlet-koleksiyonu/03.jpg",
+                       "assets/images/products/fitilli-atlet-koleksiyonu/04.jpg",
+                       "assets/images/products/fitilli-atlet-koleksiyonu/05.jpg",
+                       "assets/images/products/fitilli-atlet-koleksiyonu/06.jpg",
+                       "assets/images/products/fitilli-atlet-koleksiyonu/07.jpg",
+                       "assets/images/products/fitilli-atlet-koleksiyonu/08.jpg",
+                       "assets/images/products/fitilli-atlet-koleksiyonu/09.jpg",
+                       "assets/images/products/fitilli-atlet-koleksiyonu/10.jpg",
+                       "assets/images/products/fitilli-atlet-koleksiyonu/11.jpg",
+                       "assets/images/products/fitilli-atlet-koleksiyonu/12.jpg",
+                       "assets/images/products/fitilli-atlet-koleksiyonu/13.jpg",
+                       "assets/images/products/fitilli-atlet-koleksiyonu/14.jpg",
+                       "assets/images/products/fitilli-atlet-koleksiyonu/15.jpg",
+                       "assets/images/products/fitilli-atlet-koleksiyonu/16.jpg"
+                   ],
+        "description":  "Farklı renk seçenekleriyle basic, fitilli ve premium görünümlü kadın atlet koleksiyonu.",
+        "sizes":  [
+                      "S",
+                      "M",
+                      "L",
+                      "XL"
+                  ],
+        "active":  true
+    },
+    {
+        "id":  "crop-basic-koleksiyonu",
+        "name":  "VÉRAXA Crop Basic Koleksiyonu",
+        "price":  "₺ 749.00",
+        "category":  "women",
+        "image":  "assets/images/products/crop-basic-koleksiyonu/01.jpg",
+        "images":  [
+                       "assets/images/products/crop-basic-koleksiyonu/01.jpg",
+                       "assets/images/products/crop-basic-koleksiyonu/02.jpg",
+                       "assets/images/products/crop-basic-koleksiyonu/03.jpg",
+                       "assets/images/products/crop-basic-koleksiyonu/04.jpg",
+                       "assets/images/products/crop-basic-koleksiyonu/05.jpg",
+                       "assets/images/products/crop-basic-koleksiyonu/06.jpg",
+                       "assets/images/products/crop-basic-koleksiyonu/07.jpg",
+                       "assets/images/products/crop-basic-koleksiyonu/08.jpg",
+                       "assets/images/products/crop-basic-koleksiyonu/09.jpg",
+                       "assets/images/products/crop-basic-koleksiyonu/10.jpg",
+                       "assets/images/products/crop-basic-koleksiyonu/11.jpg",
+                       "assets/images/products/crop-basic-koleksiyonu/12.jpg",
+                       "assets/images/products/crop-basic-koleksiyonu/13.jpg",
+                       "assets/images/products/crop-basic-koleksiyonu/14.jpg",
+                       "assets/images/products/crop-basic-koleksiyonu/15.jpg",
+                       "assets/images/products/crop-basic-koleksiyonu/16.jpg",
+                       "assets/images/products/crop-basic-koleksiyonu/17.jpg",
+                       "assets/images/products/crop-basic-koleksiyonu/18.jpg",
+                       "assets/images/products/crop-basic-koleksiyonu/19.jpg",
+                       "assets/images/products/crop-basic-koleksiyonu/20.jpg"
+                   ],
+        "description":  "Günlük kombinler için crop formda, yumuşak dokulu premium basic üst koleksiyonu.",
+        "sizes":  [
+                      "S",
+                      "M",
+                      "L",
+                      "XL"
+                  ],
+        "active":  true
+    },
+    {
+        "id":  "oversize-basic-tee",
+        "name":  "VÉRAXA Oversize Basic Tee",
+        "price":  "₺ 899.00",
+        "category":  "unisex",
+        "image":  "assets/images/products/oversize-basic-tee/01.jpg",
+        "images":  [
+                       "assets/images/products/oversize-basic-tee/01.jpg",
+                       "assets/images/products/oversize-basic-tee/02.jpg",
+                       "assets/images/products/oversize-basic-tee/03.jpg",
+                       "assets/images/products/oversize-basic-tee/04.jpg",
+                       "assets/images/products/oversize-basic-tee/05.jpg",
+                       "assets/images/products/oversize-basic-tee/06.jpg",
+                       "assets/images/products/oversize-basic-tee/07.jpg",
+                       "assets/images/products/oversize-basic-tee/08.jpg",
+                       "assets/images/products/oversize-basic-tee/09.jpg",
+                       "assets/images/products/oversize-basic-tee/10.jpg"
+                   ],
+        "description":  "Modern kesim, sade duruş ve farklı renk alternatifleriyle oversize basic tişört.",
+        "sizes":  [
+                      "S",
+                      "M",
+                      "L",
+                      "XL"
+                  ],
+        "active":  true
+    },
+    {
+        "id":  "cizgili-polo-koleksiyonu",
+        "name":  "VÉRAXA Çizgili Polo Koleksiyonu",
+        "price":  "₺ 849.00",
+        "category":  "women",
+        "image":  "assets/images/products/cizgili-polo-koleksiyonu/01.jpg",
+        "images":  [
+                       "assets/images/products/cizgili-polo-koleksiyonu/01.jpg",
+                       "assets/images/products/cizgili-polo-koleksiyonu/02.jpg",
+                       "assets/images/products/cizgili-polo-koleksiyonu/03.jpg",
+                       "assets/images/products/cizgili-polo-koleksiyonu/04.jpg",
+                       "assets/images/products/cizgili-polo-koleksiyonu/05.jpg",
+                       "assets/images/products/cizgili-polo-koleksiyonu/06.jpg",
+                       "assets/images/products/cizgili-polo-koleksiyonu/07.jpg",
+                       "assets/images/products/cizgili-polo-koleksiyonu/08.jpg",
+                       "assets/images/products/cizgili-polo-koleksiyonu/09.jpg",
+                       "assets/images/products/cizgili-polo-koleksiyonu/10.jpg",
+                       "assets/images/products/cizgili-polo-koleksiyonu/11.jpg",
+                       "assets/images/products/cizgili-polo-koleksiyonu/12.jpg",
+                       "assets/images/products/cizgili-polo-koleksiyonu/13.jpg",
+                       "assets/images/products/cizgili-polo-koleksiyonu/14.jpg",
+                       "assets/images/products/cizgili-polo-koleksiyonu/15.jpg",
+                       "assets/images/products/cizgili-polo-koleksiyonu/16.jpg",
+                       "assets/images/products/cizgili-polo-koleksiyonu/17.jpg",
+                       "assets/images/products/cizgili-polo-koleksiyonu/18.jpg",
+                       "assets/images/products/cizgili-polo-koleksiyonu/19.jpg",
+                       "assets/images/products/cizgili-polo-koleksiyonu/20.jpg"
+                   ],
+        "description":  "Zamansız çizgili polo formu; şort, etek ve pantolon kombinleriyle premium günlük stil.",
+        "sizes":  [
+                      "S",
+                      "M",
+                      "L",
+                      "XL"
+                  ],
+        "active":  true
+    },
+    {
+        "id":  "oversize-blouse",
+        "name":  "VÉRAXA Oversize Blouse",
+        "price":  "₺ 999.00",
+        "category":  "women",
+        "image":  "assets/images/products/oversize-blouse/01.jpg",
+        "images":  [
+                       "assets/images/products/oversize-blouse/01.jpg",
+                       "assets/images/products/oversize-blouse/02.jpg",
+                       "assets/images/products/oversize-blouse/03.jpg",
+                       "assets/images/products/oversize-blouse/04.jpg",
+                       "assets/images/products/oversize-blouse/05.jpg",
+                       "assets/images/products/oversize-blouse/06.jpg",
+                       "assets/images/products/oversize-blouse/07.jpg",
+                       "assets/images/products/oversize-blouse/08.jpg"
+                   ],
+        "description":  "Mor ve yeşil tonlarında dökümlü, rahat ve şık oversize blouse modeli.",
+        "sizes":  [
+                      "S",
+                      "M",
+                      "L",
+                      "XL"
+                  ],
+        "active":  true
+    },
+    {
+        "id":  "oversize-striped-tee",
+        "name":  "VÉRAXA Oversize Striped Tee",
+        "price":  "₺ 899.00",
+        "category":  "women",
+        "image":  "assets/images/products/oversize-striped-tee/01.jpg",
+        "images":  [
+                       "assets/images/products/oversize-striped-tee/01.jpg",
+                       "assets/images/products/oversize-striped-tee/02.jpg",
+                       "assets/images/products/oversize-striped-tee/03.jpg",
+                       "assets/images/products/oversize-striped-tee/04.jpg",
+                       "assets/images/products/oversize-striped-tee/05.jpg",
+                       "assets/images/products/oversize-striped-tee/06.jpg",
+                       "assets/images/products/oversize-striped-tee/07.jpg",
+                       "assets/images/products/oversize-striped-tee/08.jpg",
+                       "assets/images/products/oversize-striped-tee/09.jpg",
+                       "assets/images/products/oversize-striped-tee/10.jpg",
+                       "assets/images/products/oversize-striped-tee/11.jpg",
+                       "assets/images/products/oversize-striped-tee/12.jpg",
+                       "assets/images/products/oversize-striped-tee/13.jpg",
+                       "assets/images/products/oversize-striped-tee/14.jpg",
+                       "assets/images/products/oversize-striped-tee/15.jpg",
+                       "assets/images/products/oversize-striped-tee/16.jpg",
+                       "assets/images/products/oversize-striped-tee/17.jpg",
+                       "assets/images/products/oversize-striped-tee/18.jpg",
+                       "assets/images/products/oversize-striped-tee/19.jpg",
+                       "assets/images/products/oversize-striped-tee/20.jpg",
+                       "assets/images/products/oversize-striped-tee/21.jpg",
+                       "assets/images/products/oversize-striped-tee/22.jpg",
+                       "assets/images/products/oversize-striped-tee/23.jpg",
+                       "assets/images/products/oversize-striped-tee/24.jpg"
+                   ],
+        "description":  "Oversize çizgili tişört koleksiyonu; siyah, yeşil, bordo, mavi ve pembe çizgi seçenekleri.",
+        "sizes":  [
+                      "S",
+                      "M",
+                      "L",
+                      "XL"
+                  ],
+        "active":  true
