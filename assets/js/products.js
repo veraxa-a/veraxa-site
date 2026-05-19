@@ -1,200 +1,100 @@
 window.VERAXA_PRODUCTS = [
-    {
-        "id":  "fitilli-atlet-koleksiyonu",
-        "name":  "VÉRAXA Fitilli Atlet Koleksiyonu",
-        "price":  "₺ 699.00",
-        "category":  "women",
-        "image":  "assets/images/products/fitilli-atlet-koleksiyonu/01.jpg",
-        "images":  [
-                       "assets/images/products/fitilli-atlet-koleksiyonu/01.jpg",
-                       "assets/images/products/fitilli-atlet-koleksiyonu/02.jpg",
-                       "assets/images/products/fitilli-atlet-koleksiyonu/03.jpg",
-                       "assets/images/products/fitilli-atlet-koleksiyonu/04.jpg",
-                       "assets/images/products/fitilli-atlet-koleksiyonu/05.jpg",
-                       "assets/images/products/fitilli-atlet-koleksiyonu/06.jpg",
-                       "assets/images/products/fitilli-atlet-koleksiyonu/07.jpg",
-                       "assets/images/products/fitilli-atlet-koleksiyonu/08.jpg",
-                       "assets/images/products/fitilli-atlet-koleksiyonu/09.jpg",
-                       "assets/images/products/fitilli-atlet-koleksiyonu/10.jpg",
-                       "assets/images/products/fitilli-atlet-koleksiyonu/11.jpg",
-                       "assets/images/products/fitilli-atlet-koleksiyonu/12.jpg",
-                       "assets/images/products/fitilli-atlet-koleksiyonu/13.jpg",
-                       "assets/images/products/fitilli-atlet-koleksiyonu/14.jpg",
-                       "assets/images/products/fitilli-atlet-koleksiyonu/15.jpg",
-                       "assets/images/products/fitilli-atlet-koleksiyonu/16.jpg"
-                   ],
-        "description":  "Farklı renk seçenekleriyle basic, fitilli ve premium görünümlü kadın atlet koleksiyonu.",
-        "sizes":  [
-                      "S",
-                      "M",
-                      "L",
-                      "XL"
-                  ],
-        "active":  true
-    },
-    {
-        "id":  "crop-basic-koleksiyonu",
-        "name":  "VÉRAXA Crop Basic Koleksiyonu",
-        "price":  "₺ 749.00",
-        "category":  "women",
-        "image":  "assets/images/products/crop-basic-koleksiyonu/01.jpg",
-        "images":  [
-                       "assets/images/products/crop-basic-koleksiyonu/01.jpg",
-                       "assets/images/products/crop-basic-koleksiyonu/02.jpg",
-                       "assets/images/products/crop-basic-koleksiyonu/03.jpg",
-                       "assets/images/products/crop-basic-koleksiyonu/04.jpg",
-                       "assets/images/products/crop-basic-koleksiyonu/05.jpg",
-                       "assets/images/products/crop-basic-koleksiyonu/06.jpg",
-                       "assets/images/products/crop-basic-koleksiyonu/07.jpg",
-                       "assets/images/products/crop-basic-koleksiyonu/08.jpg",
-                       "assets/images/products/crop-basic-koleksiyonu/09.jpg",
-                       "assets/images/products/crop-basic-koleksiyonu/10.jpg",
-                       "assets/images/products/crop-basic-koleksiyonu/11.jpg",
-                       "assets/images/products/crop-basic-koleksiyonu/12.jpg",
-                       "assets/images/products/crop-basic-koleksiyonu/13.jpg",
-                       "assets/images/products/crop-basic-koleksiyonu/14.jpg",
-                       "assets/images/products/crop-basic-koleksiyonu/15.jpg",
-                       "assets/images/products/crop-basic-koleksiyonu/16.jpg",
-                       "assets/images/products/crop-basic-koleksiyonu/17.jpg",
-                       "assets/images/products/crop-basic-koleksiyonu/18.jpg",
-                       "assets/images/products/crop-basic-koleksiyonu/19.jpg",
-                       "assets/images/products/crop-basic-koleksiyonu/20.jpg"
-                   ],
-        "description":  "Günlük kombinler için crop formda, yumuşak dokulu premium basic üst koleksiyonu.",
-        "sizes":  [
-                      "S",
-                      "M",
-                      "L",
-                      "XL"
-                  ],
-        "active":  true
-    },
-    {
-        "id":  "oversize-basic-tee",
-        "name":  "VÉRAXA Oversize Basic Tee",
-        "price":  "₺ 899.00",
-        "category":  "unisex",
-        "image":  "assets/images/products/oversize-basic-tee/01.jpg",
-        "images":  [
-                       "assets/images/products/oversize-basic-tee/01.jpg",
-                       "assets/images/products/oversize-basic-tee/02.jpg",
-                       "assets/images/products/oversize-basic-tee/03.jpg",
-                       "assets/images/products/oversize-basic-tee/04.jpg",
-                       "assets/images/products/oversize-basic-tee/05.jpg",
-                       "assets/images/products/oversize-basic-tee/06.jpg",
-                       "assets/images/products/oversize-basic-tee/07.jpg",
-                       "assets/images/products/oversize-basic-tee/08.jpg",
-                       "assets/images/products/oversize-basic-tee/09.jpg",
-                       "assets/images/products/oversize-basic-tee/10.jpg"
-                   ],
-        "description":  "Modern kesim, sade duruş ve farklı renk alternatifleriyle oversize basic tişört.",
-        "sizes":  [
-                      "S",
-                      "M",
-                      "L",
-                      "XL"
-                  ],
-        "active":  true
-    },
-    {
-        "id":  "cizgili-polo-koleksiyonu",
-        "name":  "VÉRAXA Çizgili Polo Koleksiyonu",
-        "price":  "₺ 849.00",
-        "category":  "women",
-        "image":  "assets/images/products/cizgili-polo-koleksiyonu/01.jpg",
-        "images":  [
-                       "assets/images/products/cizgili-polo-koleksiyonu/01.jpg",
-                       "assets/images/products/cizgili-polo-koleksiyonu/02.jpg",
-                       "assets/images/products/cizgili-polo-koleksiyonu/03.jpg",
-                       "assets/images/products/cizgili-polo-koleksiyonu/04.jpg",
-                       "assets/images/products/cizgili-polo-koleksiyonu/05.jpg",
-                       "assets/images/products/cizgili-polo-koleksiyonu/06.jpg",
-                       "assets/images/products/cizgili-polo-koleksiyonu/07.jpg",
-                       "assets/images/products/cizgili-polo-koleksiyonu/08.jpg",
-                       "assets/images/products/cizgili-polo-koleksiyonu/09.jpg",
-                       "assets/images/products/cizgili-polo-koleksiyonu/10.jpg",
-                       "assets/images/products/cizgili-polo-koleksiyonu/11.jpg",
-                       "assets/images/products/cizgili-polo-koleksiyonu/12.jpg",
-                       "assets/images/products/cizgili-polo-koleksiyonu/13.jpg",
-                       "assets/images/products/cizgili-polo-koleksiyonu/14.jpg",
-                       "assets/images/products/cizgili-polo-koleksiyonu/15.jpg",
-                       "assets/images/products/cizgili-polo-koleksiyonu/16.jpg",
-                       "assets/images/products/cizgili-polo-koleksiyonu/17.jpg",
-                       "assets/images/products/cizgili-polo-koleksiyonu/18.jpg",
-                       "assets/images/products/cizgili-polo-koleksiyonu/19.jpg",
-                       "assets/images/products/cizgili-polo-koleksiyonu/20.jpg"
-                   ],
-        "description":  "Zamansız çizgili polo formu; şort, etek ve pantolon kombinleriyle premium günlük stil.",
-        "sizes":  [
-                      "S",
-                      "M",
-                      "L",
-                      "XL"
-                  ],
-        "active":  true
-    },
-    {
-        "id":  "oversize-blouse",
-        "name":  "VÉRAXA Oversize Blouse",
-        "price":  "₺ 999.00",
-        "category":  "women",
-        "image":  "assets/images/products/oversize-blouse/01.jpg",
-        "images":  [
-                       "assets/images/products/oversize-blouse/01.jpg",
-                       "assets/images/products/oversize-blouse/02.jpg",
-                       "assets/images/products/oversize-blouse/03.jpg",
-                       "assets/images/products/oversize-blouse/04.jpg",
-                       "assets/images/products/oversize-blouse/05.jpg",
-                       "assets/images/products/oversize-blouse/06.jpg",
-                       "assets/images/products/oversize-blouse/07.jpg",
-                       "assets/images/products/oversize-blouse/08.jpg"
-                   ],
-        "description":  "Mor ve yeşil tonlarında dökümlü, rahat ve şık oversize blouse modeli.",
-        "sizes":  [
-                      "S",
-                      "M",
-                      "L",
-                      "XL"
-                  ],
-        "active":  true
-    },
-    {
-        "id":  "oversize-striped-tee",
-        "name":  "VÉRAXA Oversize Striped Tee",
-        "price":  "₺ 899.00",
-        "category":  "women",
-        "image":  "assets/images/products/oversize-striped-tee/01.jpg",
-        "images":  [
-                       "assets/images/products/oversize-striped-tee/01.jpg",
-                       "assets/images/products/oversize-striped-tee/02.jpg",
-                       "assets/images/products/oversize-striped-tee/03.jpg",
-                       "assets/images/products/oversize-striped-tee/04.jpg",
-                       "assets/images/products/oversize-striped-tee/05.jpg",
-                       "assets/images/products/oversize-striped-tee/06.jpg",
-                       "assets/images/products/oversize-striped-tee/07.jpg",
-                       "assets/images/products/oversize-striped-tee/08.jpg",
-                       "assets/images/products/oversize-striped-tee/09.jpg",
-                       "assets/images/products/oversize-striped-tee/10.jpg",
-                       "assets/images/products/oversize-striped-tee/11.jpg",
-                       "assets/images/products/oversize-striped-tee/12.jpg",
-                       "assets/images/products/oversize-striped-tee/13.jpg",
-                       "assets/images/products/oversize-striped-tee/14.jpg",
-                       "assets/images/products/oversize-striped-tee/15.jpg",
-                       "assets/images/products/oversize-striped-tee/16.jpg",
-                       "assets/images/products/oversize-striped-tee/17.jpg",
-                       "assets/images/products/oversize-striped-tee/18.jpg",
-                       "assets/images/products/oversize-striped-tee/19.jpg",
-                       "assets/images/products/oversize-striped-tee/20.jpg",
-                       "assets/images/products/oversize-striped-tee/21.jpg",
-                       "assets/images/products/oversize-striped-tee/22.jpg",
-                       "assets/images/products/oversize-striped-tee/23.jpg",
-                       "assets/images/products/oversize-striped-tee/24.jpg"
-                   ],
-        "description":  "Oversize çizgili tişört koleksiyonu; siyah, yeşil, bordo, mavi ve pembe çizgi seçenekleri.",
-        "sizes":  [
-                      "S",
-                      "M",
-                      "L",
-                      "XL"
-                  ],
-        "active":  true
+  {
+    id: "fitilli-atlet-koleksiyonu",
+    name: "VÉRAXA Fitilli Atlet Koleksiyonu",
+    price: "₺ 699.00",
+    category: "women",
+    image: "assets/images/products/01 (1).jpg",
+    images: [
+      "assets/images/products/01 (1).jpg",
+      "assets/images/products/02 (2).jpg",
+      "assets/images/products/01 (5).jpg",
+      "assets/images/products/02 (6).jpg",
+      "assets/images/products/03 (7).jpg",
+      "assets/images/products/01 (9).jpg",
+      "assets/images/products/02 (10).jpg"
+    ],
+    description: "Fitilli dokulu, premium basic atlet koleksiyonu. Farkli renk alternatifleriyle gunluk kombinlere luxury dokunus.",
+    sizes: ["S", "M", "L", "XL"],
+    active: true
+  },
+  {
+    id: "crop-basic-koleksiyonu",
+    name: "VÉRAXA Crop Basic Koleksiyonu",
+    price: "₺ 749.00",
+    category: "women",
+    image: "assets/images/products/01 (29).jpg",
+    images: [
+      "assets/images/products/01 (29).jpg",
+      "assets/images/products/02 (30).jpg",
+      "assets/images/products/03 (31).jpg",
+      "assets/images/products/04 (32).jpg"
+    ],
+    description: "Crop formda, yumusak dokulu basic ust koleksiyonu. Etek, jean ve sort kombinleri icin sade ve net durus.",
+    sizes: ["S", "M", "L"],
+    active: true
+  },
+  {
+    id: "oversize-basic-tee",
+    name: "VÉRAXA Oversize Basic Tee",
+    price: "₺ 899.00",
+    category: "unisex",
+    image: "assets/images/products/01 (45).jpg",
+    images: [
+      "assets/images/products/01 (45).jpg",
+      "assets/images/products/02 (46).jpg",
+      "assets/images/products/03 (47).jpg",
+      "assets/images/products/04 (48).jpg"
+    ],
+    description: "Modern kesim, sade gorunum ve rahat kalip. Streetwear cizgisinde premium oversize basic tee.",
+    sizes: ["S", "M", "L", "XL"],
+    active: true
+  },
+  {
+    id: "cizgili-polo-koleksiyonu",
+    name: "VÉRAXA Çizgili Polo Koleksiyonu",
+    price: "₺ 849.00",
+    category: "women",
+    image: "assets/images/products/01 (49).jpg",
+    images: [
+      "assets/images/products/01 (49).jpg",
+      "assets/images/products/02 (50).jpg",
+      "assets/images/products/03 (51).jpg",
+      "assets/images/products/04 (52).jpg"
+    ],
+    description: "Zamansiz cizgili polo formu. Sort, pantolon ve etek kombinleriyle temiz premium gorunum.",
+    sizes: ["S", "M", "L"],
+    active: true
+  },
+  {
+    id: "oversize-blouse",
+    name: "VÉRAXA Oversize Blouse",
+    price: "₺ 999.00",
+    category: "women",
+    image: "assets/images/products/01 (63).jpg",
+    images: [
+      "assets/images/products/01 (63).jpg",
+      "assets/images/products/02 (64).jpg",
+      "assets/images/products/03 (65).jpg",
+      "assets/images/products/04 (66).jpg"
+    ],
+    description: "Dokulu, dokumlu ve rahat formda oversize blouse. Gunluk siklik icin guclu bir parca.",
+    sizes: ["S", "M", "L"],
+    active: true
+  },
+  {
+    id: "oversize-striped-tee",
+    name: "VÉRAXA Oversize Striped Tee",
+    price: "₺ 899.00",
+    category: "women",
+    image: "assets/images/products/01 (71).jpg",
+    images: [
+      "assets/images/products/01 (71).jpg",
+      "assets/images/products/02 (72).jpg",
+      "assets/images/products/03 (73).jpg",
+      "assets/images/products/04 (74).jpg"
+    ],
+    description: "Oversize cizgili tisort koleksiyonu. Rahat kalip, yumusak doku ve modern gunluk stil.",
+    sizes: ["S", "M", "L", "XL"],
+    active: true
+  },
