@@ -1,0 +1,1 @@
+// VÉRAXA auth file
