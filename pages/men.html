@@ -7,16 +7,12 @@
   <title>Erkek Koleksiyonu | VÉRAXA</title>
   <meta name="description" content="VÉRAXA erkek ve unisex koleksiyonu: oversize basic tee ve premium streetwear parçalar." />
 
-  <link rel="stylesheet" href="../assets/css/style.css?v=1000" />
+  <link rel="stylesheet" href="../assets/css/style.css?v=1001" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <div id="loader">
-    <div class="loader-logo">VÉRAXA</div>
-  </div>
-
   <div class="site-topline">
     VÉRAXA · ERKEK / UNISEX KOLEKSİYONU
   </div>
@@ -126,13 +122,15 @@
     <p>Luxury Streetwear & Custom DTF Studio</p>
   </footer>
 
-  <script src="../assets/js/config.js?v=1000"></script>
-  <script src="../assets/js/products.js?v=1000"></script>
-  <script src="../assets/js/cart.js?v=1000"></script>
-  <script src="../assets/js/app.js?v=1000"></script>
+  <script src="../assets/js/config.js?v=1001"></script>
+  <script src="../assets/js/products.js?v=1001"></script>
+  <script src="../assets/js/cart.js?v=1001"></script>
+  <script src="../assets/js/app.js?v=1001"></script>
   <script>
-    document.addEventListener("DOMContentLoaded",function(){
-      veraxaSetFilter("men", null);
+    window.addEventListener("load",function(){
+      setTimeout(function(){
+        veraxaSetFilter("men", null);
+      },300);
     });
   </script>
 </body>
