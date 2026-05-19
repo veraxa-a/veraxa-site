@@ -7,16 +7,12 @@
   <title>Kadın Koleksiyonu | VÉRAXA</title>
   <meta name="description" content="VÉRAXA kadın koleksiyonu: fitilli atlet, crop basic, çizgili polo, elbise ve premium parçalar." />
 
-  <link rel="stylesheet" href="../assets/css/style.css?v=1000" />
+  <link rel="stylesheet" href="../assets/css/style.css?v=1001" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <div id="loader">
-    <div class="loader-logo">VÉRAXA</div>
-  </div>
-
   <div class="site-topline">
     VÉRAXA · KADIN KOLEKSİYONU
   </div>
@@ -127,13 +123,15 @@
     <p>Luxury Streetwear & Custom DTF Studio</p>
   </footer>
 
-  <script src="../assets/js/config.js?v=1000"></script>
-  <script src="../assets/js/products.js?v=1000"></script>
-  <script src="../assets/js/cart.js?v=1000"></script>
-  <script src="../assets/js/app.js?v=1000"></script>
+  <script src="../assets/js/config.js?v=1001"></script>
+  <script src="../assets/js/products.js?v=1001"></script>
+  <script src="../assets/js/cart.js?v=1001"></script>
+  <script src="../assets/js/app.js?v=1001"></script>
   <script>
-    document.addEventListener("DOMContentLoaded",function(){
-      veraxaSetFilter("women", null);
+    window.addEventListener("load",function(){
+      setTimeout(function(){
+        veraxaSetFilter("women", null);
+      },300);
     });
   </script>
 </body>
