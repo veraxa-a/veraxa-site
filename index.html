@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>VÉRAXA | Luxury Streetwear</title>
 
-  <link rel="stylesheet" href="assets/css/style.css?v=100" />
+  <link rel="stylesheet" href="assets/css/style.css?v=200" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -76,24 +76,25 @@
       <div class="section-title">
         <span>SELECT YOUR STYLE</span>
         <h2>COLLECTIONS</h2>
+        <p>Tarzını seç, koleksiyona direkt geç.</p>
       </div>
 
       <div class="collection-grid">
-        <a class="card" href="#products">
+        <button class="card" onclick="filterProducts('men')">
           <img src="https://images.pexels.com/photos/769733/pexels-photo-769733.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Erkek Koleksiyonu" />
           <div class="card-content">
             <span>MEN</span>
-            <h3>Erkek Koleksiyonu</h3>
+            <h3>Erkek / Unisex</h3>
           </div>
-        </a>
+        </button>
 
-        <a class="card" href="#products">
+        <button class="card" onclick="filterProducts('women')">
           <img src="https://images.pexels.com/photos/6311392/pexels-photo-6311392.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Kadın Koleksiyonu" />
           <div class="card-content">
             <span>WOMEN</span>
             <h3>Kadın Koleksiyonu</h3>
           </div>
-        </a>
+        </button>
 
         <a class="card" href="#dtf">
           <img src="https://images.pexels.com/photos/8532616/pexels-photo-8532616.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="DTF Studio" />
@@ -109,17 +110,63 @@
       <div class="section-title">
         <span>NEW COLLECTION</span>
         <h2>PRODUCTS</h2>
-        <p>VÉRAXA koleksiyonundaki seçili parçalar.</p>
+        <p>114 ürün fotoğrafı koleksiyonlara ayrıldı. Kartı açınca ürünün tüm fotoğrafları görünür.</p>
+      </div>
+
+      <div class="product-filters">
+        <button class="active" onclick="filterProducts('all', this)">Tümü</button>
+        <button onclick="filterProducts('women', this)">Kadın</button>
+        <button onclick="filterProducts('men', this)">Erkek / Unisex</button>
       </div>
 
       <div class="products-grid"></div>
     </section>
 
-    <section class="banner" id="dtf">
-      <div class="banner-content">
-        <span>CUSTOM DTF</span>
-        <h2>Kendi tasarımını VÉRAXA kalitesiyle ürüne dönüştür.</h2>
-        <a href="https://wa.me/905468853731" target="_blank">TEKLİF AL</a>
+    <section class="dtf-section" id="dtf">
+      <div class="section-title">
+        <span>CUSTOM DTF STUDIO</span>
+        <h2>DTF BASKI SÜRECİ</h2>
+        <p>Kendi tasarımını gönder, VÉRAXA kalitesiyle tişört veya sweatshirt üzerine baskıya dönüştürelim.</p>
+      </div>
+
+      <div class="dtf-hero">
+        <img src="https://images.pexels.com/photos/8532616/pexels-photo-8532616.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="DTF Studio">
+        <div>
+          <span>YOUR DESIGN / OUR QUALITY</span>
+          <h3>Özel tasarım, premium baskı.</h3>
+          <p>Logo, yazı, illüstrasyon, marka tasarımı veya özel görsel. Ürün modelini seç, tasarımını WhatsApp üzerinden gönder, baskıya uygunluk ve fiyat bilgisini al.</p>
+          <a href="https://wa.me/905468853731?text=Merhaba%20VÉRAXA,%20özel%20DTF%20baskı%20yaptırmak%20istiyorum." target="_blank">WhatsApp ile Teklif Al</a>
+        </div>
+      </div>
+
+      <div class="dtf-steps">
+        <div>
+          <img src="https://images.pexels.com/photos/4065876/pexels-photo-4065876.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Tasarım kontrol">
+          <span>01</span>
+          <h3>Tasarım Kontrol</h3>
+          <p>Gönderdiğin görsel çözünürlük, renk ve baskı alanı açısından incelenir.</p>
+        </div>
+
+        <div>
+          <img src="https://images.pexels.com/photos/8532616/pexels-photo-8532616.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Baskı hazırlığı">
+          <span>02</span>
+          <h3>Baskı Hazırlığı</h3>
+          <p>DTF baskıya uygun dosya hazırlanır, ürün rengi ve beden bilgisi netleştirilir.</p>
+        </div>
+
+        <div>
+          <img src="https://images.pexels.com/photos/6311392/pexels-photo-6311392.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Ürün uygulama">
+          <span>03</span>
+          <h3>Ürüne Uygulama</h3>
+          <p>Tasarım tişört, oversize tee, hoodie veya sweatshirt üzerine uygulanır.</p>
+        </div>
+
+        <div>
+          <img src="https://images.pexels.com/photos/7679651/pexels-photo-7679651.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Teslimat">
+          <span>04</span>
+          <h3>Kontrol ve Teslimat</h3>
+          <p>Baskı son kontrolü yapılır, ürün paketlenir ve kargoya hazırlanır.</p>
+        </div>
       </div>
     </section>
   </main>
@@ -135,7 +182,7 @@
     </div>
   </footer>
 
-  <script src="assets/js/products.js?v=100"></script>
-  <script src="assets/js/app.js?v=100"></script>
+  <script src="assets/js/products.js?v=200"></script>
+  <script src="assets/js/app.js?v=200"></script>
 </body>
 </html>
