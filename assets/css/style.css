@@ -268,6 +268,7 @@ button{
   object-fit:cover;
   display:block;
   filter:brightness(.9) contrast(1.05);
+  transition:.5s ease;
 }
 
 .product-content{
