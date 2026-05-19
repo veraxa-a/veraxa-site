@@ -2,36 +2,67 @@ function veraxaPad(number) {
   return String(number).padStart(2, "0");
 }
 
-function veraxaAssetPath(path) {
-  const clean = String(path).replace(/^\/+/, "");
-  if (window.location.protocol === "file:") {
-    return window.location.pathname.includes("/pages/") ? "../" + clean : clean;
+function veraxaAsset(path) {
+  return "/" + String(path).replace(/^\/+/, "");
+}
+
+function veraxaProductImage(sequence, originalNumber, fallbackUrl) {
+  return {
+    src: veraxaAsset("assets/images/products/" + veraxaPad(sequence) + " (" + originalNumber + ").jpg"),
+    fallback: fallbackUrl
+  };
+}
+
+function veraxaImageGroup(startNumber, count, fallbackUrl) {
+  const images = [];
+
+  for (let index = 0; index < count; index++) {
+    images.push(veraxaProductImage(index + 1, startNumber + index, fallbackUrl));
   }
-  return "/" + clean;
+
+  return images;
 }
 
-function veraxaFlatImage(sequence, originalNumber) {
-  return veraxaAssetPath("assets/images/products/" + veraxaPad(sequence) + " (" + originalNumber + ").jpg");
-}
+function veraxaMergeImages(groups, fallbackUrl) {
+  let images = [];
 
-function veraxaFolderImage(folder, sequence) {
-  return veraxaAssetPath("assets/images/products/" + folder + "/" + veraxaPad(sequence) + ".jpg");
-}
-
-function veraxaImages(folder, originalNumbers) {
-  return originalNumbers.map(function(originalNumber, index) {
-    return {
-      src: veraxaFlatImage(index + 1, originalNumber),
-      fallback: veraxaFolderImage(folder, index + 1)
-    };
+  groups.forEach(function(group) {
+    images = images.concat(veraxaImageGroup(group.start, group.count, fallbackUrl));
   });
+
+  return images;
 }
+
+const VERAXA_FALLBACKS = {
+  womenDark: "https://images.pexels.com/photos/6311392/pexels-photo-6311392.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  womenLight: "https://images.pexels.com/photos/6311397/pexels-photo-6311397.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  womenEditorial: "https://images.pexels.com/photos/7679471/pexels-photo-7679471.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  men: "https://images.pexels.com/photos/769733/pexels-photo-769733.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  dress: "https://images.pexels.com/photos/7679863/pexels-photo-7679863.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  set: "https://images.pexels.com/photos/7679651/pexels-photo-7679651.jpeg?auto=compress&cs=tinysrgb&w=1200"
+};
 
 window.VERAXA_CATEGORIES = [
-  { id: "women", title: "Kadın", description: "Fitilli atlet, crop basic, çizgili polo, elbise ve premium günlük kombinler." },
-  { id: "men", title: "Erkek / Unisex", description: "Oversize basic tee ve unisex streetwear parçaları." },
-  { id: "sets", title: "Takımlar", description: "Dökümlü iki parça takımlar ve sezon kombinleri." },
-  { id: "dtf", title: "DTF Studio", description: "Kendi tasarımın için tişört, hoodie ve sweatshirt üzerine özel baskı." }
+  {
+    id: "women",
+    title: "Kadın",
+    description: "Fitilli atlet, crop basic, çizgili polo, elbise ve premium günlük kombinler."
+  },
+  {
+    id: "men",
+    title: "Erkek / Unisex",
+    description: "Oversize basic tee ve unisex streetwear parçaları."
+  },
+  {
+    id: "sets",
+    title: "Takımlar",
+    description: "Dökümlü iki parça takımlar ve sezon kombinleri."
+  },
+  {
+    id: "dtf",
+    title: "DTF Studio",
+    description: "Kendi tasarımın için tişört, hoodie ve sweatshirt üzerine özel baskı."
+  }
 ];
 
 window.VERAXA_PRODUCTS = [
@@ -46,7 +77,14 @@ window.VERAXA_PRODUCTS = [
     colorText: "Siyah, beyaz, gri, bej ve sezon renkleri",
     fit: "Slim basic fit",
     fabric: "Fitilli esnek dokulu kumaş",
-    images: veraxaImages("fitilli-atlet-koleksiyonu", [1,2,3,4,5,6,7,8,9,10,11,12,99,100,101,102]),
+    images: veraxaMergeImages(
+      [
+        { start: 1, count: 4 },
+        { start: 5, count: 4 },
+        { start: 9, count: 4 }
+      ],
+      VERAXA_FALLBACKS.womenDark
+    ),
     description: "Fitilli dokulu premium atlet koleksiyonu. Günlük kombinlerde sade, güçlü ve luxury bir temel parça."
   },
   {
@@ -60,7 +98,13 @@ window.VERAXA_PRODUCTS = [
     colorText: "Soft nötr ve sezon renkleri",
     fit: "Crop regular fit",
     fabric: "Yumuşak pamuk karışımlı kumaş",
-    images: veraxaImages("crop-basic-koleksiyonu", [13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32]),
+    images: veraxaMergeImages(
+      [
+        { start: 29, count: 4 },
+        { start: 45, count: 4 }
+      ],
+      VERAXA_FALLBACKS.womenLight
+    ),
     description: "Crop formda, yumuşak dokulu premium basic üst koleksiyonu. Jean, etek ve takım altlarıyla net görünüm verir."
   },
   {
@@ -74,7 +118,13 @@ window.VERAXA_PRODUCTS = [
     colorText: "Siyah ve basic tonlar",
     fit: "Oversize fit",
     fabric: "Premium cotton",
-    images: veraxaImages("oversize-basic-tee", [33,34,35,36,37,38,39,40,41,42]),
+    images: veraxaMergeImages(
+      [
+        { start: 45, count: 4 },
+        { start: 49, count: 4 }
+      ],
+      VERAXA_FALLBACKS.men
+    ),
     description: "Erkek ve unisex kullanıma uygun oversize basic tişört. Minimal görünüm, güçlü kalıp ve premium streetwear çizgisi."
   },
   {
@@ -88,7 +138,13 @@ window.VERAXA_PRODUCTS = [
     colorText: "Çizgili sezon tonları",
     fit: "Regular polo fit",
     fabric: "Yumuşak örme kumaş",
-    images: veraxaImages("cizgili-polo-koleksiyonu", [43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62]),
+    images: veraxaMergeImages(
+      [
+        { start: 49, count: 4 },
+        { start: 53, count: 4 }
+      ],
+      VERAXA_FALLBACKS.womenEditorial
+    ),
     description: "Zamansız çizgili polo formu. Günlük şıklık için güçlü, net ve kolay kombinlenen bir parça."
   },
   {
@@ -102,7 +158,12 @@ window.VERAXA_PRODUCTS = [
     colorText: "Minimal tonlar",
     fit: "Oversize relaxed fit",
     fabric: "Dökümlü hafif kumaş",
-    images: veraxaImages("oversize-blouse", [63,64,65,66,67,68,69,70]),
+    images: veraxaMergeImages(
+      [
+        { start: 63, count: 8 }
+      ],
+      VERAXA_FALLBACKS.womenDark
+    ),
     description: "Dökümlü, rahat ve şık oversize blouse modeli. Sakin ama güçlü bir görünüm isteyenler için."
   },
   {
@@ -116,7 +177,13 @@ window.VERAXA_PRODUCTS = [
     colorText: "Çizgili kontrast tonlar",
     fit: "Oversize fit",
     fabric: "Yumuşak pamuklu kumaş",
-    images: veraxaImages("oversize-striped-tee", [71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94]),
+    images: veraxaMergeImages(
+      [
+        { start: 71, count: 12 },
+        { start: 83, count: 12 }
+      ],
+      VERAXA_FALLBACKS.womenLight
+    ),
     description: "Oversize çizgili tişört koleksiyonu. Rahat kalıp ve modern streetwear çizgisini bir araya getirir."
   },
   {
@@ -130,7 +197,12 @@ window.VERAXA_PRODUCTS = [
     colorText: "Mavi",
     fit: "Midi dress fit",
     fabric: "Akışkan dokulu kumaş",
-    images: veraxaImages("blue-midi-dress", [95,96,97,98]),
+    images: veraxaMergeImages(
+      [
+        { start: 95, count: 4 }
+      ],
+      VERAXA_FALLBACKS.dress
+    ),
     description: "Mavi midi elbise. Zarif yaka formu, akışkan silüet ve modern şehir şıklığı."
   },
   {
@@ -144,7 +216,12 @@ window.VERAXA_PRODUCTS = [
     colorText: "Siyah",
     fit: "Regular dress fit",
     fabric: "Yumuşak polo dokusu",
-    images: veraxaImages("black-polo-dress", [103,104,105,106]),
+    images: veraxaMergeImages(
+      [
+        { start: 103, count: 4 }
+      ],
+      VERAXA_FALLBACKS.dress
+    ),
     description: "Siyah polo elbise. Kontrast yaka detayıyla sade, modern ve güçlü bir görünüm."
   },
   {
@@ -158,7 +235,12 @@ window.VERAXA_PRODUCTS = [
     colorText: "Gri",
     fit: "Relaxed two piece fit",
     fabric: "Dökümlü rahat kumaş",
-    images: veraxaImages("grey-two-piece-set", [107,108,109,110]),
+    images: veraxaMergeImages(
+      [
+        { start: 107, count: 4 }
+      ],
+      VERAXA_FALLBACKS.set
+    ),
     description: "Gri ikili takım. Rahat pantolon ve bağlama detaylı üst ile tek hareketle hazır kombin."
   },
   {
@@ -172,7 +254,12 @@ window.VERAXA_PRODUCTS = [
     colorText: "Lacivert",
     fit: "Relaxed two piece fit",
     fabric: "Dökümlü rahat kumaş",
-    images: veraxaImages("navy-two-piece-set", [111,112,113,114]),
+    images: veraxaMergeImages(
+      [
+        { start: 111, count: 4 }
+      ],
+      VERAXA_FALLBACKS.set
+    ),
     description: "Lacivert ikili takım. Dökümlü üst, geniş paça pantolon ve zarif bel detayıyla premium görünüm."
   }
 ];
