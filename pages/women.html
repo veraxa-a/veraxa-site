@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Kadın Koleksiyonu | VÉRAXA</title>
+  <meta name="description" content="VÉRAXA kadın koleksiyonu: fitilli atlet, crop basic, çizgili polo, elbise ve premium parçalar." />
+
+  <link rel="stylesheet" href="../assets/css/style.css?v=1000" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div id="loader">
+    <div class="loader-logo">VÉRAXA</div>
+  </div>
+
+  <div class="site-topline">
+    VÉRAXA · KADIN KOLEKSİYONU
+  </div>
+
+  <header class="header">
+    <a class="logo" href="../index.html">VÉRAXA</a>
+
+    <nav class="nav">
+      <a href="../index.html">Ana Sayfa</a>
+      <a href="../index.html#collections">Koleksiyon</a>
+      <a href="../index.html#products">Ürünler</a>
+      <a href="men.html">Erkek</a>
+      <a href="dtf-studio.html">DTF Studio</a>
+    </nav>
+
+    <div class="nav-right">
+      <button type="button" onclick="veraxaShowWishlist()">Favori <span id="wishlistCount">0</span></button>
+      <button type="button" onclick="veraxaOpenCart()">Sepet <span id="cartCount">0</span></button>
+      <a href="https://wa.me/905468853731" target="_blank">WhatsApp</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" style="min-height:72vh;">
+      <div class="hero-media">
+        <img src="https://images.pexels.com/photos/6311392/pexels-photo-6311392.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="VÉRAXA Kadın Koleksiyonu" />
+      </div>
+
+      <div class="hero-content">
+        <span class="eyebrow">Women Collection</span>
+        <h1>Kadın<br />Koleksiyonu</h1>
+        <p>
+          Fitilli atlet, crop basic, çizgili polo, elbise ve premium günlük kombinler.
+          VÉRAXA kadın koleksiyonu sade ama güçlü bir görünüm sunar.
+        </p>
+        <div class="hero-actions">
+          <a class="btn light" href="#products">Ürünleri Gör</a>
+          <a class="btn" href="../index.html#dtf">DTF Studio</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section products" id="products">
+      <div class="section-title">
+        <span>Women</span>
+        <h2>Selected Pieces</h2>
+        <p>Kadın koleksiyonundaki seçili VÉRAXA parçaları.</p>
+      </div>
+
+      <div class="product-tools">
+        <div class="filters">
+          <button class="is-active" type="button" data-filter onclick="veraxaSetFilter('women', this)">Kadın</button>
+          <button type="button" data-filter onclick="veraxaSetFilter('sets', this)">Takımlar</button>
+          <button type="button" onclick="veraxaShowWishlist()">Favoriler</button>
+        </div>
+
+        <input class="search" type="search" placeholder="Kadın ürünü ara..." oninput="veraxaSearchProducts(this.value)" />
+      </div>
+
+      <div class="products-grid" id="productsGrid"></div>
+    </section>
+  </main>
+
+  <div id="productModal" class="product-modal" aria-hidden="true">
+    <div class="modal-box">
+      <button class="modal-close" type="button" onclick="veraxaCloseProduct()" aria-label="Kapat">×</button>
+
+      <div id="modalGallery" class="modal-gallery"></div>
+
+      <div class="modal-info">
+        <span id="modalCategory"></span>
+        <h2 id="modalName"></h2>
+        <p id="modalPrice" class="modal-price"></p>
+        <p id="modalDesc"></p>
+
+        <div class="modal-meta">
+          <small><b>Kumaş:</b> <span id="modalFabric"></span></small>
+          <small><b>Kalıp:</b> <span id="modalFit"></span></small>
+          <small><b>Renk:</b> <span id="modalColors"></span></small>
+        </div>
+
+        <select id="modalSize">
+          <option value="">Beden Seç</option>
+          <option>XS</option>
+          <option>S</option>
+          <option>M</option>
+          <option>L</option>
+          <option>XL</option>
+        </select>
+
+        <button id="modalAddCart" class="modal-secondary" type="button">Sepete Ekle</button>
+        <button id="modalWhatsapp" type="button">WhatsApp ile Sipariş</button>
+      </div>
+    </div>
+  </div>
+
+  <aside id="cartDrawer" class="cart-drawer" aria-hidden="true">
+    <div class="cart-panel">
+      <button class="cart-close" type="button" onclick="veraxaCloseCart()">×</button>
+      <h2>Sepet</h2>
+      <div id="cartItems"></div>
+      <button class="cart-whatsapp" type="button" onclick="veraxaSendCartWhatsApp()">WhatsApp ile Sipariş Ver</button>
+    </div>
+  </aside>
+
+  <footer class="footer">
+    <div class="footer-logo">VÉRAXA</div>
+    <p>Luxury Streetwear & Custom DTF Studio</p>
+  </footer>
+
+  <script src="../assets/js/config.js?v=1000"></script>
+  <script src="../assets/js/products.js?v=1000"></script>
+  <script src="../assets/js/cart.js?v=1000"></script>
+  <script src="../assets/js/app.js?v=1000"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded",function(){
+      veraxaSetFilter("women", null);
+    });
+  </script>
+</body>
+</html>
