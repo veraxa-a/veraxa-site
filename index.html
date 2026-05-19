@@ -1,48 +1,141 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VERAXA | Luxury Streetwear</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VÉRAXA | Luxury Streetwear</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css?v=100" />
 
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:#030303;color:#f6efe3;font-family:Inter,Arial,sans-serif}
-a{text-decoration:none;color:inherit}
-button,select{font:inherit}
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
 
-#loader{position:fixed;inset:0;z-index:9999;background:#030303;display:grid;place-items:center;transition:.45s}
-#loader.hide{opacity:0;visibility:hidden;pointer-events:none}
-.loader-logo{font-family:"Cormorant Garamond",serif;font-size:44px;letter-spacing:18px;color:#d8c08a;opacity:.75}
+<body>
+  <div id="loader">
+    <div class="loader-logo">VÉRAXA</div>
+  </div>
 
-.header{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:22px 6vw;background:rgba(0,0,0,.72);backdrop-filter:blur(16px);border-bottom:1px solid rgba(214,179,106,.18)}
-.logo,.footer-logo{font-family:"Cormorant Garamond",serif;letter-spacing:9px;font-size:28px;color:#f6efe3}
-.nav{display:flex;gap:26px;font-size:12px;text-transform:uppercase;letter-spacing:2px;color:#d8d0c3}
-.nav a:hover,.nav-right a:hover{color:#d6b36a}
-.nav-right a{border:1px solid rgba(214,179,106,.4);border-radius:999px;padding:9px 15px;font-size:12px;letter-spacing:1px}
+  <div id="productModal" class="product-modal">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeProductModal()">×</button>
+      <div class="modal-gallery" id="modalGallery"></div>
+      <div class="modal-info">
+        <span id="modalCategory"></span>
+        <h2 id="modalName"></h2>
+        <p id="modalPrice"></p>
+        <p id="modalDesc"></p>
 
-.hero{min-height:100vh;position:relative;display:flex;align-items:center;padding:140px 8vw 80px;overflow:hidden;background:#050505}
-.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.52)}
-.overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.92),rgba(0,0,0,.28),rgba(0,0,0,.88))}
-.hero-content{position:relative;z-index:2;max-width:760px}
-.tag,.section-title span,.banner-content span{color:#d6b36a;letter-spacing:4px;font-size:12px;text-transform:uppercase}
-h1{font-family:"Cormorant Garamond",serif;font-size:92px;line-height:.92;font-weight:300;letter-spacing:8px;margin:22px 0}
-.hero p{max-width:560px;color:#d8d0c3;line-height:1.8}
-.hero-buttons{display:flex;gap:14px;margin-top:30px;flex-wrap:wrap}
-.light-btn,.dark-btn,.banner-content a{display:inline-flex;border-radius:999px;padding:14px 26px;font-size:12px;letter-spacing:2px;text-transform:uppercase}
-.light-btn,.banner-content a{background:#f6efe3;color:#080808}.dark-btn{border:1px solid rgba(214,179,106,.55);color:#f6efe3}
+        <select id="modalSize">
+          <option value="">Beden Seç</option>
+          <option>S</option>
+          <option>M</option>
+          <option>L</option>
+          <option>XL</option>
+        </select>
 
-.collections,.products,.banner,.footer{padding:90px 6vw}
-.section-title{text-align:center;margin-bottom:42px}
-.section-title h2{font-family:"Cormorant Garamond",serif;font-size:50px;font-weight:300;letter-spacing:7px;margin-top:10px}
-.section-title p{color:#aaa;margin-top:10px}
-.collection-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.card{position:relative;height:430px;overflow:hidden;display:block;background:#111}
-.card img{width:100%;height:100%;object-fit:cover;transition:.5s}
-.card:hover img{transform:scale(1.06)}
-.card::after{content:"";position:absolute;inset:0;background:linear-gradient(
+        <button id="modalWhatsapp">WhatsApp ile Sipariş</button>
+      </div>
+    </div>
+  </div>
+
+  <header class="header">
+    <a class="logo" href="#">VÉRAXA</a>
+
+    <nav class="nav">
+      <a href="#">Ana Sayfa</a>
+      <a href="#collections">Koleksiyon</a>
+      <a href="#products">Ürünler</a>
+      <a href="#dtf">DTF Studio</a>
+    </nav>
+
+    <div class="nav-right">
+      <a href="https://wa.me/905468853731" target="_blank">WhatsApp</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <img src="assets/images/hero/hero-main.jpg" alt="VÉRAXA Luxury Fashion" />
+      <div class="overlay"></div>
+
+      <div class="hero-content">
+        <span class="tag">PREMIUM STREETWEAR</span>
+        <h1>LUXURY<br />REDEFINED</h1>
+        <p>Premium kumaş, modern kesim ve luxury görünüm. VÉRAXA yeni nesil streetwear deneyimi.</p>
+
+        <div class="hero-buttons">
+          <a class="light-btn" href="#products">KOLEKSİYONU KEŞFET</a>
+          <a class="dark-btn" href="#dtf">DTF STUDIO</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="collections" id="collections">
+      <div class="section-title">
+        <span>SELECT YOUR STYLE</span>
+        <h2>COLLECTIONS</h2>
+      </div>
+
+      <div class="collection-grid">
+        <a class="card" href="#products">
+          <img src="https://images.pexels.com/photos/769733/pexels-photo-769733.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Erkek Koleksiyonu" />
+          <div class="card-content">
+            <span>MEN</span>
+            <h3>Erkek Koleksiyonu</h3>
+          </div>
+        </a>
+
+        <a class="card" href="#products">
+          <img src="https://images.pexels.com/photos/6311392/pexels-photo-6311392.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Kadın Koleksiyonu" />
+          <div class="card-content">
+            <span>WOMEN</span>
+            <h3>Kadın Koleksiyonu</h3>
+          </div>
+        </a>
+
+        <a class="card" href="#dtf">
+          <img src="https://images.pexels.com/photos/8532616/pexels-photo-8532616.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="DTF Studio" />
+          <div class="card-content">
+            <span>DTF</span>
+            <h3>Custom Print Studio</h3>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section class="products" id="products">
+      <div class="section-title">
+        <span>NEW COLLECTION</span>
+        <h2>PRODUCTS</h2>
+        <p>VÉRAXA koleksiyonundaki seçili parçalar.</p>
+      </div>
+
+      <div class="products-grid"></div>
+    </section>
+
+    <section class="banner" id="dtf">
+      <div class="banner-content">
+        <span>CUSTOM DTF</span>
+        <h2>Kendi tasarımını VÉRAXA kalitesiyle ürüne dönüştür.</h2>
+        <a href="https://wa.me/905468853731" target="_blank">TEKLİF AL</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-logo">VÉRAXA</div>
+    <p>Luxury Streetwear & Custom DTF Studio</p>
+
+    <div class="footer-links">
+      <a href="https://instagram.com/veraxa.co" target="_blank">Instagram</a>
+      <a href="https://wa.me/905468853731" target="_blank">WhatsApp</a>
+      <a href="https://t.me/nilu_mi" target="_blank">Telegram</a>
+    </div>
+  </footer>
+
+  <script src="assets/js/products.js?v=100"></script>
+  <script src="assets/js/app.js?v=100"></script>
+</body>
+</html>
