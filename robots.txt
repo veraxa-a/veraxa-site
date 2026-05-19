@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://veraxa.co/sitemap.xml
