@@ -12,7 +12,29 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
+<div id="productModal" class="product-modal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeProductModal()">×</button>
 
+    <div class="modal-gallery" id="modalGallery"></div>
+
+    <div class="modal-info">
+      <span id="modalCategory"></span>
+      <h2 id="modalName"></h2>
+      <p id="modalPrice"></p>
+
+      <select id="modalSize">
+        <option value="">Beden Seç</option>
+        <option>S</option>
+        <option>M</option>
+        <option>L</option>
+        <option>XL</option>
+      </select>
+
+      <button id="modalWhatsapp">WhatsApp ile Sipariş</button>
+    </div>
+  </div>
+</div>
 <body>
 <div id="loader">
   <div class="loader-logo">VÉRAXA</div>
