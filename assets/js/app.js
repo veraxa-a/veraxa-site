@@ -44,6 +44,13 @@ window.addEventListener("DOMContentLoaded", () => {
 function openProduct(index) {
   const product = VERAXA_PRODUCTS[index];
 
+  const text = `Merhaba VÉRAXA, ${product.name} ürünü için bilgi almak istiyorum.`;
+
+  window.open(
+    `https://wa.me/905468853731?text=${encodeURIComponent(text)}`,
+    "_blank"
+  );
+}
   document.getElementById("modalName").innerText = product.name;
   document.getElementById("modalPrice").innerText = product.price;
   document.getElementById("modalCategory").innerText = product.category;
