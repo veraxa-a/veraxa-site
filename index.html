@@ -4,13 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <meta name="veraxa-build" content="veraxa-build-clean-999" />
   <meta name="description" content="VÉRAXA luxury streetwear, kadın koleksiyonu, erkek/unisex parçalar ve custom DTF baskı stüdyosu." />
   <meta name="theme-color" content="#030303" />
+
+  <meta property="og:title" content="VÉRAXA | Luxury Streetwear & Custom DTF Studio" />
+  <meta property="og:description" content="Premium kumaş, modern kesim, luxury görünüm ve özel DTF baskı stüdyosu." />
+  <meta property="og:image" content="https://veraxa.co/assets/images/hero/hero-main.jpg" />
+  <meta property="og:url" content="https://veraxa.co/" />
 
   <title>VÉRAXA | Luxury Streetwear & Custom DTF Studio</title>
 
   <link rel="manifest" href="manifest.webmanifest" />
-  <link rel="stylesheet" href="assets/css/style.css?v=301" />
+  <link rel="stylesheet" href="assets/css/style.css?v=999" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -23,62 +29,35 @@
     <div class="loader-logo">VÉRAXA</div>
   </div>
 
-  <div id="productModal" class="product-modal" aria-hidden="true">
-    <div class="modal-box">
-      <button class="modal-close" type="button" onclick="closeProductModal()" aria-label="Kapat">×</button>
-
-      <div id="modalGallery" class="modal-gallery"></div>
-
-      <div class="modal-info">
-        <span id="modalCategory"></span>
-        <h2 id="modalName"></h2>
-        <p id="modalPrice" class="modal-price"></p>
-        <p id="modalDesc"></p>
-
-        <select id="modalSize">
-          <option value="">Beden Seç</option>
-          <option>S</option>
-          <option>M</option>
-          <option>L</option>
-          <option>XL</option>
-        </select>
-
-        <button id="modalWhatsapp" type="button">WhatsApp ile Sipariş</button>
-      </div>
-    </div>
+  <div class="site-topline">
+    WELCOME TO VÉRAXA · PREMIUM STREETWEAR · CUSTOM DTF STUDIO
   </div>
 
-  <aside id="cartDrawer" class="cart-drawer" aria-hidden="true">
-    <button class="cart-close" type="button" onclick="closeCart()">×</button>
-
-    <h2>Sepet</h2>
-
-    <div id="cartItems" class="cart-items"></div>
-
-    <button class="cart-whatsapp" type="button" onclick="sendCartWhatsApp()">WhatsApp ile Sipariş Ver</button>
-  </aside>
-
   <header class="header">
-    <a href="#" class="logo">VÉRAXA</a>
+    <a class="logo" href="#">VÉRAXA</a>
 
     <nav class="nav">
       <a href="#">Ana Sayfa</a>
       <a href="#collections">Koleksiyon</a>
       <a href="#products">Ürünler</a>
       <a href="#dtf">DTF Studio</a>
-      <a href="legal/return-policy.html">İade</a>
+      <a href="pages/women.html">Kadın</a>
+      <a href="pages/men.html">Erkek</a>
     </nav>
 
     <div class="nav-right">
-      <button type="button" onclick="toggleWishlist()">Favori <span id="wishlistCount">0</span></button>
-      <button type="button" onclick="openCart()">Sepet <span id="cartCount">0</span></button>
+      <button type="button" onclick="veraxaOpenAuth()">Giriş</button>
+      <button type="button" onclick="veraxaShowWishlist()">Favori <span id="wishlistCount">0</span></button>
+      <button type="button" onclick="veraxaOpenCart()">Sepet <span id="cartCount">0</span></button>
       <a href="https://wa.me/905468853731" target="_blank">WhatsApp</a>
     </div>
   </header>
 
   <main>
     <section class="hero">
-      <img src="assets/images/hero/hero-main.jpg" alt="VÉRAXA Luxury Fashion" />
+      <div class="hero-media">
+        <img src="assets/images/hero/hero-main.jpg" alt="VÉRAXA Luxury Fashion" />
+      </div>
 
       <div class="hero-content">
         <span class="eyebrow">Premium Streetwear</span>
@@ -86,46 +65,48 @@
         <h1>Luxury<br />Redefined</h1>
 
         <p>
-          Modern kesim, seçili koleksiyonlar ve özel DTF baskı hizmeti.
-          VÉRAXA, günlük giyimi luxury bir duruşla yeniden yorumlar.
+          Premium kumaş, modern kesim ve luxury görünüm. VÉRAXA yeni nesil
+          streetwear deneyimini özel DTF baskı stüdyosuyla birleştirir.
         </p>
 
         <div class="hero-actions">
           <a class="btn light" href="#products">Koleksiyonu Keşfet</a>
-          <a class="btn dark" href="#dtf">DTF Studio</a>
+          <a class="btn" href="#dtf">DTF Studio</a>
         </div>
       </div>
     </section>
+
+    <section class="category-strip" id="categoryStrip"></section>
 
     <section class="section" id="collections">
       <div class="section-title">
         <span>Select Your Style</span>
         <h2>Collections</h2>
         <p>
-          Kadın koleksiyonu, erkek/unisex parçalar ve özel baskı stüdyosu
-          tek marka çatısı altında.
+          Kadın koleksiyonu, erkek/unisex parçalar, premium takımlar ve özel
+          DTF baskı hizmeti tek marka dünyasında buluşur.
         </p>
       </div>
 
       <div class="collection-grid">
-        <button class="collection-card" type="button" onclick="filterProducts('men', null)">
-          <img src="https://images.pexels.com/photos/769733/pexels-photo-769733.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Men" />
-          <div>
-            <span>Men / Unisex</span>
-            <h3>Erkek Koleksiyonu</h3>
-          </div>
-        </button>
-
-        <button class="collection-card" type="button" onclick="filterProducts('women', null)">
-          <img src="https://images.pexels.com/photos/6311392/pexels-photo-6311392.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Women" />
+        <button class="collection-card" type="button" onclick="veraxaSetFilter('women', null)">
+          <img src="https://images.pexels.com/photos/6311392/pexels-photo-6311392.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Kadın koleksiyonu" />
           <div>
             <span>Women</span>
             <h3>Kadın Koleksiyonu</h3>
           </div>
         </button>
 
+        <button class="collection-card" type="button" onclick="veraxaSetFilter('men', null)">
+          <img src="https://images.pexels.com/photos/769733/pexels-photo-769733.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Erkek koleksiyonu" />
+          <div>
+            <span>Men / Unisex</span>
+            <h3>Erkek Koleksiyonu</h3>
+          </div>
+        </button>
+
         <a class="collection-card" href="#dtf">
-          <img src="https://images.pexels.com/photos/8532616/pexels-photo-8532616.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="DTF" />
+          <img src="https://images.pexels.com/photos/8532616/pexels-photo-8532616.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="DTF Studio" />
           <div>
             <span>Custom</span>
             <h3>DTF Studio</h3>
@@ -135,7 +116,7 @@
     </section>
 
     <section class="editorial">
-      <img src="https://images.pexels.com/photos/7679471/pexels-photo-7679471.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Editorial" />
+      <img src="https://images.pexels.com/photos/7679471/pexels-photo-7679471.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="VÉRAXA editorial" />
 
       <div class="editorial-copy">
         <span>VÉRAXA World</span>
@@ -143,9 +124,9 @@
         <h2>Az ürün, güçlü duruş, net görünüm.</h2>
 
         <p>
-          Dünya markalarının dili gibi daha sakin, daha büyük görsel odaklı
-          ve daha premium bir alışveriş deneyimi. Ürün detayları modal içinde
-          galeriyle gösterilir.
+          Dünya markalarının sakin ama etkileyici diliyle tasarlanmış yeni
+          VÉRAXA deneyimi. Büyük görseller, net kategoriler, koleksiyon mantığı,
+          ürün galerisi, favoriler ve WhatsApp sipariş akışı tek sistemde.
         </p>
       </div>
     </section>
@@ -155,78 +136,79 @@
         <span>New Collection</span>
         <h2>Products</h2>
         <p>
-          114 fotoğraf koleksiyonlara ayrıldı. Kartı açtığında ilgili ürün
-          grubunun tüm görselleri görünür.
+          114 ürün fotoğrafı koleksiyonlara ayrıldı. Kartı açtığında ilgili
+          ürün grubunun tüm görselleri galeri olarak görünür.
         </p>
       </div>
 
-      <div class="tool-row">
-        <div class="product-filters">
-          <button class="active" type="button" onclick="filterProducts('all', this)">Tümü</button>
-          <button type="button" onclick="filterProducts('women', this)">Kadın</button>
-          <button type="button" onclick="filterProducts('men', this)">Erkek / Unisex</button>
-          <button type="button" onclick="showWishlist()">Favoriler</button>
+      <div class="product-tools">
+        <div class="filters">
+          <button class="is-active" type="button" data-filter onclick="veraxaSetFilter('all', this)">Tümü</button>
+          <button type="button" data-filter onclick="veraxaSetFilter('women', this)">Kadın</button>
+          <button type="button" data-filter onclick="veraxaSetFilter('men', this)">Erkek</button>
+          <button type="button" data-filter onclick="veraxaSetFilter('sets', this)">Takımlar</button>
+          <button type="button" onclick="veraxaShowWishlist()">Favoriler</button>
         </div>
 
-        <input id="searchInput" type="search" placeholder="Ürün ara..." oninput="searchProducts()" />
+        <input class="search" type="search" placeholder="Ürün ara..." oninput="veraxaSearchProducts(this.value)" />
       </div>
 
-      <div class="products-grid"></div>
+      <div class="products-grid" id="productsGrid"></div>
     </section>
 
-    <section class="section dtf" id="dtf">
+    <section class="section studio" id="dtf">
       <div class="section-title">
         <span>Custom DTF Studio</span>
         <h2>DTF Baskı Süreci</h2>
         <p>
-          Kendi tasarımını tişört, hoodie veya sweatshirt üzerine uygulatmak için
-          WhatsApp üzerinden tasarımını gönder.
+          Kendi tasarımını tişört, hoodie veya sweatshirt üzerine uygulatmak
+          için tasarımını WhatsApp üzerinden gönder.
         </p>
       </div>
 
-      <div class="dtf-hero">
+      <div class="studio-grid">
         <img src="https://images.pexels.com/photos/8532616/pexels-photo-8532616.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="DTF Studio" />
 
-        <div class="dtf-copy">
+        <div class="studio-copy">
           <span>Your Design / Our Quality</span>
 
           <h2>Özel tasarım, premium baskı.</h2>
 
           <p>
             Logo, yazı, illüstrasyon, marka tasarımı veya özel görsel.
-            Baskı öncesi tasarımın çözünürlüğü, renkleri ve ürün üstündeki
-            konumu kontrol edilir.
+            Baskı öncesi tasarımın çözünürlüğü, renkleri, ölçüsü ve ürün
+            üstündeki konumu kontrol edilir.
           </p>
 
-          <a href="https://wa.me/905468853731?text=Merhaba%20VÉRAXA,%20özel%20DTF%20baskı%20yaptırmak%20istiyorum." target="_blank">
-            WhatsApp ile Teklif Al
+          <a class="btn light" href="https://wa.me/905468853731?text=Merhaba%20VÉRAXA,%20özel%20DTF%20baskı%20yaptırmak%20istiyorum." target="_blank">
+            Teklif Al
           </a>
         </div>
       </div>
 
-      <div class="steps">
-        <div class="step">
+      <div class="process-grid">
+        <div class="process-card">
           <img src="https://images.pexels.com/photos/4065876/pexels-photo-4065876.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Tasarım kontrol" />
           <span>01</span>
           <h3>Tasarım Kontrol</h3>
           <p>Gönderdiğin görsel baskıya uygunluk, çözünürlük ve renk açısından incelenir.</p>
         </div>
 
-        <div class="step">
+        <div class="process-card">
           <img src="https://images.pexels.com/photos/8532616/pexels-photo-8532616.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Baskı hazırlığı" />
           <span>02</span>
           <h3>Baskı Hazırlığı</h3>
           <p>Ürün rengi, beden, baskı ölçüsü ve konum bilgisi netleştirilir.</p>
         </div>
 
-        <div class="step">
-          <img src="https://images.pexels.com/photos/6311392/pexels-photo-6311392.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Uygulama" />
+        <div class="process-card">
+          <img src="https://images.pexels.com/photos/6311392/pexels-photo-6311392.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Ürüne uygulama" />
           <span>03</span>
           <h3>Ürüne Uygulama</h3>
           <p>DTF baskı tişört, oversize tee, hoodie veya sweatshirt üzerine uygulanır.</p>
         </div>
 
-        <div class="step">
+        <div class="process-card">
           <img src="https://images.pexels.com/photos/7679651/pexels-photo-7679651.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Teslimat" />
           <span>04</span>
           <h3>Kontrol ve Teslimat</h3>
@@ -248,7 +230,7 @@
 
       <div>
         <b>WhatsApp Sipariş</b>
-        Beden ve ürün bilgisi hazır mesajla gider.
+        Ürün ve beden bilgisi hazır mesajla gider.
       </div>
 
       <div>
@@ -257,6 +239,76 @@
       </div>
     </section>
   </main>
+
+  <div id="productModal" class="product-modal" aria-hidden="true">
+    <div class="modal-box">
+      <button class="modal-close" type="button" onclick="veraxaCloseProduct()" aria-label="Kapat">×</button>
+
+      <div id="modalGallery" class="modal-gallery"></div>
+
+      <div class="modal-info">
+        <span id="modalCategory"></span>
+        <h2 id="modalName"></h2>
+        <p id="modalPrice" class="modal-price"></p>
+        <p id="modalDesc"></p>
+
+        <div class="modal-meta">
+          <small><b>Kumaş:</b> <span id="modalFabric"></span></small>
+          <small><b>Kalıp:</b> <span id="modalFit"></span></small>
+          <small><b>Renk:</b> <span id="modalColors"></span></small>
+        </div>
+
+        <select id="modalSize">
+          <option value="">Beden Seç</option>
+          <option>XS</option>
+          <option>S</option>
+          <option>M</option>
+          <option>L</option>
+          <option>XL</option>
+        </select>
+
+        <button id="modalAddCart" class="modal-secondary" type="button">Sepete Ekle</button>
+        <button id="modalWhatsapp" type="button">WhatsApp ile Sipariş</button>
+      </div>
+    </div>
+  </div>
+
+  <aside id="cartDrawer" class="cart-drawer" aria-hidden="true">
+    <div class="cart-panel">
+      <button class="cart-close" type="button" onclick="veraxaCloseCart()">×</button>
+
+      <h2>Sepet</h2>
+
+      <div id="cartItems"></div>
+
+      <button class="cart-whatsapp" type="button" onclick="veraxaSendCartWhatsApp()">
+        WhatsApp ile Sipariş Ver
+      </button>
+    </div>
+  </aside>
+
+  <div id="authModal" class="auth-modal" aria-hidden="true">
+    <div class="auth-box">
+      <button class="auth-close" type="button" onclick="veraxaCloseAuth()">×</button>
+
+      <h2>VÉRAXA Hesabı</h2>
+
+      <p>
+        Google ile giriş sistemi Firebase üzerinden bağlanacak. İlk paket siteyi
+        ayağa kaldırır, ikinci pakette Google giriş dosyası aktifleşir.
+      </p>
+
+      <input id="authEmail" type="email" placeholder="E-posta" />
+      <input id="authPassword" type="password" placeholder="Şifre" />
+
+      <button class="auth-primary" type="button">Giriş Yap</button>
+      <button class="auth-ghost" type="button">Google ile Devam Et</button>
+
+      <div class="auth-note">
+        Firebase bağlantısı Paket 2 içinde auth.js dosyasıyla tamamlanacak.
+      </div>
+    </div>
+  </div>
 
   <footer class="footer">
     <div class="footer-logo">VÉRAXA</div>
@@ -269,11 +321,13 @@
       <a href="https://t.me/nilu_mi" target="_blank">Telegram</a>
       <a href="legal/privacy-policy.html">Gizlilik</a>
       <a href="legal/return-policy.html">İade</a>
+      <a href="legal/cookie-policy.html">Çerez</a>
     </div>
   </footer>
 
-  <script src="assets/js/products.js?v=301"></script>
-  <script src="assets/js/app.js?v=301"></script>
+  <script src="assets/js/config.js?v=999"></script>
+  <script src="assets/js/products.js?v=999"></script>
+  <script src="assets/js/app.js?v=999"></script>
 
   <script>
     (function(){
@@ -281,20 +335,21 @@
         var loader=document.getElementById("loader");
         if(!loader) return;
 
+        loader.classList.add("is-hidden");
         loader.style.opacity="0";
         loader.style.visibility="hidden";
         loader.style.pointerEvents="none";
 
         setTimeout(function(){
           loader.style.display="none";
-        },400);
+        },450);
       }
 
       window.addEventListener("load",function(){
-        setTimeout(hideLoader,1200);
+        setTimeout(hideLoader,900);
       });
 
-      setTimeout(hideLoader,2500);
+      setTimeout(hideLoader,2200);
     })();
   </script>
 </body>
