@@ -1,4 +1,5 @@
 const VERAXA_PHONE = "905468853731";
+let currentFilter = "all";
 
 document.addEventListener("DOMContentLoaded", function () {
   renderProducts();
@@ -37,6 +38,17 @@ function escapeHtml(value) {
   });
 }
 
+function normalizeImage(image) {
+  if (typeof image === "string") {
+    return { src: image, fallback: "" };
+  }
+
+  return {
+    src: image && image.src ? image.src : "",
+    fallback: image && image.fallback ? image.fallback : ""
+  };
+}
+
 function swapBrokenImage(img) {
   const fallback = img.getAttribute("data-fallback");
 
@@ -49,12 +61,13 @@ function swapBrokenImage(img) {
   img.style.display = "none";
 }
 
-function imageTag(src, fallback, alt, className) {
-  const fallbackAttr = fallback ? `data-fallback="${escapeHtml(fallback)}"` : "";
+function imageTag(image, alt, className) {
+  const normalized = normalizeImage(image);
+  const fallbackAttr = normalized.fallback ? `data-fallback="${escapeHtml(normalized.fallback)}"` : "";
 
   return `
     <img
-      src="${escapeHtml(src)}"
+      src="${escapeHtml(normalized.src)}"
       ${fallbackAttr}
       alt="${escapeHtml(alt)}"
       class="${className}"
@@ -64,33 +77,56 @@ function imageTag(src, fallback, alt, className) {
   `;
 }
 
+function getFilteredProducts() {
+  const products = Array.isArray(window.VERAXA_PRODUCTS) ? window.VERAXA_PRODUCTS : [];
+
+  if (currentFilter === "all") return products;
+
+  return products.filter(function (product) {
+    return product.category === currentFilter;
+  });
+}
+
+function filterProducts(filter, button) {
+  currentFilter = filter;
+
+  document.querySelectorAll(".product-filters button").forEach(function (btn) {
+    btn.classList.remove("active");
+  });
+
+  if (button) button.classList.add("active");
+
+  document.getElementById("products").scrollIntoView({ behavior: "smooth" });
+  renderProducts();
+}
+
 function renderProducts() {
   const grid = document.querySelector(".products-grid");
   if (!grid) return;
 
-  const products = Array.isArray(window.VERAXA_PRODUCTS) ? window.VERAXA_PRODUCTS : [];
+  const products = getFilteredProducts();
 
   if (!products.length) {
-    grid.innerHTML = '<p class="empty-products">Ürünler hazırlanıyor.</p>';
+    grid.innerHTML = '<p class="empty-products">Bu kategoride ürün hazırlanıyor.</p>';
     return;
   }
 
-  grid.innerHTML = products.map(function (product, index) {
-    const main = product.image || product.fallbackImage || "";
-    const hover = product.images && product.images[1] ? product.images[1] : main;
-    const mainFallback = product.fallbackImage || "";
-    const hoverFallback = product.fallbackImages && product.fallbackImages[1] ? product.fallbackImages[1] : mainFallback;
+  grid.innerHTML = products.map(function (product) {
+    const realIndex = window.VERAXA_PRODUCTS.indexOf(product);
+    const images = product.images || [];
+    const main = images[0] || "";
+    const hover = images[1] || main;
 
     return `
       <article class="product-card">
-        <button class="product-click" type="button" onclick="openProduct(${index})">
+        <button class="product-click" type="button" onclick="openProduct(${realIndex})">
           <span class="product-image-wrapper">
-            ${imageTag(main, mainFallback, product.name, "product-image primary")}
-            ${imageTag(hover, hoverFallback, product.name, "product-image secondary")}
+            ${imageTag(main, product.name, "product-image primary")}
+            ${imageTag(hover, product.name, "product-image secondary")}
           </span>
 
           <span class="product-content">
-            <small>${escapeHtml(product.category || "VÉRAXA")}</small>
+            <small>${escapeHtml(product.label || product.category || "VÉRAXA")}</small>
             <strong>${escapeHtml(product.name)}</strong>
             <span>${escapeHtml(product.price)}</span>
           </span>
@@ -115,14 +151,13 @@ function openProduct(index) {
 
   if (!modal || !gallery) return;
 
-  const images = product.images && product.images.length ? product.images : [product.image];
-  const fallbackImages = product.fallbackImages || [];
+  const images = product.images && product.images.length ? product.images : [];
 
-  gallery.innerHTML = images.map(function (src, i) {
-    return imageTag(src, fallbackImages[i] || product.fallbackImage || "", product.name, "modal-img");
+  gallery.innerHTML = images.map(function (image) {
+    return imageTag(image, product.name, "modal-img");
   }).join("");
 
-  category.textContent = product.category || "VÉRAXA";
+  category.textContent = product.label || product.category || "VÉRAXA";
   name.textContent = product.name || "";
   price.textContent = product.price || "";
   desc.textContent = product.description || "";
