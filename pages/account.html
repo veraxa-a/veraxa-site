@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Hesabım | VÉRAXA</title>
+  <meta name="description" content="VÉRAXA hesap girişi, favoriler ve sipariş başlangıç sayfası." />
+
+  <link rel="stylesheet" href="../assets/css/style.css?v=1000" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="site-topline">
+    VÉRAXA · HESABIM
+  </div>
+
+  <header class="header">
+    <a class="logo" href="../index.html">VÉRAXA</a>
+
+    <nav class="nav">
+      <a href="../index.html">Ana Sayfa</a>
+      <a href="../index.html#products">Ürünler</a>
+      <a href="women.html">Kadın</a>
+      <a href="men.html">Erkek</a>
+      <a href="dtf-studio.html">DTF Studio</a>
+    </nav>
+
+    <div class="nav-right">
+      <a href="https://wa.me/905468853731" target="_blank">WhatsApp</a>
+    </div>
+  </header>
+
+  <main class="section" style="padding-top:180px;">
+    <div class="section-title">
+      <span>Account</span>
+      <h2>VÉRAXA Hesabı</h2>
+      <p>
+        Google ile giriş yap, favorilerini sakla ve siparişlerini daha hızlı başlat.
+      </p>
+    </div>
+
+    <div class="auth-box" style="margin:auto;">
+      <h2>Giriş Yap</h2>
+
+      <p>
+        Hesap sistemi Firebase Authentication ile çalışır. Google girişinin çalışması için
+        Firebase panelinde Google provider ve authorized domain ayarları açık olmalıdır.
+      </p>
+
+      <input id="authEmail" type="email" placeholder="E-posta" />
+      <input id="authPassword" type="password" placeholder="Şifre" />
+
+      <button class="auth-primary" type="button">Giriş Yap</button>
+      <button class="auth-ghost" type="button">Google ile Devam Et</button>
+
+      <div class="auth-note">
+        Hazır.
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-logo">VÉRAXA</div>
+    <p>Luxury Streetwear & Custom DTF Studio</p>
+  </footer>
+
+  <script src="../assets/js/config.js?v=1000"></script>
+  <script src="../assets/js/auth.js?v=1000"></script>
+</body>
+</html>
