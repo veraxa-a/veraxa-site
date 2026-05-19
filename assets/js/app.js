@@ -44,14 +44,33 @@ window.addEventListener("DOMContentLoaded", () => {
 function openProduct(index) {
   const product = VERAXA_PRODUCTS[index];
 
-  let message = `Merhaba VÉRAXA, ${product.name} ürünü için bilgi almak istiyorum.`;
+  document.getElementById("modalName").innerText = product.name;
+  document.getElementById("modalPrice").innerText = product.price;
+  document.getElementById("modalCategory").innerText = product.category;
 
-  window.open(
-    `https://wa.me/905468853731?text=${encodeURIComponent(message)}`,
-    "_blank"
-  );
+  const gallery = document.getElementById("modalGallery");
+  gallery.innerHTML = "";
+
+  product.images.forEach(img => {
+    gallery.innerHTML += `<img src="${img}" alt="${product.name}">`;
+  });
+
+  document.getElementById("modalWhatsapp").onclick = () => {
+    const size = document.getElementById("modalSize").value;
+    const text = `Merhaba VÉRAXA, ${product.name} ürünü için bilgi almak istiyorum. Beden: ${size || "Belirtilmedi"}`;
+
+    window.open(
+      `https://wa.me/905468853731?text=${encodeURIComponent(text)}`,
+      "_blank"
+    );
+  };
+
+  document.getElementById("productModal").classList.add("active");
 }
 
+function closeProductModal() {
+  document.getElementById("productModal").classList.remove("active");
+}
 window.addEventListener("load", () => {
   const loader = document.getElementById("loader");
 
