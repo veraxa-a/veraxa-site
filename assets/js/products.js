@@ -6,40 +6,32 @@ function veraxaAsset(path) {
   return "/" + String(path).replace(/^\/+/, "");
 }
 
-function veraxaProductImage(sequence, originalNumber, fallbackUrl) {
+function veraxaLocalImage(sequence, originalNumber, fallbackUrl) {
   return {
     src: veraxaAsset("assets/images/products/" + veraxaPad(sequence) + " (" + originalNumber + ").jpg"),
     fallback: fallbackUrl
   };
 }
 
-function veraxaImageGroup(startNumber, count, fallbackUrl) {
-  const images = [];
-
-  for (let index = 0; index < count; index++) {
-    images.push(veraxaProductImage(index + 1, startNumber + index, fallbackUrl));
-  }
-
-  return images;
+function veraxaExternalImage(url) {
+  return {
+    src: url,
+    fallback: url
+  };
 }
 
-function veraxaMergeImages(groups, fallbackUrl) {
-  let images = [];
-
-  groups.forEach(function(group) {
-    images = images.concat(veraxaImageGroup(group.start, group.count, fallbackUrl));
-  });
-
-  return images;
-}
-
-const VERAXA_FALLBACKS = {
-  womenDark: "https://images.pexels.com/photos/6311392/pexels-photo-6311392.jpeg?auto=compress&cs=tinysrgb&w=1200",
+const VERAXA_IMG = {
+  womenBlack: "https://images.pexels.com/photos/6311392/pexels-photo-6311392.jpeg?auto=compress&cs=tinysrgb&w=1200",
   womenLight: "https://images.pexels.com/photos/6311397/pexels-photo-6311397.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  womenEditorial: "https://images.pexels.com/photos/7679471/pexels-photo-7679471.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  men: "https://images.pexels.com/photos/769733/pexels-photo-769733.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  editorial: "https://images.pexels.com/photos/7679471/pexels-photo-7679471.jpeg?auto=compress&cs=tinysrgb&w=1200",
   dress: "https://images.pexels.com/photos/7679863/pexels-photo-7679863.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  set: "https://images.pexels.com/photos/7679651/pexels-photo-7679651.jpeg?auto=compress&cs=tinysrgb&w=1200"
+  set: "https://images.pexels.com/photos/7679651/pexels-photo-7679651.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  menBlack: "https://images.pexels.com/photos/16400892/pexels-photo-16400892.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  menWhite: "https://images.pexels.com/photos/19881714/pexels-photo-19881714.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  menPrinted: "https://images.pexels.com/photos/36942018/pexels-photo-36942018.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  menStudio: "https://images.pexels.com/photos/8498419/pexels-photo-8498419.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  hoodie: "https://images.pexels.com/photos/3421683/pexels-photo-3421683.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  dtfStudio: "https://images.pexels.com/photos/8532616/pexels-photo-8532616.jpeg?auto=compress&cs=tinysrgb&w=1200"
 };
 
 window.VERAXA_CATEGORIES = [
@@ -61,7 +53,7 @@ window.VERAXA_CATEGORIES = [
   {
     id: "dtf",
     title: "DTF Studio",
-    description: "Kendi tasarımın için tişört, hoodie ve sweatshirt üzerine özel baskı."
+    description: "Tişört, hoodie ve sweatshirt üzerine özel baskı."
   }
 ];
 
@@ -77,14 +69,11 @@ window.VERAXA_PRODUCTS = [
     colorText: "Siyah, beyaz, gri, bej ve sezon renkleri",
     fit: "Slim basic fit",
     fabric: "Fitilli esnek dokulu kumaş",
-    images: veraxaMergeImages(
-      [
-        { start: 1, count: 4 },
-        { start: 5, count: 4 },
-        { start: 9, count: 4 }
-      ],
-      VERAXA_FALLBACKS.womenDark
-    ),
+    images: [
+      veraxaLocalImage(1, 1, VERAXA_IMG.womenBlack),
+      veraxaLocalImage(2, 2, VERAXA_IMG.womenLight),
+      veraxaLocalImage(3, 3, VERAXA_IMG.editorial)
+    ],
     description: "Fitilli dokulu premium atlet koleksiyonu. Günlük kombinlerde sade, güçlü ve luxury bir temel parça."
   },
   {
@@ -98,13 +87,11 @@ window.VERAXA_PRODUCTS = [
     colorText: "Soft nötr ve sezon renkleri",
     fit: "Crop regular fit",
     fabric: "Yumuşak pamuk karışımlı kumaş",
-    images: veraxaMergeImages(
-      [
-        { start: 29, count: 4 },
-        { start: 45, count: 4 }
-      ],
-      VERAXA_FALLBACKS.womenLight
-    ),
+    images: [
+      veraxaLocalImage(1, 29, VERAXA_IMG.womenLight),
+      veraxaLocalImage(2, 30, VERAXA_IMG.womenBlack),
+      veraxaLocalImage(3, 31, VERAXA_IMG.editorial)
+    ],
     description: "Crop formda, yumuşak dokulu premium basic üst koleksiyonu. Jean, etek ve takım altlarıyla net görünüm verir."
   },
   {
@@ -118,13 +105,11 @@ window.VERAXA_PRODUCTS = [
     colorText: "Siyah ve basic tonlar",
     fit: "Oversize fit",
     fabric: "Premium cotton",
-    images: veraxaMergeImages(
-      [
-        { start: 45, count: 4 },
-        { start: 49, count: 4 }
-      ],
-      VERAXA_FALLBACKS.men
-    ),
+    images: [
+      veraxaLocalImage(1, 45, VERAXA_IMG.menBlack),
+      veraxaExternalImage(VERAXA_IMG.menBlack),
+      veraxaExternalImage(VERAXA_IMG.menWhite)
+    ],
     description: "Erkek ve unisex kullanıma uygun oversize basic tişört. Minimal görünüm, güçlü kalıp ve premium streetwear çizgisi."
   },
   {
@@ -138,13 +123,11 @@ window.VERAXA_PRODUCTS = [
     colorText: "Çizgili sezon tonları",
     fit: "Regular polo fit",
     fabric: "Yumuşak örme kumaş",
-    images: veraxaMergeImages(
-      [
-        { start: 49, count: 4 },
-        { start: 53, count: 4 }
-      ],
-      VERAXA_FALLBACKS.womenEditorial
-    ),
+    images: [
+      veraxaLocalImage(1, 49, VERAXA_IMG.editorial),
+      veraxaLocalImage(2, 50, VERAXA_IMG.womenBlack),
+      veraxaLocalImage(3, 51, VERAXA_IMG.womenLight)
+    ],
     description: "Zamansız çizgili polo formu. Günlük şıklık için güçlü, net ve kolay kombinlenen bir parça."
   },
   {
@@ -158,12 +141,11 @@ window.VERAXA_PRODUCTS = [
     colorText: "Minimal tonlar",
     fit: "Oversize relaxed fit",
     fabric: "Dökümlü hafif kumaş",
-    images: veraxaMergeImages(
-      [
-        { start: 63, count: 8 }
-      ],
-      VERAXA_FALLBACKS.womenDark
-    ),
+    images: [
+      veraxaLocalImage(1, 63, VERAXA_IMG.womenBlack),
+      veraxaLocalImage(2, 64, VERAXA_IMG.womenLight),
+      veraxaLocalImage(3, 65, VERAXA_IMG.editorial)
+    ],
     description: "Dökümlü, rahat ve şık oversize blouse modeli. Sakin ama güçlü bir görünüm isteyenler için."
   },
   {
@@ -177,13 +159,11 @@ window.VERAXA_PRODUCTS = [
     colorText: "Çizgili kontrast tonlar",
     fit: "Oversize fit",
     fabric: "Yumuşak pamuklu kumaş",
-    images: veraxaMergeImages(
-      [
-        { start: 71, count: 12 },
-        { start: 83, count: 12 }
-      ],
-      VERAXA_FALLBACKS.womenLight
-    ),
+    images: [
+      veraxaLocalImage(1, 71, VERAXA_IMG.womenLight),
+      veraxaLocalImage(2, 72, VERAXA_IMG.womenBlack),
+      veraxaLocalImage(3, 73, VERAXA_IMG.editorial)
+    ],
     description: "Oversize çizgili tişört koleksiyonu. Rahat kalıp ve modern streetwear çizgisini bir araya getirir."
   },
   {
@@ -197,12 +177,10 @@ window.VERAXA_PRODUCTS = [
     colorText: "Mavi",
     fit: "Midi dress fit",
     fabric: "Akışkan dokulu kumaş",
-    images: veraxaMergeImages(
-      [
-        { start: 95, count: 4 }
-      ],
-      VERAXA_FALLBACKS.dress
-    ),
+    images: [
+      veraxaLocalImage(1, 95, VERAXA_IMG.dress),
+      veraxaLocalImage(2, 96, VERAXA_IMG.editorial)
+    ],
     description: "Mavi midi elbise. Zarif yaka formu, akışkan silüet ve modern şehir şıklığı."
   },
   {
@@ -216,12 +194,10 @@ window.VERAXA_PRODUCTS = [
     colorText: "Siyah",
     fit: "Regular dress fit",
     fabric: "Yumuşak polo dokusu",
-    images: veraxaMergeImages(
-      [
-        { start: 103, count: 4 }
-      ],
-      VERAXA_FALLBACKS.dress
-    ),
+    images: [
+      veraxaLocalImage(1, 103, VERAXA_IMG.dress),
+      veraxaLocalImage(2, 104, VERAXA_IMG.womenBlack)
+    ],
     description: "Siyah polo elbise. Kontrast yaka detayıyla sade, modern ve güçlü bir görünüm."
   },
   {
@@ -235,12 +211,10 @@ window.VERAXA_PRODUCTS = [
     colorText: "Gri",
     fit: "Relaxed two piece fit",
     fabric: "Dökümlü rahat kumaş",
-    images: veraxaMergeImages(
-      [
-        { start: 107, count: 4 }
-      ],
-      VERAXA_FALLBACKS.set
-    ),
+    images: [
+      veraxaLocalImage(1, 107, VERAXA_IMG.set),
+      veraxaLocalImage(2, 108, VERAXA_IMG.editorial)
+    ],
     description: "Gri ikili takım. Rahat pantolon ve bağlama detaylı üst ile tek hareketle hazır kombin."
   },
   {
@@ -254,12 +228,82 @@ window.VERAXA_PRODUCTS = [
     colorText: "Lacivert",
     fit: "Relaxed two piece fit",
     fabric: "Dökümlü rahat kumaş",
-    images: veraxaMergeImages(
-      [
-        { start: 111, count: 4 }
-      ],
-      VERAXA_FALLBACKS.set
-    ),
+    images: [
+      veraxaLocalImage(1, 111, VERAXA_IMG.set),
+      veraxaLocalImage(2, 112, VERAXA_IMG.womenBlack)
+    ],
     description: "Lacivert ikili takım. Dökümlü üst, geniş paça pantolon ve zarif bel detayıyla premium görünüm."
+  },
+  {
+    id: "dtf-black-oversize-tee",
+    name: "VÉRAXA Black DTF Oversize Tee",
+    price: 999,
+    oldPrice: 1299,
+    category: "dtf",
+    collection: "Custom DTF",
+    badge: "DTF Print",
+    colorText: "Siyah tişört üzerine özel baskı",
+    fit: "Oversize erkek/unisex fit",
+    fabric: "Premium cotton DTF uyumlu kumaş",
+    images: [
+      veraxaExternalImage(VERAXA_IMG.menPrinted),
+      veraxaExternalImage(VERAXA_IMG.menBlack),
+      veraxaExternalImage(VERAXA_IMG.dtfStudio)
+    ],
+    description: "Siyah oversize tişört üzerine özel DTF baskı. Logo, yazı, illüstrasyon veya marka tasarımı için uygundur."
+  },
+  {
+    id: "dtf-white-graphic-tee",
+    name: "VÉRAXA White Graphic DTF Tee",
+    price: 949,
+    oldPrice: 1199,
+    category: "dtf",
+    collection: "Custom DTF",
+    badge: "Custom Print",
+    colorText: "Beyaz tişört üzerine renkli baskı",
+    fit: "Regular erkek/unisex fit",
+    fabric: "Soft cotton DTF baskı kumaşı",
+    images: [
+      veraxaExternalImage(VERAXA_IMG.menWhite),
+      veraxaExternalImage(VERAXA_IMG.menStudio),
+      veraxaExternalImage(VERAXA_IMG.dtfStudio)
+    ],
+    description: "Beyaz tişört üzerine özel grafik DTF baskı. Kişisel tasarım, ekip tişörtü veya marka ürünü için hazırlanabilir."
+  },
+  {
+    id: "dtf-hoodie-print",
+    name: "VÉRAXA Hoodie DTF Print",
+    price: 1499,
+    oldPrice: 1899,
+    category: "dtf",
+    collection: "Custom DTF",
+    badge: "Hoodie Print",
+    colorText: "Hoodie üzerine ön veya sırt baskı",
+    fit: "Relaxed hoodie fit",
+    fabric: "Premium 3 iplik hoodie kumaşı",
+    images: [
+      veraxaExternalImage(VERAXA_IMG.hoodie),
+      veraxaExternalImage(VERAXA_IMG.dtfStudio),
+      veraxaExternalImage(VERAXA_IMG.menBlack)
+    ],
+    description: "Hoodie ve sweatshirt üzerine DTF baskı. Büyük sırt baskısı, göğüs logo veya minimal yazı tasarımları uygulanabilir."
+  },
+  {
+    id: "dtf-brand-pack",
+    name: "VÉRAXA Brand Print Pack",
+    price: 2499,
+    oldPrice: 2999,
+    category: "dtf",
+    collection: "Custom DTF",
+    badge: "Brand Pack",
+    colorText: "Marka, ekip veya özel seri baskı",
+    fit: "Tişört / hoodie seçilebilir",
+    fabric: "Ürüne göre premium kumaş",
+    images: [
+      veraxaExternalImage(VERAXA_IMG.dtfStudio),
+      veraxaExternalImage(VERAXA_IMG.menPrinted),
+      veraxaExternalImage(VERAXA_IMG.hoodie)
+    ],
+    description: "Marka, ekip veya özel koleksiyon için DTF baskı paketi. Tasarım kontrolü, ürün seçimi ve baskı konumu birlikte planlanır."
   }
 ];
