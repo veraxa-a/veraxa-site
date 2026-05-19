@@ -10,11 +10,21 @@ window.addEventListener("DOMContentLoaded", () => {
 
       productsContainer.innerHTML += `
         <div class="product-card">
-          <img 
-            src="${mainImage}" 
-            alt="${product.name}"
-            onmouseenter="this.src='${hoverImage}'"
-            onmouseleave="this.src='${mainImage}'"
+       <div class="product-image-wrapper">
+
+  <img 
+    src="${mainImage}" 
+    alt="${product.name}"
+    class="product-image primary"
+  >
+
+  <img 
+    src="${hoverImage}" 
+    alt="${product.name}"
+    class="product-image secondary"
+  >
+
+</div>
           >
 
           <div class="product-content">
