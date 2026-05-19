@@ -2,205 +2,180 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>VÉRAXA — Luxury Streetwear</title>
 
- <link rel="stylesheet" href="assets/css/style.css?v=5">
+  <link rel="stylesheet" href="assets/css/style.css?v=9" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
 </head>
-<div id="productModal" class="product-modal">
-  <div class="modal-box">
-    <button class="modal-close" onclick="closeProductModal()">×</button>
 
-    <div class="modal-gallery" id="modalGallery"></div>
-
-    <div class="modal-info">
-      <span id="modalCategory"></span>
-      <h2 id="modalName"></h2>
-      <p id="modalPrice"></p>
-
-      <select id="modalSize">
-        <option value="">Beden Seç</option>
-        <option>S</option>
-        <option>M</option>
-        <option>L</option>
-        <option>XL</option>
-      </select>
-
-      <button id="modalWhatsapp">WhatsApp ile Sipariş</button>
-    </div>
-  </div>
-</div>
 <body>
-<div id="loader">
-  <div class="loader-logo">VÉRAXA</div>
-</div>
-<header class="header">
-
-  <div class="logo">
-    VÉRAXA
+  <div id="loader">
+    <div class="loader-logo">VÉRAXA</div>
   </div>
 
-  <nav class="nav">
-    <a href="#">Ana Sayfa</a>
-    <a href="#">Koleksiyon</a>
-    <a href="#">Erkek</a>
-    <a href="#">Kadın</a>
-    <a href="#">DTF Studio</a>
-  </nav>
+  <div id="productModal" class="product-modal">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeProductModal()">×</button>
 
-  <div class="nav-right">
-    <button>Giriş</button>
-    <button>Sepet</button>
-  </div>
+      <div class="modal-gallery" id="modalGallery"></div>
 
-</header>
+      <div class="modal-info">
+        <span id="modalCategory"></span>
+        <h2 id="modalName"></h2>
+        <p id="modalPrice"></p>
 
-<section class="hero">
+        <select id="modalSize">
+          <option value="">Beden Seç</option>
+          <option>S</option>
+          <option>M</option>
+          <option>L</option>
+          <option>XL</option>
+        </select>
 
- <img src="assets/images/hero/hero-main.jpg" alt="VÉRAXA Luxury Fashion">
-
-  <div class="overlay"></div>
-
-  <div class="hero-content">
-
-    <span class="tag">
-      PREMIUM STREETWEAR
-    </span>
-
-    <h1>
-      LUXURY<br>
-      REDEFINED
-    </h1>
-
-    <p>
-      Premium kumaş, modern kesim ve luxury görünüm.
-      Veraxa yeni nesil streetwear deneyimi.
-    </p>
-
-    <div class="hero-buttons">
-      <button class="light-btn">KOLEKSİYONU KEŞFET</button>
-      <button class="dark-btn">DTF STUDIO</button>
-    </div>
-
-  </div>
-
-</section>
-
-<section class="collections">
-
-  <div class="section-title">
-    <span>SELECT YOUR STYLE</span>
-    <h2>COLLECTIONS</h2>
-  </div>
-
-  <div class="collection-grid">
-
-    <div class="card">
-      <img src="https://images.pexels.com/photos/769733/pexels-photo-769733.jpeg?auto=compress&cs=tinysrgb&w=1200">
-      <div class="card-content">
-        <span>MEN</span>
-        <h3>Erkek Koleksiyonu</h3>
+        <button id="modalWhatsapp">WhatsApp ile Sipariş</button>
       </div>
     </div>
+  </div>
 
-    <div class="card">
-      <img src="https://images.pexels.com/photos/6311392/pexels-photo-6311392.jpeg?auto=compress&cs=tinysrgb&w=1200">
-      <div class="card-content">
-        <span>WOMEN</span>
-        <h3>Kadın Koleksiyonu</h3>
+  <header class="header">
+    <div class="logo">VÉRAXA</div>
+
+    <nav class="nav">
+      <a href="#">Ana Sayfa</a>
+      <a href="#collections">Koleksiyon</a>
+      <a href="#products">Ürünler</a>
+      <a href="#women">Kadın</a>
+      <a href="#dtf">DTF Studio</a>
+    </nav>
+
+    <div class="nav-right">
+      <button>Giriş</button>
+      <button>Sepet</button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <img src="assets/images/hero/hero-main.jpg" alt="VÉRAXA Luxury Fashion" />
+
+    <div class="overlay"></div>
+
+    <div class="hero-content">
+      <span class="tag">PREMIUM STREETWEAR</span>
+
+      <h1>
+        LUXURY<br />
+        REDEFINED
+      </h1>
+
+      <p>
+        Premium kumaş, modern kesim ve luxury görünüm.
+        VÉRAXA yeni nesil streetwear deneyimi.
+      </p>
+
+      <div class="hero-buttons">
+        <a class="light-btn" href="#products">KOLEKSİYONU KEŞFET</a>
+        <a class="dark-btn" href="#dtf">DTF STUDIO</a>
       </div>
     </div>
+  </section>
 
-    <div class="card">
-      <img src="https://images.pexels.com/photos/8532616/pexels-photo-8532616.jpeg?auto=compress&cs=tinysrgb&w=1200">
-      <div class="card-content">
-        <span>DTF</span>
-        <h3>Custom Print Studio</h3>
-      </div>
+  <section class="collections" id="collections">
+    <div class="section-title">
+      <span>SELECT YOUR STYLE</span>
+      <h2>COLLECTIONS</h2>
     </div>
 
-  </div>
+    <div class="collection-grid">
+      <div class="card">
+        <img src="https://images.pexels.com/photos/769733/pexels-photo-769733.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Men Collection" />
+        <div class="card-content">
+          <span>MEN</span>
+          <h3>Erkek Koleksiyonu</h3>
+        </div>
+      </div>
 
-</section>
-<section class="products">
-  <div class="section-title">
-    <span>NEW COLLECTION</span>
-    <h2>PRODUCTS</h2>
-  </div>
+      <div class="card" id="women">
+        <img src="https://images.pexels.com/photos/6311392/pexels-photo-6311392.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Women Collection" />
+        <div class="card-content">
+          <span>WOMEN</span>
+          <h3>Kadın Koleksiyonu</h3>
+        </div>
+      </div>
 
-  <div class="products-grid"></div>
-</section>
-<section class="banner">
+      <div class="card" id="dtf">
+        <img src="https://images.pexels.com/photos/8532616/pexels-photo-8532616.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="DTF Studio" />
+        <div class="card-content">
+          <span>DTF</span>
+          <h3>Custom Print Studio</h3>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <div class="banner-content">
+  <section class="products" id="products">
+    <div class="section-title">
+      <span>NEW COLLECTION</span>
+      <h2>PRODUCTS</h2>
+      <p>VÉRAXA koleksiyonundaki seçili parçalar.</p>
+    </div>
 
-    <span>LIMITED DROP</span>
+    <div class="products-grid"></div>
+  </section>
 
-    <h2>
-      Premium streetwear
-      made for modern luxury.
-    </h2>
+  <section class="banner">
+    <div class="banner-content">
+      <span>LIMITED DROP</span>
 
-    <button>
-      ŞİMDİ KEŞFET
-    </button>
+      <h2>
+        Premium streetwear
+        made for modern luxury.
+      </h2>
 
-  </div>
+      <a href="#products">ŞİMDİ KEŞFET</a>
+    </div>
+  </section>
 
-</section>
+  <footer class="footer">
+    <div class="footer-logo">VÉRAXA</div>
 
-<footer class="footer">
+    <p>Luxury Streetwear & Custom DTF Studio</p>
 
-  <div class="footer-logo">
-    VÉRAXA
-  </div>
+    <div class="footer-links">
+      <a href="https://instagram.com/veraxa.co" target="_blank">Instagram</a>
+      <a href="https://wa.me/905468853731" target="_blank">WhatsApp</a>
+      <a href="https://t.me/nilu_mi" target="_blank">Telegram</a>
+    </div>
+  </footer>
 
-  <p>
-    Luxury Streetwear & Custom DTF Studio
-  </p>
+  <script src="assets/js/products.js?v=9"></script>
+  <script src="assets/js/app.js?v=9"></script>
 
-  <div class="footer-links">
-    <a href="#">Instagram</a>
-    <a href="#">WhatsApp</a>
-    <a href="#">Telegram</a>
-  </div>
+  <script>
+    (function () {
+      function hideVeraxaLoader() {
+        const loader = document.getElementById("loader");
+        if (!loader) return;
 
-</footer>
+        loader.style.opacity = "0";
+        loader.style.visibility = "hidden";
+        loader.style.pointerEvents = "none";
 
-<script>
-document.addEventListener("DOMContentLoaded", () => {
+        setTimeout(() => {
+          loader.style.display = "none";
+        }, 400);
+      }
 
-});
-</script>
-<script src="assets/js/products.js"></script>
-<script src="assets/js/app.js"></script>
-<script>
-(function () {
-  function hideVeraxaLoader() {
-    const loader = document.getElementById("loader");
-    if (!loader) return;
+      window.addEventListener("load", () => {
+        setTimeout(hideVeraxaLoader, 1200);
+      });
 
-    loader.style.opacity = "0";
-    loader.style.visibility = "hidden";
-    loader.style.pointerEvents = "none";
-
-    setTimeout(() => {
-      loader.style.display = "none";
-    }, 400);
-  }
-
-  window.addEventListener("load", () => {
-    setTimeout(hideVeraxaLoader, 1200);
-  });
-
-  setTimeout(hideVeraxaLoader, 2500);
-})();
-</script>
-
+      setTimeout(hideVeraxaLoader, 2500);
+    })();
+  </script>
 </body>
 </html>
