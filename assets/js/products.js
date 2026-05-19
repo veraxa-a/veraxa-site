@@ -2,12 +2,20 @@ function veraxaPad(number) {
   return String(number).padStart(2, "0");
 }
 
+function veraxaAssetPath(path) {
+  const clean = String(path).replace(/^\/+/, "");
+  if (window.location.protocol === "file:") {
+    return window.location.pathname.includes("/pages/") ? "../" + clean : clean;
+  }
+  return "/" + clean;
+}
+
 function veraxaFlatImage(sequence, originalNumber) {
-  return "assets/images/products/" + veraxaPad(sequence) + " (" + originalNumber + ").jpg";
+  return veraxaAssetPath("assets/images/products/" + veraxaPad(sequence) + " (" + originalNumber + ").jpg");
 }
 
 function veraxaFolderImage(folder, sequence) {
-  return "assets/images/products/" + folder + "/" + veraxaPad(sequence) + ".jpg";
+  return veraxaAssetPath("assets/images/products/" + folder + "/" + veraxaPad(sequence) + ".jpg");
 }
 
 function veraxaImages(folder, originalNumbers) {
@@ -20,26 +28,10 @@ function veraxaImages(folder, originalNumbers) {
 }
 
 window.VERAXA_CATEGORIES = [
-  {
-    id: "women",
-    title: "Kadın",
-    description: "Fitilli atlet, crop basic, çizgili polo, elbise ve premium günlük kombinler."
-  },
-  {
-    id: "men",
-    title: "Erkek / Unisex",
-    description: "Oversize basic tee ve unisex streetwear parçaları."
-  },
-  {
-    id: "sets",
-    title: "Takımlar",
-    description: "Dökümlü iki parça takımlar ve sezon kombinleri."
-  },
-  {
-    id: "dtf",
-    title: "DTF Studio",
-    description: "Kendi tasarımın için tişört, hoodie ve sweatshirt üzerine özel baskı."
-  }
+  { id: "women", title: "Kadın", description: "Fitilli atlet, crop basic, çizgili polo, elbise ve premium günlük kombinler." },
+  { id: "men", title: "Erkek / Unisex", description: "Oversize basic tee ve unisex streetwear parçaları." },
+  { id: "sets", title: "Takımlar", description: "Dökümlü iki parça takımlar ve sezon kombinleri." },
+  { id: "dtf", title: "DTF Studio", description: "Kendi tasarımın için tişört, hoodie ve sweatshirt üzerine özel baskı." }
 ];
 
 window.VERAXA_PRODUCTS = [
