@@ -4,23 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <meta name="veraxa-build" content="veraxa-build-clean-1000" />
-  <meta name="description" content="VÉRAXA luxury streetwear, kadın koleksiyonu, erkek/unisex parçalar ve custom DTF baskı stüdyosu." />
-  <meta name="theme-color" content="#030303" />
-
-  <meta property="og:title" content="VÉRAXA | Luxury Streetwear & Custom DTF Studio" />
-  <meta property="og:description" content="Premium kumaş, modern kesim, luxury görünüm ve özel DTF baskı stüdyosu." />
-  <meta property="og:image" content="https://veraxa.co/assets/images/hero/hero-main.jpg" />
-  <meta property="og:url" content="https://veraxa.co/" />
-
   <title>VÉRAXA | Luxury Streetwear & Custom DTF Studio</title>
+  <meta name="description" content="VÉRAXA luxury streetwear, kadın ve erkek koleksiyonları, custom DTF baskı ve transfer kağıdı siparişi." />
+  <meta name="theme-color" content="#f4f0e8" />
 
   <link rel="manifest" href="manifest.webmanifest" />
-  <link rel="stylesheet" href="assets/css/style.css?v=1000" />
+  <link rel="stylesheet" href="assets/css/style.css?v=4001" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 </head>
 
@@ -29,220 +21,52 @@
     <div class="loader-logo">VÉRAXA</div>
   </div>
 
-  <div class="site-topline">
-    WELCOME TO VÉRAXA · PREMIUM STREETWEAR · CUSTOM DTF STUDIO
-  </div>
+  <div id="siteMenu" class="site-menu" aria-hidden="true">
+    <button class="menu-close" type="button" onclick="veraxaCloseSiteMenu()" aria-label="Menüyü kapat">×</button>
 
-  <header class="header">
-    <a class="logo" href="#">VÉRAXA</a>
+    <div class="menu-logo">VÉRAXA</div>
 
-    <nav class="nav">
-      <a href="#">Ana Sayfa</a>
-      <a href="#collections">Koleksiyon</a>
-      <a href="#products">Ürünler</a>
-      <a href="#dtf">DTF Studio</a>
-      <a href="pages/women.html">Kadın</a>
-      <a href="pages/men.html">Erkek</a>
-    </nav>
+    <div class="menu-grid">
+      <div class="menu-column">
+        <span>Shop</span>
+        <a href="#products" onclick="veraxaSafeFilter('all')">Tüm Ürünler</a>
+        <a href="#products" onclick="veraxaSafeFilter('women')">Kadın</a>
+        <a href="#products" onclick="veraxaSafeFilter('men')">Erkek</a>
+        <a href="#products" onclick="veraxaSafeFilter('sets')">Takımlar</a>
+        <a href="pages/women.html">Kadın Sayfası</a>
+        <a href="pages/men.html">Erkek Sayfası</a>
+      </div>
 
-    <div class="nav-right">
-      <button type="button" onclick="veraxaOpenAuth()">Giriş</button>
-      <button type="button" onclick="veraxaShowWishlist()">Favori <span id="wishlistCount">0</span></button>
-      <button type="button" onclick="veraxaOpenCart()">Sepet <span id="cartCount">0</span></button>
-      <a href="https://wa.me/905468853731" target="_blank">WhatsApp</a>
+      <div class="menu-column">
+        <span>DTF Studio</span>
+        <a href="#dtf" onclick="veraxaCloseSiteMenu()">Baskı Süreci</a>
+        <a href="#dtf-transfer" onclick="veraxaCloseSiteMenu()">Transfer Kağıdı</a>
+        <a href="#products" onclick="veraxaSafeFilter('dtf')">DTF Ürünleri</a>
+        <a href="pages/dtf-studio.html">DTF Sayfası</a>
+        <a href="https://wa.me/905468853731?text=Merhaba%20VÉRAXA,%20DTF%20siparişi%20vermek%20istiyorum." target="_blank">WhatsApp Teklif</a>
+      </div>
+
+      <div class="menu-column">
+        <span>VÉRAXA</span>
+        <a href="#story" onclick="veraxaCloseSiteMenu()">Story</a>
+        <a href="#atelier" onclick="veraxaCloseSiteMenu()">Atelier</a>
+        <a href="#services" onclick="veraxaCloseSiteMenu()">Hizmetler</a>
+        <a href="pages/account.html">Hesabım</a>
+        <a href="academy.html">Academy</a>
+      </div>
+
+      <div class="menu-column">
+        <span>Legal</span>
+        <a href="legal/privacy-policy.html">Gizlilik</a>
+        <a href="legal/return-policy.html">İade Politikası</a>
+        <a href="legal/cookie-policy.html">Çerez Politikası</a>
+      </div>
     </div>
-  </header>
-
-  <main>
-    <section class="hero">
-      <div class="hero-media">
-        <img src="assets/images/hero/hero-main.jpg" alt="VÉRAXA Luxury Fashion" />
-      </div>
-
-      <div class="hero-content">
-        <span class="eyebrow">Premium Streetwear</span>
-
-        <h1>Luxury<br />Redefined</h1>
-
-        <p>
-          Premium kumaş, modern kesim ve luxury görünüm. VÉRAXA yeni nesil
-          streetwear deneyimini özel DTF baskı stüdyosuyla birleştirir.
-        </p>
-
-        <div class="hero-actions">
-          <a class="btn light" href="#products">Koleksiyonu Keşfet</a>
-          <a class="btn" href="#dtf">DTF Studio</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="category-strip" id="categoryStrip"></section>
-
-    <section class="section" id="collections">
-      <div class="section-title">
-        <span>Select Your Style</span>
-        <h2>Collections</h2>
-        <p>
-          Kadın koleksiyonu, erkek/unisex parçalar, premium takımlar ve özel
-          DTF baskı hizmeti tek marka dünyasında buluşur.
-        </p>
-      </div>
-
-      <div class="collection-grid">
-        <button class="collection-card" type="button" onclick="veraxaSetFilter('women', null)">
-          <img src="https://images.pexels.com/photos/6311392/pexels-photo-6311392.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Kadın koleksiyonu" />
-          <div>
-            <span>Women</span>
-            <h3>Kadın Koleksiyonu</h3>
-          </div>
-        </button>
-
-        <button class="collection-card" type="button" onclick="veraxaSetFilter('men', null)">
-          <img src="https://images.pexels.com/photos/769733/pexels-photo-769733.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Erkek koleksiyonu" />
-          <div>
-            <span>Men / Unisex</span>
-            <h3>Erkek Koleksiyonu</h3>
-          </div>
-        </button>
-
-        <a class="collection-card" href="#dtf">
-          <img src="https://images.pexels.com/photos/8532616/pexels-photo-8532616.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="DTF Studio" />
-          <div>
-            <span>Custom</span>
-            <h3>DTF Studio</h3>
-          </div>
-        </a>
-      </div>
-    </section>
-
-    <section class="editorial">
-      <img src="https://images.pexels.com/photos/7679471/pexels-photo-7679471.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="VÉRAXA editorial" />
-
-      <div class="editorial-copy">
-        <span>VÉRAXA World</span>
-
-        <h2>Az ürün, güçlü duruş, net görünüm.</h2>
-
-        <p>
-          Dünya markalarının sakin ama etkileyici diliyle tasarlanmış yeni
-          VÉRAXA deneyimi. Büyük görseller, net kategoriler, koleksiyon mantığı,
-          ürün galerisi, favoriler ve WhatsApp sipariş akışı tek sistemde.
-        </p>
-      </div>
-    </section>
-
-    <section class="section products" id="products">
-      <div class="section-title">
-        <span>New Collection</span>
-        <h2>Products</h2>
-        <p>
-          114 ürün fotoğrafı koleksiyonlara ayrıldı. Kartı açtığında ilgili
-          ürün grubunun tüm görselleri galeri olarak görünür.
-        </p>
-      </div>
-
-      <div class="product-tools">
-        <div class="filters">
-          <button class="is-active" type="button" data-filter onclick="veraxaSetFilter('all', this)">Tümü</button>
-          <button type="button" data-filter onclick="veraxaSetFilter('women', this)">Kadın</button>
-          <button type="button" data-filter onclick="veraxaSetFilter('men', this)">Erkek</button>
-          <button type="button" data-filter onclick="veraxaSetFilter('sets', this)">Takımlar</button>
-          <button type="button" onclick="veraxaShowWishlist()">Favoriler</button>
-        </div>
-
-        <input class="search" type="search" placeholder="Ürün ara..." oninput="veraxaSearchProducts(this.value)" />
-      </div>
-
-      <div class="products-grid" id="productsGrid"></div>
-    </section>
-
-    <section class="section studio" id="dtf">
-      <div class="section-title">
-        <span>Custom DTF Studio</span>
-        <h2>DTF Baskı Süreci</h2>
-        <p>
-          Kendi tasarımını tişört, hoodie veya sweatshirt üzerine uygulatmak
-          için tasarımını WhatsApp üzerinden gönder.
-        </p>
-      </div>
-
-      <div class="studio-grid">
-        <img src="https://images.pexels.com/photos/8532616/pexels-photo-8532616.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="DTF Studio" />
-
-        <div class="studio-copy">
-          <span>Your Design / Our Quality</span>
-
-          <h2>Özel tasarım, premium baskı.</h2>
-
-          <p>
-            Logo, yazı, illüstrasyon, marka tasarımı veya özel görsel.
-            Baskı öncesi tasarımın çözünürlüğü, renkleri, ölçüsü ve ürün
-            üstündeki konumu kontrol edilir.
-          </p>
-
-          <a class="btn light" href="https://wa.me/905468853731?text=Merhaba%20VÉRAXA,%20özel%20DTF%20baskı%20yaptırmak%20istiyorum." target="_blank">
-            Teklif Al
-          </a>
-        </div>
-      </div>
-
-      <div class="process-grid">
-        <div class="process-card">
-          <img src="https://images.pexels.com/photos/4065876/pexels-photo-4065876.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Tasarım kontrol" />
-          <span>01</span>
-          <h3>Tasarım Kontrol</h3>
-          <p>Gönderdiğin görsel baskıya uygunluk, çözünürlük ve renk açısından incelenir.</p>
-        </div>
-
-        <div class="process-card">
-          <img src="https://images.pexels.com/photos/8532616/pexels-photo-8532616.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Baskı hazırlığı" />
-          <span>02</span>
-          <h3>Baskı Hazırlığı</h3>
-          <p>Ürün rengi, beden, baskı ölçüsü ve konum bilgisi netleştirilir.</p>
-        </div>
-
-        <div class="process-card">
-          <img src="https://images.pexels.com/photos/6311392/pexels-photo-6311392.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Ürüne uygulama" />
-          <span>03</span>
-          <h3>Ürüne Uygulama</h3>
-          <p>DTF baskı tişört, oversize tee, hoodie veya sweatshirt üzerine uygulanır.</p>
-        </div>
-
-        <div class="process-card">
-          <img src="https://images.pexels.com/photos/7679651/pexels-photo-7679651.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Teslimat" />
-          <span>04</span>
-          <h3>Kontrol ve Teslimat</h3>
-          <p>Son kontrol sonrası ürün paketlenir ve teslimata hazırlanır.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="service-strip">
-      <div>
-        <b>Premium Kumaş</b>
-        Seçili kalıp ve kaliteli ürün dokusu.
-      </div>
-
-      <div>
-        <b>Çoklu Fotoğraf</b>
-        Ürün modalında tüm detay görselleri.
-      </div>
-
-      <div>
-        <b>WhatsApp Sipariş</b>
-        Ürün ve beden bilgisi hazır mesajla gider.
-      </div>
-
-      <div>
-        <b>Custom DTF</b>
-        Kendi tasarımın için teklif akışı.
-      </div>
-    </section>
-  </main>
+  </div>
 
   <div id="productModal" class="product-modal" aria-hidden="true">
     <div class="modal-box">
-      <button class="modal-close" type="button" onclick="veraxaCloseProduct()" aria-label="Kapat">×</button>
+      <button class="modal-close" type="button" onclick="closeProductModal()" aria-label="Kapat">×</button>
 
       <div id="modalGallery" class="modal-gallery"></div>
 
@@ -252,66 +76,213 @@
         <p id="modalPrice" class="modal-price"></p>
         <p id="modalDesc"></p>
 
-        <div class="modal-meta">
-          <small><b>Kumaş:</b> <span id="modalFabric"></span></small>
-          <small><b>Kalıp:</b> <span id="modalFit"></span></small>
-          <small><b>Renk:</b> <span id="modalColors"></span></small>
-        </div>
-
         <select id="modalSize">
           <option value="">Beden Seç</option>
-          <option>XS</option>
           <option>S</option>
           <option>M</option>
           <option>L</option>
           <option>XL</option>
         </select>
 
-        <button id="modalAddCart" class="modal-secondary" type="button">Sepete Ekle</button>
         <button id="modalWhatsapp" type="button">WhatsApp ile Sipariş</button>
       </div>
     </div>
   </div>
 
   <aside id="cartDrawer" class="cart-drawer" aria-hidden="true">
-    <div class="cart-panel">
-      <button class="cart-close" type="button" onclick="veraxaCloseCart()">×</button>
-
-      <h2>Sepet</h2>
-
-      <div id="cartItems"></div>
-
-      <button class="cart-whatsapp" type="button" onclick="veraxaSendCartWhatsApp()">
-        WhatsApp ile Sipariş Ver
-      </button>
-    </div>
+    <button class="cart-close" type="button" onclick="veraxaSafeCloseCart()" aria-label="Sepeti kapat">×</button>
+    <h2>Sepet</h2>
+    <div id="cartItems" class="cart-items"></div>
+    <button class="cart-whatsapp" type="button" onclick="veraxaSafeSendCart()">WhatsApp ile Sipariş Ver</button>
   </aside>
 
   <div id="authModal" class="auth-modal" aria-hidden="true">
     <div class="auth-box">
-      <button class="auth-close" type="button" onclick="veraxaCloseAuth()">×</button>
-
-      <h2>VÉRAXA Hesabı</h2>
-
-      <p>
-        Hesabına giriş yap, favorilerini sakla ve siparişlerini daha hızlı başlat.
-      </p>
-
-      <input id="authEmail" type="email" placeholder="E-posta" />
-      <input id="authPassword" type="password" placeholder="Şifre" />
-
-      <button class="auth-primary" type="button">Giriş Yap</button>
-      <button class="auth-ghost" type="button">Google ile Devam Et</button>
-
-      <div class="auth-note">
-        Google ile giriş Firebase üzerinden çalışır.
-      </div>
+      <button class="auth-close" type="button" onclick="veraxaCloseAuth()" aria-label="Girişi kapat">×</button>
+      <span>VÉRAXA Account</span>
+      <h2>Üye Girişi</h2>
+      <p>Google giriş sistemi aktifse hesabına giriş yapabilirsin. Sipariş için WhatsApp her zaman hazır.</p>
+      <button type="button" onclick="veraxaTryGoogleLogin()">Google ile Devam Et</button>
+      <a href="https://wa.me/905468853731" target="_blank">WhatsApp Destek</a>
     </div>
   </div>
 
+  <header class="header">
+    <button class="header-link" type="button" onclick="veraxaOpenSiteMenu()">Menu</button>
+    <a href="#" class="logo" aria-label="VÉRAXA Ana Sayfa">VÉRAXA</a>
+
+    <div class="header-actions">
+      <button type="button" onclick="veraxaOpenAuthSafe()">Giriş</button>
+      <button type="button" onclick="veraxaSafeWishlist()">Saved <span id="wishlistCount">0</span></button>
+      <button type="button" onclick="veraxaSafeOpenCart()">Bag <span id="cartCount">0</span></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <img src="assets/images/hero/hero-main.jpg" alt="VÉRAXA editorial" onerror="this.src='https://images.pexels.com/photos/1926769/pexels-photo-1926769.jpeg?auto=compress&cs=tinysrgb&w=1800'" />
+
+      <div class="hero-caption">
+        <span>VÉRAXA ATELIER</span>
+        <h1>Luxury Streetwear</h1>
+        <p>Premium koleksiyonlar, custom DTF baskı ve transfer kağıdı stüdyosu.</p>
+        <a href="#products">Koleksiyonu Keşfet</a>
+      </div>
+    </section>
+
+    <section class="quiet-nav">
+      <a href="#products" onclick="veraxaSafeFilter('women')">Kadın</a>
+      <a href="#products" onclick="veraxaSafeFilter('men')">Erkek</a>
+      <a href="#products" onclick="veraxaSafeFilter('dtf')">DTF Studio</a>
+      <a href="#dtf-transfer">Transfer Kağıdı</a>
+    </section>
+
+    <section class="split-editorial" id="story">
+      <div class="split-copy">
+        <span>New Season</span>
+        <h2>Sade çizgi, güçlü duruş.</h2>
+        <p>VÉRAXA, günlük giyimi daha sakin, daha seçili ve daha premium bir dil ile sunar. Her ürün net görünür, her bölüm alışverişe hızlı bağlanır.</p>
+        <a href="#products">Shop Now</a>
+      </div>
+
+      <div class="split-image">
+        <img src="https://images.pexels.com/photos/7679471/pexels-photo-7679471.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="VÉRAXA collection" />
+      </div>
+    </section>
+
+    <section class="section products" id="products">
+      <div class="section-heading">
+        <span>Shop</span>
+        <h2>VÉRAXA Collection</h2>
+      </div>
+
+      <div class="product-toolbar">
+        <div class="product-filters">
+          <button class="active" type="button" onclick="filterProducts('all', this)">Tümü</button>
+          <button type="button" onclick="filterProducts('women', this)">Kadın</button>
+          <button type="button" onclick="filterProducts('men', this)">Erkek</button>
+          <button type="button" onclick="filterProducts('sets', this)">Takımlar</button>
+          <button type="button" onclick="filterProducts('dtf', this)">DTF</button>
+        </div>
+
+        <input id="searchInput" type="search" placeholder="Ürün ara" oninput="searchProducts()" />
+      </div>
+
+      <div class="products-grid"></div>
+    </section>
+
+    <section class="atelier" id="atelier">
+      <div class="atelier-image">
+        <img src="https://images.pexels.com/photos/8532616/pexels-photo-8532616.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="VÉRAXA DTF Studio" />
+      </div>
+
+      <div class="atelier-copy">
+        <span>DTF Atelier</span>
+        <h2>Custom print, clean finish.</h2>
+        <p>Logo, yazı, görsel, marka tasarımı veya özel çizim. Ürüne baskı ya da sadece transfer kağıdı siparişi için teklif alabilirsin.</p>
+        <a href="#dtf-transfer">DTF Studio</a>
+      </div>
+    </section>
+
+    <section class="section dtf" id="dtf">
+      <div class="section-heading">
+        <span>Process</span>
+        <h2>DTF Baskı Süreci</h2>
+      </div>
+
+      <div class="process-grid">
+        <div>
+          <span>01</span>
+          <h3>Tasarım Kontrolü</h3>
+          <p>Görsel baskıya uygunluk, çözünürlük ve renk açısından incelenir.</p>
+        </div>
+
+        <div>
+          <span>02</span>
+          <h3>Ölçü ve Konum</h3>
+          <p>Baskı ölçüsü, ürün rengi, beden ve konum bilgisi netleştirilir.</p>
+        </div>
+
+        <div>
+          <span>03</span>
+          <h3>Üretim</h3>
+          <p>DTF transfer hazırlanır veya seçili ürün üzerine uygulanır.</p>
+        </div>
+
+        <div>
+          <span>04</span>
+          <h3>Teslimat</h3>
+          <p>Son kontrol sonrası ürün veya transfer kağıdı teslimata hazırlanır.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section transfer" id="dtf-transfer">
+      <div class="section-heading">
+        <span>Order</span>
+        <h2>DTF Transfer Siparişi</h2>
+      </div>
+
+      <div class="transfer-box">
+        <div class="transfer-intro">
+          <h3>Kendi tasarımını gönder, transfer olarak hazırlayalım.</h3>
+          <p>A4, A3, metre baskı, logo baskı ve hazır desen seçenekleri için WhatsApp üzerinden teklif al.</p>
+        </div>
+
+        <form class="transfer-form" onsubmit="sendTransferOrder(event)">
+          <label>
+            Baskı Türü
+            <select id="transferType">
+              <option>DTF Transfer Kağıdı</option>
+              <option>Tişört Üzerine DTF Baskı</option>
+              <option>Sweatshirt Üzerine DTF Baskı</option>
+              <option>Hazır Baskı Modeli</option>
+            </select>
+          </label>
+
+          <label>
+            Ölçü / Ebat
+            <input id="transferSize" type="text" placeholder="A4, A3, 30x40 cm, 1 metre" />
+          </label>
+
+          <label>
+            Adet
+            <input id="transferQty" type="number" min="1" placeholder="10" />
+          </label>
+
+          <label>
+            Not
+            <textarea id="transferNote" placeholder="Tasarım, renk, ürün veya özel isteğini yaz."></textarea>
+          </label>
+
+          <button type="submit">WhatsApp ile Teklif Al</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div>
+        <span>01</span>
+        <h3>Premium Ürün</h3>
+        <p>Seçili basic parçalar ve temiz koleksiyon yapısı.</p>
+      </div>
+
+      <div>
+        <span>02</span>
+        <h3>Custom DTF</h3>
+        <p>Kendi tasarımını ürün üzerine uygulatma akışı.</p>
+      </div>
+
+      <div>
+        <span>03</span>
+        <h3>Transfer Kağıdı</h3>
+        <p>Sadece baskı kağıdı almak isteyenler için teklif sistemi.</p>
+      </div>
+    </section>
+  </main>
+
   <footer class="footer">
     <div class="footer-logo">VÉRAXA</div>
-
     <p>Luxury Streetwear & Custom DTF Studio</p>
 
     <div class="footer-links">
@@ -321,38 +292,144 @@
       <a href="legal/privacy-policy.html">Gizlilik</a>
       <a href="legal/return-policy.html">İade</a>
       <a href="legal/cookie-policy.html">Çerez</a>
+      <a href="sitemap.xml">Sitemap</a>
     </div>
   </footer>
 
-  <script src="assets/js/config.js?v=1000"></script>
-  <script src="assets/js/products.js?v=1000"></script>
-  <script src="assets/js/cart.js?v=1000"></script>
-  <script src="assets/js/app.js?v=1000"></script>
-  <script src="assets/js/auth.js?v=1000"></script>
-  <script src="assets/js/analytics.js?v=1000"></script>
-
   <script>
-    (function(){
-      function hideLoader(){
-        var loader=document.getElementById("loader");
-        if(!loader) return;
+    function veraxaOpenSiteMenu() {
+      const menu = document.getElementById("siteMenu");
+      if (!menu) return;
+      menu.classList.add("open");
+      menu.setAttribute("aria-hidden", "false");
+      document.body.classList.add("menu-open");
+    }
 
-        loader.classList.add("is-hidden");
-        loader.style.opacity="0";
-        loader.style.visibility="hidden";
-        loader.style.pointerEvents="none";
+    function veraxaCloseSiteMenu() {
+      const menu = document.getElementById("siteMenu");
+      if (!menu) return;
+      menu.classList.remove("open");
+      menu.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("menu-open");
+    }
 
-        setTimeout(function(){
-          loader.style.display="none";
-        },450);
+    function veraxaSafeFilter(category) {
+      veraxaCloseSiteMenu();
+      if (typeof filterProducts === "function") {
+        filterProducts(category, null);
+        return;
       }
+      const target = document.getElementById("products");
+      if (target) target.scrollIntoView({ behavior: "smooth" });
+    }
 
-      window.addEventListener("load",function(){
-        setTimeout(hideLoader,900);
-      });
+    function veraxaSafeWishlist() {
+      if (typeof showWishlist === "function") {
+        showWishlist();
+        return;
+      }
+      if (typeof veraxaShowWishlist === "function") {
+        veraxaShowWishlist();
+        return;
+      }
+      veraxaSafeFilter("all");
+    }
 
-      setTimeout(hideLoader,2200);
-    })();
+    function veraxaSafeOpenCart() {
+      if (typeof openCart === "function") {
+        openCart();
+        return;
+      }
+      if (typeof veraxaOpenCart === "function") {
+        veraxaOpenCart();
+      }
+    }
+
+    function veraxaSafeCloseCart() {
+      if (typeof closeCart === "function") {
+        closeCart();
+        return;
+      }
+      if (typeof veraxaCloseCart === "function") {
+        veraxaCloseCart();
+      }
+    }
+
+    function veraxaSafeSendCart() {
+      if (typeof sendCartWhatsApp === "function") {
+        sendCartWhatsApp();
+        return;
+      }
+      if (typeof veraxaSendCartWhatsApp === "function") {
+        veraxaSendCartWhatsApp();
+      }
+    }
+
+    function veraxaOpenAuthSafe() {
+      if (typeof veraxaOpenAuth === "function") {
+        veraxaOpenAuth();
+        return;
+      }
+      const modal = document.getElementById("authModal");
+      if (!modal) return;
+      modal.classList.add("open");
+      modal.setAttribute("aria-hidden", "false");
+    }
+
+    function veraxaCloseAuth() {
+      if (typeof veraxaCloseAuthModal === "function") {
+        veraxaCloseAuthModal();
+        return;
+      }
+      const modal = document.getElementById("authModal");
+      if (!modal) return;
+      modal.classList.remove("open");
+      modal.setAttribute("aria-hidden", "true");
+    }
+
+    function veraxaTryGoogleLogin() {
+      if (typeof veraxaGoogleLogin === "function") {
+        veraxaGoogleLogin();
+        return;
+      }
+      if (typeof loginGoogle === "function") {
+        loginGoogle();
+        return;
+      }
+      window.open("https://wa.me/905468853731?text=Merhaba%20VÉRAXA,%20üyelik%20ve%20sipariş%20hakkında%20bilgi%20almak%20istiyorum.", "_blank");
+    }
+
+    function sendTransferOrder(event) {
+      event.preventDefault();
+
+      const type = document.getElementById("transferType").value;
+      const size = document.getElementById("transferSize").value || "Belirtilmedi";
+      const qty = document.getElementById("transferQty").value || "Belirtilmedi";
+      const note = document.getElementById("transferNote").value || "Yok";
+
+      const message =
+        "Merhaba VÉRAXA, DTF siparişi için teklif almak istiyorum.%0A%0A" +
+        "Baskı Türü: " + encodeURIComponent(type) + "%0A" +
+        "Ölçü / Ebat: " + encodeURIComponent(size) + "%0A" +
+        "Adet: " + encodeURIComponent(qty) + "%0A" +
+        "Not: " + encodeURIComponent(note);
+
+      window.open("https://wa.me/905468853731?text=" + message, "_blank");
+    }
+
+    document.addEventListener("keydown", function(event) {
+      if (event.key === "Escape") {
+        veraxaCloseSiteMenu();
+        veraxaCloseAuth();
+      }
+    });
   </script>
+
+  <script src="assets/js/config.js?v=4001"></script>
+  <script src="assets/js/products.js?v=4001"></script>
+  <script src="assets/js/cart.js?v=4001"></script>
+  <script src="assets/js/auth.js?v=4001"></script>
+  <script src="assets/js/app.js?v=4001"></script>
+  <script src="assets/js/analytics.js?v=4001"></script>
 </body>
 </html>
