@@ -5,13 +5,13 @@ let wishlist = JSON.parse(localStorage.getItem("veraxa_wishlist") || "[]");
 let cart = JSON.parse(localStorage.getItem("veraxa_cart") || "[]");
 
 document.addEventListener("DOMContentLoaded", () => {
-  hideLoaderSoon();
-  bindModalClose();
-  updateBadges();
-  waitForProducts();
+  veraxaHideLoaderSoon();
+  veraxaBindModalClose();
+  veraxaUpdateBadges();
+  veraxaWaitForProducts();
 });
 
-function hideLoaderSoon() {
+function veraxaHideLoaderSoon() {
   function hideLoader() {
     const loader = document.getElementById("loader");
     if (!loader) return;
@@ -24,13 +24,13 @@ function hideLoaderSoon() {
   }
 
   window.addEventListener("load", () => {
-    setTimeout(hideLoader, 900);
+    setTimeout(hideLoader, 700);
   });
 
-  setTimeout(hideLoader, 1800);
+  setTimeout(hideLoader, 1600);
 }
 
-function waitForProducts(attempt = 0) {
+function veraxaWaitForProducts(attempt = 0) {
   if (Array.isArray(window.VERAXA_PRODUCTS)) {
     renderProducts();
     return;
@@ -44,7 +44,7 @@ function waitForProducts(attempt = 0) {
     return;
   }
 
-  setTimeout(() => waitForProducts(attempt + 1), 100);
+  setTimeout(() => veraxaWaitForProducts(attempt + 1), 100);
 }
 
 function escapeHtml(value) {
@@ -57,7 +57,7 @@ function escapeHtml(value) {
   }[char]));
 }
 
-function normalizeImage(image) {
+function veraxaNormalizeImage(image) {
   if (typeof image === "string") {
     return {
       src: image,
@@ -83,8 +83,8 @@ function swapBrokenImage(img) {
   img.style.display = "none";
 }
 
-function imageTag(image, alt, className) {
-  const normalized = normalizeImage(image);
+function veraxaImageTag(image, alt, className) {
+  const normalized = veraxaNormalizeImage(image);
   const fallbackAttr = normalized.fallback ? `data-fallback="${escapeHtml(normalized.fallback)}"` : "";
 
   return `
@@ -99,12 +99,13 @@ function imageTag(image, alt, className) {
   `;
 }
 
-function getProducts() {
+function veraxaGetProducts() {
   const products = Array.isArray(window.VERAXA_PRODUCTS) ? window.VERAXA_PRODUCTS : [];
   const query = (document.getElementById("searchInput")?.value || "").toLowerCase().trim();
 
   return products.filter(product => {
     const inWishlist = wishlist.includes(product.name);
+
     const filterOk =
       currentFilter === "all" ||
       product.category === currentFilter ||
@@ -148,7 +149,9 @@ function filterProducts(filter, button) {
     });
   }
 
-  document.getElementById("products")?.scrollIntoView({ behavior: "smooth" });
+  const target = document.getElementById("products");
+  if (target) target.scrollIntoView({ behavior: "smooth" });
+
   renderProducts();
 }
 
@@ -164,7 +167,9 @@ function showWishlist() {
   });
 
   renderProducts();
-  document.getElementById("products")?.scrollIntoView({ behavior: "smooth" });
+
+  const target = document.getElementById("products");
+  if (target) target.scrollIntoView({ behavior: "smooth" });
 }
 
 function toggleWishlist() {
@@ -175,7 +180,7 @@ function renderProducts() {
   const grid = document.querySelector(".products-grid");
   if (!grid) return;
 
-  const products = getProducts();
+  const products = veraxaGetProducts();
 
   if (!products.length) {
     grid.innerHTML = '<p class="empty">Bu kategoride ürün hazırlanıyor.</p>';
@@ -192,8 +197,8 @@ function renderProducts() {
       <article class="product-card">
         <button class="product-click" type="button" onclick="openProduct(${index})">
           <span class="product-image-wrap">
-            ${imageTag(main, product.name, "primary")}
-            ${imageTag(hover, product.name, "secondary")}
+            ${veraxaImageTag(main, product.name, "primary")}
+            ${veraxaImageTag(hover, product.name, "secondary")}
           </span>
 
           <span class="product-content">
@@ -219,26 +224,33 @@ function openProduct(index) {
   const modal = document.getElementById("productModal");
   const gallery = document.getElementById("modalGallery");
 
+  if (!modal || !gallery) return;
+
   document.getElementById("modalCategory").textContent = product.label || "";
   document.getElementById("modalName").textContent = product.name || "";
   document.getElementById("modalPrice").textContent = product.price || "";
   document.getElementById("modalDesc").textContent = product.description || "";
-  document.getElementById("modalSize").value = "";
+
+  const modalSize = document.getElementById("modalSize");
+  if (modalSize) modalSize.value = "";
 
   const images = Array.isArray(product.images) ? product.images.slice(0, 2) : [];
-  gallery.innerHTML = images.map(image => imageTag(image, product.name, "modal-img")).join("");
+  gallery.innerHTML = images.map(image => veraxaImageTag(image, product.name, "modal-img")).join("");
 
-  document.getElementById("modalWhatsapp").onclick = function () {
-    const size = document.getElementById("modalSize").value || "Belirtilmedi";
+  const whatsappButton = document.getElementById("modalWhatsapp");
+  if (whatsappButton) {
+    whatsappButton.onclick = function () {
+      const size = document.getElementById("modalSize")?.value || "Belirtilmedi";
 
-    const msg =
-      "Merhaba VÉRAXA, ürün hakkında bilgi almak istiyorum.\n\n" +
-      "Ürün: " + product.name + "\n" +
-      "Beden: " + size + "\n" +
-      "Fiyat: " + product.price;
+      const msg =
+        "Merhaba VÉRAXA, ürün hakkında bilgi almak istiyorum.\n\n" +
+        "Ürün: " + product.name + "\n" +
+        "Beden: " + size + "\n" +
+        "Fiyat: " + product.price;
 
-    window.open("https://wa.me/" + VERAXA_PHONE + "?text=" + encodeURIComponent(msg), "_blank");
-  };
+      window.open("https://wa.me/" + VERAXA_PHONE + "?text=" + encodeURIComponent(msg), "_blank");
+    };
+  }
 
   modal.classList.add("open");
   modal.setAttribute("aria-hidden", "false");
@@ -254,7 +266,7 @@ function closeProductModal() {
   document.body.classList.remove("modal-open");
 }
 
-function bindModalClose() {
+function veraxaBindModalClose() {
   const modal = document.getElementById("productModal");
 
   if (modal) {
@@ -282,7 +294,7 @@ function toggleFavorite(index) {
     : [...wishlist, product.name];
 
   localStorage.setItem("veraxa_wishlist", JSON.stringify(wishlist));
-  updateBadges();
+  veraxaUpdateBadges();
   renderProducts();
 }
 
@@ -296,11 +308,11 @@ function addToCart(index) {
   });
 
   localStorage.setItem("veraxa_cart", JSON.stringify(cart));
-  updateBadges();
+  veraxaUpdateBadges();
   openCart();
 }
 
-function updateBadges() {
+function veraxaUpdateBadges() {
   const wishlistCount = document.getElementById("wishlistCount");
   const cartCount = document.getElementById("cartCount");
 
@@ -312,18 +324,18 @@ function updateBadges() {
 
 function openCart() {
   const drawer = document.getElementById("cartDrawer");
-  if (drawer) {
-    drawer.classList.add("open");
-    drawer.setAttribute("aria-hidden", "false");
-  }
+  if (!drawer) return;
+
+  drawer.classList.add("open");
+  drawer.setAttribute("aria-hidden", "false");
 }
 
 function closeCart() {
   const drawer = document.getElementById("cartDrawer");
-  if (drawer) {
-    drawer.classList.remove("open");
-    drawer.setAttribute("aria-hidden", "true");
-  }
+  if (!drawer) return;
+
+  drawer.classList.remove("open");
+  drawer.setAttribute("aria-hidden", "true");
 }
 
 function renderCart() {
@@ -347,7 +359,7 @@ function renderCart() {
 function removeCart(index) {
   cart.splice(index, 1);
   localStorage.setItem("veraxa_cart", JSON.stringify(cart));
-  updateBadges();
+  veraxaUpdateBadges();
 }
 
 function sendCartWhatsApp() {
