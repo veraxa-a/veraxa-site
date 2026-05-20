@@ -1,792 +1,355 @@
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:#030303;color:#f8f2e8;font-family:Inter,Arial,sans-serif;overflow-x:hidden}
-body.is-locked{overflow:hidden}
-a{text-decoration:none;color:inherit}
-button,input,select{font:inherit}
-button{cursor:pointer}
-img{display:block;max-width:100%}
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-:root{
-  --black:#030303;
-  --ink:#080808;
-  --panel:#101010;
-  --panel-soft:#161616;
-  --cream:#f8f2e8;
-  --muted:#aaa29a;
-  --gold:#d6b36a;
-  --gold-soft:#f3dba2;
-  --line:rgba(214,179,106,.18);
-  --line-strong:rgba(214,179,106,.42);
-  --shadow:0 30px 90px rgba(0,0,0,.58);
-}
+  <title>VÉRAXA | Luxury Streetwear & Custom DTF Studio</title>
+  <meta name="description" content="VÉRAXA luxury streetwear, kadın koleksiyonu, erkek/unisex parçalar, DTF transfer baskı ve özel tasarım stüdyosu." />
+  <meta name="theme-color" content="#030303" />
 
-#loader{
-  position:fixed;
-  inset:0;
-  z-index:9999;
-  display:grid;
-  place-items:center;
-  background:#030303;
-  transition:opacity .45s ease,visibility .45s ease;
-}
-#loader.is-hidden{
-  opacity:0;
-  visibility:hidden;
-  pointer-events:none;
-}
-.loader-logo{
-  font-family:"Cormorant Garamond",serif;
-  font-size:44px;
-  letter-spacing:20px;
-  color:var(--gold);
-  opacity:.78;
-}
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="stylesheet" href="assets/css/style.css?v=1004" />
 
-.site-topline{
-  position:fixed;
-  top:0;
-  left:0;
-  right:0;
-  z-index:91;
-  height:34px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:#0a1d64;
-  color:#fff;
-  font-size:11px;
-  letter-spacing:2px;
-  text-transform:uppercase;
-}
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
 
-.header{
-  position:fixed;
-  top:34px;
-  left:0;
-  right:0;
-  z-index:90;
-  display:grid;
-  grid-template-columns:1fr auto 1fr;
-  align-items:center;
-  gap:24px;
-  padding:22px 6vw;
-  background:rgba(0,0,0,.78);
-  backdrop-filter:blur(18px);
-  border-bottom:1px solid var(--line);
-}
-.logo{
-  font-family:"Cormorant Garamond",serif;
-  font-size:31px;
-  letter-spacing:12px;
-  color:var(--cream);
-}
-.nav{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:28px;
-  color:#d7d0c4;
-  font-size:12px;
-  letter-spacing:2px;
-  text-transform:uppercase;
-}
-.nav a:hover{color:var(--gold-soft)}
-.nav-right{
-  display:flex;
-  align-items:center;
-  justify-content:flex-end;
-  gap:10px;
-}
-.nav-right button,
-.nav-right a{
-  border:1px solid rgba(214,179,106,.42);
-  background:transparent;
-  color:var(--cream);
-  border-radius:999px;
-  padding:10px 16px;
-  font-size:12px;
-  letter-spacing:1px;
-}
-.nav-right button:hover,
-.nav-right a:hover{
-  background:var(--cream);
-  color:#080808;
-}
+<body>
+  <div id="loader">
+    <div class="loader-logo">VÉRAXA</div>
+  </div>
 
-.hero{
-  min-height:100vh;
-  position:relative;
-  display:flex;
-  align-items:center;
-  padding:170px 8vw 92px;
-  overflow:hidden;
-  background:#050505;
-}
-.hero-media{
-  position:absolute;
-  inset:0;
-  z-index:0;
-}
-.hero-media img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  filter:brightness(.46) saturate(.9);
-}
-.hero::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  z-index:1;
-  background:
-    linear-gradient(90deg,rgba(0,0,0,.94),rgba(0,0,0,.30),rgba(0,0,0,.82)),
-    linear-gradient(transparent 60%,rgba(0,0,0,.96));
-}
-.hero-content{
-  position:relative;
-  z-index:2;
-  max-width:760px;
-}
-.eyebrow,
-.section-title span,
-.editorial-copy span,
-.studio-copy span,
-.category-strip button span,
-.process-card span{
-  color:var(--gold);
-  letter-spacing:4px;
-  font-size:12px;
-  text-transform:uppercase;
-}
-.hero h1{
-  font-family:"Cormorant Garamond",serif;
-  font-size:112px;
-  line-height:.9;
-  font-weight:300;
-  letter-spacing:9px;
-  margin:24px 0;
-}
-.hero p{
-  max-width:610px;
-  color:#d8d0c3;
-  line-height:1.9;
-  font-weight:500;
-}
-.hero-actions{
-  display:flex;
-  flex-wrap:wrap;
-  gap:14px;
-  margin-top:34px;
-}
-.btn{
-  display:inline-flex;
-  min-height:48px;
-  align-items:center;
-  justify-content:center;
-  border-radius:999px;
-  padding:0 28px;
-  border:1px solid rgba(214,179,106,.52);
-  background:transparent;
-  color:var(--cream);
-  font-size:12px;
-  letter-spacing:2px;
-  text-transform:uppercase;
-}
-.btn.light{
-  background:var(--cream);
-  border-color:var(--cream);
-  color:#080808;
-}
-.btn:hover{transform:translateY(-1px)}
+  <div id="productModal" class="product-modal" aria-hidden="true">
+    <div class="modal-box">
+      <button class="modal-close" type="button" onclick="closeProductModal()" aria-label="Kapat">×</button>
 
-.section{
-  padding:98px 6vw;
-}
-.section-title{
-  max-width:880px;
-  margin:0 auto 48px;
-  text-align:center;
-}
-.section-title h2{
-  font-family:"Cormorant Garamond",serif;
-  font-size:56px;
-  line-height:1;
-  font-weight:300;
-  letter-spacing:8px;
-  margin-top:14px;
-}
-.section-title p{
-  color:var(--muted);
-  line-height:1.8;
-  margin-top:14px;
-}
+      <div id="modalGallery" class="modal-gallery"></div>
 
-.category-strip{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  border-top:1px solid var(--line);
-  border-bottom:1px solid var(--line);
-}
-.category-strip button{
-  min-height:150px;
-  padding:26px;
-  text-align:left;
-  color:var(--cream);
-  background:#070707;
-  border:0;
-  border-right:1px solid var(--line);
-}
-.category-strip button:hover{
-  background:#101010;
-}
-.category-strip small{
-  display:block;
-  margin-top:12px;
-  color:#aaa;
-  line-height:1.6;
-}
+      <div class="modal-info">
+        <span id="modalCategory"></span>
+        <h2 id="modalName"></h2>
+        <p id="modalPrice" class="modal-price"></p>
+        <p id="modalDesc"></p>
 
-.collection-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:22px;
-}
-.collection-card{
-  position:relative;
-  height:500px;
-  overflow:hidden;
-  border:0;
-  background:#111;
-  color:var(--cream);
-  text-align:left;
-}
-.collection-card img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  transition:.7s ease;
-}
-.collection-card:hover img{transform:scale(1.06)}
-.collection-card::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(transparent,rgba(0,0,0,.92));
-}
-.collection-card div{
-  position:absolute;
-  z-index:2;
-  left:30px;
-  right:30px;
-  bottom:30px;
-}
-.collection-card span{
-  color:var(--gold);
-  font-size:12px;
-  letter-spacing:3px;
-  text-transform:uppercase;
-}
-.collection-card h3{
-  font-family:"Cormorant Garamond",serif;
-  font-size:38px;
-  font-weight:300;
-  margin-top:8px;
-}
+        <select id="modalSize">
+          <option value="">Beden Seç</option>
+          <option>S</option>
+          <option>M</option>
+          <option>L</option>
+          <option>XL</option>
+        </select>
 
-.editorial{
-  display:grid;
-  grid-template-columns:1.08fr .92fr;
-  min-height:650px;
-  border-top:1px solid var(--line);
-  border-bottom:1px solid var(--line);
-}
-.editorial img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  filter:brightness(.78);
-}
-.editorial-copy{
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  padding:70px 7vw;
-  background:#070707;
-}
-.editorial-copy h2{
-  font-family:"Cormorant Garamond",serif;
-  font-size:60px;
-  line-height:1;
-  font-weight:300;
-  margin:18px 0;
-}
-.editorial-copy p{
-  color:#bdb5a9;
-  line-height:1.9;
-  max-width:570px;
-}
+        <button id="modalWhatsapp" type="button">WhatsApp ile Sipariş</button>
+      </div>
+    </div>
+  </div>
 
-.product-tools{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:18px;
-  flex-wrap:wrap;
-  margin-bottom:36px;
-}
-.filters{
-  display:flex;
-  flex-wrap:wrap;
-  gap:12px;
-}
-.filters button{
-  border:1px solid rgba(214,179,106,.35);
-  background:transparent;
-  color:var(--cream);
-  border-radius:999px;
-  padding:11px 21px;
-}
-.filters button.is-active,
-.filters button:hover{
-  background:var(--cream);
-  color:#080808;
-}
-.search{
-  min-width:290px;
-  background:#080808;
-  border:1px solid rgba(214,179,106,.28);
-  color:var(--cream);
-  border-radius:999px;
-  padding:13px 18px;
-  outline:none;
-}
+  <aside id="cartDrawer" class="cart-drawer" aria-hidden="true">
+    <button class="cart-close" type="button" onclick="closeCart()" aria-label="Sepeti kapat">×</button>
+    <h2>Sepet</h2>
+    <div id="cartItems" class="cart-items"></div>
+    <button class="cart-whatsapp" type="button" onclick="sendCartWhatsApp()">WhatsApp ile Sipariş Ver</button>
+  </aside>
 
-.products-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:28px;
-}
-.product-card{
-  background:#0b0b0b;
-  border:1px solid rgba(214,179,106,.16);
-}
-.product-media{
-  position:relative;
-  display:block;
-  width:100%;
-  aspect-ratio:3/4;
-  overflow:hidden;
-  border:0;
-  background:#111;
-}
-.product-media img{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  transition:.45s ease;
-}
-.product-media .secondary{opacity:0}
-.product-card:hover .secondary{opacity:1}
-.product-card:hover .primary{opacity:0}
-.product-badge{
-  position:absolute;
-  left:14px;
-  top:14px;
-  z-index:2;
-  background:rgba(0,0,0,.72);
-  border:1px solid rgba(214,179,106,.45);
-  color:var(--gold-soft);
-  border-radius:999px;
-  padding:7px 12px;
-  font-size:11px;
-  letter-spacing:1px;
-}
-.product-info{
-  display:grid;
-  gap:14px;
-  padding:20px;
-}
-.product-info small{
-  color:var(--gold);
-  text-transform:uppercase;
-  letter-spacing:2px;
-}
-.product-info h3{
-  font-family:"Cormorant Garamond",serif;
-  font-size:25px;
-  line-height:1.12;
-  font-weight:400;
-}
-.price-row{
-  display:flex;
-  gap:10px;
-  align-items:center;
-}
-.price-row strong{
-  color:#f5deb3;
-  font-size:18px;
-}
-.price-row span{
-  color:#777;
-  text-decoration:line-through;
-}
-.product-actions{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:10px;
-}
-.product-actions button{
-  border:1px solid rgba(214,179,106,.28);
-  background:transparent;
-  color:var(--cream);
-  padding:11px;
-}
-.product-actions button:hover{
-  background:var(--cream);
-  color:#080808;
-}
+  <div class="top-announcement">
+    VÉRAXA'YA HOŞ GELDİNİZ · PREMIUM STREETWEAR · CUSTOM DTF STUDIO
+  </div>
 
-.studio{
-  background:#070707;
-}
-.studio-grid{
-  display:grid;
-  grid-template-columns:1.04fr .96fr;
-  gap:34px;
-  align-items:center;
-  border:1px solid var(--line);
-  background:#0b0b0b;
-}
-.studio-grid img{
-  width:100%;
-  height:590px;
-  object-fit:cover;
-}
-.studio-copy{
-  padding:46px;
-}
-.studio-copy h2{
-  font-family:"Cormorant Garamond",serif;
-  font-size:56px;
-  font-weight:300;
-  line-height:1;
-  margin:18px 0;
-}
-.studio-copy p{
-  color:#bdb5a9;
-  line-height:1.9;
-  margin-bottom:24px;
-}
+  <header class="header">
+    <a href="#" class="logo">VÉRAXA</a>
 
-.process-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:20px;
-  margin-top:28px;
-}
-.process-card{
-  background:#0c0c0c;
-  border:1px solid rgba(214,179,106,.16);
-  padding-bottom:24px;
-}
-.process-card img{
-  width:100%;
-  height:220px;
-  object-fit:cover;
-  margin-bottom:20px;
-}
-.process-card span,
-.process-card h3,
-.process-card p{
-  display:block;
-  padding:0 20px;
-}
-.process-card h3{
-  font-family:"Cormorant Garamond",serif;
-  font-size:28px;
-  font-weight:300;
-  margin:8px 0;
-}
-.process-card p{
-  color:#aaa;
-  line-height:1.7;
-}
+    <nav class="nav">
+      <a class="nav-link" href="#">Ana Sayfa</a>
 
-.service-strip{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  border-top:1px solid var(--line);
-  border-bottom:1px solid var(--line);
-}
-.service-strip div{
-  padding:30px;
-  text-align:center;
-  border-right:1px solid var(--line);
-  color:#bfb7aa;
-}
-.service-strip b{
-  display:block;
-  color:var(--cream);
-  margin-bottom:8px;
-  letter-spacing:1px;
-}
+      <div class="nav-item">
+        <button class="nav-link nav-trigger" type="button">Shop <span>⌄</span></button>
+        <div class="mega-menu">
+          <div class="mega-column">
+            <span>Collections</span>
+            <a href="#products" onclick="filterProducts('all', null)">Tüm Ürünler</a>
+            <a href="#products" onclick="filterProducts('women', null)">Kadın Koleksiyonu</a>
+            <a href="#products" onclick="filterProducts('men', null)">Erkek / Unisex</a>
+            <a href="#products" onclick="filterProducts('sets', null)">Takımlar</a>
+          </div>
 
-.footer{
-  padding:78px 6vw;
-  text-align:center;
-  color:#aaa;
-}
-.footer-logo{
-  font-family:"Cormorant Garamond",serif;
-  letter-spacing:13px;
-  font-size:32px;
-  margin-bottom:12px;
-}
-.footer-links{
-  display:flex;
-  justify-content:center;
-  gap:18px;
-  flex-wrap:wrap;
-  margin-top:22px;
-  color:var(--cream);
-}
+          <div class="mega-column">
+            <span>Product Lines</span>
+            <a href="#products" onclick="filterProducts('women', null)">Tişört & Blouse</a>
+            <a href="#products" onclick="filterProducts('men', null)">Oversize Tee</a>
+            <a href="#products" onclick="filterProducts('dtf', null)">DTF Baskılı Ürünler</a>
+            <a href="#products" onclick="showWishlist()">Favoriler</a>
+          </div>
 
-.product-modal,
-.auth-modal{
-  display:none;
-  position:fixed;
-  inset:0;
-  z-index:130;
-  background:rgba(0,0,0,.86);
-  padding:28px;
-  overflow:auto;
-}
-.product-modal.is-open,
-.auth-modal.is-open{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-.modal-box{
-  position:relative;
-  width:100%;
-  max-width:1180px;
-  display:grid;
-  grid-template-columns:1.12fr .88fr;
-  gap:28px;
-  background:#090909;
-  border:1px solid rgba(214,179,106,.35);
-  padding:24px;
-  box-shadow:var(--shadow);
-}
-.modal-close,
-.cart-close,
-.auth-close{
-  position:absolute;
-  top:12px;
-  right:16px;
-  z-index:3;
-  border:0;
-  background:transparent;
-  color:#f5deb3;
-  font-size:32px;
-}
-.modal-gallery{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:12px;
-  max-height:82vh;
-  overflow:auto;
-}
-.modal-gallery img{
-  width:100%;
-  aspect-ratio:3/4;
-  object-fit:cover;
-  background:#111;
-}
-.modal-info{
-  padding:44px 12px;
-}
-.modal-info span{
-  color:var(--gold);
-  letter-spacing:3px;
-  text-transform:uppercase;
-  font-size:12px;
-}
-.modal-info h2{
-  font-family:"Cormorant Garamond",serif;
-  font-size:46px;
-  line-height:1;
-  font-weight:300;
-  margin:16px 0;
-}
-.modal-info p{
-  color:#cfc6b8;
-  line-height:1.8;
-  margin-bottom:12px;
-}
-.modal-price{
-  color:#f5deb3!important;
-  font-size:22px;
-}
-.modal-meta{
-  display:grid;
-  gap:8px;
-  margin:18px 0;
-  color:#cfc6b8;
-}
-.modal-info select,
-.modal-info button,
-.auth-box input,
-.auth-box button{
-  width:100%;
-  padding:14px;
-  margin-top:12px;
-}
-.modal-info select,
-.auth-box input{
-  background:#050505;
-  color:var(--cream);
-  border:1px solid rgba(214,179,106,.35);
-}
-.modal-info button,
-.cart-whatsapp,
-.auth-primary{
-  border:0;
-  background:#25D366;
-  color:white;
-  font-weight:700;
-}
-.modal-secondary{
-  background:var(--cream)!important;
-  color:#080808!important;
-}
+          <a class="mega-feature" href="#products" onclick="filterProducts('women', null)">
+            <strong>New Collection</strong>
+            <small>Seçili ürünler, sade lüks görünüm ve ürün başına temiz galeri.</small>
+          </a>
+        </div>
+      </div>
 
-.cart-drawer{
-  position:fixed;
-  inset:0;
-  z-index:125;
-  display:none;
-  background:rgba(0,0,0,.58);
-}
-.cart-drawer.is-open{
-  display:block;
-}
-.cart-panel{
-  position:absolute;
-  top:0;
-  right:0;
-  width:410px;
-  max-width:92%;
-  min-height:100vh;
-  background:#080808;
-  border-left:1px solid rgba(214,179,106,.4);
-  padding:36px 24px;
-}
-.cart-panel h2{
-  font-family:"Cormorant Garamond",serif;
-  font-size:40px;
-  font-weight:300;
-  margin-bottom:20px;
-}
-.cart-item{
-  display:grid;
-  gap:6px;
-  border-bottom:1px solid rgba(214,179,106,.16);
-  padding:14px 0;
-  color:#cfc6b8;
-}
-.cart-item strong{color:var(--cream)}
-.cart-item button{
-  width:max-content;
-  border:0;
-  background:transparent;
-  color:#f5deb3;
-}
-.cart-whatsapp{
-  width:100%;
-  padding:14px;
-  margin-top:20px;
-}
+      <div class="nav-item">
+        <button class="nav-link nav-trigger" type="button">DTF Studio <span>⌄</span></button>
+        <div class="mega-menu mega-menu-dtf">
+          <div class="mega-column">
+            <span>DTF Hizmetleri</span>
+            <a href="#dtf">DTF Baskı Süreci</a>
+            <a href="#dtf-transfer">DTF Transfer Sipariş</a>
+            <a href="#products" onclick="filterProducts('dtf', null)">Hazır Baskılı Ürünler</a>
+            <a href="#dtf-pricing">Ölçü & Fiyat Bilgisi</a>
+          </div>
 
-.auth-box{
-  position:relative;
-  width:100%;
-  max-width:430px;
-  background:#090909;
-  border:1px solid rgba(214,179,106,.35);
-  padding:34px;
-}
-.auth-box h2{
-  font-family:"Cormorant Garamond",serif;
-  font-size:38px;
-  font-weight:300;
-}
-.auth-box p{
-  color:#aaa;
-  line-height:1.7;
-  margin:10px 0 14px;
-}
-.auth-ghost{
-  background:transparent!important;
-  color:var(--cream)!important;
-  border:1px solid rgba(214,179,106,.4)!important;
-}
-.auth-note{
-  margin-top:12px;
-  color:#888;
-  font-size:12px;
-  line-height:1.6;
-}
+          <div class="mega-column">
+            <span>Sipariş Akışı</span>
+            <a href="https://wa.me/905468853731?text=Merhaba%20VÉRAXA,%20kendi%20tasarımımla%20DTF%20baskı%20yaptırmak%20istiyorum." target="_blank">Kendi Tasarımını Gönder</a>
+            <a href="https://wa.me/905468853731?text=Merhaba%20VÉRAXA,%20DTF%20transfer%20kağıdı%20siparişi%20vermek%20istiyorum." target="_blank">Transfer Kağıdı Siparişi</a>
+            <a href="https://wa.me/905468853731?text=Merhaba%20VÉRAXA,%20hazır%20baskı%20modelleri%20hakkında%20bilgi%20almak%20istiyorum." target="_blank">Hazır Baskı Modelleri</a>
+          </div>
 
-.empty-state{
-  grid-column:1/-1;
-  text-align:center;
-  color:var(--muted);
-  padding:34px;
-}
+          <a class="mega-feature" href="#dtf-transfer">
+            <strong>Custom Transfer</strong>
+            <small>Logo, yazı, görsel, marka tasarımı veya hazır baskı transferi.</small>
+          </a>
+        </div>
+      </div>
 
-@media(max-width:1180px){
-  .products-grid{grid-template-columns:repeat(3,1fr)}
-  .process-grid{grid-template-columns:repeat(2,1fr)}
-}
-@media(max-width:920px){
-  .site-topline{height:30px}
-  .header{top:30px;grid-template-columns:1fr auto;padding:17px 5vw}
-  .nav{display:none}
-  .logo{font-size:24px}
-  .hero{padding:140px 6vw 76px}
-  .hero h1{font-size:64px}
-  .category-strip,
-  .collection-grid,
-  .editorial,
-  .studio-grid,
-  .service-strip{
-    grid-template-columns:1fr;
-  }
-  .products-grid{grid-template-columns:repeat(2,1fr)}
-  .modal-box{grid-template-columns:1fr}
-  .modal-gallery{grid-template-columns:1fr}
-}
-@media(max-width:560px){
-  .nav-right a{display:none}
-  .nav-right button{padding:9px 11px;font-size:11px}
-  .hero h1{font-size:48px;letter-spacing:5px}
-  .section{padding:74px 5vw}
-  .section-title h2{font-size:38px}
-  .products-grid,
-  .process-grid{
-    grid-template-columns:1fr;
-  }
-  .search{width:100%;min-width:0}
-  .collection-card{height:420px}
-  .studio-grid img{height:360px}
-  .studio-copy{padding:28px}
-  .studio-copy h2,
-  .editorial-copy h2{
-    font-size:38px;
-  }
-}
+      <a class="nav-link" href="#world">VÉRAXA World</a>
+    </nav>
+
+    <div class="nav-right">
+      <button type="button" onclick="alert('Üyelik alanı yakında aktif olacak kanka.')">Giriş</button>
+      <button type="button" onclick="toggleWishlist()">Favori <span id="wishlistCount">0</span></button>
+      <button type="button" onclick="openCart()">Sepet <span id="cartCount">0</span></button>
+      <a href="https://wa.me/905468853731" target="_blank">WhatsApp</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <img src="assets/images/hero/hero-main.jpg" alt="VÉRAXA Luxury Fashion" onerror="this.src='https://images.pexels.com/photos/1926769/pexels-photo-1926769.jpeg?auto=compress&cs=tinysrgb&w=1800'" />
+
+      <div class="hero-content">
+        <span class="eyebrow">Premium Streetwear</span>
+        <h1>Luxury<br />Redefined</h1>
+        <p>Modern kesim, seçili koleksiyonlar ve özel DTF baskı hizmeti. VÉRAXA, günlük giyimi luxury bir duruşla yeniden yorumlar.</p>
+
+        <div class="hero-actions">
+          <a class="btn light" href="#products">Koleksiyonu Keşfet</a>
+          <a class="btn dark" href="#dtf-transfer">DTF Studio</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="collections">
+      <div class="section-title">
+        <span>Select Your Style</span>
+        <h2>Collections</h2>
+        <p>Kadın koleksiyonu, erkek/unisex parçalar ve özel baskı stüdyosu tek marka çatısı altında.</p>
+      </div>
+
+      <div class="collection-grid">
+        <button class="collection-card" type="button" onclick="filterProducts('women', null)">
+          <img src="https://images.pexels.com/photos/7679471/pexels-photo-7679471.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Kadın koleksiyonu" />
+          <div>
+            <span>Women</span>
+            <h3>Kadın Koleksiyonu</h3>
+          </div>
+        </button>
+
+        <button class="collection-card" type="button" onclick="filterProducts('men', null)">
+          <img src="https://images.pexels.com/photos/769733/pexels-photo-769733.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Erkek koleksiyonu" />
+          <div>
+            <span>Men / Unisex</span>
+            <h3>Erkek Koleksiyonu</h3>
+          </div>
+        </button>
+
+        <a class="collection-card" href="#dtf-transfer">
+          <img src="https://images.pexels.com/photos/8532616/pexels-photo-8532616.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="DTF Studio" />
+          <div>
+            <span>Custom</span>
+            <h3>DTF Studio</h3>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section class="editorial" id="world">
+      <img src="https://images.pexels.com/photos/7679651/pexels-photo-7679651.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="VÉRAXA editorial" />
+      <div class="editorial-copy">
+        <span>VÉRAXA World</span>
+        <h2>Az ürün, güçlü duruş, net görünüm.</h2>
+        <p>Dünya markalarının dili gibi daha sakin, daha büyük görsel odaklı ve daha premium bir alışveriş deneyimi. Her ürün ayrı kart, her kartta aynı ürünün seçili iki görseli.</p>
+      </div>
+    </section>
+
+    <section class="section products" id="products">
+      <div class="section-title">
+        <span>New Collection</span>
+        <h2>Products</h2>
+        <p>Seçili ürünler kategoriye ayrıldı. Ürüne tıkladığında aynı ürüne ait temiz galeri açılır.</p>
+      </div>
+
+      <div class="tool-row">
+        <div class="product-filters">
+          <button class="active" type="button" onclick="filterProducts('all', this)">Tümü</button>
+          <button type="button" onclick="filterProducts('women', this)">Kadın</button>
+          <button type="button" onclick="filterProducts('men', this)">Erkek</button>
+          <button type="button" onclick="filterProducts('sets', this)">Takımlar</button>
+          <button type="button" onclick="filterProducts('dtf', this)">DTF</button>
+          <button type="button" onclick="showWishlist()">Favoriler</button>
+        </div>
+
+        <input id="searchInput" type="search" placeholder="Ürün ara..." oninput="searchProducts()" />
+      </div>
+
+      <div class="products-grid"></div>
+    </section>
+
+    <section class="section dtf" id="dtf">
+      <div class="section-title">
+        <span>Custom DTF Studio</span>
+        <h2>DTF Baskı Süreci</h2>
+        <p>Kendi tasarımını tişört, hoodie veya sweatshirt üzerine uygulatabilir ya da sadece DTF transfer kağıdı siparişi verebilirsin.</p>
+      </div>
+
+      <div class="dtf-hero">
+        <img src="https://images.pexels.com/photos/8532616/pexels-photo-8532616.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="DTF Studio" />
+
+        <div class="dtf-copy">
+          <span>Your Design / Our Quality</span>
+          <h2>Özel tasarım, premium baskı.</h2>
+          <p>Logo, yazı, illüstrasyon, marka tasarımı veya özel görsel. Baskı öncesi çözünürlük, renk, ölçü ve ürün üstündeki konum kontrol edilir.</p>
+          <a href="https://wa.me/905468853731?text=Merhaba%20VÉRAXA,%20özel%20DTF%20baskı%20yaptırmak%20istiyorum." target="_blank">Teklif Al</a>
+        </div>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <img src="https://images.pexels.com/photos/4065876/pexels-photo-4065876.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Tasarım kontrolü" />
+          <span>01</span>
+          <h3>Tasarım Kontrolü</h3>
+          <p>Gönderdiğin görsel baskıya uygunluk, dosya kalitesi ve renk açısından incelenir.</p>
+        </div>
+
+        <div class="step">
+          <img src="https://images.pexels.com/photos/8532616/pexels-photo-8532616.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Baskı hazırlığı" />
+          <span>02</span>
+          <h3>Baskı Hazırlığı</h3>
+          <p>Ürün rengi, beden, baskı ölçüsü ve konum bilgisi netleştirilir.</p>
+        </div>
+
+        <div class="step">
+          <img src="https://images.pexels.com/photos/6311392/pexels-photo-6311392.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Ürün uygulaması" />
+          <span>03</span>
+          <h3>Ürün Uygulaması</h3>
+          <p>DTF baskı tişört, oversize tee, hoodie veya sweatshirt üzerine uygulanır.</p>
+        </div>
+
+        <div class="step">
+          <img src="https://images.pexels.com/photos/7679651/pexels-photo-7679651.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Kontrol ve teslimat" />
+          <span>04</span>
+          <h3>Kontrol ve Teslimat</h3>
+          <p>Son kontrol sonrası ürün veya transfer kağıdı teslimata hazırlanır.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section transfer-section" id="dtf-transfer">
+      <div class="section-title">
+        <span>DTF Transfer Order</span>
+        <h2>Transfer Kağıdı Siparişi</h2>
+        <p>Sadece baskı kağıdı almak isteyenler için ölçü, adet ve tasarım bilgisiyle WhatsApp sipariş akışı.</p>
+      </div>
+
+      <div class="transfer-grid">
+        <div class="transfer-panel">
+          <span>Custom Transfer</span>
+          <h3>Kendi baskını seç, ölçünü yaz, teklif al.</h3>
+          <p>DTF transfer kağıdı tişört, sweatshirt, çanta ve tekstil ürünleri için hazırlanabilir. Net fiyat için tasarım ölçüsü ve adet bilgisi gerekir.</p>
+
+          <div class="transfer-badges">
+            <b>A4 / A3</b>
+            <b>Metre Baskı</b>
+            <b>Logo Baskı</b>
+            <b>Hazır Desen</b>
+          </div>
+        </div>
+
+        <form class="transfer-form" onsubmit="sendTransferOrder(event)">
+          <label>
+            Baskı Türü
+            <select id="transferType">
+              <option>DTF Transfer Kağıdı</option>
+              <option>Tişört Üzerine DTF Baskı</option>
+              <option>Sweatshirt Üzerine DTF Baskı</option>
+              <option>Hazır Baskı Modeli</option>
+            </select>
+          </label>
+
+          <label>
+            Ölçü / Ebat
+            <input id="transferSize" type="text" placeholder="Örn: A4, A3, 30x40 cm, 1 metre" />
+          </label>
+
+          <label>
+            Adet
+            <input id="transferQty" type="number" min="1" placeholder="Örn: 10" />
+          </label>
+
+          <label>
+            Not
+            <textarea id="transferNote" placeholder="Tasarım, renk, ürün türü veya özel isteğini yaz."></textarea>
+          </label>
+
+          <button type="submit">WhatsApp ile Teklif Al</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="service-strip">
+      <div><b>Premium Kumaş</b> Seçili kalıp ve kaliteli ürün dokusu.</div>
+      <div><b>Temiz Galeri</b> Ürün başına aynı modele ait iki görsel.</div>
+      <div><b>WhatsApp Sipariş</b> Beden ve ürün bilgisi hazır mesajla gider.</div>
+      <div><b>Custom DTF</b> Transfer kağıdı veya ürün üstü baskı.</div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-logo">VÉRAXA</div>
+    <p>Luxury Streetwear & Custom DTF Studio</p>
+
+    <div class="footer-links">
+      <a href="https://instagram.com/veraxa.co" target="_blank">Instagram</a>
+      <a href="https://wa.me/905468853731" target="_blank">WhatsApp</a>
+      <a href="https://t.me/nilu_mi" target="_blank">Telegram</a>
+      <a href="legal/privacy-policy.html">Gizlilik</a>
+      <a href="legal/return-policy.html">İade</a>
+    </div>
+  </footer>
+
+  <script>
+    function sendTransferOrder(event) {
+      event.preventDefault();
+
+      const type = document.getElementById("transferType").value;
+      const size = document.getElementById("transferSize").value || "Belirtilmedi";
+      const qty = document.getElementById("transferQty").value || "Belirtilmedi";
+      const note = document.getElementById("transferNote").value || "Yok";
+
+      const message =
+        "Merhaba VÉRAXA, DTF siparişi için teklif almak istiyorum.%0A%0A" +
+        "Baskı Türü: " + encodeURIComponent(type) + "%0A" +
+        "Ölçü / Ebat: " + encodeURIComponent(size) + "%0A" +
+        "Adet: " + encodeURIComponent(qty) + "%0A" +
+        "Not: " + encodeURIComponent(note);
+
+      window.open("https://wa.me/905468853731?text=" + message, "_blank");
+    }
+  </script>
+
+  <script src="assets/js/products.js?v=1004"></script>
+  <script src="assets/js/app.js?v=1004"></script>
+</body>
+</html>
