@@ -3,11 +3,18 @@ const VERAXA_FALLBACKS = {
   womenLight: "https://images.pexels.com/photos/6311392/pexels-photo-6311392.jpeg?auto=compress&cs=tinysrgb&w=900",
   dress: "https://images.pexels.com/photos/7679471/pexels-photo-7679471.jpeg?auto=compress&cs=tinysrgb&w=900",
   set: "https://images.pexels.com/photos/7679651/pexels-photo-7679651.jpeg?auto=compress&cs=tinysrgb&w=900",
-  menDark: "https://images.pexels.com/photos/769733/pexels-photo-769733.jpeg?auto=compress&cs=tinysrgb&w=900",
-  menLight: "https://images.pexels.com/photos/6765164/pexels-photo-6765164.jpeg?auto=compress&cs=tinysrgb&w=900",
-  hoodie: "https://images.pexels.com/photos/6311397/pexels-photo-6311397.jpeg?auto=compress&cs=tinysrgb&w=900",
-  dtf: "https://images.pexels.com/photos/8532616/pexels-photo-8532616.jpeg?auto=compress&cs=tinysrgb&w=900",
-  transfer: "https://images.pexels.com/photos/4065876/pexels-photo-4065876.jpeg?auto=compress&cs=tinysrgb&w=900"
+
+  menBlackTee: "https://images.pexels.com/photos/26967988/pexels-photo-26967988.jpeg?auto=compress&cs=tinysrgb&w=900",
+  menDarkTee: "https://images.pexels.com/photos/15544302/pexels-photo-15544302.jpeg?auto=compress&cs=tinysrgb&w=900",
+  menPlainTee: "https://images.pexels.com/photos/16701781/pexels-photo-16701781.jpeg?auto=compress&cs=tinysrgb&w=900",
+  menOutdoorTee: "https://images.pexels.com/photos/11268392/pexels-photo-11268392.jpeg?auto=compress&cs=tinysrgb&w=900",
+  menHoodie: "https://images.pexels.com/photos/19982386/pexels-photo-19982386.jpeg?auto=compress&cs=tinysrgb&w=900",
+  menHoodieAlt: "https://images.pexels.com/photos/21702333/pexels-photo-21702333.jpeg?auto=compress&cs=tinysrgb&w=900",
+
+  dtfStudio: "https://images.pexels.com/photos/8532616/pexels-photo-8532616.jpeg?auto=compress&cs=tinysrgb&w=900",
+  dtfTransfer: "https://images.pexels.com/photos/4065876/pexels-photo-4065876.jpeg?auto=compress&cs=tinysrgb&w=900",
+  dtfWorkshop: "https://images.pexels.com/photos/4792728/pexels-photo-4792728.jpeg?auto=compress&cs=tinysrgb&w=900",
+  blankTee: "https://images.pexels.com/photos/6311392/pexels-photo-6311392.jpeg?auto=compress&cs=tinysrgb&w=900"
 };
 
 function veraxaLocalImage(fileName, fallback) {
@@ -128,10 +135,10 @@ window.VERAXA_PRODUCTS = [
     category: "men",
     label: "Erkek",
     images: [
-      VERAXA_FALLBACKS.menDark,
-      "https://images.pexels.com/photos/6311392/pexels-photo-6311392.jpeg?auto=compress&cs=tinysrgb&w=900"
+      VERAXA_FALLBACKS.menBlackTee,
+      VERAXA_FALLBACKS.menDarkTee
     ],
-    description: "Erkek/unisex siyah oversize tişört. Tok kumaş, sade logo dili ve güçlü streetwear görünümü."
+    description: "Erkek siyah oversize tişört. Tok kumaş, sade logo dili ve güçlü streetwear görünümü."
   },
   {
     name: "VÉRAXA Men Stone Oversize Tee",
@@ -139,10 +146,10 @@ window.VERAXA_PRODUCTS = [
     category: "men",
     label: "Erkek",
     images: [
-      VERAXA_FALLBACKS.menLight,
-      "https://images.pexels.com/photos/6311397/pexels-photo-6311397.jpeg?auto=compress&cs=tinysrgb&w=900"
+      VERAXA_FALLBACKS.menPlainTee,
+      VERAXA_FALLBACKS.menOutdoorTee
     ],
-    description: "Açık ton erkek/unisex oversize tişört. Minimal kombinler için premium basic."
+    description: "Erkek açık ton oversize tişört. Minimal kombinler için premium basic."
   },
   {
     name: "VÉRAXA Men Signature Hoodie",
@@ -150,10 +157,10 @@ window.VERAXA_PRODUCTS = [
     category: "men",
     label: "Erkek",
     images: [
-      VERAXA_FALLBACKS.hoodie,
-      "https://images.pexels.com/photos/6765164/pexels-photo-6765164.jpeg?auto=compress&cs=tinysrgb&w=900"
+      VERAXA_FALLBACKS.menHoodie,
+      VERAXA_FALLBACKS.menHoodieAlt
     ],
-    description: "Signature hoodie. Günlük kullanım için rahat kalıp, güçlü görünüm ve premium sweatshirt dokusu."
+    description: "Erkek signature hoodie. Günlük kullanım için rahat kalıp, güçlü görünüm ve premium sweatshirt dokusu."
   },
   {
     name: "VÉRAXA Men Minimal Sweatshirt",
@@ -161,20 +168,20 @@ window.VERAXA_PRODUCTS = [
     category: "men",
     label: "Erkek",
     images: [
-      "https://images.pexels.com/photos/6311397/pexels-photo-6311397.jpeg?auto=compress&cs=tinysrgb&w=900",
-      "https://images.pexels.com/photos/769732/pexels-photo-769732.jpeg?auto=compress&cs=tinysrgb&w=900"
+      VERAXA_FALLBACKS.menHoodieAlt,
+      VERAXA_FALLBACKS.menHoodie
     ],
-    description: "Minimal sweatshirt. Sade duruş, rahat kalıp ve sezonluk premium streetwear parçası."
+    description: "Erkek minimal sweatshirt. Sade duruş, rahat kalıp ve sezonluk premium streetwear parçası."
   },
 
   {
     name: "VÉRAXA Custom DTF Siyah Tee",
     price: "Teklif Al",
     category: "dtf",
-    label: "DTF Studio",
+    label: "DTF STUDIO",
     images: [
-      VERAXA_FALLBACKS.dtf,
-      "https://images.pexels.com/photos/6311392/pexels-photo-6311392.jpeg?auto=compress&cs=tinysrgb&w=900"
+      VERAXA_FALLBACKS.dtfStudio,
+      VERAXA_FALLBACKS.blankTee
     ],
     description: "Siyah tişört üzerine logo, yazı, illüstrasyon veya özel görsel DTF baskı."
   },
@@ -182,10 +189,10 @@ window.VERAXA_PRODUCTS = [
     name: "VÉRAXA Custom DTF Beyaz Tee",
     price: "Teklif Al",
     category: "dtf",
-    label: "DTF Studio",
+    label: "DTF STUDIO",
     images: [
-      "https://images.pexels.com/photos/8532616/pexels-photo-8532616.jpeg?auto=compress&cs=tinysrgb&w=900",
-      VERAXA_FALLBACKS.womenLight
+      VERAXA_FALLBACKS.blankTee,
+      VERAXA_FALLBACKS.dtfStudio
     ],
     description: "Beyaz tişört üzerine özel DTF baskı. Marka tasarımı, logo, yazı veya kişisel tasarım."
   },
@@ -193,10 +200,10 @@ window.VERAXA_PRODUCTS = [
     name: "VÉRAXA DTF Hoodie Baskı",
     price: "Teklif Al",
     category: "dtf",
-    label: "DTF Studio",
+    label: "DTF STUDIO",
     images: [
-      VERAXA_FALLBACKS.hoodie,
-      VERAXA_FALLBACKS.dtf
+      VERAXA_FALLBACKS.menHoodie,
+      VERAXA_FALLBACKS.dtfStudio
     ],
     description: "Hoodie veya sweatshirt üzerine özel DTF baskı uygulaması."
   },
@@ -206,8 +213,8 @@ window.VERAXA_PRODUCTS = [
     category: "dtf",
     label: "Transfer Kağıdı",
     images: [
-      VERAXA_FALLBACKS.transfer,
-      VERAXA_FALLBACKS.dtf
+      VERAXA_FALLBACKS.dtfTransfer,
+      VERAXA_FALLBACKS.dtfStudio
     ],
     description: "A4 ölçüde DTF transfer kağıdı. Kendi tasarımını gönder, baskıya hazır transfer olarak hazırlanır."
   },
@@ -217,8 +224,8 @@ window.VERAXA_PRODUCTS = [
     category: "dtf",
     label: "Transfer Kağıdı",
     images: [
-      "https://images.pexels.com/photos/4065877/pexels-photo-4065877.jpeg?auto=compress&cs=tinysrgb&w=900",
-      VERAXA_FALLBACKS.transfer
+      VERAXA_FALLBACKS.dtfWorkshop,
+      VERAXA_FALLBACKS.dtfTransfer
     ],
     description: "A3 ölçüde DTF transfer kağıdı. Daha büyük tasarımlar, sırt baskısı ve çoklu logo baskıları için."
   },
@@ -228,8 +235,8 @@ window.VERAXA_PRODUCTS = [
     category: "dtf",
     label: "Transfer Kağıdı",
     images: [
-      "https://images.pexels.com/photos/4792728/pexels-photo-4792728.jpeg?auto=compress&cs=tinysrgb&w=900",
-      "https://images.pexels.com/photos/4065876/pexels-photo-4065876.jpeg?auto=compress&cs=tinysrgb&w=900"
+      VERAXA_FALLBACKS.dtfWorkshop,
+      VERAXA_FALLBACKS.dtfTransfer
     ],
     description: "Metre bazlı DTF transfer siparişi. Çoklu logo, marka baskısı ve toplu üretim için teklif alınır."
   }
