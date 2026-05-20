@@ -1,395 +1,236 @@
-function veraxaAsset(path) {
-  return "/" + String(path).replace(/^\/+/, "");
-}
+const VERAXA_FALLBACKS = {
+  womenDark: "https://images.pexels.com/photos/7679863/pexels-photo-7679863.jpeg?auto=compress&cs=tinysrgb&w=900",
+  womenLight: "https://images.pexels.com/photos/6311392/pexels-photo-6311392.jpeg?auto=compress&cs=tinysrgb&w=900",
+  dress: "https://images.pexels.com/photos/7679471/pexels-photo-7679471.jpeg?auto=compress&cs=tinysrgb&w=900",
+  set: "https://images.pexels.com/photos/7679651/pexels-photo-7679651.jpeg?auto=compress&cs=tinysrgb&w=900",
+  menDark: "https://images.pexels.com/photos/769733/pexels-photo-769733.jpeg?auto=compress&cs=tinysrgb&w=900",
+  menLight: "https://images.pexels.com/photos/6765164/pexels-photo-6765164.jpeg?auto=compress&cs=tinysrgb&w=900",
+  hoodie: "https://images.pexels.com/photos/6311397/pexels-photo-6311397.jpeg?auto=compress&cs=tinysrgb&w=900",
+  dtf: "https://images.pexels.com/photos/8532616/pexels-photo-8532616.jpeg?auto=compress&cs=tinysrgb&w=900",
+  transfer: "https://images.pexels.com/photos/4065876/pexels-photo-4065876.jpeg?auto=compress&cs=tinysrgb&w=900"
+};
 
-function veraxaImage(src, fallback) {
+function veraxaLocalImage(fileName, fallback) {
   return {
-    src: src,
-    fallback: fallback || src
+    src: "assets/images/products/" + fileName,
+    fallback: fallback
   };
 }
 
-function veraxaLocal(fileName, fallback) {
-  return veraxaImage(veraxaAsset("assets/images/products/" + fileName), fallback);
+function veraxaPair(firstFile, secondFile, firstFallback, secondFallback) {
+  return [
+    veraxaLocalImage(firstFile, firstFallback),
+    veraxaLocalImage(secondFile, secondFallback || firstFallback)
+  ];
 }
-
-const VERAXA_IMG = {
-  womenA: "https://images.pexels.com/photos/6311392/pexels-photo-6311392.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  womenB: "https://images.pexels.com/photos/6311397/pexels-photo-6311397.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  womenC: "https://images.pexels.com/photos/7679471/pexels-photo-7679471.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  dress: "https://images.pexels.com/photos/7679863/pexels-photo-7679863.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  set: "https://images.pexels.com/photos/7679651/pexels-photo-7679651.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  menA: "https://images.pexels.com/photos/16400892/pexels-photo-16400892.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  menB: "https://images.pexels.com/photos/19881714/pexels-photo-19881714.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  menPrint: "https://images.pexels.com/photos/36942018/pexels-photo-36942018.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  hoodie: "https://images.pexels.com/photos/3421683/pexels-photo-3421683.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  dtf: "https://images.pexels.com/photos/8532616/pexels-photo-8532616.jpeg?auto=compress&cs=tinysrgb&w=1200"
-};
-
-window.VERAXA_CATEGORIES = [
-  {
-    id: "women",
-    title: "Kadın",
-    description: "Fitilli atlet, crop basic, çizgili polo, elbise ve premium günlük kombinler."
-  },
-  {
-    id: "men",
-    title: "Erkek / Unisex",
-    description: "Oversize basic tee ve unisex streetwear parçaları."
-  },
-  {
-    id: "sets",
-    title: "Takımlar",
-    description: "Dökümlü iki parça takımlar ve sezon kombinleri."
-  },
-  {
-    id: "dtf",
-    title: "DTF Studio",
-    description: "DTF transfer baskı kağıdı, hazır baskı ve özel tasarım transfer."
-  }
-];
 
 window.VERAXA_PRODUCTS = [
   {
-    id: "fitilli-atlet-siyah",
     name: "VÉRAXA Fitilli Atlet Siyah",
-    price: 699,
-    oldPrice: 899,
+    price: "₺ 699.00",
     category: "women",
-    collection: "Essentials",
-    badge: "New",
-    colorText: "Siyah",
-    fit: "Slim basic fit",
-    fabric: "Fitilli esnek dokulu kumaş",
-    images: [
-      veraxaLocal("01 (1).jpg", VERAXA_IMG.womenA),
-      veraxaLocal("02 (2).jpg", VERAXA_IMG.womenB)
-    ],
-    description: "Siyah fitilli atlet. Günlük kombinlerde sade, güçlü ve premium bir temel parça."
+    label: "Kadın",
+    images: veraxaPair("01 (1).jpg", "02 (2).jpg", VERAXA_FALLBACKS.womenDark, VERAXA_FALLBACKS.womenDark),
+    description: "Fitilli dokulu siyah atlet. Minimal, sade ve günlük luxury görünüm için seçili basic parça."
   },
   {
-    id: "fitilli-atlet-beyaz",
-    name: "VÉRAXA Fitilli Atlet Beyaz",
-    price: 699,
-    oldPrice: 899,
+    name: "VÉRAXA Fitilli Atlet Ekru",
+    price: "₺ 699.00",
     category: "women",
-    collection: "Essentials",
-    badge: "New",
-    colorText: "Beyaz",
-    fit: "Slim basic fit",
-    fabric: "Fitilli esnek dokulu kumaş",
-    images: [
-      veraxaLocal("01 (5).jpg", VERAXA_IMG.womenB),
-      veraxaLocal("02 (6).jpg", VERAXA_IMG.womenA)
-    ],
-    description: "Beyaz fitilli atlet. Temiz, minimal ve luxury günlük görünüm için."
+    label: "Kadın",
+    images: veraxaPair("01 (5).jpg", "02 (6).jpg", VERAXA_FALLBACKS.womenLight, VERAXA_FALLBACKS.womenLight),
+    description: "Ekru tonlarda fitilli atlet. Açık renk kombinler ve yazlık sade görünüm için premium basic."
   },
   {
-    id: "crop-basic-siyah",
     name: "VÉRAXA Crop Basic Siyah",
-    price: 749,
-    oldPrice: 949,
+    price: "₺ 749.00",
     category: "women",
-    collection: "Essentials",
-    badge: "Limited",
-    colorText: "Siyah",
-    fit: "Crop regular fit",
-    fabric: "Yumuşak pamuk karışımlı kumaş",
-    images: [
-      veraxaLocal("01 (29).jpg", VERAXA_IMG.womenA),
-      veraxaLocal("02 (30).jpg", VERAXA_IMG.womenB)
-    ],
-    description: "Siyah crop basic üst. Jean, etek ve takım altlarıyla net görünüm verir."
+    label: "Kadın",
+    images: veraxaPair("01 (29).jpg", "02 (30).jpg", VERAXA_FALLBACKS.womenDark, VERAXA_FALLBACKS.womenDark),
+    description: "Siyah crop basic üst. Rahat kalıp, net siluet ve modern şehir görünümü."
   },
   {
-    id: "crop-basic-beyaz",
     name: "VÉRAXA Crop Basic Beyaz",
-    price: 749,
-    oldPrice: 949,
+    price: "₺ 749.00",
     category: "women",
-    collection: "Essentials",
-    badge: "Limited",
-    colorText: "Beyaz",
-    fit: "Crop regular fit",
-    fabric: "Yumuşak pamuk karışımlı kumaş",
-    images: [
-      veraxaLocal("01 (45).jpg", VERAXA_IMG.womenB),
-      veraxaLocal("02 (46).jpg", VERAXA_IMG.womenA)
-    ],
-    description: "Beyaz crop basic üst. Sade, temiz ve modern VÉRAXA görünümü."
+    label: "Kadın",
+    images: veraxaPair("01 (45).jpg", "02 (46).jpg", VERAXA_FALLBACKS.womenLight, VERAXA_FALLBACKS.womenLight),
+    description: "Beyaz crop basic üst. Temiz, sade ve premium günlük kombinler için."
   },
   {
-    id: "cizgili-polo-siyah",
     name: "VÉRAXA Çizgili Polo Siyah",
-    price: 849,
-    oldPrice: 1049,
+    price: "₺ 849.00",
     category: "women",
-    collection: "Daily Luxury",
-    badge: "Best Match",
-    colorText: "Siyah çizgili",
-    fit: "Regular polo fit",
-    fabric: "Yumuşak örme kumaş",
-    images: [
-      veraxaLocal("01 (49).jpg", VERAXA_IMG.womenC),
-      veraxaLocal("02 (50).jpg", VERAXA_IMG.womenA)
-    ],
-    description: "Çizgili polo formu. Günlük şıklık için güçlü ve kolay kombinlenen parça."
+    label: "Kadın",
+    images: veraxaPair("01 (49).jpg", "02 (50).jpg", VERAXA_FALLBACKS.womenDark, VERAXA_FALLBACKS.womenDark),
+    description: "Siyah çizgili polo formu. Zamansız, net ve günlük şıklığa yakın bir parça."
   },
   {
-    id: "cizgili-polo-acik-ton",
     name: "VÉRAXA Çizgili Polo Açık Ton",
-    price: 849,
-    oldPrice: 1049,
+    price: "₺ 849.00",
     category: "women",
-    collection: "Daily Luxury",
-    badge: "Best Match",
-    colorText: "Açık çizgili ton",
-    fit: "Regular polo fit",
-    fabric: "Yumuşak örme kumaş",
-    images: [
-      veraxaLocal("01 (53).jpg", VERAXA_IMG.womenB),
-      veraxaLocal("02 (54).jpg", VERAXA_IMG.womenC)
-    ],
-    description: "Açık ton çizgili polo. Sade ama premium günlük görünüm."
+    label: "Kadın",
+    images: veraxaPair("01 (53).jpg", "02 (54).jpg", VERAXA_FALLBACKS.womenLight, VERAXA_FALLBACKS.womenLight),
+    description: "Açık ton çizgili polo. Hafif, temiz ve yazlık kombinlere uygun luxury basic."
   },
   {
-    id: "oversize-blouse",
     name: "VÉRAXA Oversize Blouse",
-    price: 999,
-    oldPrice: 1199,
+    price: "₺ 999.00",
     category: "women",
-    collection: "Soft Tailoring",
-    badge: "Editorial",
-    colorText: "Minimal tonlar",
-    fit: "Oversize relaxed fit",
-    fabric: "Dökümlü hafif kumaş",
-    images: [
-      veraxaLocal("01 (63).jpg", VERAXA_IMG.womenA),
-      veraxaLocal("02 (64).jpg", VERAXA_IMG.womenB)
-    ],
-    description: "Dökümlü ve şık oversize blouse. Sakin ama güçlü görünüm isteyenler için."
+    label: "Kadın",
+    images: veraxaPair("01 (63).jpg", "02 (64).jpg", VERAXA_FALLBACKS.womenDark, VERAXA_FALLBACKS.womenLight),
+    description: "Dökümlü oversize blouse. Rahat form, sade duruş ve premium günlük kullanım."
   },
   {
-    id: "oversize-striped-tee",
     name: "VÉRAXA Oversize Striped Tee",
-    price: 899,
-    oldPrice: 1099,
+    price: "₺ 899.00",
     category: "women",
-    collection: "Streetwear",
-    badge: "Signature",
-    colorText: "Çizgili kontrast tonlar",
-    fit: "Oversize fit",
-    fabric: "Yumuşak pamuklu kumaş",
-    images: [
-      veraxaLocal("01 (71).jpg", VERAXA_IMG.womenB),
-      veraxaLocal("02 (72).jpg", VERAXA_IMG.womenA)
-    ],
+    label: "Kadın",
+    images: veraxaPair("01 (71).jpg", "02 (72).jpg", VERAXA_FALLBACKS.womenDark, VERAXA_FALLBACKS.womenLight),
     description: "Oversize çizgili tişört. Rahat kalıp ve modern streetwear çizgisi."
   },
   {
-    id: "blue-midi-dress",
     name: "VÉRAXA Blue Midi Dress",
-    price: 1299,
-    oldPrice: 1599,
+    price: "₺ 1,299.00",
     category: "women",
-    collection: "Dresses",
-    badge: "Elegant",
-    colorText: "Mavi",
-    fit: "Midi dress fit",
-    fabric: "Akışkan dokulu kumaş",
-    images: [
-      veraxaLocal("01 (95).jpg", VERAXA_IMG.dress),
-      veraxaLocal("02 (96).jpg", VERAXA_IMG.womenC)
-    ],
-    description: "Mavi midi elbise. Zarif yaka formu ve modern şehir şıklığı."
+    label: "Kadın",
+    images: veraxaPair("01 (95).jpg", "02 (96).jpg", VERAXA_FALLBACKS.dress, VERAXA_FALLBACKS.dress),
+    description: "Mavi midi elbise. Zarif yaka formu, akışkan siluet ve sade premium duruş."
   },
   {
-    id: "black-polo-dress",
     name: "VÉRAXA Black Polo Dress",
-    price: 1199,
-    oldPrice: 1499,
+    price: "₺ 1,199.00",
     category: "women",
-    collection: "Dresses",
-    badge: "Minimal",
-    colorText: "Siyah",
-    fit: "Regular dress fit",
-    fabric: "Yumuşak polo dokusu",
-    images: [
-      veraxaLocal("01 (103).jpg", VERAXA_IMG.dress),
-      veraxaLocal("02 (104).jpg", VERAXA_IMG.womenA)
-    ],
-    description: "Siyah polo elbise. Kontrast yaka detayıyla sade ve güçlü görünüm."
+    label: "Kadın",
+    images: veraxaPair("01 (103).jpg", "02 (104).jpg", VERAXA_FALLBACKS.dress, VERAXA_FALLBACKS.dress),
+    description: "Siyah polo elbise. Kontrast yaka detayıyla sade, net ve modern görünüm."
   },
   {
-    id: "grey-two-piece-set",
     name: "VÉRAXA Grey Two Piece Set",
-    price: 1699,
-    oldPrice: 1999,
+    price: "₺ 1,699.00",
     category: "sets",
-    collection: "Sets",
-    badge: "Two Piece",
-    colorText: "Gri",
-    fit: "Relaxed two piece fit",
-    fabric: "Dökümlü rahat kumaş",
-    images: [
-      veraxaLocal("01 (107).jpg", VERAXA_IMG.set),
-      veraxaLocal("02 (108).jpg", VERAXA_IMG.womenC)
-    ],
-    description: "Gri ikili takım. Rahat pantolon ve bağlama detaylı üst."
+    label: "Takımlar",
+    images: veraxaPair("01 (107).jpg", "02 (108).jpg", VERAXA_FALLBACKS.set, VERAXA_FALLBACKS.set),
+    description: "Gri ikili takım. Rahat pantolon ve bağlama detaylı üst ile premium günlük set."
   },
   {
-    id: "navy-two-piece-set",
     name: "VÉRAXA Navy Two Piece Set",
-    price: 1699,
-    oldPrice: 1999,
+    price: "₺ 1,699.00",
     category: "sets",
-    collection: "Sets",
-    badge: "Two Piece",
-    colorText: "Lacivert",
-    fit: "Relaxed two piece fit",
-    fabric: "Dökümlü rahat kumaş",
-    images: [
-      veraxaLocal("01 (111).jpg", VERAXA_IMG.set),
-      veraxaLocal("02 (112).jpg", VERAXA_IMG.womenA)
-    ],
+    label: "Takımlar",
+    images: veraxaPair("01 (111).jpg", "02 (112).jpg", VERAXA_FALLBACKS.set, VERAXA_FALLBACKS.set),
     description: "Lacivert ikili takım. Dökümlü üst, geniş paça pantolon ve zarif bel detayı."
   },
 
   {
-    id: "men-black-oversize-tee",
-    name: "VÉRAXA Men Black Oversize Tee",
-    price: 899,
-    oldPrice: 1099,
+    name: "VÉRAXA Men Noir Oversize Tee",
+    price: "₺ 899.00",
     category: "men",
-    collection: "Streetwear",
-    badge: "Men",
-    colorText: "Siyah",
-    fit: "Oversize erkek/unisex fit",
-    fabric: "Premium cotton",
+    label: "Erkek",
     images: [
-      veraxaImage(VERAXA_IMG.menA),
-      veraxaImage(VERAXA_IMG.menB)
+      VERAXA_FALLBACKS.menDark,
+      "https://images.pexels.com/photos/6311392/pexels-photo-6311392.jpeg?auto=compress&cs=tinysrgb&w=900"
     ],
-    description: "Erkek/unisex siyah oversize tişört. Minimal ve güçlü streetwear görünümü."
+    description: "Erkek/unisex siyah oversize tişört. Tok kumaş, sade logo dili ve güçlü streetwear görünümü."
   },
   {
-    id: "men-white-basic-tee",
-    name: "VÉRAXA Men White Basic Tee",
-    price: 849,
-    oldPrice: 999,
+    name: "VÉRAXA Men Stone Oversize Tee",
+    price: "₺ 899.00",
     category: "men",
-    collection: "Streetwear",
-    badge: "Men",
-    colorText: "Beyaz",
-    fit: "Regular erkek/unisex fit",
-    fabric: "Soft cotton",
+    label: "Erkek",
     images: [
-      veraxaImage(VERAXA_IMG.menB),
-      veraxaImage(VERAXA_IMG.menA)
+      VERAXA_FALLBACKS.menLight,
+      "https://images.pexels.com/photos/6311397/pexels-photo-6311397.jpeg?auto=compress&cs=tinysrgb&w=900"
     ],
-    description: "Beyaz basic erkek/unisex tişört. DTF baskı için de uygun temiz zemin."
+    description: "Açık ton erkek/unisex oversize tişört. Minimal kombinler için premium basic."
+  },
+  {
+    name: "VÉRAXA Men Signature Hoodie",
+    price: "₺ 1,499.00",
+    category: "men",
+    label: "Erkek",
+    images: [
+      VERAXA_FALLBACKS.hoodie,
+      "https://images.pexels.com/photos/6765164/pexels-photo-6765164.jpeg?auto=compress&cs=tinysrgb&w=900"
+    ],
+    description: "Signature hoodie. Günlük kullanım için rahat kalıp, güçlü görünüm ve premium sweatshirt dokusu."
+  },
+  {
+    name: "VÉRAXA Men Minimal Sweatshirt",
+    price: "₺ 1,399.00",
+    category: "men",
+    label: "Erkek",
+    images: [
+      "https://images.pexels.com/photos/6311397/pexels-photo-6311397.jpeg?auto=compress&cs=tinysrgb&w=900",
+      "https://images.pexels.com/photos/769732/pexels-photo-769732.jpeg?auto=compress&cs=tinysrgb&w=900"
+    ],
+    description: "Minimal sweatshirt. Sade duruş, rahat kalıp ve sezonluk premium streetwear parçası."
   },
 
   {
-    id: "dtf-black-transfer-tee",
-    name: "VÉRAXA Black DTF Transfer Tee",
-    price: 999,
-    oldPrice: 1299,
+    name: "VÉRAXA Custom DTF Siyah Tee",
+    price: "Teklif Al",
     category: "dtf",
-    collection: "DTF Transfer",
-    badge: "DTF",
-    colorText: "Siyah tişört transfer baskı",
-    fit: "Erkek/unisex",
-    fabric: "DTF transfer baskı kağıdı",
+    label: "DTF Studio",
     images: [
-      veraxaImage(VERAXA_IMG.menPrint),
-      veraxaImage(VERAXA_IMG.dtf)
+      VERAXA_FALLBACKS.dtf,
+      "https://images.pexels.com/photos/6311392/pexels-photo-6311392.jpeg?auto=compress&cs=tinysrgb&w=900"
     ],
-    description: "Siyah tişört için hazır DTF transfer baskı. Müşteri tişört almaz; uygulanabilir transfer baskı alır."
+    description: "Siyah tişört üzerine logo, yazı, illüstrasyon veya özel görsel DTF baskı."
   },
   {
-    id: "dtf-white-transfer-tee",
-    name: "VÉRAXA White DTF Transfer Tee",
-    price: 949,
-    oldPrice: 1199,
+    name: "VÉRAXA Custom DTF Beyaz Tee",
+    price: "Teklif Al",
     category: "dtf",
-    collection: "DTF Transfer",
-    badge: "Transfer",
-    colorText: "Beyaz tişört transfer baskı",
-    fit: "Erkek/unisex",
-    fabric: "DTF transfer baskı kağıdı",
+    label: "DTF Studio",
     images: [
-      veraxaImage(VERAXA_IMG.menB),
-      veraxaImage(VERAXA_IMG.dtf)
+      "https://images.pexels.com/photos/8532616/pexels-photo-8532616.jpeg?auto=compress&cs=tinysrgb&w=900",
+      VERAXA_FALLBACKS.womenLight
     ],
-    description: "Beyaz tişört için renkli DTF transfer baskı. Kendi tasarımını gönderebilir veya hazır baskı seçebilirsin."
+    description: "Beyaz tişört üzerine özel DTF baskı. Marka tasarımı, logo, yazı veya kişisel tasarım."
   },
   {
-    id: "dtf-hoodie-transfer",
-    name: "VÉRAXA Hoodie DTF Transfer",
-    price: 1499,
-    oldPrice: 1899,
+    name: "VÉRAXA DTF Hoodie Baskı",
+    price: "Teklif Al",
     category: "dtf",
-    collection: "DTF Transfer",
-    badge: "Hoodie",
-    colorText: "Hoodie / sweatshirt transfer baskı",
-    fit: "Hoodie transfer",
-    fabric: "DTF transfer baskı kağıdı",
+    label: "DTF Studio",
     images: [
-      veraxaImage(VERAXA_IMG.hoodie),
-      veraxaImage(VERAXA_IMG.dtf)
+      VERAXA_FALLBACKS.hoodie,
+      VERAXA_FALLBACKS.dtf
     ],
-    description: "Hoodie ve sweatshirt için büyük yüzeyli DTF transfer baskı."
+    description: "Hoodie veya sweatshirt üzerine özel DTF baskı uygulaması."
   },
   {
-    id: "dtf-a4-transfer-sheet",
-    name: "VÉRAXA A4 DTF Transfer Sheet",
-    price: 129,
-    oldPrice: 179,
+    name: "VÉRAXA A4 DTF Transfer Kağıdı",
+    price: "Teklif Al",
     category: "dtf",
-    collection: "Transfer Sheet",
-    badge: "A4",
-    colorText: "A4 transfer kağıdı",
-    fit: "Uygulamaya hazır",
-    fabric: "DTF transfer film",
+    label: "Transfer Kağıdı",
     images: [
-      veraxaImage(VERAXA_IMG.dtf),
-      veraxaImage(VERAXA_IMG.menPrint)
+      VERAXA_FALLBACKS.transfer,
+      VERAXA_FALLBACKS.dtf
     ],
-    description: "A4 DTF transfer baskı kağıdı. Logo, yazı, küçük grafik ve kişisel tasarım için."
+    description: "A4 ölçüde DTF transfer kağıdı. Kendi tasarımını gönder, baskıya hazır transfer olarak hazırlanır."
   },
   {
-    id: "dtf-a3-transfer-sheet",
-    name: "VÉRAXA A3 DTF Transfer Sheet",
-    price: 219,
-    oldPrice: 279,
+    name: "VÉRAXA A3 DTF Transfer Kağıdı",
+    price: "Teklif Al",
     category: "dtf",
-    collection: "Transfer Sheet",
-    badge: "A3",
-    colorText: "A3 transfer kağıdı",
-    fit: "Büyük ön / sırt baskı",
-    fabric: "DTF transfer film",
+    label: "Transfer Kağıdı",
     images: [
-      veraxaImage(VERAXA_IMG.dtf),
-      veraxaImage(VERAXA_IMG.hoodie)
+      "https://images.pexels.com/photos/4065877/pexels-photo-4065877.jpeg?auto=compress&cs=tinysrgb&w=900",
+      VERAXA_FALLBACKS.transfer
     ],
-    description: "A3 DTF transfer baskı kağıdı. Büyük ön baskı, sırt baskısı ve geniş grafikler için."
+    description: "A3 ölçüde DTF transfer kağıdı. Daha büyük tasarımlar, sırt baskısı ve çoklu logo baskıları için."
   },
   {
-    id: "dtf-meter-transfer",
     name: "VÉRAXA Metre DTF Transfer",
-    price: 690,
-    oldPrice: 790,
+    price: "Teklif Al",
     category: "dtf",
-    collection: "Transfer Sheet",
-    badge: "Metre",
-    colorText: "Metre işi transfer",
-    fit: "Toplu üretim",
-    fabric: "DTF transfer film",
+    label: "Transfer Kağıdı",
     images: [
-      veraxaImage(VERAXA_IMG.dtf),
-      veraxaImage(VERAXA_IMG.menPrint)
+      "https://images.pexels.com/photos/4792728/pexels-photo-4792728.jpeg?auto=compress&cs=tinysrgb&w=900",
+      "https://images.pexels.com/photos/4065876/pexels-photo-4065876.jpeg?auto=compress&cs=tinysrgb&w=900"
     ],
-    description: "Metre işi DTF transfer. Marka, ekip, logo dizilimi ve toplu üretim için."
+    description: "Metre bazlı DTF transfer siparişi. Çoklu logo, marka baskısı ve toplu üretim için teklif alınır."
   }
 ];
