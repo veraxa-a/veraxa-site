@@ -27,15 +27,14 @@
     <div class="menu-logo">VÉRAXA</div>
 
     <div class="menu-grid">
-      <div class="menu-column">
-        <span>Shop</span>
-        <a href="#products" onclick="veraxaSafeFilter('all')">Tüm Ürünler</a>
-        <a href="#products" onclick="veraxaSafeFilter('women')">Kadın</a>
-        <a href="#products" onclick="veraxaSafeFilter('men')">Erkek</a>
-        <a href="#products" onclick="veraxaSafeFilter('sets')">Takımlar</a>
-        <a href="pages/women.html">Kadın Sayfası</a>
-        <a href="pages/men.html">Erkek Sayfası</a>
-      </div>
+<div class="menu-column">
+  <span>Shop</span>
+  <a href="#products" onclick="veraxaSafeFilter('all')">Tüm Ürünler</a>
+  <a href="#products" onclick="veraxaSafeFilter('women')">Kadın Koleksiyonu</a>
+  <a href="#products" onclick="veraxaSafeFilter('sets')">Takımlar</a>
+  <a href="#dtf" onclick="veraxaCloseSiteMenu()">DTF Studio</a>
+  <a href="#dtf-transfer" onclick="veraxaCloseSiteMenu()">Transfer Kağıdı</a>
+</div>
 
       <div class="menu-column">
         <span>DTF Studio</span>
@@ -122,13 +121,13 @@
     <section class="hero">
       <img src="assets/images/hero/hero-main.jpg" alt="VÉRAXA editorial" onerror="this.src='https://images.pexels.com/photos/1926769/pexels-photo-1926769.jpeg?auto=compress&cs=tinysrgb&w=1800'" />
 
-      <div class="hero-caption">
-        <span>VÉRAXA ATELIER</span>
-        <h1>Luxury Streetwear</h1>
-        <p>Premium koleksiyonlar, custom DTF baskı ve transfer kağıdı stüdyosu.</p>
-        <a href="#products">Koleksiyonu Keşfet</a>
-      </div>
-    </section>
+<section class="quiet-nav">
+  <a href="#products" onclick="veraxaSafeFilter('all')">Shop</a>
+  <a href="#products" onclick="veraxaSafeFilter('women')">Kadın Koleksiyonu</a>
+  <a href="#products" onclick="veraxaSafeFilter('sets')">Takımlar</a>
+  <a href="#dtf">DTF Studio</a>
+  <a href="#dtf-transfer">Transfer Kağıdı</a>
+</section>
 
     <section class="quiet-nav">
       <a href="#products" onclick="veraxaSafeFilter('women')">Kadın</a>
@@ -158,12 +157,10 @@
 
       <div class="product-toolbar">
         <div class="product-filters">
-          <button class="active" type="button" onclick="filterProducts('all', this)">Tümü</button>
-          <button type="button" onclick="filterProducts('women', this)">Kadın</button>
-          <button type="button" onclick="filterProducts('men', this)">Erkek</button>
-          <button type="button" onclick="filterProducts('sets', this)">Takımlar</button>
-          <button type="button" onclick="filterProducts('dtf', this)">DTF</button>
-        </div>
+  <button class="active" type="button" onclick="filterProducts('all', this)">Tümü</button>
+  <button type="button" onclick="filterProducts('women', this)">Kadın</button>
+  <button type="button" onclick="filterProducts('sets', this)">Takımlar</button>
+</div>
 
         <input id="searchInput" type="search" placeholder="Ürün ara" oninput="searchProducts()" />
       </div>
