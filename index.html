@@ -3,57 +3,98 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Veraxa | Secili Urunler</title>
-  <meta name="description" content="Veraxa, internet uzerinden secili urunleri ve avantajli satin alma linklerini bir araya getirir.">
+  <title>Veraxa | Trend Ürün Vitrini</title>
+  <meta name="description" content="Veraxa, seçili trend ürünleri komisyonlu alışveriş linkleriyle tek vitrinde toplar.">
   <meta name="verify-admitad" content="ded226ef34">
-  <link rel="stylesheet" href="assets/css/site.css?v=20260612">
+  <link rel="stylesheet" href="assets/css/site.css?v=20260612-pro">
 </head>
 <body>
   <header class="site-header">
-    <a class="brand" href="/">Veraxa</a>
-    <nav aria-label="Ana menu">
-      <a href="#urunler">Urunler</a>
-      <a href="#iletisim">Iletisim</a>
-      <a href="legal/affiliate-disclosure.html">Komisyon Bilgisi</a>
+    <a class="brand" href="/" aria-label="Veraxa ana sayfa">
+      <span>Veraxa</span>
+      <small>Picks</small>
+    </a>
+    <nav aria-label="Ana menü">
+      <a href="#urunler">Vitrin</a>
+      <a href="#kategoriler">Kategoriler</a>
+      <a href="#iletisim">İletişim</a>
+      <a href="legal/affiliate-disclosure.html">Komisyon</a>
     </nav>
   </header>
 
   <main>
-    <section class="hero">
+    <section class="hero" aria-label="Veraxa ürün vitrini">
       <div class="hero-copy">
         <p class="eyebrow">AliExpress WW aktif</p>
-        <h1>Secili urunleri tek vitrinde kesfet.</h1>
-        <p>Veraxa, gunluk kullanima uygun urunleri komisyonlu satis linkleriyle bir araya getirir. Fiyat, stok ve teslimat bilgisi satis sayfasinda guncellenir.</p>
-        <div class="actions">
-          <a class="button primary" href="#urunler">Urunlere bak</a>
+        <h1>Veraxa</h1>
+        <p class="hero-lead">Günlük hayat için seçilmiş trend ürünler, daha net ve daha güven veren bir vitrinde.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#urunler">Vitrine bak</a>
           <a class="button secondary" href="legal/affiliate-disclosure.html">Komisyon bilgisi</a>
         </div>
+        <div class="hero-metrics" aria-label="Veraxa özet">
+          <div>
+            <strong>8</strong>
+            <span>seçili ürün</span>
+          </div>
+          <div>
+            <strong>5</strong>
+            <span>kategori</span>
+          </div>
+          <div>
+            <strong>Aktif</strong>
+            <span>Admitad linkleri</span>
+          </div>
+        </div>
       </div>
-      <div class="hero-panel" aria-label="Veraxa secili urun vitrini">
-        <img class="hero-image hero-image-main" src="https://images.weserv.nl/?url=ae-pic-a1.aliexpress-media.com/kf/S6639f572b72c4e018dfe589594f356b9n.jpg" alt="Gold baharat standi">
-        <img class="hero-image hero-image-side" src="https://images.weserv.nl/?url=ae-pic-a1.aliexpress-media.com/kf/S7a014c9f0093440b8388fc38d8e30758v.jpg" alt="Dijital bagaj tartisi">
-        <div class="hero-note">
-          <span>Veraxa Picks</span>
-          <strong>Guncel fiyatli, sponsorlu linkli secimler.</strong>
+
+      <div class="hero-showcase">
+        <a class="showcase-main" href="#urunler" aria-label="Öne çıkan ürünlere git">
+          <img src="https://images.weserv.nl/?url=ae-pic-a1.aliexpress-media.com/kf/S6639f572b72c4e018dfe589594f356b9n.jpg" alt="Gold baharat standı">
+          <span>Öne çıkan</span>
+          <strong>Gold baharat standı</strong>
+        </a>
+        <a class="showcase-tile tile-a" href="#urunler" aria-label="Seyahat ürünlerine git">
+          <img src="https://images.weserv.nl/?url=ae-pic-a1.aliexpress-media.com/kf/S7a014c9f0093440b8388fc38d8e30758v.jpg" alt="Dijital bagaj tartısı">
+        </a>
+        <a class="showcase-tile tile-b" href="#urunler" aria-label="Aksesuar ürünlerine git">
+          <img src="https://images.weserv.nl/?url=ae-pic-a1.aliexpress-media.com/kf/Sb8699b75dc444189b32965ae1b0ab645R.jpg" alt="Siyah çiçek broş toka">
+        </a>
+        <div class="showcase-note">
+          <span>Güncel vitrin</span>
+          <strong>Fiyat ve stok satış sayfasında güncellenir.</strong>
         </div>
       </div>
     </section>
 
-    <section class="section" id="urunler">
+    <section class="section catalog" id="urunler">
       <div class="section-heading">
         <div>
-          <p class="eyebrow">Baslangic vitrini</p>
-          <h2>Secili urunler</h2>
+          <p class="eyebrow">Editör seçimi</p>
+          <h2>Bugünün vitrini</h2>
         </div>
-        <p>AliExpress satis ortakligi linkleri kullanilir.</p>
+        <p>Ürünler AliExpress satış ortaklığı linkleriyle listelenir.</p>
       </div>
+
+      <div class="catalog-tools" id="kategoriler">
+        <label class="search-box" for="productSearch">
+          <span>Ürün ara</span>
+          <input id="productSearch" type="search" placeholder="Broş, çanta, mutfak..." autocomplete="off">
+        </label>
+        <div class="filter-box" aria-label="Kategori filtresi">
+          <span>Kategori</span>
+          <div class="category-tabs" id="categoryFilters"></div>
+        </div>
+      </div>
+
+      <p class="product-status" id="productStatus" aria-live="polite"></p>
       <div class="product-grid" id="productGrid"></div>
     </section>
 
     <section class="section contact" id="iletisim">
       <div>
-        <p class="eyebrow">Hizli iletisim</p>
-        <h2>Yeni urun veya is birligi icin yaz.</h2>
+        <p class="eyebrow">Veraxa</p>
+        <h2>Yeni ürün ve iş birliği için hızlı iletişim.</h2>
       </div>
       <div class="contact-actions">
         <a class="button primary" href="https://wa.me/" target="_blank" rel="noopener">WhatsApp</a>
@@ -64,9 +105,9 @@
 
   <footer class="site-footer">
     <span>&copy; 2026 Veraxa</span>
-    <a href="legal/affiliate-disclosure.html">Komisyonlu satis aciklamasi</a>
+    <a href="legal/affiliate-disclosure.html">Komisyonlu satış açıklaması</a>
   </footer>
 
-  <script src="assets/js/products.js?v=20260612"></script>
+  <script src="assets/js/products.js?v=20260612-pro"></script>
 </body>
 </html>
