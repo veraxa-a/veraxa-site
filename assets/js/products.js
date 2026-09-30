@@ -51,5 +51,6 @@ document.querySelectorAll("[data-select]").forEach(link=>link.addEventListener("
     const active=item.dataset.category===state.category;
     item.setAttribute("aria-pressed",String(active));
   });
+  renderProducts();
 }));
 renderProducts();
