@@ -1,18 +1,13 @@
-# Veraxa Clean Start
+# Veraxa
 
-Bu klasor Veraxa icin sifirdan hazirlanan temiz baslangic yapisidir.
+Veraxa.co için kadın ve erkek giyim ürünlerini sergileyen statik mağaza sitesi.
 
-## Klasorler
+## İçerik
 
-- `index.html`: ana sayfa
-- `assets/css/site.css`: tasarim stilleri
-- `assets/js/products.js`: urun ve komisyon linki verileri
-- `legal/affiliate-disclosure.html`: komisyonlu satis aciklamasi
-- `CNAME`: veraxa.co domain baglantisi
-- `.nojekyll`: GitHub Pages icin temiz statik yayin
+- `index.html`: mağaza ana sayfası
+- `assets/css/site.css`: responsive mağaza tasarımı
+- `assets/js/products.js`: ürün kataloğu, kategori filtreleri ve arama
+- `assets/products/`: ürün fotoğrafları
+- `CNAME`: veraxa.co alan adı
 
-## Hemen Duzenlenecek Yerler
-
-1. `assets/js/products.js` icindeki urun adlarini ve linkleri degistir.
-2. `index.html` icindeki WhatsApp/Instagram linklerini kendi hesaplarinla degistir.
-3. GitHub Pages ayarinda domaini `veraxa.co` olarak yeniden bagla.
+Ürünlerin güncel fiyatı, beden ve stok bilgisi sipariş öncesinde Veraxa ile teyit edilir. Ürün bilgi bağlantıları `veraxa.contact@gmail.com` adresine yönlenir.
