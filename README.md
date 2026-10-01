@@ -2,12 +2,10 @@
 
 Veraxa.co için kadın ve erkek giyim ürünlerini sergileyen statik mağaza sitesi.
 
-## İçerik
+## İçerik düzenleme
 
-- `index.html`: mağaza ana sayfası
-- `assets/css/site.css`: responsive mağaza tasarımı
-- `assets/js/products.js`: ürün kataloğu, kategori filtreleri ve arama
-- `assets/products/`: ürün fotoğrafları
-- `CNAME`: veraxa.co alan adı
+- `content/products.json`: ürün başlıkları, koleksiyon, fiyat ve görsel yolları
+- `content/site.json`: ana sayfa metinleri ve mağaza e-posta adresi
+- `admin-editor.html`: bağımsız görsel içerik düzenleyici
 
-Ürünlerin güncel fiyatı, beden ve stok bilgisi sipariş öncesinde Veraxa ile teyit edilir. Ürün bilgi bağlantıları `veraxa.contact@gmail.com` adresine yönlenir.
+Düzenleyici GitHub Contents API üzerinden değişiklikleri `main` dalına kaydeder. GitHub Pages değişiklikleri yayımlar.

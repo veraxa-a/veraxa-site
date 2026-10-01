@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="assets/css/site.css?v=20260930-fashion">
 </head>
 <body>
-  <div class="announcement">VERAXA — GÜNLÜK STİLİN, KENDİ YORUMUN</div>
+  <div class="announcement" id="announcementText">VERAXA — GÜNLÜK STİLİN, KENDİ YORUMUN</div>
   <header class="site-header">
     <a class="brand" href="/" aria-label="Veraxa ana sayfa"><span class="brand-mark">V</span><span>veraxa</span></a>
     <nav aria-label="Ana menü">
@@ -20,23 +20,23 @@
       <a href="#erkek">Erkek</a>
       <a href="#koleksiyon">Koleksiyon</a>
     </nav>
-    <a class="header-cta" href="mailto:veraxa.contact@gmail.com?subject=Veraxa%20%C3%BCr%C3%BCn%20bilgisi">Bize ulaş <span aria-hidden="true">↗</span></a>
+    <a class="header-cta" data-store-email href="mailto:veraxa.contact@gmail.com?subject=Veraxa%20%C3%BCr%C3%BCn%20bilgisi">Bize ulaş <span aria-hidden="true">↗</span></a>
   </header>
 
   <main>
     <section class="hero">
       <div class="hero-copy">
         <p class="eyebrow"><span></span> Yeni sezon seçkisi</p>
-        <h1>Giyin.<br><em>Kendin ol.</em></h1>
-        <p class="hero-lead">Kendine ait bir stil, küçük seçimlerle başlar. Kadın ve erkek koleksiyonundan sana uyan parçaları keşfet.</p>
+        <h1 class="hero-title" id="heroTitle">Giyin.<br><em>Kendin ol.</em></h1>
+        <p class="hero-lead" id="heroLead">Kendine ait bir stil, küçük seçimlerle başlar. Kadın ve erkek koleksiyonundan sana uyan parçaları keşfet.</p>
         <div class="hero-actions">
           <a class="button button-dark" href="#koleksiyon">Koleksiyonu keşfet <span aria-hidden="true">↓</span></a>
-          <a class="text-link" href="mailto:veraxa.contact@gmail.com?subject=Veraxa%20%C3%BCr%C3%BCn%20bilgisi">Beden ve fiyat sor <span aria-hidden="true">↗</span></a>
+          <a class="text-link" data-store-email href="mailto:veraxa.contact@gmail.com?subject=Veraxa%20%C3%BCr%C3%BCn%20bilgisi">Beden ve fiyat sor <span aria-hidden="true">↗</span></a>
         </div>
-        <div class="hero-note"><span class="note-line"></span> Günlük parçalar. Sana göre kombinler.</div>
+        <div class="hero-note"><span class="note-line"></span> <span id="heroNote">Günlük parçalar. Sana göre kombinler.</span></div>
       </div>
       <div class="hero-visual">
-        <img src="assets/products/26Y005.jpg" alt="Veraxa kadın koleksiyonundan günlük kombin">
+        <img id="heroImage" src="assets/products/26Y005.jpg" alt="Veraxa kadın koleksiyonundan günlük kombin">
         <div class="visual-label"><span>VERAXA / 01</span><strong>Yeni<br>sezon</strong></div>
         <div class="visual-caption">STİLİNİ BUL · 2026</div>
       </div>
@@ -45,13 +45,13 @@
 
     <section class="category-intro" aria-label="Koleksiyon kategorileri">
       <a class="category-card women" id="kadin" href="#koleksiyon" data-select="Kadın">
-        <img src="assets/products/25NO4517-elbise.jpg" alt="Kadın koleksiyonundan saks mavisi elbise" loading="lazy">
+        <img id="womenImage" src="assets/products/25NO4517-elbise.jpg" alt="Kadın koleksiyonundan saks mavisi elbise" loading="lazy">
         <span class="category-overline">VERAXA WOMAN</span>
         <span class="category-title">Kadın <span>↗</span></span>
         <span class="category-subtitle">Günlük stilin yeni parçaları</span>
       </a>
       <a class="category-card men" id="erkek" href="#koleksiyon" data-select="Erkek">
-        <img src="assets/products/26Y020.jpg" alt="Erkek koleksiyonundan farklı renklerde tişörtler" loading="lazy">
+        <img id="menImage" src="assets/products/26Y020.jpg" alt="Erkek koleksiyonundan farklı renklerde tişörtler" loading="lazy">
         <span class="category-overline">VERAXA MAN</span>
         <span class="category-title">Erkek <span>↗</span></span>
         <span class="category-subtitle">Her güne eşlik eden temel parçalar</span>
@@ -62,9 +62,9 @@
       <div class="catalog-heading">
         <div>
           <p class="eyebrow"><span></span> VERAXA SEÇKİSİ</p>
-          <h2>Yeni favorinle <em>tanış.</em></h2>
+          <h2 class="catalog-title" id="catalogTitle">Yeni favorinle <em>tanış.</em></h2>
         </div>
-        <p>Ürün ve renk seçeneklerine göz at. Beden, stok ve güncel fiyat bilgisi için bize yaz.</p>
+        <p id="catalogDescription">Ürün ve renk seçeneklerine göz at. Beden, stok ve güncel fiyat bilgisi için bize yaz.</p>
       </div>
       <div class="catalog-toolbar">
         <div class="filters" id="categoryFilters" aria-label="Koleksiyon filtresi"></div>
@@ -72,16 +72,16 @@
       </div>
       <p class="product-status" id="productStatus" aria-live="polite"></p>
       <div class="product-grid" id="productGrid"></div>
-      <div class="catalog-footnote">Ürünlerin beden, stok ve fiyat bilgisi sipariş öncesinde teyit edilir.</div>
+      <div class="catalog-footnote" id="catalogFootnote">Ürünlerin beden, stok ve fiyat bilgisi sipariş öncesinde teyit edilir.</div>
     </section>
 
     <section class="contact">
       <div class="contact-index">V / 26</div>
       <div class="contact-copy">
         <p class="eyebrow">Sorun, birlikte bulalım</p>
-        <h2>Beden, renk veya<br><em>ürün hakkında?</em></h2>
-        <p>Ürün kodunu belirterek bize yaz; sana yardımcı olalım.</p>
-        <a class="button button-light" href="mailto:veraxa.contact@gmail.com?subject=Veraxa%20%C3%BCr%C3%BCn%20bilgisi">E-posta gönder <span aria-hidden="true">↗</span></a>
+        <h2 class="contact-title" id="contactTitle">Beden, renk veya<br><em>ürün hakkında?</em></h2>
+        <p id="contactText">Ürün kodunu belirterek bize yaz; sana yardımcı olalım.</p>
+        <a class="button button-light" data-store-email href="mailto:veraxa.contact@gmail.com?subject=Veraxa%20%C3%BCr%C3%BCn%20bilgisi">E-posta gönder <span aria-hidden="true">↗</span></a>
       </div>
       <div class="contact-orbit" aria-hidden="true">VERAXA<br>YOUR STYLE<br>YOUR WAY</div>
     </section>
@@ -90,7 +90,7 @@
   <footer class="site-footer">
     <a class="brand footer-brand" href="/"><span class="brand-mark">V</span><span>veraxa</span></a>
     <span>© 2026 Veraxa</span>
-    <a href="mailto:veraxa.contact@gmail.com">veraxa.contact@gmail.com</a>
+    <a id="footerEmail" href="mailto:veraxa.contact@gmail.com">veraxa.contact@gmail.com</a>
     <a href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">Başa dön ↑</a>
   </footer>
 

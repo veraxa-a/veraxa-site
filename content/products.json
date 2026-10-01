@@ -1,0 +1,137 @@
+[
+  {
+    "code": "25MY5001",
+    "name": "Müslin Bol Paça Pantolon",
+    "detail": "Gri",
+    "category": "Kadın",
+    "price": "",
+    "image": "assets/products/25MY5001-pantolon.jpg",
+    "active": true
+  },
+  {
+    "code": "25MY5001",
+    "name": "Müslin Kimono",
+    "detail": "Gri",
+    "category": "Kadın",
+    "price": "",
+    "image": "assets/products/25MY5001-kimono.jpg",
+    "active": true
+  },
+  {
+    "code": "25MY5002",
+    "name": "Müslin Bol Paça Pantolon",
+    "detail": "Lacivert",
+    "category": "Kadın",
+    "price": "",
+    "image": "assets/products/25MY5002.jpg",
+    "active": true
+  },
+  {
+    "code": "25MY5504",
+    "name": "Çizgili Tişört",
+    "detail": "Farklı renk seçenekleri",
+    "category": "Kadın",
+    "price": "",
+    "image": "assets/products/25MY5504.jpg",
+    "active": true
+  },
+  {
+    "code": "25MY6002",
+    "name": "V Yaka Gömlek",
+    "detail": "Farklı renk seçenekleri",
+    "category": "Kadın",
+    "price": "",
+    "image": "assets/products/25MY6002.jpg",
+    "active": true
+  },
+  {
+    "code": "25NO4517",
+    "name": "Kemerli Elbise",
+    "detail": "Saks mavisi",
+    "category": "Kadın",
+    "price": "",
+    "image": "assets/products/25NO4517-elbise.jpg",
+    "active": true
+  },
+  {
+    "code": "25TP305",
+    "name": "V Yaka Basic Tişört",
+    "detail": "Renk seçenekleri",
+    "category": "Kadın",
+    "price": "",
+    "image": "assets/products/25TP305.jpg",
+    "active": true
+  },
+  {
+    "code": "25VL074",
+    "name": "Polo Yaka Elbise",
+    "detail": "Siyah",
+    "category": "Kadın",
+    "price": "",
+    "image": "assets/products/25VL074.jpg",
+    "active": true
+  },
+  {
+    "code": "25MY25585",
+    "name": "Çizgili Bisiklet Yaka Tişört",
+    "detail": "Renk seçenekleri",
+    "category": "Kadın",
+    "price": "",
+    "image": "assets/products/25MY25585.jpg",
+    "active": true
+  },
+  {
+    "code": "26Y005",
+    "name": "Günlük Kısa Kollu Üst",
+    "detail": "Taş rengi",
+    "category": "Kadın",
+    "price": "",
+    "image": "assets/products/26Y005.jpg",
+    "active": true
+  },
+  {
+    "code": "26Y006",
+    "name": "Basic Kısa Kollu Tişört",
+    "detail": "Siyah",
+    "category": "Kadın",
+    "price": "",
+    "image": "assets/products/26Y006.jpg",
+    "active": true
+  },
+  {
+    "code": "26Y008",
+    "name": "Askılı Basic Üst",
+    "detail": "Siyah",
+    "category": "Kadın",
+    "price": "",
+    "image": "assets/products/26Y008.jpg",
+    "active": true
+  },
+  {
+    "code": "26Y009",
+    "name": "Basic Kısa Kollu Tişört",
+    "detail": "Lacivert",
+    "category": "Kadın",
+    "price": "",
+    "image": "assets/products/26Y009.jpg",
+    "active": true
+  },
+  {
+    "code": "26Y010",
+    "name": "Günlük Stil Üstü",
+    "detail": "Mavi",
+    "category": "Kadın",
+    "price": "",
+    "image": "assets/products/26Y010.jpg",
+    "active": true
+  },
+  {
+    "code": "26Y020",
+    "name": "Basic Tişört",
+    "detail": "Renk seçenekleri",
+    "category": "Erkek",
+    "price": "",
+    "image": "assets/products/26Y020.jpg",
+    "active": true
+  }
+]
